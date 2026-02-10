@@ -1,26 +1,35 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UNEG - Test CI/CD</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      :root { color-scheme: light; }
-      body { font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif; }
-    </style>
-  </head>
-  <body class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-amber-50 text-slate-900">
-    <main class="min-h-screen grid place-items-center px-6">
-      <section class="text-center">
-        <h1 class="text-5xl sm:text-6xl font-bold tracking-tight">UNEG</h1>
-        <p class="mt-4 text-lg sm:text-xl text-slate-600">
-          Esto es un test de CI/CD para el entorno.
-        </p>
-      </section>
-    </main>
-  </body>
-</html>
+<?php
+declare(strict_types=1);
+
+$autoload = __DIR__ . '/vendor/autoload.php';
+if (!file_exists($autoload)) {
+    http_response_code(500);
+    echo 'Falta instalar dependencias. Ejecuta: composer install';
+    exit;
+}
+
+require $autoload;
+
+$router = new AltoRouter();
+// Ajusta base path automáticamente para funcionar en /uneg y en /
+$scriptDir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+$router->setBasePath($scriptDir === '' ? '' : $scriptDir);
+
+$router->map('GET', '/', function (): void {
+    require __DIR__ . '/pages/home.php';
+});
+
+$router->map('GET', '/404', function (): void {
+    http_response_code(404);
+    require __DIR__ . '/pages/404.php';
+});
+
+$match = $router->match();
+
+if ($match && is_callable($match['target'])) {
+    call_user_func_array($match['target'], $match['params']);
+    exit;
+}
+
+http_response_code(404);
+require __DIR__ . '/pages/404.php';
