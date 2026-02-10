@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/administrator/public_html/2026.uneg.edu.mx
+    - export DEPLOYPATH=/home/administrador/public_html/2026.uneg.edu.mx
     - /bin/cp -R * $DEPLOYPATH
