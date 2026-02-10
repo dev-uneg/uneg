@@ -19,6 +19,14 @@ $router->map('GET', '/', function (): void {
     require __DIR__ . '/pages/home.php';
 });
 
+$router->map('GET', '/nosotros', function (): void {
+    require __DIR__ . '/pages/nosotros.php';
+});
+
+$router->map('GET', '/contacto', function (): void {
+    require __DIR__ . '/pages/contacto.php';
+});
+
 $router->map('GET', '/404', function (): void {
     http_response_code(404);
     require __DIR__ . '/pages/404.php';
