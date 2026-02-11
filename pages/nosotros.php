@@ -1,5 +1,6 @@
 <?php
-$pageTitle = 'UNEG - Nosotros';
+$title = 'UNEG - Nosotros';
+$active = '';
 require __DIR__ . '/partials/header.php';
 ?>
 <section class="text-center">

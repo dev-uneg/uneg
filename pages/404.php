@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'UNEG - 404';
+$title = 'UNEG - 404';
 require __DIR__ . '/partials/header.php';
 ?>
 <section class="text-center">
