@@ -6,7 +6,7 @@ require __DIR__ . '/../partials/header.php';
 
 <main class="max-w-7xl mx-auto px-4 py-10">
   <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/nms/cch/hero.png" alt="Maestrías" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/maestrias/hero.png" alt="Maestrías" class="block w-full h-auto" loading="eager">
     <div class="bg-[#0b2c65] text-white">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
         <div class="flex items-center gap-3">

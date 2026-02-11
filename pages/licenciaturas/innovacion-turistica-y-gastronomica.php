@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Licenciatura en Innovación Turística y Gastronómica | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -8,7 +8,7 @@ require __DIR__ . '/../partials/header.php';
 <div class="-mx-6 bg-slate-50">
 <main class="max-w-7xl mx-auto px-4 py-10">
 <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/innovacion-turistica-y-gastronomica/hero-innovacion-turistica-gastronomica.png" alt="Contaduría Pública Estratégica" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/innovacion-turistica-y-gastronomica/hero-innovacion-turistica-gastronomica.png" alt="Innovación Turística y Gastronómica" class="block w-full h-auto" loading="eager">
   <div class="bg-[#0b2c65] text-white">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
       <div class="flex items-center gap-3">
@@ -43,28 +43,28 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">¿Licenciatura en Turismo y Gastronomía? Conoce nuestra Licenciatura en Innovación Turística y Gastronómica</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      Si estás buscando una universidad de turismo en donde explorar nuevas oportunidades para influir en esta actividad económica tan interesante y satisfactoria, conoce más sobre nuestra Licenciatura en Innovación Turística y Gastronómica. Deja que las ideas fluyan para crear nuevos caminos más allá de una Licenciatura en Turismo y Gastronomía.
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        Conocimiento y comprensión de las actividades turísticas nacionales e internacionales identificando su impacto en el ámbito económico, social y cultural tomando en cuenta la sustentabilidad ambiental.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-[#0b2c65] text-center">Inscríbete Ahora</h3>
       <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido Paterno" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico" type="email" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono" type="tel" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido paterno*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico*" type="email" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono*" type="tel" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" class="h-4 w-4" />
-          He leído y acepto el aviso de privacidad
+          He leído y acepto el <span class="font-semibold text-slate-700">Aviso de Privacidad</span>
         </label>
         <button class="col-span-1 sm:col-span-2 rounded-md bg-[#0b2c65] px-4 py-2 text-white font-semibold">Enviar</button>
       </form>
@@ -76,7 +76,7 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="overflow-hidden rounded-2xl shadow-sm">
-      <div class="bg-gradient-to-r from-[#1f7a3f] via-[#2f9e57] to-[#74c69d] text-white">
+      <div class="bg-gradient-to-r from-[#0092AF] via-[#0092AF] to-[#0092AF] text-white">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-8">
           <div class="text-left">
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">Perfil de Ingreso/Egreso</p>
@@ -130,9 +130,7 @@ require __DIR__ . '/../partials/header.php';
             <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de esta licenciatura deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Interés en invertir eficazmente e incrementar la economía empresarial.</li>
-              <li>Interés en desarrollar habilidades para planear, desarrollar y dirigir estrategias que hagan crecer empresas o instituciones.</li>
-              <li>Capacidad de aprovechar al máximo todos los recursos y el tener sólido control sobre los aspectos financieros y administrativos.</li>
+              <li>Esta Licenciatura responde a las necesidades educativas, sociales, políticas, económicas, ecológicas y laborales que den respuesta al campo en el que se va a desempeñar el profesionista de manera individual y profesional, logrando así brindar una formación oportuna de acuerdo a las características requeridas en un mundo globalizado donde se puedan desarrollar tanto en lo administrativo como en la parte operativa.</li>
             </ul>
           </div>
 
@@ -141,13 +139,11 @@ require __DIR__ . '/../partials/header.php';
               <i class="ri-graduation-cap-line text-xl"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
-            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura tendrás habilidades para:</p>
+            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura, tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Cambiar la visión proyectiva de negocios.</li>
-              <li>Realizar nuevos modelos de desarrollo empresarial.</li>
-              <li>Manejar escenarios de contingencia y volatilidad.</li>
-              <li>Comprender la analítica del entorno.</li>
-              <li>Desarrollar habilidades para la toma de decisiones.</li>
+              <li>Conocer y comprender la evolución, comportamiento y prospectiva de la actividad turística en el escenario nacional e internacional a efecto de analizar el impacto que refleje en el ámbito económico, social, cultural, gastronómico y ecológico.</li>
+              <li>Aplicar los elementos cuantitativos en la operación de empresas del sector.</li>
+              <li>Conocer el manejo y operación de las empresas del sector en sus diferentes modalidades.</li>
             </ul>
           </div>
 
@@ -158,12 +154,12 @@ require __DIR__ . '/../partials/header.php';
             <h4 class="mt-3 font-semibold">Campo de Trabajo</h4>
             <p class="mt-2 text-sm text-slate-600">Profesionalmente te desarrollarás en:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Contador General.</li>
-              <li>Director de Finanzas.</li>
-              <li>Tesorero.</li>
-              <li>Gerente de Impuestos.</li>
-              <li>Director de Presupuestos.</li>
-              <li>Entre otros.</li>
+              <li>Sector público o privado en el área de turismo.</li>
+              <li>Gestión de negocios.</li>
+              <li>Relaciones públicas de negocios nacionales e internacionales.</li>
+              <li>Organizaciones financieras.</li>
+              <li>Planeación estratégica.</li>
+              <li>Administración de negocios turísticos.</li>
             </ul>
           </div>
         </div>
@@ -172,7 +168,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Innovación Turística y Gastronómica</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
@@ -190,100 +186,85 @@ require __DIR__ . '/../partials/header.php';
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
         <ul class="sem-panel list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s1">
           <li>Razonamiento Matemático para Negocios</li>
-          <li>Microeconomía</li>
           <li>Administración Contemporánea</li>
-          <li>Redacción de Informes</li>
-          <li>Informática para Negocios</li>
-          <li>Contabilidad para Negocios</li>
+          <li>Cultura Aplicada en los Negocios</li>
+          <li>Tecnologías de la Información y la Comunicación</li>
+          <li>Introducción a la Gastronomía</li>
+          <li>Análisis del Sector Turístico</li>
           <li>Lengua Extranjera I (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s2">
-          <li>Probabilidad y Estadística</li>
-          <li>Macroeconomía</li>
-          <li>Derecho Civil</li>
-          <li>Comunicación y Liderazgo</li>
-          <li>Cultura General</li>
-          <li>Contabilidad Administrativa</li>
+          <li>Habilidades Numéricas</li>
+          <li>Responsabilidad Social</li>
+          <li>Comunicación Directiva</li>
+          <li>Informática para Negocios</li>
+          <li>Manejo Higiénico y Seguridad Alimentaria</li>
+          <li>Destinos y Productos Turísticos de México I</li>
           <li>Lengua Extranjera II (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s3">
-          <li>Matemáticas Financieras</li>
-          <li>Derecho Mercantil y Societario</li>
-          <li>Sistemas Contables I</li>
-          <li>Contabilidad Intermedia I</li>
-          <li>Contabilidad de Costos</li>
-          <li>Derecho Fiscal</li>
+          <li>Fundamentos de Mercadotecnia</li>
+          <li>Comunicación y Liderazgo</li>
+          <li>Capital Humano</li>
+          <li>Infraestructura y Gestión Hotelera</li>
+          <li>Cocina Francesa</li>
+          <li>Destinos y Productos Turísticos de México II</li>
           <li>Lengua Extranjera III (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s4">
-          <li>Derecho Laboral</li>
-          <li>Sistemas Contables II</li>
-          <li>Contabilidad Intermedia II</li>
-          <li>Costos para la toma de Decisiones</li>
-          <li>Comercio Exterior y Ley Aduanera</li>
-          <li>Administración Financiera</li>
+          <li>Probabilidad y Estadística Aplicada a Negocios</li>
+          <li>Mercadotecnia Aplicada a la Industria Turística y Gastronómica</li>
+          <li>Responsabilidad Social y Desarrollo Sostenible</li>
+          <li>Administración del Tiempo Libre</li>
+          <li>Legislación y Regulación Turística</li>
+          <li>Composición de los Alimentos</li>
           <li>Lengua Extranjera IV (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s5">
-          <li>Ética y Valores en los Negocios</li>
-          <li>Contabilidad Avanzada I</li>
-          <li>Administración Estratégica de Costos</li>
-          <li>Estudio de las Normas Internacionales de Auditoria</li>
-          <li>Impuestos Personas Morales</li>
-          <li>Finanzas Corporativas</li>
+          <li>Creatividad e Innovación Empresarial</li>
+          <li>Finanzas Internacionales</li>
+          <li>Ecología y Turismo Alternativo</li>
+          <li>Administración de la División de Habitaciones</li>
+          <li>Aporte Nutricional</li>
+          <li>Destinos y Productos Turísticos del Mundo I</li>
           <li>Lengua Extranjera V (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s6">
-          <li>Investigación de Operaciones</li>
-          <li>Contabilidad Avanzada II</li>
-          <li>Presupuestos</li>
-          <li>Auditoria Administrativa y Control Interno</li>
-          <li>Impuestos Personas Físicas</li>
-          <li>Finanzas Bursátiles</li>
+          <li>Costos Aplicados a la Hotelería y Gastronomía</li>
+          <li>Gestión Ambiental para el Turismo Alternativo</li>
+          <li>Repostería, Panadería y Decoración</li>
+          <li>Destinos y Productos Turísticos del Mundo II</li>
+          <li>Sistemas de Transportación Turística</li>
+          <li>Planeación y Logística de Eventos</li>
           <li>Lengua Extranjera VI (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s7">
-          <li>Informática Contable</li>
-          <li>Contabilidad Internacional</li>
-          <li>Auditoria Operacional</li>
-          <li>Impuestos Indirectos</li>
-          <li>Seguridad Social</li>
-          <li>Proyectos Internacionales de Inversión</li>
+          <li>Informática Aplicada al Turismo</li>
+          <li>Mercadotecnia en Medios Electrónicos</li>
+          <li>Cocina Mexicana</li>
+          <li>Administración de Agencias de Viajes</li>
+          <li>Planeación y Evaluación de Destinos Turísticos</li>
+          <li>Simulador de Negocios de Hotelería, Gastronomía y Turismo</li>
           <li>Lengua Extranjera VII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s8">
-          <li>Responsabilidad Social Corporativa</li>
-          <li>Taller de Imagen Pública</li>
-          <li>Análisis de la Información Financiera</li>
-          <li>Gobierno Corporativo</li>
-          <li>Impuestos Internacionales</li>
-          <li>Finanzas Internacionales</li>
+          <li>Dirección y Administración de Ventas</li>
+          <li>Ética para Negocios</li>
+          <li>Comercio Internacional de Servicios Turísticos</li>
+          <li>Cocina Italiana y Española</li>
+          <li>Turismo de Salud, Incluyente y para la Tercera Edad</li>
+          <li>Diagnóstico y Consultoría en Establecimientos de Hospitalidad y Gastronomía</li>
           <li>Lengua Extranjera VIII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
-          <li>Desarrollo Sustentable</li>
-          <li>Emprendimiento Empresarial</li>
-          <li>Contabilidad Gubernamental</li>
-          <li>Dictamen Fiscal</li>
-          <li>Estrategias Fiscales</li>
-          <li>Riesgos</li>
+          <li>Gestión de Servicio al Cliente</li>
+          <li>Práctica de Integración</li>
+          <li>Taller de Gestión de Negocios</li>
+          <li>Emprendimiento Empresarial e Incubadora de Negocios</li>
+          <li>Relación México, Europa y el Pacífico</li>
+          <li>Coctelería, Enología y Clasificación de Vinos</li>
           <li>Lengua Extranjera IX (Inglés)</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-12">
-    <div class="relative w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-      <div class="aspect-video w-full">
-        <iframe
-          class="h-full w-full"
-          src="https://www.youtube.com/embed/jgG-lyjXNfY"
-          title="Contaduría Pública Estratégica"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
       </div>
     </div>
   </section>
@@ -293,127 +274,92 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Preguntas frecuentes</h2>
       <div class="mt-6 space-y-3">
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Turismo?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Se trata de un campo académico y profesional que se enfoca en la gestión y análisis de la información financiera de organizaciones, empresas y entidades públicas.
+            La carrera de turismo en la Universidad de Negocios ISEC tiene múltiples enfoques, el gastronómico, cultural, territorial, ecológico y sustentable, de la salud y sobre todo, cada enfoque se imparte con una perspectiva ética.
           </p>
+          <p class="mt-2 text-slate-600 text-sm">El egresado en turismo adquiere las siguientes competencias:</p>
+          <ul class="mt-2 space-y-1 text-sm text-slate-600">
+            <li>Conocer cada cambio, desarrollo y comportamiento del turismo nacional e internacional.</li>
+            <li>Aplicar los elementos cuantitativos en la operación de empresas de este sector.</li>
+            <li>Conocer la gestión de las empresas de este sector en sus diferentes modalidades.</li>
+            <li>Efectuar estrategias para proyectos turísticos, analizando el entorno económico, territorial, regional, social y ambiental.</li>
+            <li>Crear conceptos creativos que generen negocio en esta industria, contribuyendo a la sustentabilidad ambiental.</li>
+          </ul>
           <p class="mt-2 text-slate-600 text-sm">
-            Los estudiantes de esta carrera adquieren conocimientos sobre contabilidad, finanzas, auditorías, impuestos y aspectos legales relacionados con la actividad económica de las empresas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Si te gustaría entrar más en contexto, tal vez te interese: ¿Qué es la licenciatura en Contaduría Pública?.
+            El estudiante de turismo refuerza diversas aptitudes que le permiten insertarse en gran diversidad de ambientes laborales.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de turismo?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Esta profesión desempeña una amplia gama de funciones dentro del ámbito empresarial, gubernamental y del sector no lucrativo.
+            La carrera de turismo es sumamente importante en México, ya que este es uno de los sectores económicos que más contribuye al PIB del país.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Además, implica brindar orientación sobre la elaboración, evaluación y comprensión de registros financieros y estados contables para individuos privados.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">Entre sus responsabilidades se incluyen:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>La elaboración de estados financieros.</li>
-            <li>La realización de auditorías internas y externas.</li>
-            <li>La gestión de impuestos.</li>
-            <li>La planeación financiera.</li>
-            <li>La asesoría respecto a temas contables y fiscales.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Y en cuanto a las actividades más específicas, podrás:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Brindar orientación a individuos, empresas y entidades de gran envergadura sobre el acatamiento de las regulaciones contables, legales y fiscales específicas de sus respectivos territorios.</li>
-            <li>Encargarte de la dirección, la planificación, la coordinación y la supervisión de los servicios contables más adecuados para la empresa en la que te desempeñes.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Por consiguiente, podrás encontrar oportunidades laborales como:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contador general.</li>
-            <li>Director de finanzas.</li>
-            <li>Tesorero.</li>
-            <li>Gerente de impuestos.</li>
-            <li>Director de presupuestos.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
-          </p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Transformar la perspectiva estratégica de las empresas.</li>
-            <li>Idear nuevas estrategias de crecimiento empresarial.</li>
-            <li>Gestionar situaciones de incertidumbre y cambios rápidos.</li>
-            <li>Analizar el contexto empresarial de manera integral.</li>
-            <li>Adoptar decisiones fundamentadas y bien fundamentadas.</li>
-            <li>Introducir métodos innovadores para potenciar la competitividad organizacional.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            La mayoría de las licenciaturas suelen tener una duración de 8 semestres, lo que se traduce aproximadamente en 4 años. No obstante, en las carreras técnicas, el período de estudio suele ser de alrededor de 3 años.
+            Además, es fundamental que se estudie de manera profesional para potenciarlo, esto permite generar nuevos debates sobre cómo conducir los proyectos turísticos, salvaguardando la identidad, la cultura y la seguridad de las personas que habitan las zonas más emblemáticas del país y procurando la sustentabilidad ambiental en cada proyecto.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Durante los cuales, los estudiantes cursan materias teóricas y prácticas relacionadas con la contabilidad, las finanzas, la fiscalidad y auditoría, entre otras áreas de estudio.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, en la Universidad de Negocios ISEC, la Licenciatura en Contaduría Pública Estratégica tiene una duración de 9 cuatrimestres con 7 asignaturas en cada periodo.
+            Esta perspectiva profesional también le permite a los egresados poder formar parte del sector público o el privado.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">Ramas de la Contaduría</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de turismo?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Dentro de la profesión, existen diversas ramas especializadas que los profesionales pueden explorar, tales como:
+            Su duración es de 9 cuatrimestres con 7 materias en cada uno. La licenciatura de turismo puedes estudiarla en dos turnos.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">Turno matutino: 7:00 a 13:00</p>
+          <p class="mt-2 text-slate-600 text-sm">Turno vespertino: 17:00 a 22:00</p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Para inscribirte en ISEC, solo necesitas tu acta de nacimiento, certificado de estudios del nivel medio superior, 2 fotografías, tu CURP y tu comprobante de domicilio. Todos los detalles al respecto los hallas en la página de la licenciatura en Innovación Turística y Gastronómica.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">Ramas del turismo</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            Las ramas del turismo (que a su vez tienen sub-ramas) son diversas, si no las conoces todas, descúbrelas y elige cuál es la que más te atrae.
           </p>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contabilidad financiera.</li>
-            <li>Contabilidad de costos.</li>
-            <li>Auditoría externa e interna.</li>
-            <li>Contabilidad de gestión.</li>
-            <li>Consultoría fiscal.</li>
-            <li>Contabilidad de campañas políticas.</li>
-            <li>Contabilidad de proyectos.</li>
-            <li>Contabilidad forense.</li>
-            <li>Contabilidad de fondos.</li>
-            <li>Contabilidad internacional.</li>
-            <li>Contabilidad gubernamental.</li>
-            <li>Contabilidad fiduciaria.</li>
+            <li>Turismo de naturaleza: turismo de aventura, turismo rural, ecoturismo.</li>
+            <li>Turismo cultural: turismo religioso.</li>
+            <li>Turismo de reuniones: turismo de negocios.</li>
+            <li>Turismo gastronómico: enoturismo.</li>
+            <li>Turismo de romance.</li>
+            <li>Turismo de salud.</li>
           </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Contaduría?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Los salarios en México varían según la experiencia, especialización y el sector en el que se desempeñen.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Según Jobted, un recién graduado en Contaduría, con menos de tres años de experiencia en el campo laboral, puede anticipar un sueldo medio de alrededor de $8,900 mensuales.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Aquellos con una experiencia laboral de entre 4 y 9 años pueden aspirar a un salario promedio de aproximadamente $14,070; mientras que un contador con una trayectoria de 10 a 20 años puede percibir un salario promedio de $19,700.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Para los Contadores con más de 20 años de experiencia, el salario medio general tiende a ser alrededor de $22,350.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, los contadores públicos suelen recibir remuneraciones competitivas y tienen buenas oportunidades de crecimiento profesional a lo largo de su carrera.
+            Conocer las ramas del turismo te permitirá poder elegir aquella en la que quieres enfocar tu vida profesional o en cuáles deseas experimentar en caso de que te genere interés más de una.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">El camino hacia el éxito</summary>
+          <summary class="font-semibold cursor-pointer">¿Qué hace un licenciado en turismo?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Con un plan de estudios actualizado, docentes calificados y recursos tecnológicos de última generación, la Universidad de Negocios ISEC brinda a sus estudiantes las herramientas necesarias para destacarse en el campo de la contabilidad y alcanzar el éxito profesional.
+            Un licenciado en turismo desarrolla las aptitudes necesarias para captar las principales implicaciones que tiene esta actividad, en el aspecto económico, cultural, social, político, jurídico, etcétera.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            ¿Conoces algo acerca de ISEC? ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Contabilidad Pública Estratégica!.
+            Asimismo, gracias a su perfil que también está enfocado en la administración y dirección de proyectos, el licenciado en turismo puede desarrollar y encabezar estas planificaciones, adhiriéndose a las preocupaciones actuales, siendo socialmente responsable mientras potencia a este importante sector.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Si quieres conocer más acerca de ISEC y el programa de esta licenciatura, no olvides ingresar al sitio web y descubrir todo lo que la universidad tiene para ti.
           </p>
         </details>
-      </div>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en turismo?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            El promedio salarial de quienes ejercen esta profesión en México, es de 9,000 a 15,000 pesos mensuales, el más alto.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            No obstante, este solo es un promedio, recuerda que existen otros casos en los que se puede llegar a aumentar la percepción salarial, por ejemplo, si ocupas algún puesto clave en el sector público o privado, en caso de que domines más de un idioma, etcétera.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Tus aptitudes son un factor de valor que aumentan las posibilidades de que recibas mejores ingresos en el mercado laboral.
+          </p>
+        </details>
+      </div>      </div>
     </div>
   </section>
 </main>

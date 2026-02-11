@@ -6,7 +6,7 @@ require __DIR__ . '/partials/header.php';
 
 <main class="max-w-7xl mx-auto px-4 py-10">
   <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/nms/cch/hero.png" alt="Egresados ISEC" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/egresados/hero.png" alt="Egresados ISEC" class="block w-full h-auto" loading="eager">
     <div class="bg-[#0b2c65] text-white">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
         <div class="flex items-center gap-3">
@@ -46,38 +46,38 @@ require __DIR__ . '/partials/header.php';
 
   <section class="mt-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 rounded-2xl border border-slate-200 bg-white overflow-hidden">
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-b-0 sm:border-r border-slate-200">
+      <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Déjanos Saber de Ti</h3>
         <p class="mt-2 text-sm text-slate-600">Queremos saber que has hecho</p>
       </div>
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-b-0 sm:border-r border-slate-200">
+      <div class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b sm:border-r border-slate-200">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Bolsa de Trabajo</h3>
         <p class="mt-2 text-sm text-slate-600">Aquí te mostramos nuestra bolsa de trabajo</p>
       </div>
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b-0 border-slate-200">
+      <div class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 lg:border-b">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">E-Learning</h3>
       </div>
 
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-b-0 sm:border-r border-slate-200">
+      <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Buzón del Rector</h3>
         <p class="mt-2 text-sm text-slate-600">Comunicación directa para brindarte la mejor atención y un servicio personalizado</p>
       </div>
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-b-0 sm:border-r border-slate-200">
+      <div class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b sm:border-r border-slate-200">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Beneficios</h3>
         <p class="mt-2 text-sm text-slate-600">Consulta aquí todos beneficios que recibes por ser egresado ISEC</p>
       </div>
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b-0 border-slate-200">
+      <div class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 lg:border-b">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Oferta Educativa para Egresados</h3>
         <p class="mt-2 text-sm text-slate-600">Continua tu formación académica y profesional con nosotros</p>
       </div>
 
-      <div class="p-6 text-center transition hover:bg-slate-50 border-t border-slate-200">
+      <div class="p-6 text-center transition hover:bg-slate-50 border-t border-slate-200 sm:border-t-0">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Office 365</h3>
         <p class="mt-2 text-sm text-slate-600">Acceder a correo electrónico</p>

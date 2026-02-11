@@ -20,36 +20,36 @@ require __DIR__ . '/partials/header.php';
       Oferta Educativa Universidad de Negocios ISEC | Programas Académicos y Planes de Estudio
     </h2>
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-      <div class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm">
+      <a href="<?php echo $base; ?>/nivel-medio-superior" class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center mb-3">
           <i class="ri-school-line text-2xl"></i>
         </div>
         Nivel Medio Superior
-      </div>
-      <div class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm">
+      </a>
+      <a href="<?php echo $base; ?>/licenciaturas" class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center mb-3">
           <i class="ri-graduation-cap-line text-2xl"></i>
         </div>
         Licenciaturas
-      </div>
-      <div class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm">
+      </a>
+      <a href="<?php echo $base; ?>/maestrias" class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center mb-3">
           <i class="ri-medal-line text-2xl"></i>
         </div>
         Maestrías
-      </div>
-      <div class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm">
+      </a>
+      <a href="<?php echo $base; ?>/doctorados" class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center mb-3">
           <i class="ri-book-3-line text-2xl"></i>
         </div>
         Doctorados
-      </div>
-      <div class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm">
+      </a>
+      <a href="<?php echo $base; ?>/cursos" class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center mb-3">
           <i class="ri-lightbulb-flash-line text-2xl"></i>
         </div>
         Cursos IXU
-      </div>
+      </a>
     </div>
   </section>
 </main>

@@ -9,32 +9,56 @@
           </div>
 
           <div class="space-y-3">
-            <p class="font-semibold">Oferta Educativa</p>
+            <a class="block font-semibold hover:text-white" href="<?php echo $base; ?>/oferta-educativa">Oferta Educativa</a>
             <ul class="space-y-2 text-slate-300">
-              <li> - Nivel Medio Superior</li>
-              <li> - Licenciaturas</li>
-              <li> - Diplomados Online y Ejecutivos</li>
-              <li> - Maestrías</li>
-              <li> - Doctorados</li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/nivel-medio-superior">- Nivel Medio Superior</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/licenciaturas">- Licenciaturas</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/diplomados-online-y-ejecutivos">- Diplomados Online y Ejecutivos</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/maestrias">- Maestrías</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/doctorados">- Doctorados</a>
+              </li>
             </ul>
           </div>
 
           <div class="space-y-3">
-            <p class="font-semibold">IXU</p>
+            <a class="block font-semibold hover:text-white" href="<?php echo $base; ?>/ixu">IXU</a>
             <ul class="space-y-2 text-slate-300">
-              <li> - Diplomados Online y Ejecutivos</li>
-              <li> - Cursos</li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/diplomados-online-y-ejecutivos">- Diplomados Online y Ejecutivos</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/cursos">- Cursos</a>
+              </li>
             </ul>
           </div>
 
           <div class="space-y-3">
-            <p class="font-semibold">Comunidad</p>
+            <a class="block font-semibold hover:text-white" href="<?php echo $base; ?>/comunidad">Comunidad</a>
             <ul class="space-y-2 text-slate-300">
-              <li> - Alumnos</li>
-              <li> - Docentes</li>
-              <li> - Noticias</li>
-              <li> - Blog</li>
-              <li> - Buzón del Rector</li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/comunidad/alumnos">- Alumnos</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/comunidad/docentes">- Docentes</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/comunidad/noticias">- Noticias</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/comunidad/blog">- Blog</a>
+              </li>
+              <li>
+                <a class="hover:text-white" href="<?php echo $base; ?>/comunidad/buzon-del-rector">- Buzón del Rector</a>
+              </li>
             </ul>
           </div>
 
@@ -45,11 +69,41 @@
         </div>
 
         <div class="mt-10 text-xs text-slate-400">
-          <p>© 2026 Universidad de Negocios ISEC. Todos los derechos reservados.</p>
-          <p class="mt-2">Aviso de Privacidad</p>
-          <p class="mt-2">Creado por UNEG.edu.mx</p>
+          <p>© 2026 <a class="hover:text-white" href="<?php echo $base; ?>/">Universidad de Negocios ISEC</a>. Todos los derechos reservados.</p>
+          <p class="mt-2"><a class="hover:text-white" href="<?php echo $base; ?>/contacto">Aviso de Privacidad</a></p>
+          <p class="mt-2"><a class="hover:text-white" href="<?php echo $base; ?>/">Creado por UNEG.edu.mx</a></p>
         </div>
       </div>
     </footer>
+    <a href="https://wa.me/5215571137882" class="whatsapp-float" aria-label="WhatsApp">
+      <i class="ri-whatsapp-line" aria-hidden="true"></i>
+    </a>
+    <style>
+      .whatsapp-float {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 999px;
+        background: #25D366;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 50;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .whatsapp-float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+      }
+      .whatsapp-float:focus-visible {
+        outline: 3px solid rgba(37, 211, 102, 0.4);
+        outline-offset: 3px;
+      }
+    </style>
   </body>
 </html>

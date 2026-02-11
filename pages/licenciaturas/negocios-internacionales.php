@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Licenciatura en Negocios Internacionales | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -8,7 +8,7 @@ require __DIR__ . '/../partials/header.php';
 <div class="-mx-6 bg-slate-50">
 <main class="max-w-7xl mx-auto px-4 py-10">
 <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/negocios-internacionales/hero-negocios-internacionales.png" alt="Contaduría Pública Estratégica" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/negocios-internacionales/hero-negocios-internacionales.png" alt="Negocios Internacionales" class="block w-full h-auto" loading="eager">
   <div class="bg-[#0b2c65] text-white">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
       <div class="flex items-center gap-3">
@@ -43,28 +43,28 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Licenciatura en Negocios Internacionales: Educación profesional enfocada a negocios</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      Domina a profundidad las estructuras empresariales con nuestra Licenciatura en Negocios Internacionales. ¡Elige ser parte de una de las mejores Universidades de Negocios Internacionales y sé parte de ISEC!
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        Fomentar la proyección de los egresados en el mercado internacional a través de la obtención de conocimientos y llevar a cabo actividades en el ámbito logístico y de comercio exterior elevando los niveles de competitividad empresarial.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-[#0b2c65] text-center">Inscríbete Ahora</h3>
       <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido Paterno" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico" type="email" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono" type="tel" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido paterno*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico*" type="email" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono*" type="tel" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" class="h-4 w-4" />
-          He leído y acepto el aviso de privacidad
+          He leído y acepto el <span class="font-semibold text-slate-700">Aviso de Privacidad</span>
         </label>
         <button class="col-span-1 sm:col-span-2 rounded-md bg-[#0b2c65] px-4 py-2 text-white font-semibold">Enviar</button>
       </form>
@@ -76,7 +76,7 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="overflow-hidden rounded-2xl shadow-sm">
-      <div class="bg-gradient-to-r from-[#1f7a3f] via-[#2f9e57] to-[#74c69d] text-white">
+      <div class="bg-gradient-to-r from-[#1C58B2] via-[#1C58B2] to-[#1C58B2] text-white">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-8">
           <div class="text-left">
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">Perfil de Ingreso/Egreso</p>
@@ -130,9 +130,11 @@ require __DIR__ . '/../partials/header.php';
             <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de esta licenciatura deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Interés en invertir eficazmente e incrementar la economía empresarial.</li>
-              <li>Interés en desarrollar habilidades para planear, desarrollar y dirigir estrategias que hagan crecer empresas o instituciones.</li>
-              <li>Capacidad de aprovechar al máximo todos los recursos y el tener sólido control sobre los aspectos financieros y administrativos.</li>
+              <li>Habilidad para negociar.</li>
+              <li>Pensamiento analítico, lógico y reflexivo.</li>
+              <li>Habilidad para organizar y tomar decisiones.</li>
+              <li>Habilidad para generar ideas.</li>
+              <li>Facilidad para trabajar en equipo.</li>
             </ul>
           </div>
 
@@ -141,13 +143,12 @@ require __DIR__ . '/../partials/header.php';
               <i class="ri-graduation-cap-line text-xl"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
-            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura tendrás habilidades para:</p>
+            <p class="mt-2 text-sm text-slate-600">Al egresar de esta licenciatura te distinguirás por los conocimientos especializados que te llevarán a un desempeño exitoso en los siguientes contextos:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Cambiar la visión proyectiva de negocios.</li>
-              <li>Realizar nuevos modelos de desarrollo empresarial.</li>
-              <li>Manejar escenarios de contingencia y volatilidad.</li>
-              <li>Comprender la analítica del entorno.</li>
-              <li>Desarrollar habilidades para la toma de decisiones.</li>
+              <li>Planear y organizar funciones empresariales.</li>
+              <li>Sostener conversaciones de negociación comercial internacional en idioma inglés.</li>
+              <li>Evaluar operaciones de logística en comercio exterior.</li>
+              <li>Analizar la información administrativa, financiera y aduanera.</li>
             </ul>
           </div>
 
@@ -158,12 +159,14 @@ require __DIR__ . '/../partials/header.php';
             <h4 class="mt-3 font-semibold">Campo de Trabajo</h4>
             <p class="mt-2 text-sm text-slate-600">Profesionalmente te desarrollarás en:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Contador General.</li>
-              <li>Director de Finanzas.</li>
-              <li>Tesorero.</li>
-              <li>Gerente de Impuestos.</li>
-              <li>Director de Presupuestos.</li>
-              <li>Entre otros.</li>
+              <li>Relaciones públicas internacionales.</li>
+              <li>Investigación de mercados internacionales.</li>
+              <li>Franquicias internacionales.</li>
+              <li>Organizaciones financieras internacionales.</li>
+              <li>Planeación estratégica internacional.</li>
+              <li>Importación y exportación de bienes y servicios.</li>
+              <li>Tráfico y logística de abastecimientos.</li>
+              <li>Financiamiento internacional.</li>
             </ul>
           </div>
         </div>
@@ -172,7 +175,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Negocios Internacionales</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
@@ -190,83 +193,83 @@ require __DIR__ . '/../partials/header.php';
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
         <ul class="sem-panel list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s1">
           <li>Razonamiento Matemático para Negocios</li>
-          <li>Microeconomía</li>
-          <li>Administración Contemporánea</li>
-          <li>Redacción de Informes</li>
-          <li>Informática para Negocios</li>
           <li>Contabilidad para Negocios</li>
+          <li>Administración Contemporánea</li>
+          <li>Ética y Valores en los Negocios</li>
+          <li>Derecho Mercantil y Societario</li>
+          <li>Microeconomía</li>
           <li>Lengua Extranjera I (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s2">
-          <li>Probabilidad y Estadística</li>
-          <li>Macroeconomía</li>
-          <li>Derecho Civil</li>
+          <li>Matemáticas Financieras</li>
           <li>Comunicación y Liderazgo</li>
           <li>Cultura General</li>
-          <li>Contabilidad Administrativa</li>
+          <li>Informática de Negocios</li>
+          <li>Comercio Exterior y Ley Aduanera</li>
+          <li>Macroeconomía</li>
           <li>Lengua Extranjera II (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s3">
-          <li>Matemáticas Financieras</li>
-          <li>Derecho Mercantil y Societario</li>
-          <li>Sistemas Contables I</li>
-          <li>Contabilidad Intermedia I</li>
-          <li>Contabilidad de Costos</li>
-          <li>Derecho Fiscal</li>
+          <li>Mercadotecnia Estratégica</li>
+          <li>Administración Estratégica de Costos</li>
+          <li>Taller de Imagen Pública</li>
+          <li>Tic’s en los Negocios Internacionales</li>
+          <li>Contratos Internacionales</li>
+          <li>Relaciones Internacionales y Organismos Multilaterales</li>
           <li>Lengua Extranjera III (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s4">
-          <li>Derecho Laboral</li>
-          <li>Sistemas Contables II</li>
-          <li>Contabilidad Intermedia II</li>
-          <li>Costos para la toma de Decisiones</li>
-          <li>Comercio Exterior y Ley Aduanera</li>
-          <li>Administración Financiera</li>
+          <li>Probabilidad y Estadística Aplicada a los Negocios</li>
+          <li>Administración Financiera de los Negocios Internacionales</li>
+          <li>Promoción Internacional</li>
+          <li>Tratados Internacionales en materia Económica y Comercial</li>
+          <li>Integración Económica Regional</li>
+          <li>Comercio Internacional de Bienes</li>
           <li>Lengua Extranjera IV (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s5">
-          <li>Ética y Valores en los Negocios</li>
-          <li>Contabilidad Avanzada I</li>
-          <li>Administración Estratégica de Costos</li>
-          <li>Estudio de las Normas Internacionales de Auditoria</li>
-          <li>Impuestos Personas Morales</li>
-          <li>Finanzas Corporativas</li>
+          <li>Planeación y Organización de los Negocios Internacionales</li>
+          <li>Psicología del Negociador</li>
+          <li>Merceología</li>
+          <li>Logística Internacional</li>
+          <li>Comercio Internacional de Servicios</li>
+          <li>Inteligencia Comercial con América del Norte</li>
           <li>Lengua Extranjera V (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s6">
-          <li>Investigación de Operaciones</li>
-          <li>Contabilidad Avanzada II</li>
-          <li>Presupuestos</li>
-          <li>Auditoria Administrativa y Control Interno</li>
-          <li>Impuestos Personas Físicas</li>
-          <li>Finanzas Bursátiles</li>
+          <li>Aspectos Fiscales de los Negocios Internacionales</li>
+          <li>Técnicas de Compra Venta Internacional</li>
+          <li>Administración y Operación Aduanera</li>
+          <li>Finanzas Internacionales</li>
+          <li>Propiedad Intelectual en los Negocios Internacionales</li>
+          <li>Inteligencia Comercial con América Latina</li>
           <li>Lengua Extranjera VI (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s7">
-          <li>Informática Contable</li>
-          <li>Contabilidad Internacional</li>
-          <li>Auditoria Operacional</li>
-          <li>Impuestos Indirectos</li>
-          <li>Seguridad Social</li>
+          <li>Técnicas de Negociación Intercultural</li>
+          <li>Aspectos Legales del Comercio Electrónico</li>
+          <li>Licitaciones Internacionales</li>
           <li>Proyectos Internacionales de Inversión</li>
+          <li>Inteligencia Comercial con Europa</li>
+          <li>Inteligencia Comercial con Asia y Oceanía</li>
           <li>Lengua Extranjera VII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s8">
           <li>Responsabilidad Social Corporativa</li>
-          <li>Taller de Imagen Pública</li>
-          <li>Análisis de la Información Financiera</li>
-          <li>Gobierno Corporativo</li>
-          <li>Impuestos Internacionales</li>
-          <li>Finanzas Internacionales</li>
+          <li>Investigación de Mercados</li>
+          <li>Diseño de Negocios Digitales (E-business)</li>
+          <li>Gestión Estratégica de las Operaciones Internacionales</li>
+          <li>Análisis de la Inversión Extranjera</li>
+          <li>Inteligencia Comercial con África</li>
           <li>Lengua Extranjera VIII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
           <li>Desarrollo Sustentable</li>
-          <li>Emprendimiento Empresarial</li>
-          <li>Contabilidad Gubernamental</li>
-          <li>Dictamen Fiscal</li>
-          <li>Estrategias Fiscales</li>
-          <li>Riesgos</li>
+          <li>Simulador de Negocios</li>
+          <li>Oportunidades Comerciales con Bloques Regionales</li>
+          <li>Análisis Sectorial para el Desarrollo Industrial y la Exportación</li>
+          <li>Taller de Negociación Internacional</li>
+          <li>Inglés técnico para los Negocios Internacionales y Comercio Exterior</li>
           <li>Lengua Extranjera IX (Inglés)</li>
         </ul>
       </div>
@@ -278,8 +281,8 @@ require __DIR__ . '/../partials/header.php';
       <div class="aspect-video w-full">
         <iframe
           class="h-full w-full"
-          src="https://www.youtube.com/embed/jgG-lyjXNfY"
-          title="Contaduría Pública Estratégica"
+          src="https://www.youtube.com/embed/8C6pUKr4oU0"
+          title="Negocios Internacionales"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
@@ -293,124 +296,129 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Preguntas frecuentes</h2>
       <div class="mt-6 space-y-3">
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿De qué trata la carrera en Negocios Internacionales?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Se trata de un campo académico y profesional que se enfoca en la gestión y análisis de la información financiera de organizaciones, empresas y entidades públicas.
+            Esta licenciatura se centra en el estudio de las relaciones comerciales entre países, empresas multinacionales y organizaciones internacionales.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Los estudiantes de esta carrera adquieren conocimientos sobre contabilidad, finanzas, auditorías, impuestos y aspectos legales relacionados con la actividad económica de las empresas.
+            Las actividades comerciales a nivel internacional engloban una amplia gama de transacciones, que comprenden desde intercambios comerciales hasta inversiones y movimientos de bienes y servicios entre naciones diversas, tanto por parte de entidades gubernamentales como privadas.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Si te gustaría entrar más en contexto, tal vez te interese: ¿Qué es la licenciatura en Contaduría Pública?.
-          </p>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Esta profesión desempeña una amplia gama de funciones dentro del ámbito empresarial, gubernamental y del sector no lucrativo.
+            Estas transacciones adoptan múltiples formas, desde el comercio de productos de exportación e importación hasta la realización de inversiones directas en el extranjero, concesiones de licencias, franquicias y acuerdos de gestión.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Además, implica brindar orientación sobre la elaboración, evaluación y comprensión de registros financieros y estados contables para individuos privados.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">Entre sus responsabilidades se incluyen:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>La elaboración de estados financieros.</li>
-            <li>La realización de auditorías internas y externas.</li>
-            <li>La gestión de impuestos.</li>
-            <li>La planeación financiera.</li>
-            <li>La asesoría respecto a temas contables y fiscales.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Y en cuanto a las actividades más específicas, podrás:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Brindar orientación a individuos, empresas y entidades de gran envergadura sobre el acatamiento de las regulaciones contables, legales y fiscales específicas de sus respectivos territorios.</li>
-            <li>Encargarte de la dirección, la planificación, la coordinación y la supervisión de los servicios contables más adecuados para la empresa en la que te desempeñes.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Por consiguiente, podrás encontrar oportunidades laborales como:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contador general.</li>
-            <li>Director de finanzas.</li>
-            <li>Tesorero.</li>
-            <li>Gerente de impuestos.</li>
-            <li>Director de presupuestos.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
-          </p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Transformar la perspectiva estratégica de las empresas.</li>
-            <li>Idear nuevas estrategias de crecimiento empresarial.</li>
-            <li>Gestionar situaciones de incertidumbre y cambios rápidos.</li>
-            <li>Analizar el contexto empresarial de manera integral.</li>
-            <li>Adoptar decisiones fundamentadas y bien fundamentadas.</li>
-            <li>Introducir métodos innovadores para potenciar la competitividad organizacional.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            La mayoría de las licenciaturas suelen tener una duración de 8 semestres, lo que se traduce aproximadamente en 4 años. No obstante, en las carreras técnicas, el período de estudio suele ser de alrededor de 3 años.
+            Más allá del intercambio de bienes físicos por dinero, estas actividades también implican la transferencia internacional de derechos de propiedad intelectual, prestación de servicios y otros recursos valiosos.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Durante los cuales, los estudiantes cursan materias teóricas y prácticas relacionadas con la contabilidad, las finanzas, la fiscalidad y auditoría, entre otras áreas de estudio.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, en la Universidad de Negocios ISEC, la Licenciatura en Contaduría Pública Estratégica tiene una duración de 9 cuatrimestres con 7 asignaturas en cada periodo.
+            Además, aborda temas como economía global, comercio internacional, finanzas internacionales, marketing global, logística internacional, negociación y gestión intercultural.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">Ramas de la Contaduría</summary>
+          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera en Negocios Internacionales?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Dentro de la profesión, existen diversas ramas especializadas que los profesionales pueden explorar, tales como:
+            Esta carrera sirve como puente entre culturas y economías, capacitando a los estudiantes para:
           </p>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contabilidad financiera.</li>
-            <li>Contabilidad de costos.</li>
-            <li>Auditoría externa e interna.</li>
-            <li>Contabilidad de gestión.</li>
-            <li>Consultoría fiscal.</li>
-            <li>Contabilidad de campañas políticas.</li>
-            <li>Contabilidad de proyectos.</li>
-            <li>Contabilidad forense.</li>
-            <li>Contabilidad de fondos.</li>
-            <li>Contabilidad internacional.</li>
-            <li>Contabilidad gubernamental.</li>
-            <li>Contabilidad fiduciaria.</li>
+            <li>Comprender los complejos procesos de globalización.</li>
+            <li>Analizar mercados internacionales.</li>
+            <li>Identificar oportunidades de negocios.</li>
+            <li>Gestionar operaciones internacionales de manera efectiva.</li>
+          </ul>
+          <p class="mt-2 text-slate-600 text-sm">
+            Los negocios a nivel internacional presentan una mayor complejidad en comparación con los negocios locales debido a las disparidades entre naciones, que abarcan aspectos como las monedas, los regímenes impositivos, los marcos legales y las diversidades culturales.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Las prácticas y tradiciones arraigadas en las culturas también desempeñan un papel significativo en las negociaciones internacionales. Por ejemplo, al interactuar con estadounidenses, se observa una tendencia hacia la competencia y la búsqueda de resultados inmediatos como prioridades durante las negociaciones.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Qué hace un licenciado en Negocios Internacionales?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            Un profesional puede desempeñarse en diversas áreas como gestión de exportaciones e importaciones, análisis de mercado internacional, consultoría empresarial, gestión de proyectos internacionales, desarrollo de estrategias de expansión global y negociación internacional.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            A continuación, encontrarás algunas de las actividades y responsabilidades que ofrece esta área de estudio:
+          </p>
+          <ul class="mt-2 space-y-1 text-sm text-slate-600">
+            <li>Detectar y capitalizar oportunidades comerciales entre naciones.</li>
+            <li>Los graduados en Negocios Internacionales son especialistas en identificar potenciales oportunidades de negocio a nivel global.</li>
+            <li>Analizan los mercados, evalúan los riesgos y diseñan estrategias para expandir las operaciones de las empresas más allá de las fronteras.</li>
+            <li>Adaptarse a entornos multiculturales y dinámicos.</li>
+            <li>Con la creciente globalización, las empresas se desenvuelven en contextos cada vez más diversos. Los profesionales de este campo deben ser flexibles para ajustarse a distintas culturas, regulaciones y prácticas comerciales.</li>
+            <li>La capacidad para comunicarse en varios idiomas es un recurso muy valorado.</li>
+            <li>Impulsar el crecimiento empresarial.</li>
+            <li>Los licenciados en Negocios Internacionales juegan un papel clave en la toma de decisiones estratégicas que influyen en el desarrollo de las organizaciones: desde la incursión en nuevos mercados hasta la gestión de complejas cadenas de suministro globales, su labor es esencial para el éxito de las compañías.</li>
+            <li>Explorar múltiples sectores.</li>
+            <li>Las oportunidades profesionales para estos expertos son vastas. Pueden desempeñarse en empresas multinacionales, firmas consultoras de comercio exterior, entidades financieras, agencias aduaneras y organismos comerciales internacionales.</li>
+            <li>Emprender desde cualquier lugar del mundo.</li>
+            <li>Gracias a la interconexión global, un graduado en Negocios Internacionales puede proponer iniciativas y proyectos desde cualquier rincón del planeta. Tanto las startups como los gobiernos valoran su experiencia para abordar los desafíos del comercio internacional.</li>
           </ul>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera en Negocios Internacionales?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Los salarios en México varían según la experiencia, especialización y el sector en el que se desempeñen.
+            La duración típica de esta licenciatura es de 3 o 4 años, aunque esto puede variar dependiendo del plan de estudios y la institución educativa. No obstante, existe la opción en UNEG que abarca 9 cuatrimestres, con 7 asignaturas en cada periodo.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Según Jobted, un recién graduado en Contaduría, con menos de tres años de experiencia en el campo laboral, puede anticipar un sueldo medio de alrededor de $8,900 mensuales.
+            Durante ese tiempo, los estudiantes adquieren conocimientos teóricos y prácticos, así como habilidades interculturales y lingüísticas.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Aquellos con una experiencia laboral de entre 4 y 9 años pueden aspirar a un salario promedio de aproximadamente $14,070; mientras que un contador con una trayectoria de 10 a 20 años puede percibir un salario promedio de $19,700.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Para los Contadores con más de 20 años de experiencia, el salario medio general tiende a ser alrededor de $22,350.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, los contadores públicos suelen recibir remuneraciones competitivas y tienen buenas oportunidades de crecimiento profesional a lo largo de su carrera.
+            Los requisitos de ingreso varían según la institución educativa. Por lo general, los aspirantes deben contar con un certificado de bachillerato y aprobar un examen de admisión. Algunos programas pueden exigir competencia básica en idiomas extranjeros, sobre todo en inglés, dado su papel preponderante en el ámbito del comercio internacional.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">El camino hacia el éxito</summary>
+          <summary class="font-semibold cursor-pointer">¡Estás a un CLIC para dar el gran paso!</summary>
+          <p class="mt-2 text-slate-600 text-sm">¡Estás a un CLIC para dar el gran paso!</p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">Rama de Negocios Internacionales</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Con un plan de estudios actualizado, docentes calificados y recursos tecnológicos de última generación, la Universidad de Negocios ISEC brinda a sus estudiantes las herramientas necesarias para destacarse en el campo de la contabilidad y alcanzar el éxito profesional.
+            Dentro del amplio abanico de especialización, los más sobresalientes son los siguientes:
+          </p>
+          <ul class="mt-2 space-y-1 text-sm text-slate-600">
+            <li>Comercio internacional.</li>
+            <li>Gestión de proyectos internacionales.</li>
+            <li>Marketing internacional.</li>
+            <li>Finanzas internacionales.</li>
+            <li>Logística internacional.</li>
+            <li>Gestión de la cadena de suministro.</li>
+            <li>Comercio electrónico internacional.</li>
+            <li>Derecho internacional.</li>
+          </ul>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Negocios Internacionales?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            Los rangos de remuneraciones varían según la posición, la ubicación geográfica, la experiencia y el sector de la industria.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            ¿Conoces algo acerca de ISEC? ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Contabilidad Pública Estratégica!.
+            Con base en datos obtenidos de diversas fuentes de empleo en México como Jobatus, un egresado reciente de esta disciplina puede anticipar un salario mensual que oscile entre los $12,000 y $15,000, aproximadamente.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Para aquellos profesionales con una trayectoria más extensa, las perspectivas salariales suelen ser más alentadoras. Por lo general, los ingresos iniciales se sitúan en un rango de $10,000 a $15,000 mensuales. Conforme acumulan experiencia y asumen roles de mayor responsabilidad, esta cifra tiende a incrementarse notablemente.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Sin embargo, los profesionales en este campo suelen tener salarios competitivos y oportunidades para crecer profesionalmente a medida que adquieren experiencia y habilidades especializadas.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¡Estás a un paso de conseguir el éxito!</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            El hecho de estudiar una licenciatura en Negocios Internacionales en ISEC, está consolidando tu formación académica y práctica en un campo dinámico y de rápido crecimiento. Los graduados de esta carrera están preparados para enfrentar los desafíos y aprovechar las oportunidades en un entorno empresarial cada vez más globalizado.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Conoces algo acerca de ISEC?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Negocios Internacionales!
           </p>
         </details>
       </div>

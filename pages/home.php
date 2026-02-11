@@ -23,12 +23,44 @@ $filename = 'uneg_pop-up.png';
 </div>
 <?php endif; ?>
 
+<style>
+  .fade-slider {
+    position: relative;
+  }
+  .fade-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+  }
+  .fade-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
 <main class="max-w-7xl mx-auto px-4 py-10">
   <div class="relative h-[500px] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-    <div id="home-slider" class="h-full w-full">
-      <div class="home-slide h-full w-full bg-[#0d4fb6] text-white flex items-center justify-center text-3xl font-semibold">Slide 1</div>
-      <div class="home-slide hidden h-full w-full bg-[#f2c027] text-slate-900 flex items-center justify-center text-3xl font-semibold">Slide 2</div>
-      <div class="home-slide hidden h-full w-full bg-[#0b2c65] text-white flex items-center justify-center text-3xl font-semibold">Slide 3</div>
+    <div id="home-slider" class="fade-slider h-full w-full">
+      <div class="home-slide fade-slide is-active h-full w-full">
+        <img src="<?php echo $assetBase; ?>/imgs/nms/cch/hero.png" alt="CCH ISEC" class="absolute inset-0 h-full w-full object-cover">
+      </div>
+      <div class="home-slide fade-slide h-full w-full">
+        <iframe
+          id="home-hero-video"
+          class="absolute inset-0 h-full w-full"
+          data-src-desktop="https://www.youtube.com/embed/Im1-iJwNVWI?rel=0&autoplay=1&mute=1&playsinline=1"
+          data-src-mobile="https://www.youtube.com/embed/Im1-iJwNVWI?rel=0&playsinline=1"
+          title="Video institucional UNEG"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="home-slide fade-slide h-full w-full">
+        <img src="<?php echo $assetBase; ?>/imgs/home/hero.png" alt="Universidad de Negocios ISEC" class="absolute inset-0 h-full w-full object-cover">
+      </div>
     </div>
     <button id="home-prev" class="absolute left-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/25 text-white shadow-md backdrop-blur hover:bg-white/35" aria-label="Anterior">
       <svg class="h-5 w-5 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -113,19 +145,19 @@ $filename = 'uneg_pop-up.png';
       </button>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px]">
-          <div class="h-20 w-20 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">IMG</div>
+          <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_18%20p.m..png" alt="Office 365" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">OFFICE 365</p>
         </div>
         <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px]">
-          <div class="h-20 w-20 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">IMG</div>
+          <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_21%20p.m..png" alt="E-learning" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">E-LEARNING</p>
         </div>
         <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px]">
-          <div class="h-20 w-20 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">IMG</div>
+          <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_27%20p.m..png" alt="Reglamentos" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">REGLAMENTOS</p>
         </div>
         <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px]">
-          <div class="h-20 w-20 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">IMG</div>
+          <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_30%20p.m..png" alt="Kiosko de impresión" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">KIOSKO DE IMPRESIÓN</p>
         </div>
       </div>
@@ -175,36 +207,78 @@ $filename = 'uneg_pop-up.png';
   window.addEventListener('DOMContentLoaded', resizeTravel);
 </script>
 <script>
+  const slider = document.getElementById('home-slider');
   const slides = Array.from(document.querySelectorAll('#home-slider .home-slide'));
   const prevBtn = document.getElementById('home-prev');
   const nextBtn = document.getElementById('home-next');
+  const heroVideo = document.getElementById('home-hero-video');
+  const slideDurations = [46000, 7000, 7000];
   let current = 0;
   let autoTimer = null;
+  let paused = false;
+
+  const setVideoSource = () => {
+    if (!heroVideo) return;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    const targetSrc = isDesktop ? heroVideo.dataset.srcDesktop : heroVideo.dataset.srcMobile;
+    if (targetSrc && heroVideo.src !== targetSrc) {
+      heroVideo.src = targetSrc;
+    }
+  };
 
   const showSlide = (index) => {
     slides.forEach((slide, i) => {
-      slide.classList.toggle('hidden', i !== index);
+      slide.classList.toggle('is-active', i === index);
     });
   };
 
+  const scheduleNext = () => {
+    if (autoTimer) {
+      clearTimeout(autoTimer);
+    }
+    if (paused || !slides.length) return;
+    const duration = slideDurations[current] || 7000;
+    autoTimer = setTimeout(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+      scheduleNext();
+    }, duration);
+  };
+
   if (slides.length) {
+    setVideoSource();
     showSlide(current);
+    scheduleNext();
+
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
         current = (current - 1 + slides.length) % slides.length;
         showSlide(current);
+        scheduleNext();
       });
     }
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         current = (current + 1) % slides.length;
         showSlide(current);
+        scheduleNext();
       });
     }
-    autoTimer = setInterval(() => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }, 5000);
+
+    if (slider) {
+      slider.addEventListener('mouseenter', () => {
+        paused = true;
+        if (autoTimer) {
+          clearTimeout(autoTimer);
+        }
+      });
+      slider.addEventListener('mouseleave', () => {
+        paused = false;
+        scheduleNext();
+      });
+    }
+
+    window.addEventListener('resize', setVideoSource);
   }
 </script>
 

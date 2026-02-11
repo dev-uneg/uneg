@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Ingeniería en Inteligencia Artificial | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -8,7 +8,7 @@ require __DIR__ . '/../partials/header.php';
 <div class="-mx-6 bg-slate-50">
 <main class="max-w-7xl mx-auto px-4 py-10">
 <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/ingenieria-en-inteligencia-artificial/hero-ingenieria-inteligencia-artificial.png" alt="Contaduría Pública Estratégica" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/ingenieria-en-inteligencia-artificial/hero-ingenieria-inteligencia-artificial.png" alt="Ingeniería en Inteligencia Artificial" class="block w-full h-auto" loading="eager">
   <div class="bg-[#0b2c65] text-white">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
       <div class="flex items-center gap-3">
@@ -43,28 +43,28 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Ingeniería en Inteligencia Artificial: ¡Conviértete en un experto en sistemas inteligentes!</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      Crea sistemas que hagan la diferencia en el futuro con una Ingeniería en Inteligencia Artificial. ¡Conoce todos los detalles!
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        ¡Te esperamos! Desarrolla tu carrera en Inteligencia Artificial y transforma el mundo con Universidad de Negocios ISEC.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-[#0b2c65] text-center">Inscríbete Ahora</h3>
       <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido Paterno" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico" type="email" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono" type="tel" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido paterno*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico*" type="email" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono*" type="tel" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" class="h-4 w-4" />
-          He leído y acepto el aviso de privacidad
+          He leído y acepto el <span class="font-semibold text-slate-700">Aviso de Privacidad</span>
         </label>
         <button class="col-span-1 sm:col-span-2 rounded-md bg-[#0b2c65] px-4 py-2 text-white font-semibold">Enviar</button>
       </form>
@@ -76,7 +76,7 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="overflow-hidden rounded-2xl shadow-sm">
-      <div class="bg-gradient-to-r from-[#1f7a3f] via-[#2f9e57] to-[#74c69d] text-white">
+      <div class="bg-gradient-to-r from-[#2159BD] via-[#2159BD] to-[#2159BD] text-white">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-8">
           <div class="text-left">
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">Perfil de Ingreso/Egreso</p>
@@ -172,7 +172,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Ingeniería en Inteligencia Artificial</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
@@ -189,85 +189,68 @@ require __DIR__ . '/../partials/header.php';
       </div>
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
         <ul class="sem-panel list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s1">
-          <li>Razonamiento Matemático para Negocios</li>
-          <li>Microeconomía</li>
-          <li>Administración Contemporánea</li>
-          <li>Redacción de Informes</li>
-          <li>Informática para Negocios</li>
-          <li>Contabilidad para Negocios</li>
-          <li>Lengua Extranjera I (Inglés)</li>
+          <li>Fundamentos de Programación</li>
+          <li>Matemáticas discretas</li>
+          <li>Mecánica y Electromagnetismo</li>
+          <li>Cálculo</li>
+          <li>Fundamentos Económicos</li>
+          <li>Comunicación Oral y Escrita</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s2">
-          <li>Probabilidad y Estadística</li>
-          <li>Macroeconomía</li>
-          <li>Derecho Civil</li>
-          <li>Comunicación y Liderazgo</li>
-          <li>Cultura General</li>
-          <li>Contabilidad Administrativa</li>
-          <li>Lengua Extranjera II (Inglés)</li>
+          <li>Algoritmos y Estructuras de Datos</li>
+          <li>Álgebra lineal</li>
+          <li>Cálculo Multivariable</li>
+          <li>Fundamentos Diseño Digital</li>
+          <li>Ingeniería, Ética y Sociedad</li>
+          <li>Finanzas Empresariales</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s3">
-          <li>Matemáticas Financieras</li>
-          <li>Derecho Mercantil y Societario</li>
-          <li>Sistemas Contables I</li>
-          <li>Contabilidad Intermedia I</li>
-          <li>Contabilidad de Costos</li>
-          <li>Derecho Fiscal</li>
-          <li>Lengua Extranjera III (Inglés)</li>
+          <li>Análisis Y Diseño De Algoritmos</li>
+          <li>Paradigmas De Programación</li>
+          <li>Ecuaciones Diferenciales</li>
+          <li>Base De Datos</li>
+          <li>Diseño de Sistemas Digitales</li>
+          <li>Liderazgo Personal</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s4">
-          <li>Derecho Laboral</li>
-          <li>Sistemas Contables II</li>
-          <li>Contabilidad Intermedia II</li>
-          <li>Costos para la toma de Decisiones</li>
-          <li>Comercio Exterior y Ley Aduanera</li>
-          <li>Administración Financiera</li>
-          <li>Lengua Extranjera IV (Inglés)</li>
+          <li>Fundamentos De Inteligencia Artificial</li>
+          <li>Probabilidad Y Estadística</li>
+          <li>Matemáticas Avanzadas Para Ingeniería</li>
+          <li>Tecnologías Para El Desarrollo De Aplicaciones Web</li>
+          <li>Análisis Y Diseño De Sistemas</li>
+          <li>Procesamiento Digital De Imágenes</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s5">
-          <li>Ética y Valores en los Negocios</li>
-          <li>Contabilidad Avanzada I</li>
-          <li>Administración Estratégica de Costos</li>
-          <li>Estudio de las Normas Internacionales de Auditoria</li>
-          <li>Impuestos Personas Morales</li>
-          <li>Finanzas Corporativas</li>
-          <li>Lengua Extranjera V (Inglés)</li>
+          <li>Aprendizaje De Máquina</li>
+          <li>Visión Artificial</li>
+          <li>Teoría De La Computación</li>
+          <li>Procesamiento De Señales</li>
+          <li>Algoritmos Bioinspirados</li>
+          <li>Tecnologías Del Lenguaje Natural</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s6">
-          <li>Investigación de Operaciones</li>
-          <li>Contabilidad Avanzada II</li>
-          <li>Presupuestos</li>
-          <li>Auditoria Administrativa y Control Interno</li>
-          <li>Impuestos Personas Físicas</li>
-          <li>Finanzas Bursátiles</li>
-          <li>Lengua Extranjera VI (Inglés)</li>
+          <li>Cómputo Paralelo</li>
+          <li>Redes Neuronales Y Aprendizaje Profundo</li>
+          <li>Ingeniería De Software Para Sistemas Inteligentes</li>
+          <li>Metodología Dela Investigación Y Divulgación Científica</li>
+          <li>Aplicaciones De Lenguaje Natural</li>
+          <li>Cómputo En La Nube</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s7">
-          <li>Informática Contable</li>
-          <li>Contabilidad Internacional</li>
-          <li>Auditoria Operacional</li>
-          <li>Impuestos Indirectos</li>
-          <li>Seguridad Social</li>
-          <li>Proyectos Internacionales de Inversión</li>
-          <li>Lengua Extranjera VII (Inglés)</li>
+          <li>Trabajo terminal I</li>
+          <li>Reconocimiento De Voz</li>
+          <li>Formulación Y Evaluación de Proyectos Informáticos</li>
+          <li>Interacción Humano-máquina</li>
+          <li>Minería De Datos</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s8">
-          <li>Responsabilidad Social Corporativa</li>
-          <li>Taller de Imagen Pública</li>
-          <li>Análisis de la Información Financiera</li>
-          <li>Gobierno Corporativo</li>
-          <li>Impuestos Internacionales</li>
-          <li>Finanzas Internacionales</li>
-          <li>Lengua Extranjera VIII (Inglés)</li>
+          <li>Trabajo Terminal II</li>
+          <li>Gestión Empresarial</li>
+          <li>Estancia Profesional</li>
+          <li>Desarrollo De Habilidades Sociales Para La Alta Dirección</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
-          <li>Desarrollo Sustentable</li>
-          <li>Emprendimiento Empresarial</li>
-          <li>Contabilidad Gubernamental</li>
-          <li>Dictamen Fiscal</li>
-          <li>Estrategias Fiscales</li>
-          <li>Riesgos</li>
-          <li>Lengua Extranjera IX (Inglés)</li>
+          <li>Por definir</li>
         </ul>
       </div>
     </div>
@@ -278,8 +261,8 @@ require __DIR__ . '/../partials/header.php';
       <div class="aspect-video w-full">
         <iframe
           class="h-full w-full"
-          src="https://www.youtube.com/embed/jgG-lyjXNfY"
-          title="Contaduría Pública Estratégica"
+          src="https://www.youtube.com/embed/Im1-iJwNVWI"
+          title="Ingeniería en Inteligencia Artificial"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
@@ -293,126 +276,41 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Preguntas frecuentes</h2>
       <div class="mt-6 space-y-3">
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Se trata de un campo académico y profesional que se enfoca en la gestión y análisis de la información financiera de organizaciones, empresas y entidades públicas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Los estudiantes de esta carrera adquieren conocimientos sobre contabilidad, finanzas, auditorías, impuestos y aspectos legales relacionados con la actividad económica de las empresas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Si te gustaría entrar más en contexto, tal vez te interese: ¿Qué es la licenciatura en Contaduría Pública?.
-          </p>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Esta profesión desempeña una amplia gama de funciones dentro del ámbito empresarial, gubernamental y del sector no lucrativo.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Además, implica brindar orientación sobre la elaboración, evaluación y comprensión de registros financieros y estados contables para individuos privados.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">Entre sus responsabilidades se incluyen:</p>
+          <summary class="font-semibold cursor-pointer">¿Qué hace un ingeniero en Inteligencia Artificial (IA)?</summary>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>La elaboración de estados financieros.</li>
-            <li>La realización de auditorías internas y externas.</li>
-            <li>La gestión de impuestos.</li>
-            <li>La planeación financiera.</li>
-            <li>La asesoría respecto a temas contables y fiscales.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Y en cuanto a las actividades más específicas, podrás:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Brindar orientación a individuos, empresas y entidades de gran envergadura sobre el acatamiento de las regulaciones contables, legales y fiscales específicas de sus respectivos territorios.</li>
-            <li>Encargarte de la dirección, la planificación, la coordinación y la supervisión de los servicios contables más adecuados para la empresa en la que te desempeñes.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Por consiguiente, podrás encontrar oportunidades laborales como:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contador general.</li>
-            <li>Director de finanzas.</li>
-            <li>Tesorero.</li>
-            <li>Gerente de impuestos.</li>
-            <li>Director de presupuestos.</li>
+            <li>Análisis de Problemas: Identificar y analizar problemas que pueden ser resueltos con IA, y determinar los algoritmos y técnicas de IA más adecuados para resolverlos.</li>
+            <li>Diseño de Sistemas Inteligentes: Diseñar sistemas inteligentes que utilicen algoritmos de aprendizaje de máquina, procesamiento automático de lenguaje natural, visión artificial y modelos bioinspirados.</li>
+            <li>Implementación de Algoritmos: Implementar algoritmos de IA en software, utilizando lenguajes de programación y herramientas de desarrollo de software.</li>
+            <li>Validación de Soluciones de IA: Validar las soluciones de IA mediante pruebas y evaluaciones para asegurar que cumplen con los requisitos y objetivos del problema.</li>
+            <li>Implantación de Sistemas Inteligentes: Supervisar la implantación de sistemas inteligentes en entornos de producción.</li>
+            <li>Gestión de Proyectos de IA: Gestionar proyectos de IA, incluyendo la planificación, el seguimiento del progreso, la gestión de riesgos y la comunicación con los stakeholders.</li>
           </ul>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
-          </p>
+          <summary class="font-semibold cursor-pointer">¿Qué oportunidades laborales existen para los egresados de esta carrera?</summary>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Transformar la perspectiva estratégica de las empresas.</li>
-            <li>Idear nuevas estrategias de crecimiento empresarial.</li>
-            <li>Gestionar situaciones de incertidumbre y cambios rápidos.</li>
-            <li>Analizar el contexto empresarial de manera integral.</li>
-            <li>Adoptar decisiones fundamentadas y bien fundamentadas.</li>
-            <li>Introducir métodos innovadores para potenciar la competitividad organizacional.</li>
+            <li>Ingeniero de Inteligencia Artificial: En empresas como Ignitetech1 y BairesDev, donde se requiere el diseño, desarrollo e implementación de soluciones de IA.</li>
+            <li>Implementación de Soluciones Innovadoras: En empresas como Acquasu S.A. de C.V, donde se busca a ingenieros en IA para la implementación de soluciones innovadoras.</li>
+            <li>Desarrollo de Software y Hardware: Los graduados pueden trabajar como desarrolladores de software y hardware, creando y optimizando algoritmos de IA.</li>
+            <li>Investigación: Los graduados pueden trabajar en instituciones de investigación, desarrollando nuevas técnicas y algoritmos en el campo de la IA.</li>
+            <li>Consultoría de IA: Los graduados pueden trabajar como consultores de IA, asesorando a las empresas sobre cómo implementar y utilizar la IA para mejorar sus operaciones y tomar decisiones basadas en datos.</li>
           </ul>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            La mayoría de las licenciaturas suelen tener una duración de 8 semestres, lo que se traduce aproximadamente en 4 años. No obstante, en las carreras técnicas, el período de estudio suele ser de alrededor de 3 años.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Durante los cuales, los estudiantes cursan materias teóricas y prácticas relacionadas con la contabilidad, las finanzas, la fiscalidad y auditoría, entre otras áreas de estudio.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, en la Universidad de Negocios ISEC, la Licenciatura en Contaduría Pública Estratégica tiene una duración de 9 cuatrimestres con 7 asignaturas en cada periodo.
-          </p>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">Ramas de la Contaduría</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Dentro de la profesión, existen diversas ramas especializadas que los profesionales pueden explorar, tales como:
-          </p>
+          <summary class="font-semibold cursor-pointer">¿Cuáles son las habilidades técnicas necesarias para un ingeniero en IA?</summary>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contabilidad financiera.</li>
-            <li>Contabilidad de costos.</li>
-            <li>Auditoría externa e interna.</li>
-            <li>Contabilidad de gestión.</li>
-            <li>Consultoría fiscal.</li>
-            <li>Contabilidad de campañas políticas.</li>
-            <li>Contabilidad de proyectos.</li>
-            <li>Contabilidad forense.</li>
-            <li>Contabilidad de fondos.</li>
-            <li>Contabilidad internacional.</li>
-            <li>Contabilidad gubernamental.</li>
-            <li>Contabilidad fiduciaria.</li>
+            <li>Conocimiento del dominio: Debe tener conocimientos en redes neuronales, aprendizaje automático, aprendizaje profundo, etc.</li>
+            <li>Lenguajes de programación: Tener conocimiento y dominio de lenguajes de programación como Java, R, Python, C++, JavaScript, entre otros.</li>
+            <li>Matemáticas y Estadística: Un conocimiento sólido de estadísticas y aprendizaje automático es fundamental.</li>
+            <li>Debe comprender los fundamentos de la teoría de la probabilidad, así como las técnicas de regresión, clasificación y agrupamiento.</li>
+            <li>Pensamiento analítico y resolución de problemas: Los profesionales que deseen trabajar con IA deben tener habilidades sólidas en pensamiento analítico y ser capaces de descomponer problemas complejos en componentes más manejables.</li>
+            <li>Curiosidad y capacidad de aprendizaje continuo: La inteligencia artificial es un campo en constante evolución, por lo que es fundamental tener curiosidad y una mentalidad de aprendizaje continuo.</li>
+            <li>Conocimiento de herramientas y tecnologías: Es importante familiarizarte con bibliotecas y frameworks populares como TensorFlow o PyTorch.</li>
           </ul>
         </details>
 
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Los salarios en México varían según la experiencia, especialización y el sector en el que se desempeñen.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Según Jobted, un recién graduado en Contaduría, con menos de tres años de experiencia en el campo laboral, puede anticipar un sueldo medio de alrededor de $8,900 mensuales.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Aquellos con una experiencia laboral de entre 4 y 9 años pueden aspirar a un salario promedio de aproximadamente $14,070; mientras que un contador con una trayectoria de 10 a 20 años puede percibir un salario promedio de $19,700.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Para los Contadores con más de 20 años de experiencia, el salario medio general tiende a ser alrededor de $22,350.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, los contadores públicos suelen recibir remuneraciones competitivas y tienen buenas oportunidades de crecimiento profesional a lo largo de su carrera.
-          </p>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">El camino hacia el éxito</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Con un plan de estudios actualizado, docentes calificados y recursos tecnológicos de última generación, la Universidad de Negocios ISEC brinda a sus estudiantes las herramientas necesarias para destacarse en el campo de la contabilidad y alcanzar el éxito profesional.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            ¿Conoces algo acerca de ISEC? ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Contabilidad Pública Estratégica!.
-          </p>
-        </details>
       </div>
     </div>
   </section>

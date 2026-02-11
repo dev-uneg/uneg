@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Licenciatura en Psicología | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -8,7 +8,7 @@ require __DIR__ . '/../partials/header.php';
 <div class="-mx-6 bg-slate-50">
 <main class="max-w-7xl mx-auto px-4 py-10">
 <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/contaduria-publica-estrategica/hero-contaduria-publica-estrategica.png" alt="Contaduría Pública Estratégica" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/psicologia/hero-psicologia.png" alt="Psicología" class="block w-full h-auto" loading="eager">
   <div class="bg-[#0b2c65] text-white">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
       <div class="flex items-center gap-3">
@@ -43,28 +43,28 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Licenciatura en Psicología: Educación profesional enfocada a negocios</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      Nuestra Licenciatura en Psicología te preparará para ser un profesional en el área de la mente humana
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        Conocimiento de los procesos básicos para lograr entender y evaluar los fenómenos conductuales que permitirán despertar el interés interpersonal y fomentar aprendizajes interactivos para que los egresados sean profesionales en el campo de la mente humana.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-[#0b2c65] text-center">Inscríbete Ahora</h3>
       <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido Paterno" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico" type="email" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono" type="tel" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido paterno*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico*" type="email" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono*" type="tel" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" class="h-4 w-4" />
-          He leído y acepto el aviso de privacidad
+          He leído y acepto el <span class="font-semibold text-slate-700">Aviso de Privacidad</span>
         </label>
         <button class="col-span-1 sm:col-span-2 rounded-md bg-[#0b2c65] px-4 py-2 text-white font-semibold">Enviar</button>
       </form>
@@ -76,7 +76,7 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="overflow-hidden rounded-2xl shadow-sm">
-      <div class="bg-gradient-to-r from-[#1f7a3f] via-[#2f9e57] to-[#74c69d] text-white">
+      <div class="bg-gradient-to-r from-[#0397FC] via-[#0397FC] to-[#0397FC] text-white">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-8">
           <div class="text-left">
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">Perfil de Ingreso/Egreso</p>
@@ -116,6 +116,7 @@ require __DIR__ . '/../partials/header.php';
             <p class="mt-2 text-sm text-slate-600">Para cursar esta licenciatura deberás contar con los siguientes documentos:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Acta de nacimiento (Original y 2 copias).</li>
+              <li>Certificado de Secundaria (Original y 2 copias).</li>
               <li>Certificado de Nivel Medio Superior (Original y 2 copias).</li>
               <li>2 fotografías blanco y negro papel mate.</li>
               <li>CURP (Original y 2 Copias).</li>
@@ -130,9 +131,12 @@ require __DIR__ . '/../partials/header.php';
             <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de esta licenciatura deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Interés en invertir eficazmente e incrementar la economía empresarial.</li>
-              <li>Interés en desarrollar habilidades para planear, desarrollar y dirigir estrategias que hagan crecer empresas o instituciones.</li>
-              <li>Capacidad de aprovechar al máximo todos los recursos y el tener sólido control sobre los aspectos financieros y administrativos.</li>
+              <li>Capacidad de observación, análisis y síntesis.</li>
+              <li>Conocimiento interdisciplinario con carácter científico y humanístico (cultura general).</li>
+              <li>Disponibilidad al trabajo en equipo.</li>
+              <li>Gusto por la lectura y la investigación.</li>
+              <li>Estabilidad emocional y habilidad para las relaciones interpersonales.</li>
+              <li>Alto sentido de la responsabilidad.</li>
             </ul>
           </div>
 
@@ -141,13 +145,12 @@ require __DIR__ . '/../partials/header.php';
               <i class="ri-graduation-cap-line text-xl"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
-            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura tendrás habilidades para:</p>
+            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura, tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Cambiar la visión proyectiva de negocios.</li>
-              <li>Realizar nuevos modelos de desarrollo empresarial.</li>
-              <li>Manejar escenarios de contingencia y volatilidad.</li>
-              <li>Comprender la analítica del entorno.</li>
-              <li>Desarrollar habilidades para la toma de decisiones.</li>
+              <li>Identificar, valorar y proponer alternativas de prevención y solución ante diversos contextos.</li>
+              <li>Implementar modelos de intervención en esferas cognitivas, conductuales y emotivas en niños, jóvenes, adultos y adultos en plenitud.</li>
+              <li>Proponer soluciones realistas a los problemas en el ámbito individual, familiar y laboral.</li>
+              <li>Fomentar el amor, la justicia, la confianza y la verdad.</li>
             </ul>
           </div>
 
@@ -158,12 +161,9 @@ require __DIR__ . '/../partials/header.php';
             <h4 class="mt-3 font-semibold">Campo de Trabajo</h4>
             <p class="mt-2 text-sm text-slate-600">Profesionalmente te desarrollarás en:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Contador General.</li>
-              <li>Director de Finanzas.</li>
-              <li>Tesorero.</li>
-              <li>Gerente de Impuestos.</li>
-              <li>Director de Presupuestos.</li>
-              <li>Entre otros.</li>
+              <li>El área de Psicobiología: Investigación Científica en el área de las Neurociencias, Psicología Biológica, Ciencias Biomédicas, Ciencias Biológicas, Experimentales y de Salud, Adicciones, Epidemiología, entre otras.</li>
+              <li>En el área Clínica: Salud mental y rehabilitación; evaluación diagnóstica y entrevistas clínicas.</li>
+              <li>En el área Organizacional: Investigación y aplicación de técnicas para la difusión de productos, Procesos Psicosociales en las Organizaciones, Calidad, Productividad y Competitividad, Salud Organizacional y del Trabajo.</li>
             </ul>
           </div>
         </div>
@@ -172,7 +172,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Psicología</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
@@ -184,93 +184,64 @@ require __DIR__ . '/../partials/header.php';
           <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Cuatrimestre</button>
           <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Cuatrimestre</button>
           <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s9">Noveno Cuatrimestre</button>
         </div>
       </div>
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
         <ul class="sem-panel list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s1">
-          <li>Razonamiento Matemático para Negocios</li>
-          <li>Microeconomía</li>
-          <li>Administración Contemporánea</li>
-          <li>Redacción de Informes</li>
-          <li>Informática para Negocios</li>
-          <li>Contabilidad para Negocios</li>
-          <li>Lengua Extranjera I (Inglés)</li>
+          <li>Bases Biológicas de la Conducta</li>
+          <li>Historia de la Psicología</li>
+          <li>Identidad Universitaria</li>
+          <li>Modelos en Psicología Clínica</li>
+          <li>Psicología Social de la Interacción</li>
+          <li>Teoría Computacional de la Mente</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s2">
-          <li>Probabilidad y Estadística</li>
-          <li>Macroeconomía</li>
-          <li>Derecho Civil</li>
-          <li>Comunicación y Liderazgo</li>
-          <li>Cultura General</li>
-          <li>Contabilidad Administrativa</li>
-          <li>Lengua Extranjera II (Inglés)</li>
+          <li>Aprendizaje y Conducta Adaptativa I</li>
+          <li>Aproximaciones al Proceso Salud-Enfermedad</li>
+          <li>Introducción a la Metodología de la Investigación Psicológica</li>
+          <li>Neurobiología y Adaptación</li>
+          <li>Teoría Psicogenética Constructivista</li>
+          <li>Transdisciplina I</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s3">
-          <li>Matemáticas Financieras</li>
-          <li>Derecho Mercantil y Societario</li>
-          <li>Sistemas Contables I</li>
-          <li>Contabilidad Intermedia I</li>
-          <li>Contabilidad de Costos</li>
-          <li>Derecho Fiscal</li>
-          <li>Lengua Extranjera III (Inglés)</li>
+          <li>Aprendizaje y Conducta Adaptativa II</li>
+          <li>Ciclo de Vida</li>
+          <li>Medición y Evaluación</li>
+          <li>Método Clínico</li>
+          <li>Psicología Social de los Grupos</li>
+          <li>Taller de Psicofisiología I</li>
+          <li>Transdisciplina II</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s4">
-          <li>Derecho Laboral</li>
-          <li>Sistemas Contables II</li>
-          <li>Contabilidad Intermedia II</li>
-          <li>Costos para la toma de Decisiones</li>
-          <li>Comercio Exterior y Ley Aduanera</li>
-          <li>Administración Financiera</li>
-          <li>Lengua Extranjera IV (Inglés)</li>
+          <li>Aprendizaje y Conducta Adaptativa III</li>
+          <li>Comprensión de la Realidad Social I</li>
+          <li>Filosofía de la Psicología</li>
+          <li>Neurocognición</li>
+          <li>Prácticas de Psicobiología</li>
+          <li>Psicología Social de lo Colectivo</li>
+          <li>Teoría Sociocultural</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s5">
-          <li>Ética y Valores en los Negocios</li>
-          <li>Contabilidad Avanzada I</li>
-          <li>Administración Estratégica de Costos</li>
-          <li>Estudio de las Normas Internacionales de Auditoria</li>
-          <li>Impuestos Personas Morales</li>
-          <li>Finanzas Corporativas</li>
-          <li>Lengua Extranjera V (Inglés)</li>
+          <li>Conocimiento de Frontera I</li>
+          <li>Optativas de elección*</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s6">
-          <li>Investigación de Operaciones</li>
-          <li>Contabilidad Avanzada II</li>
-          <li>Presupuestos</li>
-          <li>Auditoria Administrativa y Control Interno</li>
-          <li>Impuestos Personas Físicas</li>
-          <li>Finanzas Bursátiles</li>
-          <li>Lengua Extranjera VI (Inglés)</li>
+          <li>Ética Profesional</li>
+          <li>Optativas de elección*</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s7">
-          <li>Informática Contable</li>
-          <li>Contabilidad Internacional</li>
-          <li>Auditoria Operacional</li>
-          <li>Impuestos Indirectos</li>
-          <li>Seguridad Social</li>
-          <li>Proyectos Internacionales de Inversión</li>
-          <li>Lengua Extranjera VII (Inglés)</li>
+          <li>Compresión de la Realidad Social II</li>
+          <li>Optativas de elección*</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s8">
-          <li>Responsabilidad Social Corporativa</li>
-          <li>Taller de Imagen Pública</li>
-          <li>Análisis de la Información Financiera</li>
-          <li>Gobierno Corporativo</li>
-          <li>Impuestos Internacionales</li>
-          <li>Finanzas Internacionales</li>
-          <li>Lengua Extranjera VIII (Inglés)</li>
-        </ul>
-        <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
-          <li>Desarrollo Sustentable</li>
-          <li>Emprendimiento Empresarial</li>
-          <li>Contabilidad Gubernamental</li>
-          <li>Dictamen Fiscal</li>
-          <li>Estrategias Fiscales</li>
-          <li>Riesgos</li>
-          <li>Lengua Extranjera IX (Inglés)</li>
+          <li>Compresión de la Realidad Social III</li>
+          <li>Optativas de elección*</li>
         </ul>
       </div>
     </div>
+    <p class="mt-4 text-sm text-slate-600">
+      *Las asignaturas optativas de elección que el alumno debe cursar del quinto al séptimo semestre se encuentran organizadas de acuerdo con los principales campos de conocimiento de la psicología. En la Universidad de Negocios ISEC ofrecemos 3 de estos campos (Psicología Clínica y de la Salud, Psicología Organizacional y Psicobiología y Neurociencias) tomando en cuenta la oferta académica disponible por semestre, y bajo la tutoría, individual o colectiva, por parte de la Dirección Técnica y de los profesores.
+    </p>
   </section>
 
   <section class="mt-12">
@@ -278,8 +249,8 @@ require __DIR__ . '/../partials/header.php';
       <div class="aspect-video w-full">
         <iframe
           class="h-full w-full"
-          src="https://www.youtube.com/embed/jgG-lyjXNfY"
-          title="Contaduría Pública Estratégica"
+          src="https://www.youtube.com/embed/EkrNWgVh-XY"
+          title="Psicología"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
@@ -293,124 +264,68 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Preguntas frecuentes</h2>
       <div class="mt-6 space-y-3">
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de psicología?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Se trata de un campo académico y profesional que se enfoca en la gestión y análisis de la información financiera de organizaciones, empresas y entidades públicas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Los estudiantes de esta carrera adquieren conocimientos sobre contabilidad, finanzas, auditorías, impuestos y aspectos legales relacionados con la actividad económica de las empresas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Si te gustaría entrar más en contexto, tal vez te interese: ¿Qué es la licenciatura en Contaduría Pública?.
+            La licenciatura de psicología está enfocada en el estudio de la psique humana, sus emociones y procesos cognitivos que van sucediendo dependiendo de las diferentes situaciones en las que se hallen el o los pacientes. El alumno de esta carrera también aprende a analizar estas problemáticas a partir de su contexto, ya sea el individual, grupal, social, familiar, cultural, organizacional, etcétera.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de psicología?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Esta profesión desempeña una amplia gama de funciones dentro del ámbito empresarial, gubernamental y del sector no lucrativo.
+            Los profesionales de la psicología tienen la facultad de analizar a las personas en diferentes escalas, ya sea individualmente o de manera grupal. Su óptimo análisis hace posible que el experto en esta profesión, pueda crear e implementar estrategias de apoyo y para el tratamiento del paciente.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Además, implica brindar orientación sobre la elaboración, evaluación y comprensión de registros financieros y estados contables para individuos privados.
+            Asimismo, en caso de ser casos muy graves, este profesional sabe cuándo es el momento indicado de remitir a un paciente a psiquiatría, en caso de que sea necesario.
           </p>
-          <p class="mt-2 text-slate-600 text-sm">Entre sus responsabilidades se incluyen:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>La elaboración de estados financieros.</li>
-            <li>La realización de auditorías internas y externas.</li>
-            <li>La gestión de impuestos.</li>
-            <li>La planeación financiera.</li>
-            <li>La asesoría respecto a temas contables y fiscales.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Y en cuanto a las actividades más específicas, podrás:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Brindar orientación a individuos, empresas y entidades de gran envergadura sobre el acatamiento de las regulaciones contables, legales y fiscales específicas de sus respectivos territorios.</li>
-            <li>Encargarte de la dirección, la planificación, la coordinación y la supervisión de los servicios contables más adecuados para la empresa en la que te desempeñes.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Por consiguiente, podrás encontrar oportunidades laborales como:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contador general.</li>
-            <li>Director de finanzas.</li>
-            <li>Tesorero.</li>
-            <li>Gerente de impuestos.</li>
-            <li>Director de presupuestos.</li>
-          </ul>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de psicología?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
+            La carrera de psicología en la Universidad de Negocios ISEC, tiene una duración de 8 cuatrimestres, de acuerdo al material oficial del plan de estudios de la licenciatura en psicología. A su vez, en cada periodo cuatrimestral, el alumno toma clase de 7 asignaturas; sin embargo, en el quinto semestre el estudiante tiene la oportunidad de elegir cuáles son las optativas que llevará, a fin de comenzar a especializarse.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Hay dos horarios disponibles, el matutino, que abarca desde las 7:00 am a las 13:00 horas, y el vespertino, que abarca desde las 18:00 a las 22:00 horas.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">Ramas de la psicología</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            La psicología tiene diversas ramas de enfoque con el objetivo de poder aterrizar de manera más óptima, cada problemática que el profesional enfrente. Algunas de las ramas de la psicología, son las siguientes:
           </p>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Transformar la perspectiva estratégica de las empresas.</li>
-            <li>Idear nuevas estrategias de crecimiento empresarial.</li>
-            <li>Gestionar situaciones de incertidumbre y cambios rápidos.</li>
-            <li>Analizar el contexto empresarial de manera integral.</li>
-            <li>Adoptar decisiones fundamentadas y bien fundamentadas.</li>
-            <li>Introducir métodos innovadores para potenciar la competitividad organizacional.</li>
+            <li>Psicología clínica.</li>
+            <li>Psicología del desarrollo.</li>
+            <li>Psicología educativa.</li>
+            <li>Psicología organizacional e industrial.</li>
+            <li>Psicología social.</li>
+            <li>Psicología de la salud.</li>
+            <li>Psicología del deporte.</li>
           </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Contaduría?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            La mayoría de las licenciaturas suelen tener una duración de 8 semestres, lo que se traduce aproximadamente en 4 años. No obstante, en las carreras técnicas, el período de estudio suele ser de alrededor de 3 años.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Durante los cuales, los estudiantes cursan materias teóricas y prácticas relacionadas con la contabilidad, las finanzas, la fiscalidad y auditoría, entre otras áreas de estudio.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, en la Universidad de Negocios ISEC, la Licenciatura en Contaduría Pública Estratégica tiene una duración de 9 cuatrimestres con 7 asignaturas en cada periodo.
+            Estas no son las únicas interpretaciones y enfoques que existen. Cada uno de ellos es sumamente importante y es clave en el desarrollo social. Si quieres saber más acerca de ISEC y los enfoques que se imparten en esta licenciatura, conoce el plan de estudios.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">Ramas de la Contaduría</summary>
+          <summary class="font-semibold cursor-pointer">Actividades de un psicólogo</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Dentro de la profesión, existen diversas ramas especializadas que los profesionales pueden explorar, tales como:
-          </p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contabilidad financiera.</li>
-            <li>Contabilidad de costos.</li>
-            <li>Auditoría externa e interna.</li>
-            <li>Contabilidad de gestión.</li>
-            <li>Consultoría fiscal.</li>
-            <li>Contabilidad de campañas políticas.</li>
-            <li>Contabilidad de proyectos.</li>
-            <li>Contabilidad forense.</li>
-            <li>Contabilidad de fondos.</li>
-            <li>Contabilidad internacional.</li>
-            <li>Contabilidad gubernamental.</li>
-            <li>Contabilidad fiduciaria.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Los salarios en México varían según la experiencia, especialización y el sector en el que se desempeñen.
+            Las actividades del experto en psicología son diversas y van por escalas. Primeramente, se lleva a cabo el diagnóstico clínico, después se efectúa la orientación y el consejo, se brinda el tratamiento a través de las terapias con el objetivo de afrontar todas aquellas problemáticas, etcétera.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Según Jobted, un recién graduado en Contaduría, con menos de tres años de experiencia en el campo laboral, puede anticipar un sueldo medio de alrededor de $8,900 mensuales.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Aquellos con una experiencia laboral de entre 4 y 9 años pueden aspirar a un salario promedio de aproximadamente $14,070; mientras que un contador con una trayectoria de 10 a 20 años puede percibir un salario promedio de $19,700.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Para los Contadores con más de 20 años de experiencia, el salario medio general tiende a ser alrededor de $22,350.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, los contadores públicos suelen recibir remuneraciones competitivas y tienen buenas oportunidades de crecimiento profesional a lo largo de su carrera.
+            El proceso permite que el profesional pueda elegir el mejor tratamiento para sus pacientes.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">El camino hacia el éxito</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en psicología?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Con un plan de estudios actualizado, docentes calificados y recursos tecnológicos de última generación, la Universidad de Negocios ISEC brinda a sus estudiantes las herramientas necesarias para destacarse en el campo de la contabilidad y alcanzar el éxito profesional.
+            El salario promedio de un profesional de la psicología, oscila entre los $4,31 K y $40,000 K, todo depende de la especialidad que el alumno tome y con cuál de ellos decida ejercer.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            ¿Conoces algo acerca de ISEC? ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Contabilidad Pública Estratégica!.
+            Si bien esta es una media salarial, la competitividad del egresado aumenta conforme mayor es el desarrollo de su especialización y aptitudes que suman a las labores.
           </p>
         </details>
       </div>

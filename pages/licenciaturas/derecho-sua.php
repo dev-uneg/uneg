@@ -76,7 +76,7 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="overflow-hidden rounded-2xl shadow-sm">
-      <div class="bg-gradient-to-r from-[#1f7a3f] via-[#2f9e57] to-[#74c69d] text-white">
+      <div class="bg-gradient-to-r from-[#560000] via-[#560000] to-[#560000] text-white">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-8">
           <div class="text-left">
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">Perfil de Ingreso/Egreso</p>
@@ -274,143 +274,85 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <div class="relative w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-      <div class="aspect-video w-full">
-        <iframe
-          class="h-full w-full"
-          src="https://www.youtube.com/embed/jgG-lyjXNfY"
-          title="Contaduría Pública Estratégica"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-12">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Preguntas frecuentes</h2>
       <div class="mt-6 space-y-3">
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Por qué estudiar la licenciatura en Derecho Sabatino (SUA) en ISEC?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Se trata de un campo académico y profesional que se enfoca en la gestión y análisis de la información financiera de organizaciones, empresas y entidades públicas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Los estudiantes de esta carrera adquieren conocimientos sobre contabilidad, finanzas, auditorías, impuestos y aspectos legales relacionados con la actividad económica de las empresas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Si te gustaría entrar más en contexto, tal vez te interese: ¿Qué es la licenciatura en Contaduría Pública?.
+            En la Universidad de Negocios ISEC puedes llevar a cabo tus demás actividades mientras te profesionalizas en el sistema abierto para convertirte en un agente de cambio de la realidad social y el funcionamiento de las instituciones. El profesional en Derecho tiene la facultad de analizar, reformar o utilizar las leyes en favor de la ciudadanía y que de este modo se logre la justicia día con día.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Derecho?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Esta profesión desempeña una amplia gama de funciones dentro del ámbito empresarial, gubernamental y del sector no lucrativo.
+            La licenciatura de Derecho es un grado académico a través del cual se prepara a los estudiantes para que puedan comprender, interpretar y aplicar las leyes y normativas jurídicas mediante diversas metodologías con el objetivo de contribuir a la transformación de la sociedad.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Además, implica brindar orientación sobre la elaboración, evaluación y comprensión de registros financieros y estados contables para individuos privados.
+            Los alumnos van desarrollando habilidades relacionadas con el análisis crítico, argumentación y la resolución de problemáticas legales, procurando la ética profesional y responsabilidad social.
           </p>
-          <p class="mt-2 text-slate-600 text-sm">Entre sus responsabilidades se incluyen:</p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">Ramas de la carrera de Derecho</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            Las ramas del Derecho abarcan distintos sectores relevantes que se desligan de dos pilares, el Derecho público y el Derecho privado.
+          </p>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>La elaboración de estados financieros.</li>
-            <li>La realización de auditorías internas y externas.</li>
-            <li>La gestión de impuestos.</li>
-            <li>La planeación financiera.</li>
-            <li>La asesoría respecto a temas contables y fiscales.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Y en cuanto a las actividades más específicas, podrás:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Brindar orientación a individuos, empresas y entidades de gran envergadura sobre el acatamiento de las regulaciones contables, legales y fiscales específicas de sus respectivos territorios.</li>
-            <li>Encargarte de la dirección, la planificación, la coordinación y la supervisión de los servicios contables más adecuados para la empresa en la que te desempeñes.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Por consiguiente, podrás encontrar oportunidades laborales como:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contador general.</li>
-            <li>Director de finanzas.</li>
-            <li>Tesorero.</li>
-            <li>Gerente de impuestos.</li>
-            <li>Director de presupuestos.</li>
+            <li>Derecho administrativo.</li>
+            <li>Derecho constitucional.</li>
+            <li>Derecho internacional público.</li>
+            <li>Derecho penal.</li>
+            <li>Derecho fiscal o tributario.</li>
+            <li>Derecho laboral.</li>
+            <li>Derecho procesal.</li>
+            <li>Derecho ambiental.</li>
+            <li>Derecho civil.</li>
+            <li>Derecho mercantil o comercial.</li>
+            <li>Derecho internacional privado.</li>
+            <li>Derecho fiscal.</li>
           </ul>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
+          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Derecho?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
-          </p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Transformar la perspectiva estratégica de las empresas.</li>
-            <li>Idear nuevas estrategias de crecimiento empresarial.</li>
-            <li>Gestionar situaciones de incertidumbre y cambios rápidos.</li>
-            <li>Analizar el contexto empresarial de manera integral.</li>
-            <li>Adoptar decisiones fundamentadas y bien fundamentadas.</li>
-            <li>Introducir métodos innovadores para potenciar la competitividad organizacional.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            La mayoría de las licenciaturas suelen tener una duración de 8 semestres, lo que se traduce aproximadamente en 4 años. No obstante, en las carreras técnicas, el período de estudio suele ser de alrededor de 3 años.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Durante los cuales, los estudiantes cursan materias teóricas y prácticas relacionadas con la contabilidad, las finanzas, la fiscalidad y auditoría, entre otras áreas de estudio.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, en la Universidad de Negocios ISEC, la Licenciatura en Contaduría Pública Estratégica tiene una duración de 9 cuatrimestres con 7 asignaturas en cada periodo.
+            La carrera de Derecho sirve para formar profesionales que estén capacitados para aplicar las leyes en diversos contextos sociales a nivel nacional e internacional, de este modo se puede garantizar justicia y orden en la sociedad dependiendo del rol profesional que desempeñen al momento de ejercer, ya sea como jueces, fiscales, asesores, abogados y más.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">Ramas de la Contaduría</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Derecho?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Dentro de la profesión, existen diversas ramas especializadas que los profesionales pueden explorar, tales como:
-          </p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contabilidad financiera.</li>
-            <li>Contabilidad de costos.</li>
-            <li>Auditoría externa e interna.</li>
-            <li>Contabilidad de gestión.</li>
-            <li>Consultoría fiscal.</li>
-            <li>Contabilidad de campañas políticas.</li>
-            <li>Contabilidad de proyectos.</li>
-            <li>Contabilidad forense.</li>
-            <li>Contabilidad de fondos.</li>
-            <li>Contabilidad internacional.</li>
-            <li>Contabilidad gubernamental.</li>
-            <li>Contabilidad fiduciaria.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Los salarios en México varían según la experiencia, especialización y el sector en el que se desempeñen.
+            La carrera de Derecho Sistema Abierto en la Universidad de Negocios ISEC, tiene una duración de 10 semestres en los que cada uno está constituido por seis materias.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Según Jobted, un recién graduado en Contaduría, con menos de tres años de experiencia en el campo laboral, puede anticipar un sueldo medio de alrededor de $8,900 mensuales.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Aquellos con una experiencia laboral de entre 4 y 9 años pueden aspirar a un salario promedio de aproximadamente $14,070; mientras que un contador con una trayectoria de 10 a 20 años puede percibir un salario promedio de $19,700.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Para los Contadores con más de 20 años de experiencia, el salario medio general tiende a ser alrededor de $22,350.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, los contadores públicos suelen recibir remuneraciones competitivas y tienen buenas oportunidades de crecimiento profesional a lo largo de su carrera.
+            Las clases se imparten cada sábado de 7:00 am hasta las 15:00 horas, asimismo, durante el tiempo de duración de la licenciatura, el estudiante podrá llevar un equilibrio entre la vida académica y sus demás actividades, recibiendo la misma calidad educativa que en el sistema escolarizado.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">El camino hacia el éxito</summary>
+          <summary class="font-semibold cursor-pointer">¿Qué hace un licenciado en Derecho?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Con un plan de estudios actualizado, docentes calificados y recursos tecnológicos de última generación, la Universidad de Negocios ISEC brinda a sus estudiantes las herramientas necesarias para destacarse en el campo de la contabilidad y alcanzar el éxito profesional.
+            El licenciado en Derecho, egresado de la Universidad de Negocios ISEC, está facultado para defender los derechos de los individuos y organizaciones, además, contribuye al desarrollo de las políticas públicas, la mediación de conflictos y la promoción de la justicia social.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            ¿Conoces algo acerca de ISEC? ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Contabilidad Pública Estratégica!.
+            En la licenciatura, el egresado habrá aprendido a implementar el análisis crítico, argumentación y resolución de problemas que son esenciales para la práctica legal y la reformación del marco jurídico para volverlo más sólido y justo.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Derecho?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            De acuerdo con el portal oficial de México, el promedio salarial de un egresado de Derecho que ejerce, es de $10 K MX.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Por qué estudiar una licenciatura en modalidad sabatina?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            La licenciatura en Derecho, modalidad sabatina, permite que aquellos estudiantes que ya tienen actividades laborales, que ya formaron una familia o que simplemente gustan más de este sistema porque son autodidactas, puedan profesionalizarse y aumentar sus oportunidades como egresados.
           </p>
         </details>
       </div>

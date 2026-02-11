@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Ingeniería en Finanzas | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -8,7 +8,7 @@ require __DIR__ . '/../partials/header.php';
 <div class="-mx-6 bg-slate-50">
 <main class="max-w-7xl mx-auto px-4 py-10">
 <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/ingenieria-en-finanzas/hero-ingenieria-finanzas.png" alt="Contaduría Pública Estratégica" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/ingenieria-en-finanzas/hero-ingenieria-finanzas.png" alt="Ingeniería en Finanzas" class="block w-full h-auto" loading="eager">
   <div class="bg-[#0b2c65] text-white">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
       <div class="flex items-center gap-3">
@@ -43,28 +43,28 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">¿Licenciatura en Finanzas? Conoce nuestra Licenciatura en Ingeniería en Finanzas</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      Si te interesa estudiar una Licenciatura en Finanzas, el plan de estudios de nuestra Licenciatura en Ingeniería en Finanzas es para ti. ¡Inscríbete hoy mismo!
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        Preparación de líderes capaces de identificar y desarrollar sólidas estrategias que permitan instrumentar proyectos de expansión y crecimiento del sector público y privado haciendo uso eficiente de los recursos financieros disponibles.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-[#0b2c65] text-center">Inscríbete Ahora</h3>
       <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido Paterno" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico" type="email" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono" type="tel" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido paterno*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico*" type="email" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono*" type="tel" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" class="h-4 w-4" />
-          He leído y acepto el aviso de privacidad
+          He leído y acepto el <span class="font-semibold text-slate-700">Aviso de Privacidad</span>
         </label>
         <button class="col-span-1 sm:col-span-2 rounded-md bg-[#0b2c65] px-4 py-2 text-white font-semibold">Enviar</button>
       </form>
@@ -76,7 +76,7 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="overflow-hidden rounded-2xl shadow-sm">
-      <div class="bg-gradient-to-r from-[#1f7a3f] via-[#2f9e57] to-[#74c69d] text-white">
+      <div class="bg-gradient-to-r from-[#E35D49] via-[#E35D49] to-[#E35D49] text-white">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-8">
           <div class="text-left">
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">Perfil de Ingreso/Egreso</p>
@@ -172,7 +172,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Ingeniería en Finanzas</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
@@ -190,83 +190,83 @@ require __DIR__ . '/../partials/header.php';
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
         <ul class="sem-panel list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s1">
           <li>Razonamiento Matemático para Negocios</li>
-          <li>Microeconomía</li>
           <li>Administración Contemporánea</li>
-          <li>Redacción de Informes</li>
+          <li>Derecho Mercantil y Societario</li>
           <li>Informática para Negocios</li>
           <li>Contabilidad para Negocios</li>
+          <li>Microeconomía</li>
           <li>Lengua Extranjera I (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s2">
-          <li>Probabilidad y Estadística</li>
-          <li>Macroeconomía</li>
-          <li>Derecho Civil</li>
+          <li>Matemáticas Financieras</li>
+          <li>Algoritmos y Programación</li>
           <li>Comunicación y Liderazgo</li>
+          <li>Ética y Valores en los Negocios</li>
           <li>Cultura General</li>
-          <li>Contabilidad Administrativa</li>
+          <li>Macroeconomía</li>
           <li>Lengua Extranjera II (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s3">
-          <li>Matemáticas Financieras</li>
-          <li>Derecho Mercantil y Societario</li>
-          <li>Sistemas Contables I</li>
-          <li>Contabilidad Intermedia I</li>
           <li>Contabilidad de Costos</li>
-          <li>Derecho Fiscal</li>
+          <li>Legislación Laboral</li>
+          <li>Planeación Financiera para Mercadotecnia</li>
+          <li>Planeación Estratégica</li>
+          <li>Administración de Operaciones</li>
+          <li>Finanzas</li>
           <li>Lengua Extranjera III (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s4">
-          <li>Derecho Laboral</li>
-          <li>Sistemas Contables II</li>
-          <li>Contabilidad Intermedia II</li>
-          <li>Costos para la toma de Decisiones</li>
-          <li>Comercio Exterior y Ley Aduanera</li>
-          <li>Administración Financiera</li>
+          <li>Probabilidad y Estadística Aplicada a los Negocios</li>
+          <li>Simulador de Negocios</li>
+          <li>Derecho Corporativo</li>
+          <li>Tecnologías y Soluciones para Negocios</li>
+          <li>Economía Internacional</li>
+          <li>Instituciones Financieras</li>
           <li>Lengua Extranjera IV (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s5">
-          <li>Ética y Valores en los Negocios</li>
-          <li>Contabilidad Avanzada I</li>
-          <li>Administración Estratégica de Costos</li>
-          <li>Estudio de las Normas Internacionales de Auditoria</li>
-          <li>Impuestos Personas Morales</li>
+          <li>Cálculo Diferencial e Integral</li>
+          <li>Derecho Fiscal</li>
           <li>Finanzas Corporativas</li>
+          <li>Finanzas Públicas</li>
+          <li>Contabilidad Internacional</li>
+          <li>Evaluación de Estados Financieros</li>
           <li>Lengua Extranjera V (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s6">
-          <li>Investigación de Operaciones</li>
-          <li>Contabilidad Avanzada II</li>
-          <li>Presupuestos</li>
-          <li>Auditoria Administrativa y Control Interno</li>
-          <li>Impuestos Personas Físicas</li>
-          <li>Finanzas Bursátiles</li>
+          <li>Análisis Numérico Multivariado</li>
+          <li>Conocimiento y Desarrollo de Franquicias</li>
+          <li>Finanzas Internacionales</li>
+          <li>Mercado de Dinero</li>
+          <li>Bursatilidad</li>
+          <li>Econometría</li>
           <li>Lengua Extranjera VI (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s7">
-          <li>Informática Contable</li>
-          <li>Contabilidad Internacional</li>
-          <li>Auditoria Operacional</li>
-          <li>Impuestos Indirectos</li>
-          <li>Seguridad Social</li>
-          <li>Proyectos Internacionales de Inversión</li>
+          <li>Administración de Portafolios de Inversión</li>
+          <li>Mercado de Derivados</li>
+          <li>Planeación Fiscal</li>
+          <li>Auditoría Administrativa y Financiera</li>
+          <li>Proyectos de Inversión</li>
+          <li>Fluctuaciones Financieras</li>
           <li>Lengua Extranjera VII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s8">
+          <li>Minería de Datos y Analítica</li>
           <li>Responsabilidad Social Corporativa</li>
-          <li>Taller de Imagen Pública</li>
-          <li>Análisis de la Información Financiera</li>
-          <li>Gobierno Corporativo</li>
-          <li>Impuestos Internacionales</li>
-          <li>Finanzas Internacionales</li>
+          <li>Automatización de Procesos Financieros</li>
+          <li>Análisis de Rentabilidad Empresarial</li>
+          <li>Evaluación de Proyectos de Inversión</li>
+          <li>Prevención de delitos financieros</li>
           <li>Lengua Extranjera VIII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
-          <li>Desarrollo Sustentable</li>
           <li>Emprendimiento Empresarial</li>
-          <li>Contabilidad Gubernamental</li>
-          <li>Dictamen Fiscal</li>
-          <li>Estrategias Fiscales</li>
-          <li>Riesgos</li>
+          <li>Banca y Finanzas</li>
+          <li>Seminario de Finanzas</li>
+          <li>Competencias y Certificaciones</li>
+          <li>Ingeniería Financiera</li>
+          <li>Planeación y Control Financiero</li>
           <li>Lengua Extranjera IX (Inglés)</li>
         </ul>
       </div>
@@ -278,8 +278,8 @@ require __DIR__ . '/../partials/header.php';
       <div class="aspect-video w-full">
         <iframe
           class="h-full w-full"
-          src="https://www.youtube.com/embed/jgG-lyjXNfY"
-          title="Contaduría Pública Estratégica"
+          src="https://www.youtube.com/embed/knP7-_2hoBg"
+          title="Ingeniería en Finanzas"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
@@ -293,125 +293,76 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Preguntas frecuentes</h2>
       <div class="mt-6 space-y-3">
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de finanzas?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Se trata de un campo académico y profesional que se enfoca en la gestión y análisis de la información financiera de organizaciones, empresas y entidades públicas.
+            La carrera de Ingeniería en Finanzas de Universidad ISEC está dividida en 9 cuatrimestres a través de los cuales el alumno recibe diversos enfoques, además de asignaturas que lo dotan de mayor competitividad, para comprender cómo funciona la economía en distintos niveles regionales, es por ello que se llevan asignaturas distintos tipos, enfocadas en las ciencias económicas.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Los estudiantes de esta carrera adquieren conocimientos sobre contabilidad, finanzas, auditorías, impuestos y aspectos legales relacionados con la actividad económica de las empresas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Si te gustaría entrar más en contexto, tal vez te interese: ¿Qué es la licenciatura en Contaduría Pública?.
+            Además, el alumno recibirá clases de lengua extranjera desde el primer cuatrimestre y a lo largo de toda la licenciatura. Conoce el plan de estudios de la carrera de Finanzas y conoce todo lo mencionado, con más detalle.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de finanzas?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Esta profesión desempeña una amplia gama de funciones dentro del ámbito empresarial, gubernamental y del sector no lucrativo.
+            Gracias al aprendizaje de las tecnologías de vanguardia, se puede llevar a cabo la óptima gestión de los productos y servicios financieros, cumpliendo con los estándares éticos a nivel nacional e internacional.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Además, implica brindar orientación sobre la elaboración, evaluación y comprensión de registros financieros y estados contables para individuos privados.
+            Quien ejerce la licenciatura de finanzas, tiene la capacidad de administrar los riesgos de inversión, de administrar el financiamiento y la operación, dependiendo de los diversos escenarios económicos y la normatividad vigente del territorio o medio en el que se lleva a cabo.
           </p>
-          <p class="mt-2 text-slate-600 text-sm">Entre sus responsabilidades se incluyen:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>La elaboración de estados financieros.</li>
-            <li>La realización de auditorías internas y externas.</li>
-            <li>La gestión de impuestos.</li>
-            <li>La planeación financiera.</li>
-            <li>La asesoría respecto a temas contables y fiscales.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Y en cuanto a las actividades más específicas, podrás:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Brindar orientación a individuos, empresas y entidades de gran envergadura sobre el acatamiento de las regulaciones contables, legales y fiscales específicas de sus respectivos territorios.</li>
-            <li>Encargarte de la dirección, la planificación, la coordinación y la supervisión de los servicios contables más adecuados para la empresa en la que te desempeñes.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Por consiguiente, podrás encontrar oportunidades laborales como:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contador general.</li>
-            <li>Director de finanzas.</li>
-            <li>Tesorero.</li>
-            <li>Gerente de impuestos.</li>
-            <li>Director de presupuestos.</li>
-          </ul>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de finanzas?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
+            La carrera de Ingeniería en Finanzas tiene una duración de 9 cuatrimestres. En cada cuatrimestre se imparten 7 asignaturas de ciencias y ciencias sociales para fortalecer el enfoque del alumnado. Asimismo, entre las materias del cuatrimestre se encuentra la asignatura de lengua extranjera, con el objetivo de darle mayor amplitud de conocimiento al alumno, y también aumentar sus oportunidades.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            En la Universidad de Negocios ISEC, hay dos horarios, el matutino, que abarca desde las 7:00 am a las 13:00 horas y el vespertino, que abarca desde las 18:00 a las 22:00 horas.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">Especialidades en finanzas</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            Los distintos tipos de especialidades en finanzas que existen, son las siguientes:
           </p>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Transformar la perspectiva estratégica de las empresas.</li>
-            <li>Idear nuevas estrategias de crecimiento empresarial.</li>
-            <li>Gestionar situaciones de incertidumbre y cambios rápidos.</li>
-            <li>Analizar el contexto empresarial de manera integral.</li>
-            <li>Adoptar decisiones fundamentadas y bien fundamentadas.</li>
-            <li>Introducir métodos innovadores para potenciar la competitividad organizacional.</li>
+            <li>Finanzas públicas.</li>
+            <li>Finanzas corporativas.</li>
+            <li>Mercado financiero.</li>
+            <li>Contabilidad.</li>
+            <li>Inteligencia de negocios y emprendimiento.</li>
+            <li>Banca y finanzas.</li>
           </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Contaduría?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            La mayoría de las licenciaturas suelen tener una duración de 8 semestres, lo que se traduce aproximadamente en 4 años. No obstante, en las carreras técnicas, el período de estudio suele ser de alrededor de 3 años.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Durante los cuales, los estudiantes cursan materias teóricas y prácticas relacionadas con la contabilidad, las finanzas, la fiscalidad y auditoría, entre otras áreas de estudio.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, en la Universidad de Negocios ISEC, la Licenciatura en Contaduría Pública Estratégica tiene una duración de 9 cuatrimestres con 7 asignaturas en cada periodo.
+            Si eres egresado de la Universidad de Negocios ISEC o te graduaste en alguna otra universidad, UNEG también pone a tu disposición los posgrados para poder especializarse en finanzas. Una de las opciones disponibles es la Maestría en Finanzas, de la cual puedes revisar el plan de estudios. Asimismo, está a disposición el plan de estudios de la Maestría en Fiscal. Ambas especialidades tienen una duración de cuatro cuatrimestres y se imparten los sábados de 7:00 am hasta las 13:00 horas.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">Ramas de la Contaduría</summary>
+          <summary class="font-semibold cursor-pointer">¿Qué hace un licenciado en finanzas?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Dentro de la profesión, existen diversas ramas especializadas que los profesionales pueden explorar, tales como:
-          </p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contabilidad financiera.</li>
-            <li>Contabilidad de costos.</li>
-            <li>Auditoría externa e interna.</li>
-            <li>Contabilidad de gestión.</li>
-            <li>Consultoría fiscal.</li>
-            <li>Contabilidad de campañas políticas.</li>
-            <li>Contabilidad de proyectos.</li>
-            <li>Contabilidad forense.</li>
-            <li>Contabilidad de fondos.</li>
-            <li>Contabilidad internacional.</li>
-            <li>Contabilidad gubernamental.</li>
-            <li>Contabilidad fiduciaria.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Los salarios en México varían según la experiencia, especialización y el sector en el que se desempeñen.
+            Como egresado de la licenciatura en Ingeniería en Finanzas, podrás tomar decisiones razonadas desde tu perspectiva profesional, sobre financiamiento, inversión y administración de riesgos en áreas como fondos de inversión, seguros, bolsa de valores, inversión y más áreas que tienen presencia, en el ámbito privado o público, como la Secretaría de Hacienda y Crédito Público, el Banco de México, etcétera.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Según Jobted, un recién graduado en Contaduría, con menos de tres años de experiencia en el campo laboral, puede anticipar un sueldo medio de alrededor de $8,900 mensuales.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Aquellos con una experiencia laboral de entre 4 y 9 años pueden aspirar a un salario promedio de aproximadamente $14,070; mientras que un contador con una trayectoria de 10 a 20 años puede percibir un salario promedio de $19,700.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Para los Contadores con más de 20 años de experiencia, el salario medio general tiende a ser alrededor de $22,350.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, los contadores públicos suelen recibir remuneraciones competitivas y tienen buenas oportunidades de crecimiento profesional a lo largo de su carrera.
+            Si quieres saber más acerca de ISEC, ingresa al sitio web y entérate de la gran oferta educativa y los planes de estudio disponibles para ti.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">El camino hacia el éxito</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en finanzas?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Con un plan de estudios actualizado, docentes calificados y recursos tecnológicos de última generación, la Universidad de Negocios ISEC brinda a sus estudiantes las herramientas necesarias para destacarse en el campo de la contabilidad y alcanzar el éxito profesional.
+            Un licenciado en finanzas puede ocupar distintas posiciones en el sector público y privado; sin embargo, la percepción salarial depende de su puesto en la jerarquía de la entidad en la que labore y la entidad misma en la que preste sus servicios.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            ¿Conoces algo acerca de ISEC? ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Contabilidad Pública Estratégica!.
+            El promedio salarial de un licenciado en finanzas es de $9.05K, de acuerdo con la Secretaría de Gobernación. Por otro lado, los Asesores y Analistas en Finanzas son los que mostraron ingresos más cuantiosos, siendo $59.4K el promedio.
           </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¡Estás a un CLIC para el gran paso!</summary>
+          <p class="mt-2 text-slate-600 text-sm">¡Estás a un CLIC para el gran paso!</p>
         </details>
       </div>
     </div>

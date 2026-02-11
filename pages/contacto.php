@@ -15,29 +15,6 @@ require __DIR__ . '/partials/header.php';
         <p class="mt-1 text-white/80">¡Para nosotros eres lo más importante!</p>
       </div>
     </div>
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-      <div class="flex items-start gap-3 rounded-2xl bg-white/10 p-4">
-        <i class="ri-phone-line text-xl"></i>
-        <div>
-          <p class="font-semibold">Llámanos</p>
-          <p class="text-white/80">55 5063 1300</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-3 rounded-2xl bg-white/10 p-4">
-        <i class="ri-mail-line text-xl"></i>
-        <div>
-          <p class="font-semibold">Escríbenos</p>
-          <p class="text-white/80">admisiones@uneg.edu.mx</p>
-        </div>
-      </div>
-      <div class="flex items-start gap-3 rounded-2xl bg-white/10 p-4">
-        <i class="ri-map-pin-2-line text-xl"></i>
-        <div>
-          <p class="font-semibold">Visítanos</p>
-          <p class="text-white/80">Mier y Pesado 227, Col. Del Valle Centro, CDMX</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -83,7 +60,7 @@ require __DIR__ . '/partials/header.php';
       </form>
     </div>
 
-    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm self-start">
       <div class="flex items-center gap-3 text-[#0b2c65]">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2c65] text-white">
           <i class="ri-information-line text-lg"></i>

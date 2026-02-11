@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Licenciatura en Mercadotecnia Estratégica | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -8,7 +8,7 @@ require __DIR__ . '/../partials/header.php';
 <div class="-mx-6 bg-slate-50">
 <main class="max-w-7xl mx-auto px-4 py-10">
 <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/mercadotecnia-estrategica/hero-mercadotecnia-estrategica.png" alt="Contaduría Pública Estratégica" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/mercadotecnia-estrategica/hero-mercadotecnia-estrategica.png" alt="Mercadotecnia Estratégica" class="block w-full h-auto" loading="eager">
   <div class="bg-[#0b2c65] text-white">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
       <div class="flex items-center gap-3">
@@ -43,28 +43,28 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Vuélvete un experto con nuestra Licenciatura en Mercadotecnia Estratégica</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      Impacta en el mundo de los negocios con la mejor preparación que la Universidad de Negocios ISEC y el plan de estudios de la Licenciatura en Mercadotecnia Estratégica tiene para ti.
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        Obtención de conocimientos especializados que generen estrategias puntuales para fomentar y mantener una comunicación efectiva que ayude a las organizaciones a impactar el mercado de productos y servicios.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-[#0b2c65] text-center">Inscríbete Ahora</h3>
       <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido Paterno" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico" type="email" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono" type="tel" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido paterno*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico*" type="email" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono*" type="tel" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" class="h-4 w-4" />
-          He leído y acepto el aviso de privacidad
+          He leído y acepto el <span class="font-semibold text-slate-700">Aviso de Privacidad</span>
         </label>
         <button class="col-span-1 sm:col-span-2 rounded-md bg-[#0b2c65] px-4 py-2 text-white font-semibold">Enviar</button>
       </form>
@@ -76,7 +76,7 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="overflow-hidden rounded-2xl shadow-sm">
-      <div class="bg-gradient-to-r from-[#1f7a3f] via-[#2f9e57] to-[#74c69d] text-white">
+      <div class="bg-gradient-to-r from-[#6400E0] via-[#6400E0] to-[#6400E0] text-white">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-8">
           <div class="text-left">
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">Perfil de Ingreso/Egreso</p>
@@ -130,9 +130,9 @@ require __DIR__ . '/../partials/header.php';
             <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de esta licenciatura deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Interés en invertir eficazmente e incrementar la economía empresarial.</li>
-              <li>Interés en desarrollar habilidades para planear, desarrollar y dirigir estrategias que hagan crecer empresas o instituciones.</li>
-              <li>Capacidad de aprovechar al máximo todos los recursos y el tener sólido control sobre los aspectos financieros y administrativos.</li>
+              <li>Haber cubierto el nivel medio superior preferentemente en el área económico administrativa o bachillerato técnico.</li>
+              <li>Conocimientos básicos en matemáticas, cultura de negocios y metodología de la investigación.</li>
+              <li>Habilidades: empleo de herramientas tecnológicas y uso de las TIC´s para reforzar las habilidades profesionales, razonamiento lógico matemático, realizar varias tareas a la vez, liderazgo, toma de decisiones, trabajo colaborativo.</li>
             </ul>
           </div>
 
@@ -141,13 +141,13 @@ require __DIR__ . '/../partials/header.php';
               <i class="ri-graduation-cap-line text-xl"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
-            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura tendrás habilidades para:</p>
+            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura, tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Cambiar la visión proyectiva de negocios.</li>
-              <li>Realizar nuevos modelos de desarrollo empresarial.</li>
-              <li>Manejar escenarios de contingencia y volatilidad.</li>
-              <li>Comprender la analítica del entorno.</li>
-              <li>Desarrollar habilidades para la toma de decisiones.</li>
+              <li>Mantener una comunicación estratégica y presencia a la marca.</li>
+              <li>Valorar la aceptación del producto o servicio en el mercado.</li>
+              <li>Autoevaluar a la organización en los productos o servicios que ofrece y en cuanto al grado de aceptación que tiene.</li>
+              <li>Mantener una política de relaciones públicas que ofrezca realce y presencia a la marca.</li>
+              <li>Aprovechar el manejo de la tecnología en el uso de la Mercadotecnia Digital.</li>
             </ul>
           </div>
 
@@ -158,12 +158,12 @@ require __DIR__ . '/../partials/header.php';
             <h4 class="mt-3 font-semibold">Campo de Trabajo</h4>
             <p class="mt-2 text-sm text-slate-600">Profesionalmente te desarrollarás en:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
-              <li>Contador General.</li>
-              <li>Director de Finanzas.</li>
-              <li>Tesorero.</li>
-              <li>Gerente de Impuestos.</li>
-              <li>Director de Presupuestos.</li>
-              <li>Entre otros.</li>
+              <li>El Sector Público o Privado de cualquier giro.</li>
+              <li>Dirección Estratégica de Mercadotecnia.</li>
+              <li>Emprendimientos de Nuevos Negocios.</li>
+              <li>Comercialización de Productos.</li>
+              <li>Tácticas de Punto de Venta.</li>
+              <li>Puestos de: Consultor de Investigación de Mercados, Gerente de Marca en empresas multinacionales, Desarrollador de Campañas Publicitarias, entre otras.</li>
             </ul>
           </div>
         </div>
@@ -172,7 +172,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Mercadotecnia Estratégica</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
@@ -190,83 +190,83 @@ require __DIR__ . '/../partials/header.php';
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
         <ul class="sem-panel list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s1">
           <li>Razonamiento Matemático para Negocios</li>
-          <li>Microeconomía</li>
           <li>Administración Contemporánea</li>
-          <li>Redacción de Informes</li>
+          <li>Mercadotecnia Estratégica</li>
           <li>Informática para Negocios</li>
           <li>Contabilidad para Negocios</li>
+          <li>Microeconomía</li>
           <li>Lengua Extranjera I (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s2">
-          <li>Probabilidad y Estadística</li>
-          <li>Macroeconomía</li>
-          <li>Derecho Civil</li>
+          <li>Matemáticas Financieras</li>
+          <li>Análisis de la Publicidad</li>
           <li>Comunicación y Liderazgo</li>
+          <li>Mercadotecnia Integral</li>
           <li>Cultura General</li>
-          <li>Contabilidad Administrativa</li>
+          <li>Macroeconomía</li>
           <li>Lengua Extranjera II (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s3">
-          <li>Matemáticas Financieras</li>
-          <li>Derecho Mercantil y Societario</li>
-          <li>Sistemas Contables I</li>
-          <li>Contabilidad Intermedia I</li>
           <li>Contabilidad de Costos</li>
-          <li>Derecho Fiscal</li>
+          <li>Derecho Mercantil y Societario</li>
+          <li>Comunicación Estratégica</li>
+          <li>Inteligencia del Consumidor y Bases de Datos</li>
+          <li>Mercadotecnia Industrial</li>
+          <li>Creatividad e Innovación</li>
           <li>Lengua Extranjera III (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s4">
-          <li>Derecho Laboral</li>
-          <li>Sistemas Contables II</li>
-          <li>Contabilidad Intermedia II</li>
-          <li>Costos para la toma de Decisiones</li>
-          <li>Comercio Exterior y Ley Aduanera</li>
-          <li>Administración Financiera</li>
+          <li>Probabilidad y Estadística Aplicada a los Negocios</li>
+          <li>Mercadotecnia de Servicios</li>
+          <li>Derecho Corporativo</li>
+          <li>Gestión de Nuevos Productos</li>
+          <li>Investigación de Mercados</li>
+          <li>Estrategias de Precio y Valor</li>
           <li>Lengua Extranjera IV (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s5">
-          <li>Ética y Valores en los Negocios</li>
-          <li>Contabilidad Avanzada I</li>
-          <li>Administración Estratégica de Costos</li>
-          <li>Estudio de las Normas Internacionales de Auditoria</li>
-          <li>Impuestos Personas Morales</li>
-          <li>Finanzas Corporativas</li>
+          <li>Administración de Ventas</li>
+          <li>Mercadotecnia Social</li>
+          <li>Promoción y Mercadotecnia</li>
+          <li>Potencia de Marca (Branding)</li>
+          <li>Finanzas para Mercadotecnia</li>
+          <li>Visual Merchandising</li>
           <li>Lengua Extranjera V (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s6">
-          <li>Investigación de Operaciones</li>
-          <li>Contabilidad Avanzada II</li>
-          <li>Presupuestos</li>
-          <li>Auditoria Administrativa y Control Interno</li>
-          <li>Impuestos Personas Físicas</li>
-          <li>Finanzas Bursátiles</li>
+          <li>Mercadotecnia Digital</li>
+          <li>Psicología del Negociador</li>
+          <li>Mercadotecnia Internacional</li>
+          <li>Comercio Electrónico</li>
+          <li>Conocimiento y Desarrollo de Franquicias</li>
+          <li>Comunicación Visual</li>
           <li>Lengua Extranjera VI (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s7">
-          <li>Informática Contable</li>
-          <li>Contabilidad Internacional</li>
-          <li>Auditoria Operacional</li>
-          <li>Impuestos Indirectos</li>
-          <li>Seguridad Social</li>
-          <li>Proyectos Internacionales de Inversión</li>
+          <li>Emprendimiento Empresarial</li>
+          <li>Consultoría y Planificación de Medios</li>
+          <li>Gestión de Servicio al Cliente</li>
+          <li>Estrategias de Segmentación y Comercialización</li>
+          <li>Mercadotecnia Política</li>
+          <li>Auditoría en Mercadotecnia</li>
           <li>Lengua Extranjera VII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s8">
+          <li>Rentabilidad de Medios Publicitarios</li>
           <li>Responsabilidad Social Corporativa</li>
+          <li>Aspectos Legales de Comercio Electrónico</li>
           <li>Taller de Imagen Pública</li>
-          <li>Análisis de la Información Financiera</li>
-          <li>Gobierno Corporativo</li>
-          <li>Impuestos Internacionales</li>
-          <li>Finanzas Internacionales</li>
+          <li>Neuromarketing</li>
+          <li>Comercio Internacional</li>
           <li>Lengua Extranjera VIII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
+          <li>Automatización de Mercadotecnia</li>
           <li>Desarrollo Sustentable</li>
-          <li>Emprendimiento Empresarial</li>
-          <li>Contabilidad Gubernamental</li>
-          <li>Dictamen Fiscal</li>
-          <li>Estrategias Fiscales</li>
-          <li>Riesgos</li>
+          <li>Seminario de Mercadotecnia</li>
+          <li>Competencias y Certificaciones</li>
+          <li>Ética y Valores en los Negocios</li>
+          <li>Mercadotecnia de Influenciadores</li>
           <li>Lengua Extranjera IX (Inglés)</li>
         </ul>
       </div>
@@ -278,8 +278,8 @@ require __DIR__ . '/../partials/header.php';
       <div class="aspect-video w-full">
         <iframe
           class="h-full w-full"
-          src="https://www.youtube.com/embed/jgG-lyjXNfY"
-          title="Contaduría Pública Estratégica"
+          src="https://www.youtube.com/embed/rMRP-wrrx_c"
+          title="Mercadotecnia Estratégica"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
@@ -293,124 +293,117 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Preguntas frecuentes</h2>
       <div class="mt-6 space-y-3">
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Mercadotecnia?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Se trata de un campo académico y profesional que se enfoca en la gestión y análisis de la información financiera de organizaciones, empresas y entidades públicas.
+            Esta licenciatura se centra en el estudio de los principios y técnicas utilizadas para identificar, anticipar y satisfacer las necesidades y deseos de los consumidores.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Los estudiantes de esta carrera adquieren conocimientos sobre contabilidad, finanzas, auditorías, impuestos y aspectos legales relacionados con la actividad económica de las empresas.
+            Además, implica comprender el comportamiento del mercado, la creación de estrategias de promoción, la gestión de marcas, el análisis de datos y la implementación de campañas publicitarias efectivas.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Si te gustaría entrar más en contexto, tal vez te interese: ¿Qué es la licenciatura en Contaduría Pública?.
+            Aquellos estudiantes que optan por esta disciplina aprenden a concebir planes de negocio que no solo sean lucrativos, sino también que conecten con el público objetivo. Las destrezas adquiridas en el ámbito de la Mercadotecnia son variadas e incluyen desde el análisis de datos y métricas para comprender el comportamiento del mercado, hasta el uso de herramientas digitales para el marketing en línea.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">De igual manera, los estudiantes exploran campos como:</p>
+          <ul class="mt-2 space-y-1 text-sm text-slate-600">
+            <li>La publicidad.</li>
+            <li>La investigación de mercados.</li>
+            <li>La psicología del consumidor.</li>
+          </ul>
+          <p class="mt-2 text-slate-600 text-sm">
+            Estas aptitudes los preparan para enfrentar los retos de un entorno comercial dinámico y en constante evolución.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Mercadotecnia?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Esta profesión desempeña una amplia gama de funciones dentro del ámbito empresarial, gubernamental y del sector no lucrativo.
+            Es fundamental para cualquier empresa que busque mantenerse relevante y competitiva en el mercado.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Además, implica brindar orientación sobre la elaboración, evaluación y comprensión de registros financieros y estados contables para individuos privados.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">Entre sus responsabilidades se incluyen:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>La elaboración de estados financieros.</li>
-            <li>La realización de auditorías internas y externas.</li>
-            <li>La gestión de impuestos.</li>
-            <li>La planeación financiera.</li>
-            <li>La asesoría respecto a temas contables y fiscales.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Y en cuanto a las actividades más específicas, podrás:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Brindar orientación a individuos, empresas y entidades de gran envergadura sobre el acatamiento de las regulaciones contables, legales y fiscales específicas de sus respectivos territorios.</li>
-            <li>Encargarte de la dirección, la planificación, la coordinación y la supervisión de los servicios contables más adecuados para la empresa en la que te desempeñes.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Por consiguiente, podrás encontrar oportunidades laborales como:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contador general.</li>
-            <li>Director de finanzas.</li>
-            <li>Tesorero.</li>
-            <li>Gerente de impuestos.</li>
-            <li>Director de presupuestos.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
-          </p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Transformar la perspectiva estratégica de las empresas.</li>
-            <li>Idear nuevas estrategias de crecimiento empresarial.</li>
-            <li>Gestionar situaciones de incertidumbre y cambios rápidos.</li>
-            <li>Analizar el contexto empresarial de manera integral.</li>
-            <li>Adoptar decisiones fundamentadas y bien fundamentadas.</li>
-            <li>Introducir métodos innovadores para potenciar la competitividad organizacional.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            La mayoría de las licenciaturas suelen tener una duración de 8 semestres, lo que se traduce aproximadamente en 4 años. No obstante, en las carreras técnicas, el período de estudio suele ser de alrededor de 3 años.
+            Ayuda a las organizaciones a comprender a su público objetivo, a posicionar sus productos o servicios de manera efectiva, a aumentar su visibilidad y a generar demanda.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Durante los cuales, los estudiantes cursan materias teóricas y prácticas relacionadas con la contabilidad, las finanzas, la fiscalidad y auditoría, entre otras áreas de estudio.
+            También, a entender a fondo a los clientes y ajustar sus tácticas en función de ello. A crear soluciones apropiadas para las demandas.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, en la Universidad de Negocios ISEC, la Licenciatura en Contaduría Pública Estratégica tiene una duración de 9 cuatrimestres con 7 asignaturas en cada periodo.
+            Y por último, a estimular la adquisición de las ofertas comerciales, lo que, a su vez, ayuda a obtener mayores beneficios.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">Ramas de la Contaduría</summary>
+          <summary class="font-semibold cursor-pointer">¡Estás a un CLIC para dar el gran paso!</summary>
+          <p class="mt-2 text-slate-600 text-sm">¡Estás a un CLIC para dar el gran paso!</p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Qué hace un licenciado en Mercadotecnia?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Dentro de la profesión, existen diversas ramas especializadas que los profesionales pueden explorar, tales como:
+            La necesidad de expertos en la materia es considerable debido a su intervención en el progreso y la efectividad de empresas y estrategias publicitarias. Para aquellas personas que optan por estudiar esta licenciatura, tienen la posibilidad de participar tanto en la faceta creativa como en la analítica del ámbito empresarial.
           </p>
+          <p class="mt-2 text-slate-600 text-sm">Este profesional está capacitado para:</p>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contabilidad financiera.</li>
-            <li>Contabilidad de costos.</li>
-            <li>Auditoría externa e interna.</li>
-            <li>Contabilidad de gestión.</li>
-            <li>Consultoría fiscal.</li>
-            <li>Contabilidad de campañas políticas.</li>
-            <li>Contabilidad de proyectos.</li>
-            <li>Contabilidad forense.</li>
-            <li>Contabilidad de fondos.</li>
-            <li>Contabilidad internacional.</li>
-            <li>Contabilidad gubernamental.</li>
-            <li>Contabilidad fiduciaria.</li>
+            <li>Desarrollar estrategias de marketing integrales.</li>
+            <li>Realizar investigaciones de mercado.</li>
+            <li>Analizar los datos y métricas.</li>
+            <li>Identificar oportunidades de negocio.</li>
+            <li>Administrar marcas.</li>
+            <li>Coordinar campañas publicitarias.</li>
+            <li>Evaluar el rendimiento de las actividades de marketing.</li>
+            <li>Publicidad exterior.</li>
           </ul>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Mercadotecnia?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Los salarios en México varían según la experiencia, especialización y el sector en el que se desempeñen.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Según Jobted, un recién graduado en Contaduría, con menos de tres años de experiencia en el campo laboral, puede anticipar un sueldo medio de alrededor de $8,900 mensuales.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Aquellos con una experiencia laboral de entre 4 y 9 años pueden aspirar a un salario promedio de aproximadamente $14,070; mientras que un contador con una trayectoria de 10 a 20 años puede percibir un salario promedio de $19,700.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Para los Contadores con más de 20 años de experiencia, el salario medio general tiende a ser alrededor de $22,350.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, los contadores públicos suelen recibir remuneraciones competitivas y tienen buenas oportunidades de crecimiento profesional a lo largo de su carrera.
+            La duración de la Licenciatura en Mercadotecnia Estratégica en ISEC es de aproximadamente 3 años, es decir, 9 cuatrimestres con 7 asignaturas en cada periodo.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">El camino hacia el éxito</summary>
+          <summary class="font-semibold cursor-pointer">Ramas de la Mercadotecnia</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Con un plan de estudios actualizado, docentes calificados y recursos tecnológicos de última generación, la Universidad de Negocios ISEC brinda a sus estudiantes las herramientas necesarias para destacarse en el campo de la contabilidad y alcanzar el éxito profesional.
+            Algunas de las ramas especializadas dentro de la carrera son las siguientes:
+          </p>
+          <ul class="mt-2 space-y-1 text-sm text-slate-600">
+            <li>Marketing digital.</li>
+            <li>Marketing Internacional.</li>
+            <li>Marketing de contenidos.</li>
+            <li>Marketing de redes sociales.</li>
+            <li>Marketing de productos.</li>
+            <li>Marketing en motores de búsqueda (SEM).</li>
+            <li>Marketing de bases de datos.</li>
+            <li>Marketing de eventos.</li>
+          </ul>
+          <p class="mt-2 text-slate-600 text-sm">
+            Estas áreas brindan oportunidades para enfocarse en aspectos específicos del marketing y desarrollar habilidades especializadas para cada cliente, empresa u organización.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Mercadotecnia?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            El potencial económico es significativo, dado que el sueldo promedio de un profesional en mercadotecnia en México se sitúa entre los más competitivos, lo cual subraya la importancia de esta carrera en el actual panorama laboral.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">Según datos de Statista, las estadísticas son las siguientes:</p>
+          <p class="mt-2 text-slate-600 text-sm">
+            El ingreso inicial promedio para un recién titulado ronda los 17,300 MXN. No obstante, de acuerdo con un sondeo realizado entre abril de 2021 y marzo de 2022, el 73% de los graduados de instituciones públicas y privadas en México reportaron ganancias inferiores a 8,001 pesos mexicanos en su primer empleo, mientras que solo el 4% percibió un salario superior a 15,001 pesos mexicanos.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            ¿Conoces algo acerca de ISEC? ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Contabilidad Pública Estratégica!.
+            El ingreso medio para los profesionales es aproximadamente de 35,800 MXN. Esto indica que la mitad de los trabajadores en México obtienen un ingreso por debajo de esta cifra, mientras que la otra mitad gana más. Por lo general, se prefiere estar dentro del grupo que supera el ingreso medio.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            En cuanto a la experiencia laboral, en promedio, los profesionales en Mercadotecnia con 2 a 5 años de experiencia ganan aproximadamente un 32% más que los recién llegados y los empleados juniors en todas las industrias y disciplinas.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Mientras que aquellos con más de 5 años de experiencia suelen percibir un 36% más que aquellos con menos de 5 años de trayectoria. A medida que se acumulan más años de experiencia, el ingreso aumenta un 21% a los 10 años y un 14% adicional para aquellos con más de 15 años en el campo.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Conoces algo acerca de ISEC?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Mercadotecnia Estratégica!
           </p>
         </details>
       </div>

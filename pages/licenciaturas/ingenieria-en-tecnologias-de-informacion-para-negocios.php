@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Ingeniería en Tecnologías de Información para Negocios | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -8,7 +8,7 @@ require __DIR__ . '/../partials/header.php';
 <div class="-mx-6 bg-slate-50">
 <main class="max-w-7xl mx-auto px-4 py-10">
 <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/ingenieria-en-tecnologias-de-informacion-para-negocios/hero-ingenieria-ti-negocios.png" alt="Contaduría Pública Estratégica" class="block w-full h-auto" loading="eager">
+    <img src="<?php echo $assetBase; ?>/imgs/licenciaturas/ingenieria-en-tecnologias-de-informacion-para-negocios/hero-ingenieria-ti-negocios.png" alt="Ingeniería en Tecnologías de Información para Negocios" class="block w-full h-auto" loading="eager">
   <div class="bg-[#0b2c65] text-white">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
       <div class="flex items-center gap-3">
@@ -43,28 +43,28 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">¿Licenciatura en Tecnologías de Información? Conoce nuestra Licenciatura en Ingeniería en Tecnologías de Información para Negocios</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      ¿Sabías que el mundo empresarial necesita a un experto en el cambio constante de las TICs? Con nuestra Licenciatura en Ingeniería en Tecnologías de Información para Negocios desarrollarás las habilidades necesarias para poder impactar en el mundo de las organizaciones. ¡Decide ser parte de una Ingeniería en Tecnologías de la Información!
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        Cuenta con materias multidisciplinarias que buscan sensibilizar valores ecológicos y de sustentabilidad con enfoque hacia modelos de emprendimiento de negocios que permitirán el desarrollo del potencial de los egresados basados en tecnologías digitales y de infraestructura.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-[#0b2c65] text-center">Inscríbete Ahora</h3>
       <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido Paterno" type="text" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico" type="email" />
-        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono" type="tel" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Nombre*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Apellido paterno*" type="text" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Correo Electrónico*" type="email" />
+        <input class="w-full rounded-md border border-slate-300 px-3 py-2" placeholder="Teléfono*" type="tel" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" class="h-4 w-4" />
-          He leído y acepto el aviso de privacidad
+          He leído y acepto el <span class="font-semibold text-slate-700">Aviso de Privacidad</span>
         </label>
         <button class="col-span-1 sm:col-span-2 rounded-md bg-[#0b2c65] px-4 py-2 text-white font-semibold">Enviar</button>
       </form>
@@ -76,7 +76,7 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="overflow-hidden rounded-2xl shadow-sm">
-      <div class="bg-gradient-to-r from-[#1f7a3f] via-[#2f9e57] to-[#74c69d] text-white">
+      <div class="bg-gradient-to-r from-[#4B9E01] via-[#4B9E01] to-[#4B9E01] text-white">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-8">
           <div class="text-left">
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">Perfil de Ingreso/Egreso</p>
@@ -172,7 +172,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Ingeniería en Tecnologías de Información para Negocios</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
@@ -190,83 +190,83 @@ require __DIR__ . '/../partials/header.php';
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
         <ul class="sem-panel list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s1">
           <li>Razonamiento Matemático para Negocios</li>
-          <li>Microeconomía</li>
+          <li>Contabilidad para Negocios</li>
           <li>Administración Contemporánea</li>
           <li>Redacción de Informes</li>
-          <li>Informática para Negocios</li>
-          <li>Contabilidad para Negocios</li>
+          <li>Ingeniería en Tecnologías de Información y Comunicaciones para Negocios</li>
+          <li>Análisis y Diseño de Algoritmos</li>
           <li>Lengua Extranjera I (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s2">
-          <li>Probabilidad y Estadística</li>
-          <li>Macroeconomía</li>
-          <li>Derecho Civil</li>
+          <li>Habilidades Numéricas</li>
+          <li>Costos y Presupuestos</li>
           <li>Comunicación y Liderazgo</li>
-          <li>Cultura General</li>
-          <li>Contabilidad Administrativa</li>
+          <li>Sistemas Empresariales</li>
+          <li>Sistemas Operativos I</li>
+          <li>Herramientas de Programación I</li>
           <li>Lengua Extranjera II (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s3">
-          <li>Matemáticas Financieras</li>
-          <li>Derecho Mercantil y Societario</li>
-          <li>Sistemas Contables I</li>
-          <li>Contabilidad Intermedia I</li>
-          <li>Contabilidad de Costos</li>
-          <li>Derecho Fiscal</li>
+          <li>Matemáticas Discretas</li>
+          <li>Mercadotecnia Digital</li>
+          <li>Ética y Valores en los Negocios</li>
+          <li>Sistemas Operativos II</li>
+          <li>Herramientas de Programación II</li>
+          <li>Modelado de Datos</li>
           <li>Lengua Extranjera III (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s4">
-          <li>Derecho Laboral</li>
-          <li>Sistemas Contables II</li>
-          <li>Contabilidad Intermedia II</li>
-          <li>Costos para la toma de Decisiones</li>
-          <li>Comercio Exterior y Ley Aduanera</li>
-          <li>Administración Financiera</li>
+          <li>Probabilidad y Estadística Aplicada a los Negocios</li>
+          <li>Administración de Proyectos</li>
+          <li>Responsabilidad Social Corporativa</li>
+          <li>Soporte y Arquitectura de Hardware</li>
+          <li>Diseño de Software</li>
+          <li>Análisis y Diseño de Sistemas</li>
           <li>Lengua Extranjera IV (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s5">
-          <li>Ética y Valores en los Negocios</li>
-          <li>Contabilidad Avanzada I</li>
-          <li>Administración Estratégica de Costos</li>
-          <li>Estudio de las Normas Internacionales de Auditoria</li>
-          <li>Impuestos Personas Morales</li>
-          <li>Finanzas Corporativas</li>
+          <li>Física I</li>
+          <li>Soporte y Arquitectura de Software</li>
+          <li>Bases de Datos</li>
+          <li>Redes Empresariales</li>
+          <li>Tecnologías Móviles Multiplataforma I</li>
+          <li>Programación Web I</li>
           <li>Lengua Extranjera V (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s6">
-          <li>Investigación de Operaciones</li>
-          <li>Contabilidad Avanzada II</li>
-          <li>Presupuestos</li>
-          <li>Auditoria Administrativa y Control Interno</li>
-          <li>Impuestos Personas Físicas</li>
-          <li>Finanzas Bursátiles</li>
+          <li>Física II</li>
+          <li>Aspectos Legales del Comercio Electrónico</li>
+          <li>Diseño de Bases de Datos</li>
+          <li>Diseño e Implementación de Redes</li>
+          <li>Tecnologías Móviles Multiplataforma II</li>
+          <li>Programación Web II</li>
           <li>Lengua Extranjera VI (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s7">
-          <li>Informática Contable</li>
-          <li>Contabilidad Internacional</li>
-          <li>Auditoria Operacional</li>
-          <li>Impuestos Indirectos</li>
-          <li>Seguridad Social</li>
-          <li>Proyectos Internacionales de Inversión</li>
+          <li>Cadenas de Valor</li>
+          <li>Planeación Estratégica</li>
+          <li>Diseño de Negocios Digitales</li>
+          <li>Administración de Bases de Datos</li>
+          <li>Comunicaciones Unificadas y Telecomunicaciones</li>
+          <li>Innovación Tecnológica</li>
           <li>Lengua Extranjera VII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s8">
-          <li>Responsabilidad Social Corporativa</li>
-          <li>Taller de Imagen Pública</li>
-          <li>Análisis de la Información Financiera</li>
-          <li>Gobierno Corporativo</li>
-          <li>Impuestos Internacionales</li>
-          <li>Finanzas Internacionales</li>
+          <li>Simulación</li>
+          <li>Diseño de Informes de Negocios</li>
+          <li>Arquitectura Empresarial</li>
+          <li>Desarrollo Sustentable</li>
+          <li>Inteligencia de Negocios</li>
+          <li>Cómputo en la Nube</li>
           <li>Lengua Extranjera VIII (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
-          <li>Desarrollo Sustentable</li>
+          <li>Sistemas Inteligentes</li>
           <li>Emprendimiento Empresarial</li>
-          <li>Contabilidad Gubernamental</li>
-          <li>Dictamen Fiscal</li>
-          <li>Estrategias Fiscales</li>
-          <li>Riesgos</li>
+          <li>Metodologías y Mejores Prácticas</li>
+          <li>Seguridad en Tecnologías de la Información</li>
+          <li>Centro de Procesamiento de Datos</li>
+          <li>Internet de las Cosas</li>
           <li>Lengua Extranjera IX (Inglés)</li>
         </ul>
       </div>
@@ -278,8 +278,8 @@ require __DIR__ . '/../partials/header.php';
       <div class="aspect-video w-full">
         <iframe
           class="h-full w-full"
-          src="https://www.youtube.com/embed/jgG-lyjXNfY"
-          title="Contaduría Pública Estratégica"
+          src="https://www.youtube.com/embed/iromNmTZpWk"
+          title="Ingeniería en Tecnologías de Información para Negocios"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
@@ -293,124 +293,90 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Preguntas frecuentes</h2>
       <div class="mt-6 space-y-3">
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿En qué consiste la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Qué es la carrera de Tecnologías de la información?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Se trata de un campo académico y profesional que se enfoca en la gestión y análisis de la información financiera de organizaciones, empresas y entidades públicas.
+            La tecnología es un conjunto de técnicas que cada día se perfeccionan más para seguir enriqueciendo los múltiples sectores públicos y privados. En este proceso de innovación siempre están involucrados los profesionales de las Tecnologías de la Información, mejor conocidas como TICs.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            Los estudiantes de esta carrera adquieren conocimientos sobre contabilidad, finanzas, auditorías, impuestos y aspectos legales relacionados con la actividad económica de las empresas.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Si te gustaría entrar más en contexto, tal vez te interese: ¿Qué es la licenciatura en Contaduría Pública?.
+            Esta es una carrera multidisciplinar en la que los estudiantes potencian los conocimientos en matemáticas y otras áreas de ciencias, a la vez que desarrollan habilidades aplicadas al software y hardware, lenguajes de programación, aspectos variados relacionados con los datos y los dispositivos para la comunicación e interconectividad, entre otras aptitudes. Todos estos conocimientos, el egresado puede aplicarlos a los negocios y para ello también aprende nociones sustanciales de liderazgo y creación de proyectos.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Contaduría?</summary>
+          <summary class="font-semibold cursor-pointer">¿Para qué sirve la carrera de Tecnologías de la Información?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Esta profesión desempeña una amplia gama de funciones dentro del ámbito empresarial, gubernamental y del sector no lucrativo.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Además, implica brindar orientación sobre la elaboración, evaluación y comprensión de registros financieros y estados contables para individuos privados.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">Entre sus responsabilidades se incluyen:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>La elaboración de estados financieros.</li>
-            <li>La realización de auditorías internas y externas.</li>
-            <li>La gestión de impuestos.</li>
-            <li>La planeación financiera.</li>
-            <li>La asesoría respecto a temas contables y fiscales.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Y en cuanto a las actividades más específicas, podrás:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Brindar orientación a individuos, empresas y entidades de gran envergadura sobre el acatamiento de las regulaciones contables, legales y fiscales específicas de sus respectivos territorios.</li>
-            <li>Encargarte de la dirección, la planificación, la coordinación y la supervisión de los servicios contables más adecuados para la empresa en la que te desempeñes.</li>
-          </ul>
-          <p class="mt-2 text-slate-600 text-sm">Por consiguiente, podrás encontrar oportunidades laborales como:</p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contador general.</li>
-            <li>Director de finanzas.</li>
-            <li>Tesorero.</li>
-            <li>Gerente de impuestos.</li>
-            <li>Director de presupuestos.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
-          </p>
-          <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Transformar la perspectiva estratégica de las empresas.</li>
-            <li>Idear nuevas estrategias de crecimiento empresarial.</li>
-            <li>Gestionar situaciones de incertidumbre y cambios rápidos.</li>
-            <li>Analizar el contexto empresarial de manera integral.</li>
-            <li>Adoptar decisiones fundamentadas y bien fundamentadas.</li>
-            <li>Introducir métodos innovadores para potenciar la competitividad organizacional.</li>
-          </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Contaduría?</summary>
-          <p class="mt-2 text-slate-600 text-sm">
-            La mayoría de las licenciaturas suelen tener una duración de 8 semestres, lo que se traduce aproximadamente en 4 años. No obstante, en las carreras técnicas, el período de estudio suele ser de alrededor de 3 años.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Durante los cuales, los estudiantes cursan materias teóricas y prácticas relacionadas con la contabilidad, las finanzas, la fiscalidad y auditoría, entre otras áreas de estudio.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, en la Universidad de Negocios ISEC, la Licenciatura en Contaduría Pública Estratégica tiene una duración de 9 cuatrimestres con 7 asignaturas en cada periodo.
+            Esta carrera es sumamente necesaria porque el desarrollo de las Tecnologías de la Información está en constante expansión. El motivo de su crecimiento es porque son una clave en la satisfacción de necesidades de los usuarios, han refinado la interactividad y la transmisión de información mediante dispositivos.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">Ramas de la Contaduría</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de Tecnologías de la Información?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Dentro de la profesión, existen diversas ramas especializadas que los profesionales pueden explorar, tales como:
+            La ingeniería en Tecnologías de Información para Negocios tiene una duración de 9 cuatrimestres en el que se llevan 7 materias en cada uno. Las clases escolarizadas son de lunes a viernes con disponibilidad de dos horarios, el matutino y el vespertino. Además, en cada cuatrimestre se contempla la enseñanza de la lengua extranjera.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">Turno matutino: 7:00 a 13:00 horas.</p>
+          <p class="mt-2 text-slate-600 text-sm">Turno vespertino: 18:00 a 22:00 horas.</p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Con tu perfil podrás formar parte de la resolución de muchas necesidades que día con día revolucionan el mundo y que tienen impacto en la cotidianidad de las personas. Además, agilizar el aprendizaje de la lengua extranjera desde el primer hasta el último cuatrimestre, te será bastante útil para implementar tus conocimientos en los negocios.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">Especialidades en Tecnologías de la Información</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            Por otro lado, si eres alguien que ya cursó alguna licenciatura relacionada o eres egresado de la universidad ISEC, puedes especializarte en Tecnologías de la Información a través de un posgrado.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            En la especialidad obtendrás las siguientes aptitudes: analizar riesgos y beneficios en la implementación de nuevas TICs, ejecución de proyectos TICs en cualquier ámbito o sector empresarial, soluciones en el ámbito de las telecomunicaciones para aumentar las transacciones, rediseñar redes globales valiéndose de las tecnologías emergentes.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">Estas son las especialidades que existen en Tecnologías de la Información.</p>
+          <ul class="mt-2 space-y-1 text-sm text-slate-600">
+            <li>Ciencias de la Computación.</li>
+            <li>Ingeniería informática.</li>
+            <li>Sistemas de Información.</li>
+            <li>Tecnología de la información.</li>
+            <li>Ingeniería de Software.</li>
+            <li>Ciencia y Tecnología de Datos.</li>
+            <li>Administración de la Tecnología en Línea.</li>
+            <li>Análisis y Diseño de Sistemas.</li>
+          </ul>
+          <p class="mt-2 text-slate-600 text-sm">
+            Durante tu desarrollo profesional en la licenciatura, puedes ir decidiendo el enfoque que quieres darle a tus conocimientos y elegir una especialidad.
+          </p>
+        </details>
+
+        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <summary class="font-semibold cursor-pointer">¿Qué hace un licenciado en Tecnologías de la Información?</summary>
+          <p class="mt-2 text-slate-600 text-sm">
+            Cuando un estudiante egresa de la ingeniería en Tecnologías de la Información para Negocios en ISEC, es capaz de cubrir satisfactoriamente los siguientes retos:
           </p>
           <ul class="mt-2 space-y-1 text-sm text-slate-600">
-            <li>Contabilidad financiera.</li>
-            <li>Contabilidad de costos.</li>
-            <li>Auditoría externa e interna.</li>
-            <li>Contabilidad de gestión.</li>
-            <li>Consultoría fiscal.</li>
-            <li>Contabilidad de campañas políticas.</li>
-            <li>Contabilidad de proyectos.</li>
-            <li>Contabilidad forense.</li>
-            <li>Contabilidad de fondos.</li>
-            <li>Contabilidad internacional.</li>
-            <li>Contabilidad gubernamental.</li>
-            <li>Contabilidad fiduciaria.</li>
+            <li>Administrar las funciones informáticas de una empresa.</li>
+            <li>Analizar y desarrollar estudios de factibilidad operativa y económica.</li>
+            <li>Diseñar, modelar y administrar bases de datos.</li>
+            <li>Desarrollar sistemas de información administrativos.</li>
+            <li>Diseñar y administrar redes de computadoras.</li>
+            <li>Conocimiento legal de las organizaciones relacionadas con la función informática.</li>
+            <li>Desarrollar, implementar y dar mantenimiento a las aplicaciones en internet.</li>
+            <li>Implementar estándares de calidad en el desarrollo de software.</li>
+            <li>Participar en las investigaciones sobre tecnologías de la información y comunicación.</li>
+            <li>Efectuar estudios de factibilidad técnica y económica para proyectos informáticos.</li>
           </ul>
-        </details>
-
-        <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Contaduría?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Los salarios en México varían según la experiencia, especialización y el sector en el que se desempeñen.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Según Jobted, un recién graduado en Contaduría, con menos de tres años de experiencia en el campo laboral, puede anticipar un sueldo medio de alrededor de $8,900 mensuales.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Aquellos con una experiencia laboral de entre 4 y 9 años pueden aspirar a un salario promedio de aproximadamente $14,070; mientras que un contador con una trayectoria de 10 a 20 años puede percibir un salario promedio de $19,700.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Para los Contadores con más de 20 años de experiencia, el salario medio general tiende a ser alrededor de $22,350.
-          </p>
-          <p class="mt-2 text-slate-600 text-sm">
-            Sin embargo, los contadores públicos suelen recibir remuneraciones competitivas y tienen buenas oportunidades de crecimiento profesional a lo largo de su carrera.
+            Gracias a su perfil, el ingeniero en TICs puede desarrollarse profesionalmente en múltiples ámbitos, ya sea como auditor, analista, etcétera. Esta es una de las mayores ventajas que te brinda formarte en esta profesión. Si quieres conocer más acerca de ISEC y su propuesta de plan de estudios, no dudes en ingresar al sitio web.
           </p>
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">El camino hacia el éxito</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuánto gana un licenciado en Tecnologías de la Información?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            Con un plan de estudios actualizado, docentes calificados y recursos tecnológicos de última generación, la Universidad de Negocios ISEC brinda a sus estudiantes las herramientas necesarias para destacarse en el campo de la contabilidad y alcanzar el éxito profesional.
+            El salario promedio que percibe el profesional en TI, es de $19,875 pesos mensuales. Asimismo, estos profesionales pueden recibir remuneraciones adicionales en efectivo que van desde los $1,875, hasta los $12,150.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
-            ¿Conoces algo acerca de ISEC? ¡Descubre cómo puede contribuir al cambio y la equidad en nuestra sociedad a través del estudio de la Licenciatura en Contabilidad Pública Estratégica!.
+            Es esencial recordar que el salario también se define a partir de la experiencia laboral, el giro de la empresa o institución gubernamental en la que se inserte el colaborador y la posición que ocupe dentro de dicha organización.
+          </p>
+          <p class="mt-2 text-slate-600 text-sm">
+            Si te sientes fascinado por uno de los mayores retos contemporáneos y que está en auge, como lo es el manejo de datos, el diseño de algoritmos, las herramientas de programación y todo esto aplicado a los negocios, entonces te encantará el plan de estudios de la Ingeniería en Tecnología de la Información para Negocios.
           </p>
         </details>
       </div>

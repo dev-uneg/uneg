@@ -1,7 +1,7 @@
 <?php
 $title = $title ?? 'UNEG';
 $active = $active ?? '';
-$bodyClass = $bodyClass ?? '';
+$bodyClass = $bodyClass ?? 'bg-slate-50';
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
 $base = $base === '.' ? '' : $base;
 $assetBase = $base === '' ? '' : $base;
@@ -21,20 +21,7 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo htmlspecialchars($title); ?></title>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brandBlue: '#0d4fb6',
-            brandBlueDark: '#0b3f93',
-            brandYellow: '#f2c027'
-          }
-        }
-      }
-    };
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="<?php echo $assetBase; ?>/assets/css/output.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
   <style>
     @font-face {
@@ -54,7 +41,7 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
     body { font-family: 'Figtree', sans-serif; }
   </style>
 </head>
-<body class="bg-white antialiased <?php echo htmlspecialchars($bodyClass); ?>">
+<body class="antialiased <?php echo htmlspecialchars($bodyClass); ?>">
   <?php include __DIR__ . '/subheader.php'; ?>
   <?php include __DIR__ . '/nav.php'; ?>
 

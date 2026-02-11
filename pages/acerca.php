@@ -4,12 +4,38 @@ $active = 'acerca';
 require __DIR__ . '/partials/header.php';
 ?>
 
+<style>
+  .fade-slider {
+    position: relative;
+  }
+  .fade-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+  }
+  .fade-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
 <main class="max-w-7xl mx-auto px-4 py-10">
   <div class="relative h-[500px] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-    <div id="about-slider" class="h-full w-full">
-      <div class="about-slide h-full w-full bg-[#0d4fb6] text-white flex items-center justify-center text-3xl font-semibold">Slide 1</div>
-      <div class="about-slide hidden h-full w-full bg-[#f2c027] text-slate-900 flex items-center justify-center text-3xl font-semibold">Slide 2</div>
-      <div class="about-slide hidden h-full w-full bg-[#0b2c65] text-white flex items-center justify-center text-3xl font-semibold">Slide 3</div>
+    <div id="about-slider" class="fade-slider h-full w-full">
+      <div class="about-slide fade-slide is-active h-full w-full">
+        <img src="<?php echo $assetBase; ?>/imgs/acerca/slide-1.png" alt="Acerca de ISEC" class="absolute inset-0 h-full w-full object-cover">
+      </div>
+      <div class="about-slide fade-slide h-full w-full">
+        <img src="<?php echo $assetBase; ?>/imgs/acerca/slide-2.png" alt="Comunidad ISEC" class="absolute inset-0 h-full w-full object-cover">
+      </div>
+      <div class="about-slide fade-slide h-full w-full">
+        <img src="<?php echo $assetBase; ?>/imgs/acerca/slide-3.png" alt="Campus ISEC" class="absolute inset-0 h-full w-full object-cover">
+      </div>
+      <div class="about-slide fade-slide h-full w-full">
+        <img src="<?php echo $assetBase; ?>/imgs/acerca/slide-4.png" alt="Vida universitaria ISEC" class="absolute inset-0 h-full w-full object-cover">
+      </div>
     </div>
     <button id="about-prev" class="absolute left-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/25 text-white shadow-md backdrop-blur hover:bg-white/35" aria-label="Anterior">
       <svg class="h-5 w-5 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -98,71 +124,231 @@ require __DIR__ . '/partials/header.php';
 
   <section class="mt-14">
     <style>
-      .timeline-rail {
+      .timeline-vertical {
         position: relative;
+        margin-top: 28px;
       }
-      .timeline-rail::before {
+      .timeline-vertical::before {
         content: '';
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        height: 2px;
+        left: 86px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
         background: #dbe2f1;
       }
-      .timeline-track {
+      .timeline-item {
+        position: relative;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-        gap: 12px;
-        position: relative;
-        z-index: 1;
+        grid-template-columns: 70px 32px 1fr;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 10px 0 26px;
       }
-      .timeline-chip {
-        position: relative;
-        border: 2px solid #0b2c65;
+      .timeline-year {
+        font-weight: 700;
         color: #0b2c65;
-        background: #fff;
-        transition: all 160ms ease;
-        width: 100%;
-        text-align: center;
+        text-align: right;
+        font-size: 1rem;
       }
-      .timeline-chip.active {
+      .timeline-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 999px;
         background: #0b2c65;
-        color: #fff;
+        margin-top: 6px;
+        box-shadow: 0 0 0 6px #e6eefc;
+      }
+      .timeline-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 16px 18px;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+      }
+      .timeline-card h3 {
+        color: #0b2c65;
+        font-weight: 700;
+      }
+      .timeline-card p {
+        margin-top: 6px;
+        color: #475569;
+        font-size: 0.95rem;
+      }
+      @media (max-width: 640px) {
+        .timeline-vertical::before {
+          left: 10px;
+        }
+        .timeline-item {
+          grid-template-columns: 20px 1fr;
+          gap: 12px;
+        }
+        .timeline-year {
+          grid-column: 2;
+          text-align: left;
+          font-size: 0.95rem;
+        }
+        .timeline-dot {
+          margin-top: 4px;
+        }
       }
     </style>
     <div class="rounded-2xl border border-slate-200 bg-slate-50 px-6 py-10">
       <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Historia del Colegio</h2>
-      <p class="mt-2 text-center text-slate-600">Pasa el mouse sobre un año para ver el contenido.</p>
+      <p class="mt-2 text-center text-slate-600">Conoce los momentos clave en la historia de ISEC.</p>
 
-      <div class="mt-8 timeline-rail">
-        <div class="timeline-track py-6">
-          <button class="timeline-chip px-4 py-2 rounded-lg font-semibold" data-year="1954" data-title="Fundación" data-body="Test: Nace la institución y comienza nuestra historia." data-default="true">1954</button>
-          <button class="timeline-chip px-4 py-2 rounded-lg font-semibold" data-year="1960" data-title="Primeros programas" data-body="Test: Programas académicos con enfoque empresarial.">1960</button>
-          <button class="timeline-chip px-4 py-2 rounded-lg font-semibold" data-year="1976" data-title="Consolidación" data-body="Test: Identidad institucional y valores sólidos.">1976</button>
-          <button class="timeline-chip px-4 py-2 rounded-lg font-semibold" data-year="1989" data-title="Expansión" data-body="Test: Crecemos en infraestructura y oferta educativa.">1989</button>
-          <button class="timeline-chip px-4 py-2 rounded-lg font-semibold" data-year="1999" data-title="Innovación" data-body="Test: Actualización académica y tecnológica.">1999</button>
-          <button class="timeline-chip px-4 py-2 rounded-lg font-semibold" data-year="2006" data-title="Crecimiento" data-body="Test: Nuevas metas y programas.">2006</button>
-          <button class="timeline-chip px-4 py-2 rounded-lg font-semibold" data-year="2018" data-title="Actualidad" data-body="Test: Comunidad fuerte y visión global.">2018</button>
-          <button class="timeline-chip px-4 py-2 rounded-lg font-semibold" data-year="2024" data-title="Futuro" data-body="Test: Preparados para nuevos retos.">2024</button>
-        </div>
-      </div>
-
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-        <div class="md:col-span-2 rounded-2xl bg-white border border-slate-200 p-8 shadow-sm">
-          <div class="flex items-center gap-2 text-sm uppercase tracking-[0.3em] text-slate-500">
-            <i class="ri-history-line"></i>
-            Historia
+      <div class="timeline-vertical">
+        <div class="timeline-item">
+          <div class="timeline-year">1954</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Inauguración</h3>
+            <p>Inauguración del Instituto Superior de Estudios Comerciales el 20 de abril de 1954.</p>
           </div>
-          <h3 id="history-year" class="mt-2 text-3xl font-semibold text-[#0b2c65]">1954</h3>
-          <h4 id="history-title" class="mt-2 text-xl font-semibold text-slate-800">
-            <i class="ri-flag-2-line mr-2 text-slate-400"></i>
-            Fundación
-          </h4>
-          <p id="history-body" class="mt-3 text-slate-600">Test: Nace la institución y comienza nuestra historia.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm flex items-center justify-center text-slate-500 min-h-[200px]">
-          Imagen
+        <div class="timeline-item">
+          <div class="timeline-year">1955</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Especialidades</h3>
+            <p>El Instituto se abre paso en el mundo empresarial en el año 1955 al crear tres especialidades en la rama.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1960</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Nuevo espacio</h3>
+            <p>En 1960, ISEC ocupa un nuevo espacio en la calle Londres No. 37, Col. Juárez.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1967</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Primer edificio</h3>
+            <p>El 18 de noviembre de 1967, se inauguró el primer edificio "ad hoc" en las instalaciones de Mier y Pesado.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1968</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>RVOE SEP</h3>
+            <p>El 9 de abril de 1968, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdo 430) para la carrera de Administración de Empresas.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1976</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>RVOE SEP</h3>
+            <p>El 22 de julio de 1976, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdo 8714) para la carrera de Contador Público.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1985</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>RVOE y predio</h3>
+            <p>El 29 de abril de 1985, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdo 85401) para la carrera de Administración de Empresas. El 13 de mayo del mismo año, se adquiere el predio de Mier y Pesado No. 235 para la construcción de aulas.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1989</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>RVOE SEP</h3>
+            <p>El 29 de abril de 1989, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdo 85402) para la carrera de Contador Público.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1990</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Casa Blanca</h3>
+            <p>El 15 de noviembre de 1990, se adquiere el espacio que ahora ocupan las instalaciones deportivas y la llamada Casa Blanca.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1994</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Rango universitario</h3>
+            <p>El 24 de mayo de 1994, se le otorga el rango de Universidad a “ISEC”. El 28 de octubre, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdo 942165) para la carrera de Derecho.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1995</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>RVOE SEP</h3>
+            <p>El 22 de febrero de 1995, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdos 952029, 952030, 952031, 952032, 952033 y 952034) para las carreras de Mercadotecnia, Finanzas, Contador Público, Administración de Empresas, Informática y Relaciones Industriales. El 27 de junio del mismo año, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP con los (Acuerdos 953243 y 953242) para las Especialidades en Finanzas e Impuestos.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1996</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Biblioteca</h3>
+            <p>El 7 de febrero de 1996, se inaugura la Biblioteca “Adrián Mora Duhart”.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1997</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Especialidades</h3>
+            <p>El 18 de julio de 1997, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdos 973191, 973192 y 973193) para: Especialidad en Telecomunicaciones y Redes, Especialidad en Sistemas Expertos y Especialidad en Administración por Calidad Total.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1999</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>RVOE e IPN</h3>
+            <p>El 08 de febrero de 1999, se obtiene la validez oficial por parte de la SEP (Acuerdo 994070) para la Maestría en Administración de Negocios. Posteriormente, el 15 de septiembre del mismo año, se obtiene la validez oficial de estudios por parte del IPN: Acuerdo A-RVOE-DG-NP/35/99 Licenciatura en Turismo; Acuerdo A-RVOE-DG-NP/36/99 Licenciatura en Contador Público; Acuerdo A-RVOE-DG-NP/37/99 Licenciatura en Negocios Internacionales; Acuerdo A-RVOE-DG-NP/38/99 Maestría en Desarrollo Educativo; Acuerdo A-RVOE-DG-NP/39/99 Doctorado en Ciencias con Especialidad en Ciencias Sociales y Administrativas.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2002</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>RVOE SEP</h3>
+            <p>El 15 de julio del 2002, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdo 2022128) para la Licenciatura en Turismo. El 4 de junio del mismo año, se obtiene la Clave de Incorporación por parte de la UNAM (Acuerdo 23/20 Clave 3125-25) para la Licenciatura en Psicología.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2003</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Acreditación</h3>
+            <p>El 27 de febrero del 2003, la FIMPES otorga el dictamen de acreditación “Lisa y Llana”. El 20 de agosto del mismo año, se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte de la SEP (Acuerdo 2003220) para la Maestría en Docencia.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2006</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Edificio Inteligente</h3>
+            <p>En 2006 se Inaugura el Edificio Inteligente ubicado en Mier y Pesado 210.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2018</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Campus Fortaleza</h3>
+            <p>En 2018 se Inaugura el Campus Fortaleza.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>70 Aniversario</h3>
+            <p>Celebración del 70 Aniversario de la Unidad de Negocios ISEC. Se obtiene el Reconocimiento de Validez Oficial de Estudios Superiores por parte del IPN (Acuerdo A-RVOE-DG-NS/04-2024) para la Ingeniería en Inteligencia Artificial.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -173,57 +359,58 @@ require __DIR__ . '/partials/header.php';
   const aboutSlides = Array.from(document.querySelectorAll('#about-slider .about-slide'));
   const aboutPrev = document.getElementById('about-prev');
   const aboutNext = document.getElementById('about-next');
+  const aboutSlider = document.getElementById('about-slider');
   let aboutCurrent = 0;
   let aboutTimer = null;
+  let aboutPaused = false;
+  const aboutDuration = 6500;
 
   const showAboutSlide = (index) => {
     aboutSlides.forEach((slide, i) => {
-      slide.classList.toggle('hidden', i !== index);
+      slide.classList.toggle('is-active', i === index);
     });
   };
 
   if (aboutSlides.length) {
     showAboutSlide(aboutCurrent);
+    const scheduleAboutNext = () => {
+      if (aboutTimer) {
+        clearTimeout(aboutTimer);
+      }
+      if (aboutPaused) return;
+      aboutTimer = setTimeout(() => {
+        aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
+        showAboutSlide(aboutCurrent);
+        scheduleAboutNext();
+      }, aboutDuration);
+    };
+    scheduleAboutNext();
     if (aboutPrev) {
       aboutPrev.addEventListener('click', () => {
         aboutCurrent = (aboutCurrent - 1 + aboutSlides.length) % aboutSlides.length;
         showAboutSlide(aboutCurrent);
+        scheduleAboutNext();
       });
     }
     if (aboutNext) {
       aboutNext.addEventListener('click', () => {
         aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
         showAboutSlide(aboutCurrent);
+        scheduleAboutNext();
       });
     }
-    aboutTimer = setInterval(() => {
-      aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
-      showAboutSlide(aboutCurrent);
-    }, 5000);
+    if (aboutSlider) {
+      aboutSlider.addEventListener('mouseenter', () => {
+        aboutPaused = true;
+        if (aboutTimer) {
+          clearTimeout(aboutTimer);
+        }
+      });
+      aboutSlider.addEventListener('mouseleave', () => {
+        aboutPaused = false;
+        scheduleAboutNext();
+      });
+    }
   }
 </script>
-<script>
-  const chips = document.querySelectorAll('.timeline-chip');
-  const yearEl = document.getElementById('history-year');
-  const titleEl = document.getElementById('history-title');
-  const bodyEl = document.getElementById('history-body');
-
-  const activateChip = (chip) => {
-    if (!chip || !yearEl || !titleEl || !bodyEl) return;
-    chips.forEach((c) => c.classList.remove('active'));
-    chip.classList.add('active');
-    yearEl.textContent = chip.dataset.year || '';
-    titleEl.textContent = chip.dataset.title || '';
-    bodyEl.textContent = chip.dataset.body || '';
-  };
-
-  chips.forEach((chip) => {
-    chip.addEventListener('mouseenter', () => activateChip(chip));
-    chip.addEventListener('focus', () => activateChip(chip));
-  });
-
-  const defaultChip = document.querySelector('.timeline-chip[data-default=\"true\"]') || chips[0];
-  activateChip(defaultChip);
-</script>
-
 <?php require __DIR__ . '/partials/footer.php'; ?>
