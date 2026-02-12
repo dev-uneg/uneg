@@ -6,7 +6,6 @@ require __DIR__ . '/partials/header.php';
 <main class="max-w-7xl mx-auto px-4 py-10">
   <section class="relative overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
     <img src="<?php echo $assetBase; ?>/imgs/ixu/hero.png" alt="IXU" class="block w-full h-auto">
-    <div class="absolute inset-0 bg-slate-900/35"></div>
     <div class="absolute inset-0"></div>
   </section>
 

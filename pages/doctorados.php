@@ -49,12 +49,16 @@ require __DIR__ . '/partials/header.php';
 
   <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
     <article class="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-      <div class="mx-auto h-28 w-28 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">IMG</div>
+      <div class="mx-auto h-28 w-28 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
+        <i class="ri-briefcase-4-line text-4xl"></i>
+      </div>
       <h3 class="mt-4 font-semibold text-[#0b2c65]">Doctorado en Administración de Negocios</h3>
       <p class="mt-1 text-xs text-slate-500">SEP RVOE 20110798</p>
     </article>
     <article class="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-      <div class="mx-auto h-28 w-28 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">IMG</div>
+      <div class="mx-auto h-28 w-28 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
+        <i class="ri-graduation-cap-line text-4xl"></i>
+      </div>
       <h3 class="mt-4 font-semibold text-[#0b2c65]">Doctorado en Educación, Sistema de Aprendizaje en Línea</h3>
       <p class="mt-1 text-xs text-slate-500">RVOE SEP 20160644</p>
     </article>

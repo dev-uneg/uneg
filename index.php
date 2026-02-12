@@ -42,6 +42,27 @@ $router->map('GET', '/comunidad/blog', function (): void {
 $router->map('GET', '/comunidad/buzon-del-rector', function (): void {
     require __DIR__ . '/pages/comunidad/buzon-del-rector.php';
 });
+$router->map('GET', '/comunidad/calendario-academico', function (): void {
+    require __DIR__ . '/pages/comunidad/calendario-academico.php';
+});
+$router->map('GET', '/comunidad/recursos-servicios', function (): void {
+    require __DIR__ . '/pages/comunidad/recursos-servicios.php';
+});
+$router->map('GET', '/comunidad/eventos', function (): void {
+    require __DIR__ . '/pages/comunidad/eventos.php';
+});
+$router->map('GET', '/comunidad/servicio-social', function (): void {
+    require __DIR__ . '/pages/comunidad/servicio-social.php';
+});
+$router->map('GET', '/comunidad/bolsa-de-trabajo', function (): void {
+    require __DIR__ . '/pages/comunidad/bolsa-de-trabajo.php';
+});
+$router->map('GET', '/comunidad/reglamento-general', function (): void {
+    require __DIR__ . '/pages/comunidad/reglamento-general.php';
+});
+$router->map('GET', '/comunidad/himno-isec', function (): void {
+    require __DIR__ . '/pages/comunidad/himno-isec.php';
+});
 
 $router->map('GET', '/diplomados-online-y-ejecutivos', function (): void {
     require __DIR__ . '/pages/diplomados-online-y-ejecutivos.php';
