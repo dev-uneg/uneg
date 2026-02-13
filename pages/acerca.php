@@ -128,10 +128,13 @@ require __DIR__ . '/partials/header.php';
         position: relative;
         margin-top: 28px;
       }
+      .timeline-vertical {
+        position: relative;
+      }
       .timeline-vertical::before {
         content: '';
         position: absolute;
-        left: 86px;
+        left: 96px;
         top: 0;
         bottom: 0;
         width: 2px;
@@ -140,10 +143,10 @@ require __DIR__ . '/partials/header.php';
       .timeline-item {
         position: relative;
         display: grid;
-        grid-template-columns: 70px 32px 1fr;
-        gap: 16px;
-        align-items: flex-start;
-        padding: 10px 0 26px;
+        grid-template-columns: 70px 36px 1fr;
+        gap: 8px;
+        align-items: center;
+        padding: 14px 0 22px;
       }
       .timeline-year {
         font-weight: 700;
@@ -152,12 +155,15 @@ require __DIR__ . '/partials/header.php';
         font-size: 1rem;
       }
       .timeline-dot {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
         border-radius: 999px;
         background: #0b2c65;
-        margin-top: 6px;
         box-shadow: 0 0 0 6px #e6eefc;
+        justify-self: center;
+      }
+      .timeline-card {
+        margin-top: 0;
       }
       .timeline-card {
         background: #fff;
@@ -177,19 +183,21 @@ require __DIR__ . '/partials/header.php';
       }
       @media (max-width: 640px) {
         .timeline-vertical::before {
-          left: 10px;
+          left: 12px;
         }
         .timeline-item {
-          grid-template-columns: 20px 1fr;
+          grid-template-columns: 24px 1fr;
           gap: 12px;
+          align-items: flex-start;
         }
         .timeline-year {
           grid-column: 2;
           text-align: left;
           font-size: 0.95rem;
+          margin-top: 2px;
         }
         .timeline-dot {
-          margin-top: 4px;
+          margin-top: 8px;
         }
       }
     </style>

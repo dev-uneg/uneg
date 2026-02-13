@@ -15,10 +15,16 @@ $router = new AltoRouter();
 $scriptDir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
 $router->setBasePath($scriptDir === '' ? '' : $scriptDir);
 
+// ---------------------------
+// Inicio
+// ---------------------------
 $router->map('GET', '/', function (): void {
     require __DIR__ . '/pages/home.php';
 });
 
+// ---------------------------
+// Institucional
+// ---------------------------
 $router->map('GET', '/acerca', function (): void {
     require __DIR__ . '/pages/acerca.php';
 });
@@ -27,18 +33,74 @@ $router->map('GET', '/recorrido-virtual', function (): void {
     require __DIR__ . '/pages/recorrido-virtual.php';
 });
 
+// ---------------------------
+// Comunidad
+// ---------------------------
 $router->map('GET', '/comunidad/alumnos', function (): void {
     require __DIR__ . '/pages/comunidad/alumnos.php';
 });
 $router->map('GET', '/comunidad/docentes', function (): void {
-    require __DIR__ . '/pages/comunidad/docentes.php';
+  require __DIR__ . '/pages/comunidad/docentes.php';
+});
+$router->map('GET', '/comunidad/claustro-docente', function (): void {
+  require __DIR__ . '/pages/comunidad/claustro-docente.php';
 });
 $router->map('GET', '/comunidad/noticias', function (): void {
-    require __DIR__ . '/pages/comunidad/noticias.php';
+  require __DIR__ . '/pages/comunidad/noticias.php';
+});
+$router->map('GET', '/comunidad/noticias/comunicados-de-rectoria', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/comunicados-de-rectoria/index.php';
+});
+$router->map('GET', '/comunidad/noticias/eventos-de-nuestra-comunidad', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/eventos-de-nuestra-comunidad/index.php';
+});
+$router->map('GET', '/comunidad/noticias/vida-en-el-campus', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/vida-en-el-campus/index.php';
+});
+$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/index.php';
+});
+$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec/videotutorial-microsoft-teams', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/post-1/index.php';
+});
+$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec/licenciatura-innovacion-turistica-gastronomica', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/post-2/index.php';
+});
+$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec/licenciatura-psicologia', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/post-3/index.php';
+});
+$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec/licenciatura-ti-para-negocios', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/post-4/index.php';
+});
+$router->map('GET', '/comunidad/noticias/eventos-de-nuestra-comunidad/firma-convenio-camic', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/eventos-de-nuestra-comunidad/post-1/index.php';
 });
 $router->map('GET', '/comunidad/blog', function (): void {
-    require __DIR__ . '/pages/comunidad/blog.php';
+  require __DIR__ . '/pages/comunidad/blog.php';
 });
+
+// ---------------------------
+// Blog
+// ---------------------------
+$router->map('GET', '/blog', function (): void {
+  require __DIR__ . '/pages/blog/index.php';
+});
+$router->map('GET', '/blog/el-turismo-como-actividad-economica', function (): void {
+  require __DIR__ . '/pages/blog/post-1/index.php';
+});
+$router->map('GET', '/blog/como-influye-la-administracion-en-las-empresas', function (): void {
+  require __DIR__ . '/pages/blog/post-2/index.php';
+});
+$router->map('GET', '/blog/sector-financiero-importancia-y-funciones', function (): void {
+  require __DIR__ . '/pages/blog/post-3/index.php';
+});
+$router->map('GET', '/blog/turismo-gastronomico-una-experiencia-unica', function (): void {
+  require __DIR__ . '/pages/blog/post-4/index.php';
+});
+$router->map('GET', '/blog/bachillerato-tecnico-en-contabilidad', function (): void {
+  require __DIR__ . '/pages/blog/post-5/index.php';
+});
+
 $router->map('GET', '/comunidad/buzon-del-rector', function (): void {
     require __DIR__ . '/pages/comunidad/buzon-del-rector.php';
 });
@@ -55,15 +117,24 @@ $router->map('GET', '/comunidad/servicio-social', function (): void {
     require __DIR__ . '/pages/comunidad/servicio-social.php';
 });
 $router->map('GET', '/comunidad/bolsa-de-trabajo', function (): void {
-    require __DIR__ . '/pages/comunidad/bolsa-de-trabajo.php';
+  require __DIR__ . '/pages/comunidad/bolsa-de-trabajo.php';
+});
+$router->map('GET', '/comunidad/reglamentos', function (): void {
+  require __DIR__ . '/pages/comunidad/reglamentos.php';
 });
 $router->map('GET', '/comunidad/reglamento-general', function (): void {
-    require __DIR__ . '/pages/comunidad/reglamento-general.php';
+  require __DIR__ . '/pages/comunidad/reglamento-general.php';
 });
 $router->map('GET', '/comunidad/himno-isec', function (): void {
-    require __DIR__ . '/pages/comunidad/himno-isec.php';
+  require __DIR__ . '/pages/comunidad/himno-isec.php';
+});
+$router->map('GET', '/comunidad/beneficios', function (): void {
+  require __DIR__ . '/pages/comunidad/beneficios.php';
 });
 
+// ---------------------------
+// Diplomados
+// ---------------------------
 $router->map('GET', '/diplomados-online-y-ejecutivos', function (): void {
     require __DIR__ . '/pages/diplomados-online-y-ejecutivos.php';
 });
@@ -75,6 +146,9 @@ $router->map('GET', '/cursos', function (): void {
     require __DIR__ . '/pages/diplomados/cursos.php';
 });
 
+// ---------------------------
+// Doctorados
+// ---------------------------
 $router->map('GET', '/doctorados', function (): void {
     require __DIR__ . '/pages/doctorados.php';
 });
@@ -86,6 +160,9 @@ $router->map('GET', '/doctorados/doctorado-en-educacion-sistema-de-aprendizaje-e
     require __DIR__ . '/pages/doctorados/doctorado-en-educacion-sistema-de-aprendizaje-en-linea.php';
 });
 
+// ---------------------------
+// Maestrias
+// ---------------------------
 $router->map('GET', '/maestrias/maestria-en-administracion-de-negocios', function (): void {
     require __DIR__ . '/pages/maestrias/maestria-en-administracion-de-negocios.php';
 });
@@ -115,14 +192,23 @@ $router->map('GET', '/maestrias', function (): void {
     require __DIR__ . '/pages/maestrias/maestrias.php';
 });
 
+// ---------------------------
+// Oferta educativa (general)
+// ---------------------------
 $router->map('GET', '/oferta-educativa', function (): void {
     require __DIR__ . '/pages/oferta-educativa.php';
 });
 
+// ---------------------------
+// Nivel Medio Superior (NMS)
+// ---------------------------
 $router->map('GET', '/nivel-medio-superior', function (): void {
     require __DIR__ . '/pages/nms/nivel-medio-superior.php';
 });
 
+// ---------------------------
+// Licenciaturas
+// ---------------------------
 $router->map('GET', '/licenciaturas', function (): void {
     require __DIR__ . '/pages/licenciaturas/licenciaturas.php';
 });
@@ -167,6 +253,9 @@ $router->map('GET', '/licenciaturas/derecho-sua', function (): void {
     require __DIR__ . '/pages/licenciaturas/derecho-sua.php';
 });
 
+// ---------------------------
+// NMS directo
+// ---------------------------
 $router->map('GET', '/cch-isec', function (): void {
     require __DIR__ . '/pages/nms/cch-isec.php';
 });
@@ -183,22 +272,51 @@ $router->map('GET', '/curso-colbach', function (): void {
     require __DIR__ . '/pages/nms/curso-colbach.php';
 });
 
+// ---------------------------
+// IXU
+// ---------------------------
 $router->map('GET', '/ixu', function (): void {
     require __DIR__ . '/pages/ixu.php';
 });
 
+// ---------------------------
+// Comunidad (landing)
+// ---------------------------
 $router->map('GET', '/comunidad', function (): void {
     require __DIR__ . '/pages/comunidad.php';
 });
 
+// ---------------------------
+// Egresados
+// ---------------------------
 $router->map('GET', '/egresados', function (): void {
     require __DIR__ . '/pages/egresados.php';
 });
 
+// ---------------------------
+// API
+// ---------------------------
+$router->map('POST', '/api/contacto', function (): void {
+    require __DIR__ . '/pages/api/contacto.php';
+});
+
+// ---------------------------
+// Contacto
+// ---------------------------
 $router->map('GET', '/contacto', function (): void {
     require __DIR__ . '/pages/contacto.php';
 });
 
+// ---------------------------
+// Gracias
+// ---------------------------
+$router->map('GET', '/gracias', function (): void {
+    require __DIR__ . '/pages/gracias.php';
+});
+
+// ---------------------------
+// 404
+// ---------------------------
 $router->map('GET', '/404', function (): void {
     http_response_code(404);
     require __DIR__ . '/pages/404.php';

@@ -92,31 +92,32 @@ $filename = 'uneg_pop-up.png';
     <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65] text-center">
       Sigue leyendo sobre lo que las Universidades Privadas en CDMX tienen para ti
     </h2>
+    <?php
+      $homeBlogPosts = require __DIR__ . '/blog/_posts.php';
+      $homeBlogPosts = array_map(function ($p) use ($base, $assetBase) {
+        $p['href'] = $base . $p['href'];
+        $p['image'] = $assetBase . $p['image'];
+        return $p;
+      }, $homeBlogPosts);
+      shuffle($homeBlogPosts);
+      $homeBlogPosts = array_slice($homeBlogPosts, 0, 3);
+    ?>
     <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <article class="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
-        <div class="h-44 w-full bg-slate-100 flex items-center justify-center text-slate-500">Imagen</div>
-        <div class="p-5">
-          <button class="inline-flex items-center rounded-md bg-[#0d4fb6] px-4 py-2 text-sm font-semibold text-white">Leer más</button>
-          <p class="mt-4 text-sm text-slate-500">6 febrero, 2026 · Blog, Comunidad ISEC</p>
-          <h3 class="mt-2 text-lg font-semibold text-slate-900">El turismo como actividad económica: impacto, beneficios y retos</h3>
-        </div>
-      </article>
-      <article class="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
-        <div class="h-44 w-full bg-slate-100 flex items-center justify-center text-slate-500">Imagen</div>
-        <div class="p-5">
-          <button class="inline-flex items-center rounded-md bg-[#0d4fb6] px-4 py-2 text-sm font-semibold text-white">Leer más</button>
-          <p class="mt-4 text-sm text-slate-500">Blog, Comunidad ISEC</p>
-          <h3 class="mt-2 text-lg font-semibold text-slate-900">La importancia de la administración de empresas para el éxito organizacional</h3>
-        </div>
-      </article>
-      <article class="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
-        <div class="h-44 w-full bg-slate-100 flex items-center justify-center text-slate-500">Imagen</div>
-        <div class="p-5">
-          <button class="inline-flex items-center rounded-md bg-[#0d4fb6] px-4 py-2 text-sm font-semibold text-white">Leer más</button>
-          <p class="mt-4 text-sm text-slate-500">Blog, Comunidad ISEC</p>
-          <h3 class="mt-2 text-lg font-semibold text-slate-900">Sector financiero: su importancia y funciones en la economía</h3>
-        </div>
-      </article>
+      <?php foreach ($homeBlogPosts as $post): ?>
+        <article class="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
+          <a href="<?php echo $post['href']; ?>" class="block">
+            <div class="h-44 w-full bg-slate-100 overflow-hidden">
+              <img src="<?php echo $post['image']; ?>" alt="<?php echo htmlspecialchars($post['title']); ?>" class="h-full w-full object-cover">
+            </div>
+            <div class="p-5">
+              <span class="inline-flex items-center rounded-md bg-[#0d4fb6] px-4 py-2 text-sm font-semibold text-white">Leer más</span>
+              <p class="mt-4 text-sm text-slate-500"><?php echo htmlspecialchars($post['date']); ?> · Blog, Comunidad ISEC</p>
+              <h3 class="mt-2 text-lg font-semibold text-slate-900"><?php echo htmlspecialchars($post['title']); ?></h3>
+              <p class="mt-2 text-sm text-slate-600"><?php echo htmlspecialchars($post['excerpt']); ?></p>
+            </div>
+          </a>
+        </article>
+      <?php endforeach; ?>
     </div>
   </section>
   <section class="mt-14">
@@ -144,22 +145,22 @@ $filename = 'uneg_pop-up.png';
         </svg>
       </button>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px]">
+        <a href="https://uneg.edu.mx/comunidad/alumnos/e-learning" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
           <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_18%20p.m..png" alt="Office 365" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">OFFICE 365</p>
-        </div>
+        </a>
         <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px]">
           <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_21%20p.m..png" alt="E-learning" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">E-LEARNING</p>
         </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px]">
+        <a href="<?php echo $base; ?>/comunidad/reglamentos" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
           <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_27%20p.m..png" alt="Reglamentos" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">REGLAMENTOS</p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px]">
+        </a>
+        <a href="http://impreweb.ddns.net:48110/PMPWeb/" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
           <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_30%20p.m..png" alt="Kiosko de impresión" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">KIOSKO DE IMPRESIÓN</p>
-        </div>
+        </a>
       </div>
     </div>
   </section>

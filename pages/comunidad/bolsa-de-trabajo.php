@@ -14,7 +14,28 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-10 text-center">
-    <p class="text-slate-600">Contenido en construcción.</p>
+    <p class="text-slate-600">Consulta las vacantes disponibles en PDF.</p>
+    <div class="mt-6 flex justify-center">
+      <a href="<?php echo $assetBase; ?>/PDFs/ENERO-VACANTES-UNEG.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-[#0b2c65] px-6 py-3 text-white font-semibold shadow-sm hover:bg-[#0a2552]">
+        <i class="ri-file-pdf-line text-xl"></i>
+        Ver PDF
+      </a>
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <div
+      class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+      style="height: calc(100vh - 320px); min-height: 720px;"
+    >
+      <iframe
+        title="Bolsa de Trabajo - Vacantes"
+        src="<?php echo $assetBase; ?>/PDFs/ENERO-VACANTES-UNEG.pdf#view=FitH"
+        class="w-full h-full"
+        style="border: 0;"
+        loading="lazy"
+      ></iframe>
+    </div>
   </section>
 </main>
 <?php require __DIR__ . '/../partials/footer.php'; ?>

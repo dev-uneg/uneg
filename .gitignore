@@ -24,3 +24,6 @@ imgs_legacy/
 # Misc
 *.swp
 *.log
+
+# Local secrets
+config/pipedrive.local.php

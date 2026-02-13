@@ -42,10 +42,10 @@ require __DIR__ . '/../partials/header.php';
         <h3 class="mt-3 font-semibold text-[#0b2c65]">E-Learning</h3>
       </div>
 
-      <div class="p-6 text-center transition hover:bg-slate-50 border-slate-200">
+      <a href="<?php echo $base; ?>/comunidad/claustro-docente" class="p-6 text-center transition hover:bg-slate-50 border-slate-200">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-user-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Nuestro Claustro Docente</h3>
-      </div>
+      </a>
     </div>
   </section>
 </main>

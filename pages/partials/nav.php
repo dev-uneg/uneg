@@ -266,13 +266,13 @@
               <div class="simple-item">
                 <a href="<?php echo $base; ?>/comunidad/noticias">Noticias</a>
                 <div class="simple-submenu">
-                  <a href="<?php echo $base; ?>/comunidad/noticias">Comunicados de Rectoría</a>
-                  <a href="<?php echo $base; ?>/comunidad/noticias">Eventos de Nuestra Comunidad</a>
-                  <a href="<?php echo $base; ?>/comunidad/noticias">Vida en el Campus</a>
-                  <a href="<?php echo $base; ?>/comunidad/noticias">Video Blog UNEG ISEC</a>
+                  <a href="<?php echo $base; ?>/comunidad/noticias/comunicados-de-rectoria">Comunicados de Rectoría</a>
+                  <a href="<?php echo $base; ?>/comunidad/noticias/eventos-de-nuestra-comunidad">Eventos de Nuestra Comunidad</a>
+                  <a href="<?php echo $base; ?>/comunidad/noticias/vida-en-el-campus">Vida en el Campus</a>
+                  <a href="<?php echo $base; ?>/comunidad/noticias/video-blog-uneg-isec">Video Blog UNEG ISEC</a>
                 </div>
               </div>
-              <a href="<?php echo $base; ?>/comunidad/blog">Blog</a>
+              <a href="<?php echo $base; ?>/blog">Blog</a>
               <a href="<?php echo $base; ?>/comunidad/buzon-del-rector">Buzón del Rector</a>
             </div>
           </div>
@@ -422,14 +422,14 @@
                 <span data-icon>+</span>
               </button>
               <div id="mobile-noticias" class="hidden pl-4 pt-2 space-y-2 text-sm">
-                <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/noticias">Comunicados de Rectoría</a>
-                <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/noticias">Eventos de Nuestra Comunidad</a>
-                <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/noticias">Vida en el Campus</a>
-                <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/noticias">Video Blog UNEG ISEC</a>
+                <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/noticias/comunicados-de-rectoria">Comunicados de Rectoría</a>
+                <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/noticias/eventos-de-nuestra-comunidad">Eventos de Nuestra Comunidad</a>
+                <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/noticias/vida-en-el-campus">Vida en el Campus</a>
+                <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/noticias/video-blog-uneg-isec">Video Blog UNEG ISEC</a>
               </div>
             </div>
 
-            <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/blog">Blog</a>
+            <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/blog">Blog</a>
             <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/buzon-del-rector">Buzón del Rector</a>
           </div>
         </div>

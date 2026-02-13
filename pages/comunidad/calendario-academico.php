@@ -15,56 +15,42 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-calendar-line text-2xl"></i>
-        </div>
+      <a href="<?php echo $assetBase; ?>/imgs/calendarios/calendario-bachillerato-tecnico.jpg" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <img src="<?php echo $assetBase; ?>/imgs/calendarios/calendario-bachillerato-tecnico.jpg" alt="Calendario Académico Bachillerato Técnico" class="mx-auto h-20 w-20 object-contain">
         <h3 class="mt-4 font-semibold text-[#0b2c65]">UNEG</h3>
         <p class="mt-2 text-sm text-slate-600">Calendario Académico Bachillerato Técnico</p>
-      </article>
-      <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-calendar-line text-2xl"></i>
-        </div>
+      </a>
+      <a href="<?php echo $assetBase; ?>/imgs/calendarios/Calendario-cuatrimestrales.webp" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <img src="<?php echo $assetBase; ?>/imgs/calendarios/Calendario-cuatrimestrales.webp" alt="Calendario Académico Licenciaturas Cuatrimestrales" class="mx-auto h-20 w-20 object-contain">
         <h3 class="mt-4 font-semibold text-[#0b2c65]">UNEG</h3>
         <p class="mt-2 text-sm text-slate-600">Calendario Académico Licenciaturas Cuatrimestrales</p>
-      </article>
-      <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-calendar-line text-2xl"></i>
-        </div>
+      </a>
+      <a href="<?php echo $assetBase; ?>/imgs/calendarios/calendario_psicologia.jpg" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <img src="<?php echo $assetBase; ?>/imgs/calendarios/calendario_psicologia.jpg" alt="Calendario Académico Licenciaturas UNAM Psicología" class="mx-auto h-20 w-20 object-contain">
         <h3 class="mt-4 font-semibold text-[#0b2c65]">UNEG</h3>
         <p class="mt-2 text-sm text-slate-600">Calendario Académico Licenciaturas UNAM Psicología</p>
-      </article>
-      <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-calendar-line text-2xl"></i>
-        </div>
+      </a>
+      <a href="<?php echo $assetBase; ?>/imgs/calendarios/ISEC_Lic.ADM_.NEGOCIOS.jpg" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <img src="<?php echo $assetBase; ?>/imgs/calendarios/ISEC_Lic.ADM_.NEGOCIOS.jpg" alt="Calendario Académico Licenciatura Administración SUA" class="mx-auto h-20 w-20 object-contain">
         <h3 class="mt-4 font-semibold text-[#0b2c65]">UNEG</h3>
         <p class="mt-2 text-sm text-slate-600">Calendario Académico Licenciatura Administración SUA</p>
-      </article>
+      </a>
 
-      <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-calendar-line text-2xl"></i>
-        </div>
+      <a href="<?php echo $assetBase; ?>/imgs/calendarios/Calendario-Maestrias-1.jpg" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <img src="<?php echo $assetBase; ?>/imgs/calendarios/Calendario-Maestrias-1.jpg" alt="Calendario Académico Maestrías" class="mx-auto h-20 w-20 object-contain">
         <h3 class="mt-4 font-semibold text-[#0b2c65]">UNEG</h3>
         <p class="mt-2 text-sm text-slate-600">Calendario Académico Maestrías</p>
-      </article>
-      <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-calendar-line text-2xl"></i>
-        </div>
+      </a>
+      <a href="<?php echo $assetBase; ?>/imgs/calendarios/ISEC_CALENDARIO_DOCTORADO.png" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <img src="<?php echo $assetBase; ?>/imgs/calendarios/ISEC_CALENDARIO_DOCTORADO.png" alt="Calendario Académico Doctorado" class="mx-auto h-20 w-20 object-contain">
         <h3 class="mt-4 font-semibold text-[#0b2c65]">UNEG</h3>
         <p class="mt-2 text-sm text-slate-600">Calendario Académico Doctorado</p>
-      </article>
-      <article class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-calendar-line text-2xl"></i>
-        </div>
+      </a>
+      <a href="<?php echo $assetBase; ?>/imgs/calendarios/Calendario-Inteligencia-Artificial-1.webp" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+        <img src="<?php echo $assetBase; ?>/imgs/calendarios/Calendario-Inteligencia-Artificial-1.webp" alt="Calendario Académico Ingeniería en Inteligencia Artificial" class="mx-auto h-20 w-20 object-contain">
         <h3 class="mt-4 font-semibold text-[#0b2c65]">UNEG</h3>
         <p class="mt-2 text-sm text-slate-600">Calendario Académico Ingeniería en Inteligencia Artificial</p>
-      </article>
+      </a>
     </div>
   </section>
 </main>

@@ -1,0 +1,93 @@
+INSTRUCCIONES NOTICIAS (UNEG)
+
+Estructura base:
+- Datos: _categorias.php, _posts.php
+- Sidebar: _sidebar.php (se incluye donde lo necesites)
+- Plantillas: _category-page.php (lista), _video-post.php (detalle video)
+
+1) Crear una categoria
+- Carpeta: pages/comunidad/noticias/TU-SLUG/
+- Archivo: pages/comunidad/noticias/TU-SLUG/index.php
+  Contenido minimo:
+  <?php
+  $categorySlug = 'tu-slug';
+  require __DIR__ . '/../_category-page.php';
+  ?>
+- Agregar la categoria en pages/comunidad/noticias/_categorias.php:
+  [
+    'slug' => 'tu-slug',
+    'titulo' => 'Titulo visible',
+    'descripcion' => 'Descripcion corta',
+  ],
+
+2) Crear una noticia (card)
+- Agregar un item en pages/comunidad/noticias/_posts.php:
+  [
+    'title' => 'Titulo',
+    'date' => '11 febrero, 2026',
+    'excerpt' => 'Resumen corto',
+    'href' => '/comunidad/noticias/tu-categoria/tu-noticia',
+    'category' => 'tu-categoria',
+    'image' => '/imgs/noticias/tu-categoria/tu-imagen.jpg',
+  ],
+- La noticia queda automaticamente dentro de su categoria por el campo 'category'.
+- La imagen debe existir fisicamente en: imgs/noticias/tu-categoria/tu-imagen.jpg
+- Requisitos minimos para crear el post:
+  - Titulo
+  - Fecha
+  - Resumen corto (excerpt)
+  - Categoria (slug valido)
+  - Imagen en imgs/noticias/...
+  - Slug final (para URL)
+
+3) Crear el detalle de una noticia (pagina individual)
+- Carpeta: pages/comunidad/noticias/tu-categoria/tu-noticia/index.php
+- Debe incluir:
+  - Header y footer:
+    require __DIR__ . '/../../../../partials/header.php';
+    ...
+    require __DIR__ . '/../../../../partials/footer.php';
+  - Contenido principal dentro de <main> y un <section> en grid con sidebar.
+  - Sidebar incluido con ruta correcta desde el detalle:
+    require __DIR__ . '/../../_sidebar.php';
+- El contenido minimo recomendado del detalle:
+  - H1 con el titulo
+  - Fecha visible
+  - Imagen principal
+  - Texto/descripcion (parrafos)
+- Ejemplo base (resumen):
+  <section class="mt-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-8 overflow-visible">
+    <article>...</article>
+    <?php
+      $categorias = require __DIR__ . '/../../_categorias.php';
+      $posts = require __DIR__ . '/../../_posts.php';
+      // construir $otherNews si quieres "Otras noticias"
+      require __DIR__ . '/../../_sidebar.php';
+    ?>
+  </section>
+
+4) Video Blog UNEG ISEC
+- Debe existir solo una carpeta:
+  pages/comunidad/noticias/video-blog-uneg-isec/
+- Los detalles de video van dentro de:
+  pages/comunidad/noticias/video-blog-uneg-isec/post-1/
+  post-2/
+  post-3/
+  post-4/
+- Cada post de video usa la plantilla:
+  require __DIR__ . '/../../../_video-post.php';
+- Los enlaces publicos deben vivir bajo:
+  /comunidad/noticias/video-blog-uneg-isec/...
+
+Notas rapidas:
+- Si el sidebar no aparece, casi siempre es un require con ruta incorrecta.
+- Si no aparece footer, revisa errores de PHP (ruta o sintaxis).
+
+Checklist para pedirme un nuevo post:
+- Titulo
+- Slug final (URL)
+- Categoria (slug existente)
+- Fecha (formato: "11 febrero, 2026")
+- Resumen corto (excerpt)
+- Imagen principal ya cargada en imgs/noticias/...
+- Contenido del detalle (parrafos y/o secciones)
