@@ -19,12 +19,39 @@ require __DIR__ . '/partials/header.php';
     opacity: 1;
     pointer-events: auto;
   }
+  .video-cover-embed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.38);
+  }
+  .video-cover-frame {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
 </style>
 
 <main class="max-w-7xl mx-auto px-4 py-10">
   <div class="relative h-[500px] w-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
     <div id="about-slider" class="fade-slider h-full w-full">
       <div class="about-slide fade-slide is-active h-full w-full">
+        <div class="video-cover-frame absolute inset-0 overflow-hidden">
+          <iframe
+            id="about-hero-video"
+            class="video-cover-embed"
+          data-src-desktop="https://www.youtube.com/embed/WISrteD5h-g?rel=0&autoplay=1&mute=1&playsinline=1"
+          data-src-mobile="https://www.youtube.com/embed/WISrteD5h-g?rel=0&playsinline=1"
+          title="Video UNEG - Egresados"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="about-slide fade-slide h-full w-full">
         <img src="<?php echo $assetBase; ?>/imgs/acerca/slide-1.png" alt="Acerca de ISEC" class="absolute inset-0 h-full w-full object-cover">
       </div>
       <div class="about-slide fade-slide h-full w-full">
@@ -368,10 +395,11 @@ require __DIR__ . '/partials/header.php';
   const aboutPrev = document.getElementById('about-prev');
   const aboutNext = document.getElementById('about-next');
   const aboutSlider = document.getElementById('about-slider');
+  const aboutVideos = Array.from(document.querySelectorAll('#about-slider iframe[data-src-desktop]'));
   let aboutCurrent = 0;
   let aboutTimer = null;
   let aboutPaused = false;
-  const aboutDuration = 6500;
+  const aboutDurations = [46000, 6500, 6500, 6500, 6500];
 
   const showAboutSlide = (index) => {
     aboutSlides.forEach((slide, i) => {
@@ -379,18 +407,30 @@ require __DIR__ . '/partials/header.php';
     });
   };
 
+  const setAboutVideoSource = () => {
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    aboutVideos.forEach((video) => {
+      const targetSrc = isDesktop ? video.dataset.srcDesktop : video.dataset.srcMobile;
+      if (targetSrc && video.src !== targetSrc) {
+        video.src = targetSrc;
+      }
+    });
+  };
+
   if (aboutSlides.length) {
+    setAboutVideoSource();
     showAboutSlide(aboutCurrent);
     const scheduleAboutNext = () => {
       if (aboutTimer) {
         clearTimeout(aboutTimer);
       }
       if (aboutPaused) return;
+      const duration = aboutDurations[aboutCurrent] || 6500;
       aboutTimer = setTimeout(() => {
         aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
         showAboutSlide(aboutCurrent);
         scheduleAboutNext();
-      }, aboutDuration);
+      }, duration);
     };
     scheduleAboutNext();
     if (aboutPrev) {
@@ -419,6 +459,7 @@ require __DIR__ . '/partials/header.php';
         scheduleAboutNext();
       });
     }
+    window.addEventListener('resize', setAboutVideoSource);
   }
 </script>
 <?php require __DIR__ . '/partials/footer.php'; ?>

@@ -4,11 +4,16 @@ $active = 'inicio';
 $bodyClass = 'bg-slate-50';
 require __DIR__ . '/partials/header.php';
 
-$popupEnabled = true;
-$filename = 'uneg_pop-up.png';
+// Popup temporalmente deshabilitado.
+// Si se vuelve a activar, usar estas variables y el bloque comentado abajo.
+// $popupEnabled = true;
+// $filename = 'uneg_pop-up.png';
 ?>
 
-<?php if ($popupEnabled): ?>
+<?php
+/*
+// POPUP temporalmente deshabilitado. Se deja el bloque por si se usa después.
+if ($popupEnabled): ?>
 <div id="home-popup" class="fixed inset-0 z-50 hidden">
   <div id="home-popup-backdrop" class="absolute inset-0 bg-slate-900/70"></div>
   <div class="relative h-full w-full flex items-center justify-center p-4">
@@ -21,7 +26,9 @@ $filename = 'uneg_pop-up.png';
     </div>
   </div>
 </div>
-<?php endif; ?>
+<?php endif;
+*/
+?>
 
 <style>
   .fade-slider {
@@ -38,6 +45,19 @@ $filename = 'uneg_pop-up.png';
     opacity: 1;
     pointer-events: auto;
   }
+  .video-cover-embed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.38);
+  }
+  .video-cover-frame {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
 </style>
 
 <main class="max-w-7xl mx-auto px-4 py-10">
@@ -47,16 +67,32 @@ $filename = 'uneg_pop-up.png';
         <img src="<?php echo $assetBase; ?>/imgs/nms/cch/hero.png" alt="CCH ISEC" class="absolute inset-0 h-full w-full object-cover">
       </div>
       <div class="home-slide fade-slide h-full w-full">
-        <iframe
-          id="home-hero-video"
-          class="absolute inset-0 h-full w-full"
+        <div class="video-cover-frame">
+          <iframe
+            id="home-hero-video-2"
+            class="video-cover-embed"
+          data-src-desktop="https://www.youtube.com/embed/WISrteD5h-g?rel=0&autoplay=1&mute=1&playsinline=1"
+          data-src-mobile="https://www.youtube.com/embed/WISrteD5h-g?rel=0&playsinline=1"
+          title="Video UNEG - Egresados"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="home-slide fade-slide h-full w-full">
+        <div class="video-cover-frame">
+          <iframe
+            id="home-hero-video"
+            class="video-cover-embed"
           data-src-desktop="https://www.youtube.com/embed/Im1-iJwNVWI?rel=0&autoplay=1&mute=1&playsinline=1"
           data-src-mobile="https://www.youtube.com/embed/Im1-iJwNVWI?rel=0&playsinline=1"
           title="Video institucional UNEG"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
-        ></iframe>
+          ></iframe>
+        </div>
       </div>
       <div class="home-slide fade-slide h-full w-full">
         <img src="<?php echo $assetBase; ?>/imgs/home/hero.png" alt="Universidad de Negocios ISEC" class="absolute inset-0 h-full w-full object-cover">
@@ -166,6 +202,10 @@ $filename = 'uneg_pop-up.png';
   </section>
 </main>
 
+<?php
+/*
+// JS del popup temporalmente deshabilitado.
+?>
 <script>
   const popup = document.getElementById('home-popup');
   const popupClose = document.getElementById('home-popup-close');
@@ -192,6 +232,9 @@ $filename = 'uneg_pop-up.png';
     });
   }
 </script>
+<?php
+*/
+?>
 <script>
   const resizeTravel = () => {
     const iframe = document.getElementById('travel');
@@ -212,19 +255,20 @@ $filename = 'uneg_pop-up.png';
   const slides = Array.from(document.querySelectorAll('#home-slider .home-slide'));
   const prevBtn = document.getElementById('home-prev');
   const nextBtn = document.getElementById('home-next');
-  const heroVideo = document.getElementById('home-hero-video');
-  const slideDurations = [46000, 7000, 7000];
+  const heroVideos = Array.from(document.querySelectorAll('#home-slider iframe[data-src-desktop]'));
+  const slideDurations = [7000, 46000, 46000, 7000];
   let current = 0;
   let autoTimer = null;
   let paused = false;
 
   const setVideoSource = () => {
-    if (!heroVideo) return;
     const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
-    const targetSrc = isDesktop ? heroVideo.dataset.srcDesktop : heroVideo.dataset.srcMobile;
-    if (targetSrc && heroVideo.src !== targetSrc) {
-      heroVideo.src = targetSrc;
-    }
+    heroVideos.forEach((video) => {
+      const targetSrc = isDesktop ? video.dataset.srcDesktop : video.dataset.srcMobile;
+      if (targetSrc && video.src !== targetSrc) {
+        video.src = targetSrc;
+      }
+    });
   };
 
   const showSlide = (index) => {

@@ -46,42 +46,42 @@ require __DIR__ . '/partials/header.php';
 
   <section class="mt-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 rounded-2xl border border-slate-200 bg-white overflow-hidden">
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200">
+      <a class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200 block" href="<?php echo $base; ?>/egresados/dejanos-saber">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Déjanos Saber de Ti</h3>
         <p class="mt-2 text-sm text-slate-600">Queremos saber que has hecho</p>
-      </div>
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b sm:border-r border-slate-200">
+      </a>
+      <a class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b sm:border-r border-slate-200 block" href="<?php echo $base; ?>/comunidad/bolsa-de-trabajo">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Bolsa de Trabajo</h3>
         <p class="mt-2 text-sm text-slate-600">Aquí te mostramos nuestra bolsa de trabajo</p>
-      </div>
+      </a>
       <div class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 lg:border-b">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">E-Learning</h3>
       </div>
 
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200">
+      <a class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200 block" href="<?php echo $base; ?>/comunidad/buzon-del-rector">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Buzón del Rector</h3>
         <p class="mt-2 text-sm text-slate-600">Comunicación directa para brindarte la mejor atención y un servicio personalizado</p>
-      </div>
+      </a>
       <div class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b sm:border-r border-slate-200">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Beneficios</h3>
         <p class="mt-2 text-sm text-slate-600">Consulta aquí todos beneficios que recibes por ser egresado ISEC</p>
       </div>
-      <div class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 lg:border-b">
+      <a class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 lg:border-b block" href="<?php echo $base; ?>/oferta-educativa">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Oferta Educativa para Egresados</h3>
         <p class="mt-2 text-sm text-slate-600">Continua tu formación académica y profesional con nosotros</p>
-      </div>
+      </a>
 
-      <div class="p-6 text-center transition hover:bg-slate-50 border-t border-slate-200 sm:border-t-0">
+      <a class="p-6 text-center transition hover:bg-slate-50 border-t border-slate-200 sm:border-t-0 block" href="https://uneg.edu.mx/comunidad/egresados/buzon-del-rector">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-image-line text-2xl"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Office 365</h3>
         <p class="mt-2 text-sm text-slate-600">Acceder a correo electrónico</p>
-      </div>
+      </a>
     </div>
   </section>
 </main>

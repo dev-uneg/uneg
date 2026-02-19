@@ -200,6 +200,25 @@ $router->map('GET', '/oferta-educativa', function (): void {
 });
 
 // ---------------------------
+// Admin Leads
+// ---------------------------
+$router->map('GET|POST', '/admin/leads-login', function (): void {
+    require __DIR__ . '/controllers/admin/login.php';
+});
+$router->map('GET', '/admin/leads', function (): void {
+    require __DIR__ . '/controllers/admin/leads_index.php';
+});
+$router->map('POST', '/admin/leads/delete', function (): void {
+    require __DIR__ . '/controllers/admin/leads_delete.php';
+});
+$router->map('GET', '/admin/leads/export', function (): void {
+    require __DIR__ . '/controllers/admin/leads_export.php';
+});
+$router->map('GET', '/admin/logout', function (): void {
+    require __DIR__ . '/controllers/admin/logout.php';
+});
+
+// ---------------------------
 // Nivel Medio Superior (NMS)
 // ---------------------------
 $router->map('GET', '/nivel-medio-superior', function (): void {
@@ -292,12 +311,15 @@ $router->map('GET', '/comunidad', function (): void {
 $router->map('GET', '/egresados', function (): void {
     require __DIR__ . '/pages/egresados.php';
 });
+$router->map('GET', '/egresados/dejanos-saber', function (): void {
+    require __DIR__ . '/pages/egresados/dejanos-saber.php';
+});
 
 // ---------------------------
 // API
 // ---------------------------
 $router->map('POST', '/api/contacto', function (): void {
-    require __DIR__ . '/pages/api/contacto.php';
+    require __DIR__ . '/controllers/api/contacto.php';
 });
 
 // ---------------------------

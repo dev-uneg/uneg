@@ -1,0 +1,66 @@
+DOCUMENTACION DEL FLUJO - FORMULARIO DE CONTACTO
+Fecha: 2026-02-18
+
+Resumen
+El formulario de contacto envia los datos a un endpoint PHP que crea un contacto (Persona) en Pipedrive y, opcionalmente, adjunta una nota con campos extra.
+
+Flujo (alto nivel)
+1) Usuario completa el formulario en la pagina de contacto.
+2) El formulario envia (POST) los campos a: /api/contacto (controller: controllers/api/contacto.php)
+3) El endpoint valida campos y token.
+4) Se crea una Persona en Pipedrive.
+5) Si hay campos extra, se crea una Nota asociada a la Persona.
+6) La respuesta devuelve JSON o redirige a una pagina de gracias segun el tipo de solicitud (HTML vs JSON).
+
+Archivo y endpoint
+- Archivo: controllers/api/contacto.php
+- Metodo: POST
+- URL Pipedrive Persona: https://api.pipedrive.com/v1/persons
+- URL Pipedrive Nota: https://api.pipedrive.com/v1/notes
+
+Campos esperados (POST)
+- full_name (obligatorio)
+- email (obligatorio, valida formato)
+- phone (obligatorio)
+- interest (obligatorio)
+- privacy (obligatorio, checkbox aceptado)
+- source (opcional)
+- message (opcional)
+- channel (opcional)
+- medium (opcional)
+
+Validaciones clave
+- Solo acepta POST. Si no, responde 405.
+- full_name, email, phone, interest y privacy son obligatorios.
+- email debe ser valido.
+- Debe existir un token de Pipedrive.
+
+Configuracion del token de Pipedrive
+- Se lee de: config/pipedrive.local.php (array con 'api_token')
+- Si no existe, intenta variable de entorno: PIPEDRIVE_API_TOKEN
+- Si no hay token, responde error 500.
+
+Pipedrive - Creacion de Persona
+- Se arma payload con:
+  - name
+  - email (primary)
+  - phone (primary)
+  - campo personalizado de oferta web (id fijo): cd1724715699c7674b53fd7e5918a1c853fa340f
+
+Pipedrive - Nota con campos extra
+- Si existe person_id y hay campos extra, se crea una nota con:
+  - Canal, Medio, Interes, Como nos conociste, Mensaje
+
+Respuesta del endpoint
+- Si es una solicitud HTML (Accept: text/html), redirige:
+  - exito: /gracias
+  - error: /contacto?error=1
+- Si es JSON:
+  - exito: { success: true, person_id: ... }
+  - error: { success: false, message: ... }
+
+Puntos a revisar / personalizables
+- Id del campo personalizado de Pipedrive:
+  cd1724715699c7674b53fd7e5918a1c853fa340f
+  (verificar que corresponda al campo "Oferta WEB")
+- Nombres de campos del formulario deben coincidir con los POST esperados.

@@ -1,6 +1,13 @@
 <?php
 declare(strict_types=1);
 
+// Este archivo es el controlador del endpoint /api/contacto.
+// Su razón de existir es centralizar la lógica de envío de TODOS los forms del sitio:
+// valida los datos obligatorios, guarda el lead en SQLite y luego crea la Persona
+// en Pipedrive (y su nota). Al final responde en JSON o redirige a /gracias según el tipo de request.
+
+require __DIR__ . '/../../helpers/leads_db.php';
+
 // Respuesta JSON estandar.
 function respond_json(int $status, array $payload): void
 {
@@ -124,6 +131,28 @@ if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
 // Nombre completo para la Persona.
 $name = $fullName;
 
+// Medio por defecto si no llega desde el form.
+if ($medium === '') {
+    $medium = 'Sitio web';
+}
+
+$leadId = leads_db_insert([
+    'full_name' => $fullName,
+    'email' => $email,
+    'phone' => $phone,
+    'interest' => $interest,
+    'source' => $source,
+    'message' => $message,
+    'channel' => $channel,
+    'medium' => $medium,
+    'pipedrive_person_id' => null,
+    'status' => 'received',
+    'error_message' => null,
+    'ip' => $_SERVER['REMOTE_ADDR'] ?? null,
+    'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? null,
+    'created_at' => date('c'),
+]);
+
 // Payload principal para crear Persona.
 $personPayload = [
     'name' => $name,
@@ -137,16 +166,26 @@ $personPayload = [
     ]],
     // Oferta WEB (campo personalizado en Pipedrive).
     'cd1724715699c7674b53fd7e5918a1c853fa340f' => $interest,
+    // Medio (campo personalizado en Pipedrive).
+    '1cd81947451e14a3c30084a31db4d6eef6fef63e' => $medium,
 ];
 
 // Crear Persona en Pipedrive.
 $personResponse = pipedrive_request('https://api.pipedrive.com/v1/persons', $token, $personPayload);
 
 if (!$personResponse['ok'] || !($personResponse['data']['success'] ?? false)) {
+    leads_db_update($leadId ?? 0, [
+        'status' => 'pipedrive_failed',
+        'error_message' => (string) ($personResponse['error'] ?? 'Pipedrive error'),
+    ]);
     fail_request('No se pudo crear el contacto en Pipedrive.', 502);
 }
 
 $personId = $personResponse['data']['data']['id'] ?? null;
+leads_db_update($leadId ?? 0, [
+    'status' => 'pipedrive_ok',
+    'pipedrive_person_id' => $personId ? (string) $personId : null,
+]);
 
 // Nota con campos extra (interes, canal, medio, etc.).
 if ($personId && ($interest !== '' || $source !== '' || $message !== '' || $channel !== '' || $medium !== '')) {
