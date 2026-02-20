@@ -1,0 +1,83 @@
+COMO CREAR UN BLOG (UNEG)
+
+Ruta publica del listado:
+- /blog
+
+Estructura actual:
+- Listado: pages/blog/index.php
+- Datos de cards: pages/blog/_posts.php
+- Sidebar: pages/blog/_sidebar.php
+- Detalles: pages/blog/post-X/index.php
+- Imagenes: imgs/blog/
+- Rutas declaradas en: index.php
+
+IMPORTANTE
+- En este proyecto las rutas de cada post del blog NO son automaticas.
+- Cada URL del blog debe mapearse manualmente en index.php.
+
+-----------------------------------
+1) Crear el detalle del post
+-----------------------------------
+1. Crea carpeta del post, por ejemplo:
+   - pages/blog/post-6/
+2. Crea archivo:
+   - pages/blog/post-6/index.php
+3. Usa como base cualquier post existente:
+   - pages/blog/post-1/index.php
+4. Ajusta:
+   - $title
+   - H1
+   - fecha visible
+   - contenido
+   - imagen principal (en /imgs/blog/...)
+
+-----------------------------------
+2) Agregar card al listado
+-----------------------------------
+1. Edita:
+   - pages/blog/_posts.php
+2. Agrega un arreglo con:
+   - title
+   - date
+   - excerpt
+   - href (URL publica, ej: /blog/mi-nuevo-post)
+   - image (ruta en /imgs/blog/...)
+
+Ejemplo de estructura:
+[
+  'title' => 'Titulo del post',
+  'date' => '20 febrero, 2026',
+  'excerpt' => 'Resumen corto del post.',
+  'href' => '/blog/mi-nuevo-post',
+  'image' => '/imgs/blog/post-6.jpg',
+]
+
+-----------------------------------
+3) Registrar la ruta en index.php
+-----------------------------------
+1. Edita index.php en la seccion de Blog.
+2. Agrega el map GET de la URL publica al archivo real.
+
+Patron:
+$router->map('GET', '/blog/mi-nuevo-post', function (): void {
+  require __DIR__ . '/pages/blog/post-6/index.php';
+});
+
+Sin este paso, la URL dara 404.
+
+-----------------------------------
+4) Subir imagen
+-----------------------------------
+1. Guarda la imagen en:
+   - imgs/blog/
+2. Usa esa ruta en _posts.php y en el detalle.
+
+-----------------------------------
+5) Checklist final
+-----------------------------------
+- [ ] Existe pages/blog/post-X/index.php
+- [ ] Existe card en pages/blog/_posts.php
+- [ ] Existe ruta GET en index.php
+- [ ] Existe imagen en imgs/blog/
+- [ ] La URL /blog/slug abre correctamente
+

@@ -1,7 +1,7 @@
     </main>
     <footer class="mt-16 bg-[#2f2f2f] text-slate-200">
       <div class="border-t border-slate-600/60"></div>
-      <div class="max-w-7xl mx-auto px-6 py-10">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 py-10">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-sm">
           <div class="space-y-3">
             <a class="block font-semibold hover:text-white" href="<?php echo $base; ?>/acerca">Acerca de ISEC.</a>
@@ -54,7 +54,7 @@
                 <a class="hover:text-white" href="<?php echo $base; ?>/comunidad/noticias">- Noticias</a>
               </li>
               <li>
-                <a class="hover:text-white" href="<?php echo $base; ?>/comunidad/blog">- Blog</a>
+                <a class="hover:text-white" href="<?php echo $base; ?>/blog">- Blog</a>
               </li>
               <li>
                 <a class="hover:text-white" href="<?php echo $base; ?>/comunidad/buzon-del-rector">- Buzón del Rector</a>

@@ -50,10 +50,6 @@ declare(strict_types=1);
       </div>
     </section>
 
-    <?php if (isset($_GET['updated'])): ?>
-      <div class="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">Registro actualizado.</div>
-    <?php endif; ?>
-
     <section class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div class="overflow-x-auto">
         <table class="min-w-full text-left text-sm">
@@ -80,9 +76,6 @@ declare(strict_types=1);
                 <td class="px-4 py-3 text-slate-600 max-w-md whitespace-pre-wrap"><?php echo htmlspecialchars((string) ($row['mensaje'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3">
                   <div class="flex items-center gap-2">
-                    <a class="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white p-2 text-slate-600 hover:border-slate-300" href="<?php echo $base; ?>/admin/buzon-rector/edit?id=<?php echo (int) $row['id']; ?>" aria-label="Editar">
-                      <i data-lucide="pencil" class="h-4 w-4"></i>
-                    </a>
                     <form method="post" action="<?php echo $base; ?>/admin/buzon-rector/delete" onsubmit="return confirm('¿Eliminar este registro?');">
                       <input type="hidden" name="id" value="<?php echo (int) $row['id']; ?>">
                       <input type="hidden" name="csrf" value="<?php echo htmlspecialchars($csrf, ENT_QUOTES, 'UTF-8'); ?>">

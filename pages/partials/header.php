@@ -40,6 +40,16 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
     }
     body { font-family: 'Figtree', sans-serif; }
     @media (max-width: 639px) {
+      /* Evita sumar padding global + padding de cada pagina en movil */
+      body > main.min-h-screen {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      /* Las vistas que usan -mx-6 no deben desbordar en movil */
+      body > main.min-h-screen .-mx-6 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
       .h-\[500px\] {
         height: 180px !important;
       }
@@ -59,7 +69,7 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <?php include __DIR__ . '/subheader.php'; ?>
   <?php include __DIR__ . '/nav.php'; ?>
 
-  <main class="min-h-screen px-6">
+  <main class="min-h-screen px-0 sm:px-6">
     <script>
       const menuToggle = document.getElementById('menu-toggle');
       const mobileNav = document.getElementById('mobile-nav');

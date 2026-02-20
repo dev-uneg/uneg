@@ -223,12 +223,6 @@ $router->map('POST', '/admin/egresados/delete', function (): void {
 $router->map('GET', '/admin/buzon-rector', function (): void {
     require __DIR__ . '/controllers/admin/buzon_index.php';
 });
-$router->map('GET', '/admin/buzon-rector/edit', function (): void {
-    require __DIR__ . '/controllers/admin/buzon_edit.php';
-});
-$router->map('POST', '/admin/buzon-rector/update', function (): void {
-    require __DIR__ . '/controllers/admin/buzon_update.php';
-});
 $router->map('GET', '/admin/buzon-rector/export', function (): void {
     require __DIR__ . '/controllers/admin/buzon_export.php';
 });

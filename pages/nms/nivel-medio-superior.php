@@ -50,32 +50,40 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <article class="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-      <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-global-line text-3xl"></i>
-      </div>
-      <h3 class="mt-4 font-semibold text-[#0b2c65]">Bachillerato en Línea</h3>
-      <p class="mt-1 text-xs text-slate-500">Programa B@ISEC</p>
-    </article>
-    <article class="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-      <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-briefcase-4-line text-3xl"></i>
-      </div>
-      <h3 class="mt-4 font-semibold text-[#0b2c65]">Bachillerato Técnico en Administración de Empresas Turísticas</h3>
-      <p class="mt-1 text-xs text-slate-500">IPN A-RVOE-DG-NMS/33/99</p>
-    </article>
-    <article class="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-      <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-file-list-3-line text-3xl"></i>
-      </div>
-      <h3 class="mt-4 font-semibold text-[#0b2c65]">Curso CENEVAL</h3>
-    </article>
-    <article class="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-      <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-pencil-ruler-2-line text-3xl"></i>
-      </div>
-      <h3 class="mt-4 font-semibold text-[#0b2c65]">Curso COLBACH</h3>
-    </article>
+    <a href="<?php echo $base; ?>/bachillerato-en-linea" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <article>
+        <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
+          <i class="ri-global-line text-3xl"></i>
+        </div>
+        <h3 class="mt-4 font-semibold text-[#0b2c65]">Bachillerato en Línea</h3>
+        <p class="mt-1 text-xs text-slate-500">Programa B@ISEC</p>
+      </article>
+    </a>
+    <a href="<?php echo $base; ?>/bachillerato-tecnico-administracion-empresas-turisticas" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <article>
+        <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
+          <i class="ri-briefcase-4-line text-3xl"></i>
+        </div>
+        <h3 class="mt-4 font-semibold text-[#0b2c65]">Bachillerato Técnico en Administración de Empresas Turísticas</h3>
+        <p class="mt-1 text-xs text-slate-500">IPN A-RVOE-DG-NMS/33/99</p>
+      </article>
+    </a>
+    <a href="<?php echo $base; ?>/cch-isec" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <article>
+        <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
+          <i class="ri-file-list-3-line text-3xl"></i>
+        </div>
+        <h3 class="mt-4 font-semibold text-[#0b2c65]">Curso CENEVAL</h3>
+      </article>
+    </a>
+    <a href="<?php echo $base; ?>/curso-colbach" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <article>
+        <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
+          <i class="ri-pencil-ruler-2-line text-3xl"></i>
+        </div>
+        <h3 class="mt-4 font-semibold text-[#0b2c65]">Curso COLBACH</h3>
+      </article>
+    </a>
   </section>
 
 </main>

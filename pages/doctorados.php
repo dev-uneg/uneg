@@ -48,20 +48,24 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
-    <article class="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-      <div class="mx-auto h-28 w-28 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-briefcase-4-line text-4xl"></i>
-      </div>
-      <h3 class="mt-4 font-semibold text-[#0b2c65]">Doctorado en Administración de Negocios</h3>
-      <p class="mt-1 text-xs text-slate-500">SEP RVOE 20110798</p>
-    </article>
-    <article class="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-      <div class="mx-auto h-28 w-28 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-graduation-cap-line text-4xl"></i>
-      </div>
-      <h3 class="mt-4 font-semibold text-[#0b2c65]">Doctorado en Educación, Sistema de Aprendizaje en Línea</h3>
-      <p class="mt-1 text-xs text-slate-500">RVOE SEP 20160644</p>
-    </article>
+    <a href="<?php echo $base; ?>/doctorados/doctorado-en-administracion-de-negocios" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <article>
+        <div class="mx-auto h-28 w-28 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
+          <i class="ri-briefcase-4-line text-4xl"></i>
+        </div>
+        <h3 class="mt-4 font-semibold text-[#0b2c65]">Doctorado en Administración de Negocios</h3>
+        <p class="mt-1 text-xs text-slate-500">SEP RVOE 20110798</p>
+      </article>
+    </a>
+    <a href="<?php echo $base; ?>/doctorados/doctorado-en-educacion-sistema-de-aprendizaje-en-linea" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <article>
+        <div class="mx-auto h-28 w-28 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
+          <i class="ri-graduation-cap-line text-4xl"></i>
+        </div>
+        <h3 class="mt-4 font-semibold text-[#0b2c65]">Doctorado en Educación, Sistema de Aprendizaje en Línea</h3>
+        <p class="mt-1 text-xs text-slate-500">RVOE SEP 20160644</p>
+      </article>
+    </a>
   </section>
 </main>
 

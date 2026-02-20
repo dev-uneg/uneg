@@ -170,18 +170,8 @@ if ($popupEnabled): ?>
       <span class="absolute left-1/2 -bottom-3 h-6 w-6 -translate-x-1/2 rotate-45 bg-[#0b2c65]"></span>
     </div>
     <div class="mt-8 relative">
-      <button class="absolute -left-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white shadow-md border border-slate-200 text-slate-600 hover:bg-slate-50" aria-label="Anterior">
-        <svg class="h-4 w-4 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M15 18l-6-6 6-6"></path>
-        </svg>
-      </button>
-      <button class="absolute -right-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white shadow-md border border-slate-200 text-slate-600 hover:bg-slate-50" aria-label="Siguiente">
-        <svg class="h-4 w-4 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 6l6 6-6 6"></path>
-        </svg>
-      </button>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a href="https://uneg.edu.mx/comunidad/alumnos/e-learning" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
+        <a href="https://uneg.edu.mx/comunidad/alumnos/e-learning" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
           <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_18%20p.m..png" alt="Office 365" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">OFFICE 365</p>
         </a>
@@ -189,11 +179,11 @@ if ($popupEnabled): ?>
           <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_21%20p.m..png" alt="E-learning" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">E-LEARNING</p>
         </div>
-        <a href="<?php echo $base; ?>/comunidad/reglamentos" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
+        <a href="<?php echo $base; ?>/comunidad/reglamentos" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
           <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_27%20p.m..png" alt="Reglamentos" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">REGLAMENTOS</p>
         </a>
-        <a href="http://impreweb.ddns.net:48110/PMPWeb/" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
+        <a href="http://impreweb.ddns.net:48110/PMPWeb/" target="_blank" rel="noopener noreferrer" class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col items-center justify-center text-center shadow-sm min-h-[180px] hover:bg-slate-50 transition-colors">
           <img src="<?php echo $assetBase; ?>/imgs/home/ChatGPT%20Image%2011%20feb%202026,%2004_58_30%20p.m..png" alt="Kiosko de impresión" class="h-20 w-20 rounded-full object-contain">
           <p class="mt-4 text-sm font-semibold text-slate-700">KIOSKO DE IMPRESIÓN</p>
         </a>
