@@ -8,7 +8,7 @@ $base = admin_base_path();
 $error = '';
 
 if (admin_is_authenticated()) {
-    header('Location: ' . $base . '/admin/leads', true, 302);
+    header('Location: ' . $base . '/admin/panel', true, 302);
     exit;
 }
 
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_regenerate_id(true);
         $_SESSION['leads_auth'] = true;
         admin_csrf_token();
-        header('Location: ' . $base . '/admin/leads', true, 302);
+        header('Location: ' . $base . '/admin/panel', true, 302);
         exit;
     }
     $error = 'Contraseña incorrecta.';

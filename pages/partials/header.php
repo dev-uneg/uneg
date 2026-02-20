@@ -39,6 +39,20 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
       font-display: swap;
     }
     body { font-family: 'Figtree', sans-serif; }
+    @media (max-width: 639px) {
+      .h-\[500px\] {
+        height: 180px !important;
+      }
+      #home-slider,
+      #home-slider .home-slide {
+        height: 180px !important;
+      }
+      main > section:first-of-type > img.block.w-full.h-auto[loading="eager"],
+      main main > section:first-of-type > img.block.w-full.h-auto[loading="eager"] {
+        height: 180px !important;
+        object-fit: cover;
+      }
+    }
   </style>
 </head>
 <body class="antialiased <?php echo htmlspecialchars($bodyClass); ?>">

@@ -60,18 +60,6 @@ $router->map('GET', '/comunidad/noticias/vida-en-el-campus', function (): void {
 $router->map('GET', '/comunidad/noticias/video-blog-uneg-isec', function (): void {
   require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/index.php';
 });
-$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec/videotutorial-microsoft-teams', function (): void {
-  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/post-1/index.php';
-});
-$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec/licenciatura-innovacion-turistica-gastronomica', function (): void {
-  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/post-2/index.php';
-});
-$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec/licenciatura-psicologia', function (): void {
-  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/post-3/index.php';
-});
-$router->map('GET', '/comunidad/noticias/video-blog-uneg-isec/licenciatura-ti-para-negocios', function (): void {
-  require __DIR__ . '/pages/comunidad/noticias/video-blog-uneg-isec/post-4/index.php';
-});
 $router->map('GET', '/comunidad/noticias/eventos-de-nuestra-comunidad/firma-convenio-camic', function (): void {
   require __DIR__ . '/pages/comunidad/noticias/eventos-de-nuestra-comunidad/post-1/index.php';
 });
@@ -202,8 +190,14 @@ $router->map('GET', '/oferta-educativa', function (): void {
 // ---------------------------
 // Admin Leads
 // ---------------------------
+$router->map('GET|POST', '/admin/login', function (): void {
+    require __DIR__ . '/controllers/admin/login.php';
+});
 $router->map('GET|POST', '/admin/leads-login', function (): void {
     require __DIR__ . '/controllers/admin/login.php';
+});
+$router->map('GET', '/admin/panel', function (): void {
+    require __DIR__ . '/controllers/admin/panel.php';
 });
 $router->map('GET', '/admin/leads', function (): void {
     require __DIR__ . '/controllers/admin/leads_index.php';
@@ -213,6 +207,33 @@ $router->map('POST', '/admin/leads/delete', function (): void {
 });
 $router->map('GET', '/admin/leads/export', function (): void {
     require __DIR__ . '/controllers/admin/leads_export.php';
+});
+$router->map('GET', '/admin/egresados', function (): void {
+    require __DIR__ . '/controllers/admin/egresados_index.php';
+});
+$router->map('GET', '/admin/egresados/show', function (): void {
+    require __DIR__ . '/controllers/admin/egresados_show.php';
+});
+$router->map('GET', '/admin/egresados/export', function (): void {
+    require __DIR__ . '/controllers/admin/egresados_export.php';
+});
+$router->map('POST', '/admin/egresados/delete', function (): void {
+    require __DIR__ . '/controllers/admin/egresados_delete.php';
+});
+$router->map('GET', '/admin/buzon-rector', function (): void {
+    require __DIR__ . '/controllers/admin/buzon_index.php';
+});
+$router->map('GET', '/admin/buzon-rector/edit', function (): void {
+    require __DIR__ . '/controllers/admin/buzon_edit.php';
+});
+$router->map('POST', '/admin/buzon-rector/update', function (): void {
+    require __DIR__ . '/controllers/admin/buzon_update.php';
+});
+$router->map('GET', '/admin/buzon-rector/export', function (): void {
+    require __DIR__ . '/controllers/admin/buzon_export.php';
+});
+$router->map('POST', '/admin/buzon-rector/delete', function (): void {
+    require __DIR__ . '/controllers/admin/buzon_delete.php';
 });
 $router->map('GET', '/admin/logout', function (): void {
     require __DIR__ . '/controllers/admin/logout.php';
@@ -320,6 +341,12 @@ $router->map('GET', '/egresados/dejanos-saber', function (): void {
 // ---------------------------
 $router->map('POST', '/api/contacto', function (): void {
     require __DIR__ . '/controllers/api/contacto.php';
+});
+$router->map('POST', '/api/egresados', function (): void {
+    require __DIR__ . '/controllers/forms/egresados_store.php';
+});
+$router->map('POST', '/api/buzon-rector', function (): void {
+    require __DIR__ . '/controllers/forms/buzon_rector_store.php';
 });
 
 // ---------------------------

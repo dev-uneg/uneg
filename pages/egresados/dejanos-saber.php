@@ -46,41 +46,72 @@ require __DIR__ . '/../partials/header.php';
     <h2 class="mt-6 text-xl font-semibold text-[#0b2c65]">Por favor, ayúdanos con tu registro.</h2>
   </section>
 
+  <?php if (isset($_GET['ok'])): ?>
+    <section class="mt-6">
+      <div class="rounded-2xl border border-emerald-300 bg-emerald-50 px-5 py-4 text-emerald-900 shadow-sm" role="status" aria-live="polite">
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-200 text-emerald-800">
+            <i class="ri-checkbox-circle-line text-lg"></i>
+          </span>
+          <div>
+            <p class="text-sm font-semibold">Registro enviado correctamente</p>
+            <p class="mt-1 text-sm text-emerald-800">Gracias por compartir tu información. Pronto podremos contactarte con novedades para egresados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
+  <?php if (isset($_GET['error'])): ?>
+    <section class="mt-6">
+      <div class="rounded-2xl border border-rose-300 bg-rose-50 px-5 py-4 text-rose-900 shadow-sm" role="alert">
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-200 text-rose-800">
+            <i class="ri-error-warning-line text-lg"></i>
+          </span>
+          <div>
+            <p class="text-sm font-semibold">No se pudo enviar el registro</p>
+            <p class="mt-1 text-sm text-rose-800">Verifica que todos los campos obligatorios estén completos e inténtalo de nuevo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
+
   <section class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
     <div class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
       <img src="<?php echo $assetBase; ?>/imgs/egresados/egresados-uneg.jpg" alt="Egresados ISEC" class="block w-full h-auto object-cover" loading="lazy">
     </div>
 
     <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
-      <form class="grid grid-cols-1 gap-4 text-sm" method="post" action="#" autocomplete="on">
-        <label class="text-xs font-semibold text-slate-600">
+      <form class="grid grid-cols-1 gap-4 text-base" method="post" action="<?php echo $base; ?>/api/egresados" autocomplete="on">
+        <label class="text-sm font-semibold text-slate-700">
           Nombre
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="text" name="nombre" required>
+          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="nombre" required>
         </label>
-        <label class="text-xs font-semibold text-slate-600">
+        <label class="text-sm font-semibold text-slate-700">
           Apellido Paterno
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="text" name="apellido_paterno" required>
+          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="apellido_paterno" required>
         </label>
-        <label class="text-xs font-semibold text-slate-600">
+        <label class="text-sm font-semibold text-slate-700">
           Apellido Materno
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="text" name="apellido_materno" required>
+          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="apellido_materno" required>
         </label>
-        <div class="text-xs font-semibold text-slate-600">
+        <div class="text-sm font-semibold text-slate-700">
           Generacion:
           <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="text-xs font-semibold text-slate-600">Año de ingreso</label>
-              <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="text" name="anio_ingreso" required>
+              <label class="text-sm font-semibold text-slate-700">Año de ingreso</label>
+              <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="anio_ingreso" required>
             </div>
             <div>
-              <label class="text-xs font-semibold text-slate-600">Año de egreso</label>
-              <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="text" name="anio_egreso" required>
+              <label class="text-sm font-semibold text-slate-700">Año de egreso</label>
+              <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="anio_egreso" required>
             </div>
           </div>
         </div>
-        <label class="text-xs font-semibold text-slate-600">
+        <label class="text-sm font-semibold text-slate-700">
           Nivel de egreso
-          <select class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" name="nivel_egreso" required>
+          <select class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" name="nivel_egreso" required>
             <option value="" selected>Por favor, seleccione una opción</option>
             <option value="Bachillerato">Bachillerato</option>
             <option value="Licenciatura">Licenciatura</option>
@@ -89,21 +120,21 @@ require __DIR__ . '/../partials/header.php';
             <option value="Diplomado">Diplomado</option>
           </select>
         </label>
-        <label class="text-xs font-semibold text-slate-600">
+        <label class="text-sm font-semibold text-slate-700">
           Carrera de egreso
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="text" name="carrera_egreso" required>
+          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="carrera_egreso" required>
         </label>
-        <label class="text-xs font-semibold text-slate-600">
+        <label class="text-sm font-semibold text-slate-700">
           Teléfono
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="tel" name="telefono" required>
+          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="tel" name="telefono" required>
         </label>
-        <label class="text-xs font-semibold text-slate-600">
+        <label class="text-sm font-semibold text-slate-700">
           Correo electrónico
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="email" name="correo" required>
+          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="email" name="correo" required>
         </label>
-        <div class="text-xs font-semibold text-slate-600">
+        <div class="text-sm font-semibold text-slate-700">
           ¿Actualmente estás trabajando?
-          <div class="mt-2 flex items-center gap-4 text-sm text-slate-700 font-normal">
+          <div class="mt-2 flex items-center gap-5 text-base text-slate-700 font-normal">
             <label class="inline-flex items-center gap-2">
               <input type="radio" name="trabajando" value="si" required>
               Sí
@@ -114,13 +145,13 @@ require __DIR__ . '/../partials/header.php';
             </label>
           </div>
         </div>
-        <label class="text-xs font-semibold text-slate-600">
+        <label class="text-sm font-semibold text-slate-700">
           Empresa
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="text" name="empresa">
+          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="empresa">
         </label>
-        <label class="text-xs font-semibold text-slate-600">
+        <label class="text-sm font-semibold text-slate-700">
           Cargo actual
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2" type="text" name="cargo">
+          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="cargo">
         </label>
         <button class="mt-2 w-max rounded-md bg-[#0b2c65] px-6 py-2.5 text-white font-semibold shadow-sm hover:bg-[#09306e]" type="submit">Enviar</button>
       </form>

@@ -24,6 +24,10 @@ declare(strict_types=1);
         <p class="mt-1 text-sm text-slate-500">Total: <?php echo $total; ?> registros</p>
       </div>
       <div class="flex flex-wrap items-center gap-3">
+        <a class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:border-slate-300" href="<?php echo $base; ?>/admin/panel">
+          <i data-lucide="layout-grid" class="h-4 w-4"></i>
+          Panel
+        </a>
         <form method="get" action="<?php echo $base; ?>/admin/leads" class="flex flex-wrap items-center gap-2 text-sm text-slate-600">
           <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
             <label class="text-xs font-semibold text-slate-500">Desde</label>
@@ -31,10 +35,10 @@ declare(strict_types=1);
             <span class="text-slate-300">|</span>
             <label class="text-xs font-semibold text-slate-500">Hasta</label>
             <input type="date" name="to" value="<?php echo htmlspecialchars($dateTo, ENT_QUOTES, 'UTF-8'); ?>" class="text-xs text-slate-700 outline-none">
-            <button type="submit" class="ml-1 inline-flex items-center justify-center rounded-lg bg-[#0b2c65] p-2 text-white hover:bg-[#09306e]" aria-label="Filtrar">
-              <i data-lucide="filter" class="h-4 w-4"></i>
-            </button>
           </div>
+          <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-[#0b2c65] p-2 text-white hover:bg-[#09306e]" aria-label="Filtrar">
+            <i data-lucide="filter" class="h-4 w-4"></i>
+          </button>
           <label for="per_page" class="text-sm font-medium text-slate-600">Ver</label>
           <div class="relative">
             <select id="per_page" name="per_page" class="appearance-none rounded-lg border border-slate-200 bg-white px-3 py-2 pr-9 text-sm" onchange="this.form.submit()">
@@ -47,12 +51,6 @@ declare(strict_types=1);
             </span>
           </div>
           <input type="hidden" name="page" value="1">
-          <?php if ($dateFrom !== ''): ?>
-            <input type="hidden" name="from" value="<?php echo htmlspecialchars($dateFrom, ENT_QUOTES, 'UTF-8'); ?>">
-          <?php endif; ?>
-          <?php if ($dateTo !== ''): ?>
-            <input type="hidden" name="to" value="<?php echo htmlspecialchars($dateTo, ENT_QUOTES, 'UTF-8'); ?>">
-          <?php endif; ?>
         </form>
         <a class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-600 hover:border-slate-300 <?php echo $hasDateFilter ? '' : 'pointer-events-none opacity-40'; ?>" href="<?php echo $base; ?>/admin/leads/export?from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>" aria-label="Exportar CSV">
           <i data-lucide="download" class="h-4 w-4"></i>

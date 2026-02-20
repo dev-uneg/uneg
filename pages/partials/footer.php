@@ -78,7 +78,49 @@
     <a href="https://wa.me/5215571137882" class="whatsapp-float" aria-label="WhatsApp">
       <i class="ri-whatsapp-line" aria-hidden="true"></i>
     </a>
+    <script>
+      (function () {
+        const isApiForm = (form) => {
+          if (!(form instanceof HTMLFormElement)) return false;
+          const action = form.getAttribute('action') || '';
+          return action.includes('/api/');
+        };
+
+        const addHoneypot = (form) => {
+          if (!isApiForm(form)) return;
+          if (form.querySelector('input[name="company_website"]')) return;
+
+          const wrap = document.createElement('div');
+          wrap.className = 'honeypot-field';
+          wrap.setAttribute('aria-hidden', 'true');
+
+          const label = document.createElement('label');
+          label.textContent = 'Sitio web';
+          label.setAttribute('for', 'company_website_' + Math.random().toString(36).slice(2, 9));
+
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.name = 'company_website';
+          input.id = label.getAttribute('for');
+          input.autocomplete = 'off';
+          input.tabIndex = -1;
+
+          wrap.appendChild(label);
+          wrap.appendChild(input);
+          form.appendChild(wrap);
+        };
+
+        document.querySelectorAll('form').forEach(addHoneypot);
+      })();
+    </script>
     <style>
+      .honeypot-field {
+        position: absolute !important;
+        left: -9999px !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+      }
       .whatsapp-float {
         position: fixed;
         right: 20px;

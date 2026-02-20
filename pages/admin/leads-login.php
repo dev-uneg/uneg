@@ -6,7 +6,7 @@ declare(strict_types=1);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Acceso Leads | UNEG</title>
+  <title>Acceso Admin | UNEG</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@ declare(strict_types=1);
           <i data-lucide="shield-check" class="h-6 w-6"></i>
         </div>
         <div>
-          <h1 class="text-xl font-semibold text-[#0b2c65]">Acceso a Leads</h1>
+          <h1 class="text-xl font-semibold text-[#0b2c65]">Acceso Admin</h1>
           <p class="text-sm text-slate-500">Panel privado de formularios</p>
         </div>
       </div>
@@ -35,7 +35,7 @@ declare(strict_types=1);
         </div>
       <?php endif; ?>
 
-      <form class="mt-6 space-y-4" method="post" action="<?php echo $base; ?>/admin/leads-login">
+      <form class="mt-6 space-y-4" method="post" action="<?php echo $base; ?>/admin/login">
         <label class="block text-sm font-medium text-slate-700" for="password">Contraseña</label>
         <div class="relative">
           <input id="password" name="password" type="password" required class="w-full rounded-xl border border-slate-200 px-4 py-3 pr-12 text-sm focus:border-[#0b2c65] focus:outline-none focus:ring-2 focus:ring-[#0b2c65]/20" placeholder="Ingresa tu contraseña">
