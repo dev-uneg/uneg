@@ -57,7 +57,12 @@ require __DIR__ . '/../partials/header.php';
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <h3 class="text-xl font-semibold text-[#0b2c65] text-center">Inscríbete Ahora</h3>
-      <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm" method="post" action="<?php echo $base; ?>/api/contacto" autocomplete="on">
+      <?php if (isset($_GET['error'])): ?>
+        <div class="mt-4 rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
+          No se pudo enviar tu informacion. Revisa los campos e intentalo de nuevo.
+        </div>
+      <?php endif; ?>
+      <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm" method="post" action="<?php echo $base; ?>/api/forms/licenciaturas-ingenieria-en-finanzas" autocomplete="on">
         <input class="w-full rounded-md border border-slate-300 px-3 py-2 sm:col-span-2 col-span-1" name="full_name" placeholder="Nombre completo*" type="text" required />
         <input class="w-full rounded-md border border-slate-300 px-3 py-2" name="email" placeholder="Correo Electrónico*" type="email" required />
         <input class="w-full rounded-md border border-slate-300 px-3 py-2" name="phone" placeholder="Teléfono*" type="tel" required />

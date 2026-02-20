@@ -40,7 +40,7 @@ require __DIR__ . '/partials/header.php';
         </div>
       <?php endif; ?>
 
-      <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm" method="post" action="<?php echo $base; ?>/api/contacto" autocomplete="on">
+      <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm" method="post" action="<?php echo $base; ?>/api/forms/contacto" autocomplete="on">
         <input class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c65]/30 sm:col-span-2" placeholder="Nombre completo*" type="text" name="full_name" required />
         <input class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c65]/30" placeholder="Correo Electrónico*" type="email" name="email" required />
         <input class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c65]/30" placeholder="Teléfono*" type="tel" name="phone" required />

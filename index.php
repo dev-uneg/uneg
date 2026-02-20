@@ -342,6 +342,90 @@ $router->map('GET', '/egresados/dejanos-saber', function (): void {
 $router->map('POST', '/api/contacto', function (): void {
     require __DIR__ . '/controllers/api/contacto.php';
 });
+$router->map('POST', '/api/forms/cch-isec', function (): void {
+    require __DIR__ . '/controllers/forms/cch-isec.php';
+});
+$router->map('POST', '/api/forms/bachillerato-en-linea', function (): void {
+    require __DIR__ . '/controllers/forms/bachillerato-en-linea.php';
+});
+$router->map('POST', '/api/forms/bachillerato-tecnico-administracion-empresas-turisticas', function (): void {
+    require __DIR__ . '/controllers/forms/bachillerato-tecnico-administracion-empresas-turisticas.php';
+});
+$router->map('POST', '/api/forms/curso-colbach', function (): void {
+    require __DIR__ . '/controllers/forms/curso-colbach.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-administracion-sua', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-administracion-sua.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-contaduria-publica-estrategica', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-contaduria-publica-estrategica.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-derecho', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-derecho.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-derecho-sua', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-derecho-sua.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-ingenieria-en-administracion-y-negocios', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-ingenieria-en-administracion-y-negocios.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-ingenieria-en-finanzas', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-ingenieria-en-finanzas.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-ingenieria-en-inteligencia-artificial', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-ingenieria-en-inteligencia-artificial.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-ingenieria-en-tecnologias-de-informacion-para-negocios', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-ingenieria-en-tecnologias-de-informacion-para-negocios.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-innovacion-turistica-y-gastronomica', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-innovacion-turistica-y-gastronomica.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-mercadotecnia-estrategica', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-mercadotecnia-estrategica.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-negocios-internacionales', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-negocios-internacionales.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-pedagogia', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-pedagogia.php';
+});
+$router->map('POST', '/api/forms/licenciaturas-psicologia', function (): void {
+    require __DIR__ . '/controllers/forms/licenciaturas-psicologia.php';
+});
+$router->map('POST', '/api/forms/maestrias-maestria-en-administracion-de-negocios', function (): void {
+    require __DIR__ . '/controllers/forms/maestrias-maestria-en-administracion-de-negocios.php';
+});
+$router->map('POST', '/api/forms/maestrias-maestria-en-administracion-de-negocios-en-linea', function (): void {
+    require __DIR__ . '/controllers/forms/maestrias-maestria-en-administracion-de-negocios-en-linea.php';
+});
+$router->map('POST', '/api/forms/maestrias-maestria-en-derecho-corporativo', function (): void {
+    require __DIR__ . '/controllers/forms/maestrias-maestria-en-derecho-corporativo.php';
+});
+$router->map('POST', '/api/forms/maestrias-maestria-en-docencia', function (): void {
+    require __DIR__ . '/controllers/forms/maestrias-maestria-en-docencia.php';
+});
+$router->map('POST', '/api/forms/maestrias-maestria-en-finanzas', function (): void {
+    require __DIR__ . '/controllers/forms/maestrias-maestria-en-finanzas.php';
+});
+$router->map('POST', '/api/forms/maestrias-maestria-en-fiscal', function (): void {
+    require __DIR__ . '/controllers/forms/maestrias-maestria-en-fiscal.php';
+});
+$router->map('POST', '/api/forms/maestrias-maestria-en-mercadotecnia', function (): void {
+    require __DIR__ . '/controllers/forms/maestrias-maestria-en-mercadotecnia.php';
+});
+$router->map('POST', '/api/forms/maestrias-maestria-en-tecnologias-de-informacion-y-comunicaciones', function (): void {
+    require __DIR__ . '/controllers/forms/maestrias-maestria-en-tecnologias-de-informacion-y-comunicaciones.php';
+});
+$router->map('POST', '/api/forms/doctorados-doctorado-en-administracion-de-negocios', function (): void {
+    require __DIR__ . '/controllers/forms/doctorados-doctorado-en-administracion-de-negocios.php';
+});
+$router->map('POST', '/api/forms/doctorados-doctorado-en-educacion-sistema-de-aprendizaje-en-linea', function (): void {
+    require __DIR__ . '/controllers/forms/doctorados-doctorado-en-educacion-sistema-de-aprendizaje-en-linea.php';
+});
+$router->map('POST', '/api/forms/contacto', function (): void {
+    require __DIR__ . '/controllers/forms/contacto.php';
+});
 $router->map('POST', '/api/egresados', function (): void {
     require __DIR__ . '/controllers/forms/egresados_store.php';
 });
