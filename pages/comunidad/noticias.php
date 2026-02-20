@@ -97,6 +97,15 @@ require __DIR__ . '/../partials/header.php';
   <section class="mt-8">
     <div class="news-accordion">
       <?php
+      $posts = require __DIR__ . '/noticias/_posts.php';
+      $postsByCategory = [];
+      foreach ($posts as $post) {
+        $slug = (string) ($post['category'] ?? '');
+        if ($slug === '') {
+          continue;
+        }
+        $postsByCategory[$slug] = ($postsByCategory[$slug] ?? 0) + 1;
+      }
       $accordionImages = [
         'comunicados-de-rectoria' => $assetBase . '/imgs/acerca/slide-1.png',
         'eventos-de-nuestra-comunidad' => $assetBase . '/imgs/acerca/slide-2.png',
@@ -105,12 +114,16 @@ require __DIR__ . '/../partials/header.php';
       ];
       foreach ($categorias as $cat):
         $img = $accordionImages[$cat['slug']] ?? ($assetBase . '/imgs/acerca/slide-4.png');
+        $count = (int) ($postsByCategory[$cat['slug']] ?? 0);
+        $description = $count > 0
+          ? $cat['descripcion']
+          : 'Sin noticias por el momento. Estamos preparando nuevo contenido.';
       ?>
         <article class="news-panel">
           <img src="<?php echo $img; ?>" alt="<?php echo htmlspecialchars($cat['titulo']); ?>">
           <div class="content">
             <h2><?php echo htmlspecialchars($cat['titulo']); ?></h2>
-            <p><?php echo htmlspecialchars($cat['descripcion']); ?></p>
+            <p><?php echo htmlspecialchars($description); ?></p>
             <a class="btn" href="<?php echo $base; ?>/comunidad/noticias/<?php echo $cat['slug']; ?>">Ver</a>
           </div>
         </article>

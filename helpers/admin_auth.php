@@ -29,7 +29,7 @@ function admin_require_auth(): void
 {
     if (!admin_is_authenticated()) {
         $base = admin_base_path();
-        header('Location: ' . $base . '/admin/leads-login', true, 302);
+        header('Location: ' . $base . '/admin/login', true, 302);
         exit;
     }
 }

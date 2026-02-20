@@ -96,6 +96,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     fail_request('Metodo no permitido.', 405);
 }
 
+$honeypot = trim((string) ($_POST['company_website'] ?? ''));
+if ($honeypot !== '') {
+    fail_request('Solicitud invalida.', 400);
+}
+
 // Captura y limpia campos del formulario.
 $fullName = trim((string) ($_POST['full_name'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
@@ -116,26 +121,6 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     fail_request('Correo invalido.');
 }
 
-// Carga token desde config local o variable de entorno.
-$config = [];
-$configPath = __DIR__ . '/../../config/pipedrive.local.php';
-if (file_exists($configPath)) {
-    $config = require $configPath;
-}
-
-$token = (string) ($config['api_token'] ?? getenv('PIPEDRIVE_API_TOKEN') ?? '');
-if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
-    fail_request('Falta configurar el API token de Pipedrive.', 500);
-}
-
-// Nombre completo para la Persona.
-$name = $fullName;
-
-// Medio por defecto si no llega desde el form.
-if ($medium === '') {
-    $medium = 'Sitio web';
-}
-
 $leadId = leads_db_insert([
     'full_name' => $fullName,
     'email' => $email,
@@ -152,6 +137,34 @@ $leadId = leads_db_insert([
     'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? null,
     'created_at' => date('c'),
 ]);
+
+if (!$leadId) {
+    fail_request('No se pudo guardar el lead en base de datos.', 500);
+}
+
+// Carga token desde config local o variable de entorno.
+$config = [];
+$configPath = __DIR__ . '/../../config/pipedrive.local.php';
+if (file_exists($configPath)) {
+    $config = require $configPath;
+}
+
+$token = (string) ($config['api_token'] ?? getenv('PIPEDRIVE_API_TOKEN') ?? '');
+if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
+    leads_db_update($leadId, [
+        'status' => 'pipedrive_failed',
+        'error_message' => 'Falta configurar el API token de Pipedrive.',
+    ]);
+    fail_request('Falta configurar el API token de Pipedrive.', 500);
+}
+
+// Nombre completo para la Persona.
+$name = $fullName;
+
+// Medio por defecto si no llega desde el form.
+if ($medium === '') {
+    $medium = 'Sitio web';
+}
 
 // Payload principal para crear Persona.
 $personPayload = [

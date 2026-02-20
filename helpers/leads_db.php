@@ -7,8 +7,16 @@ function leads_db_path(): string
     if (!is_dir($storageDir)) {
         @mkdir($storageDir, 0775, true);
     }
+    if (is_dir($storageDir) && !is_writable($storageDir)) {
+        @chmod($storageDir, 0777);
+    }
 
-    return $storageDir . '/leads.sqlite';
+    $dbPath = $storageDir . '/leads.sqlite';
+    if (file_exists($dbPath) && !is_writable($dbPath)) {
+        @chmod($dbPath, 0666);
+    }
+
+    return $dbPath;
 }
 
 function leads_db(): PDO
@@ -21,6 +29,10 @@ function leads_db(): PDO
     $dsn = 'sqlite:' . leads_db_path();
     $pdo = new PDO($dsn);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbPath = leads_db_path();
+    if (file_exists($dbPath) && !is_writable($dbPath)) {
+        @chmod($dbPath, 0666);
+    }
     leads_db_init($pdo);
 
     return $pdo;
@@ -46,6 +58,38 @@ function leads_db_init(PDO $pdo): void
         created_at TEXT NOT NULL
     )');
     $pdo->exec('CREATE INDEX IF NOT EXISTS leads_created_at_idx ON leads (created_at DESC)');
+
+    $pdo->exec('CREATE TABLE IF NOT EXISTS egresados (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre TEXT NOT NULL,
+        apellido_paterno TEXT NOT NULL,
+        apellido_materno TEXT NOT NULL,
+        anio_ingreso TEXT NOT NULL,
+        anio_egreso TEXT NOT NULL,
+        nivel_egreso TEXT NOT NULL,
+        carrera_egreso TEXT NOT NULL,
+        telefono TEXT NOT NULL,
+        correo TEXT NOT NULL,
+        trabajando TEXT NOT NULL,
+        empresa TEXT,
+        cargo TEXT,
+        ip TEXT,
+        user_agent TEXT,
+        created_at TEXT NOT NULL
+    )');
+    $pdo->exec('CREATE INDEX IF NOT EXISTS egresados_created_at_idx ON egresados (created_at DESC)');
+
+    $pdo->exec('CREATE TABLE IF NOT EXISTS buzon_rector (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre TEXT NOT NULL,
+        correo TEXT NOT NULL,
+        asunto TEXT NOT NULL,
+        mensaje TEXT NOT NULL,
+        ip TEXT,
+        user_agent TEXT,
+        created_at TEXT NOT NULL
+    )');
+    $pdo->exec('CREATE INDEX IF NOT EXISTS buzon_rector_created_at_idx ON buzon_rector (created_at DESC)');
 }
 
 function leads_db_insert(array $data): ?int
@@ -104,5 +148,69 @@ function leads_db_update(int $id, array $data): void
         $stmt->execute($params);
     } catch (Throwable $e) {
         return;
+    }
+}
+
+function egresados_db_insert(array $data): ?int
+{
+    try {
+        $pdo = leads_db();
+        $stmt = $pdo->prepare('INSERT INTO egresados (
+            nombre, apellido_paterno, apellido_materno, anio_ingreso, anio_egreso,
+            nivel_egreso, carrera_egreso, telefono, correo, trabajando,
+            empresa, cargo, ip, user_agent, created_at
+        ) VALUES (
+            :nombre, :apellido_paterno, :apellido_materno, :anio_ingreso, :anio_egreso,
+            :nivel_egreso, :carrera_egreso, :telefono, :correo, :trabajando,
+            :empresa, :cargo, :ip, :user_agent, :created_at
+        )');
+
+        $stmt->execute([
+            ':nombre' => $data['nombre'],
+            ':apellido_paterno' => $data['apellido_paterno'],
+            ':apellido_materno' => $data['apellido_materno'],
+            ':anio_ingreso' => $data['anio_ingreso'],
+            ':anio_egreso' => $data['anio_egreso'],
+            ':nivel_egreso' => $data['nivel_egreso'],
+            ':carrera_egreso' => $data['carrera_egreso'],
+            ':telefono' => $data['telefono'],
+            ':correo' => $data['correo'],
+            ':trabajando' => $data['trabajando'],
+            ':empresa' => $data['empresa'],
+            ':cargo' => $data['cargo'],
+            ':ip' => $data['ip'],
+            ':user_agent' => $data['user_agent'],
+            ':created_at' => $data['created_at'],
+        ]);
+
+        return (int) $pdo->lastInsertId();
+    } catch (Throwable $e) {
+        return null;
+    }
+}
+
+function buzon_rector_db_insert(array $data): ?int
+{
+    try {
+        $pdo = leads_db();
+        $stmt = $pdo->prepare('INSERT INTO buzon_rector (
+            nombre, correo, asunto, mensaje, ip, user_agent, created_at
+        ) VALUES (
+            :nombre, :correo, :asunto, :mensaje, :ip, :user_agent, :created_at
+        )');
+
+        $stmt->execute([
+            ':nombre' => $data['nombre'],
+            ':correo' => $data['correo'],
+            ':asunto' => $data['asunto'],
+            ':mensaje' => $data['mensaje'],
+            ':ip' => $data['ip'],
+            ':user_agent' => $data['user_agent'],
+            ':created_at' => $data['created_at'],
+        ]);
+
+        return (int) $pdo->lastInsertId();
+    } catch (Throwable $e) {
+        return null;
     }
 }
