@@ -93,7 +93,7 @@ require __DIR__ . '/../partials/header.php';
               <i class="ri-graduation-cap-line text-2xl"></i>
             </div>
             <p class="mt-3 text-lg font-semibold">Plan de Estudios</p>
-            <button class="mt-1 text-sm text-white/80 hover:text-white">Ver plan</button>
+            <a href="<?php echo $assetBase; ?>/assets/planes-de-estudio/UNEG_PLAN_DE_ESTUDIOS_MERCADOTECNIA.pdf" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-white/90 underline-offset-4 transition hover:text-white hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80">Ver plan <i class="ri-external-link-line text-base" aria-hidden="true"></i></a>
           </div>
           <div class="text-center">
             <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
