@@ -1,0 +1,54 @@
+OPTIMIZACION DE IMAGENES (_imgs)
+================================
+
+Este proyecto optimiza imagenes con el script:
+- _app/scripts/optimize-images.js
+
+Se ejecuta con:
+- npm run optimize:images
+
+Que carpeta se optimiza
+-----------------------
+- Solo se procesa la carpeta: _imgs/
+- No se optimizan imagenes fuera de _imgs/
+
+Formato final
+-------------
+- El formato objetivo es WebP (.webp).
+- Si un archivo fuente es .png/.jpg/.jpeg:
+  1) Se convierte a .webp
+  2) Se elimina el original
+- Si el archivo ya es .webp, se re-optimiza solo cuando cambio.
+
+Manifest (control incremental)
+------------------------------
+- Archivo: _app/scripts/optimize-images.manifest.json
+- Guarda huella de cada imagen (size + mtime), salida y fecha de optimizacion.
+- En corridas futuras:
+  - Si la imagen no cambio, se omite.
+  - Si es nueva o cambio, se procesa.
+
+Respaldo antes de optimizar
+---------------------------
+- Antes de procesar (si hay cambios), se crea un respaldo completo de _imgs/ en:
+  imgs_legacy/imgs_legacy_DD-MM-YY_HHMMSS
+- Ejemplo:
+  imgs_legacy/imgs_legacy_25-02-26_105651
+
+Importante:
+- Si no hay cambios detectados, NO crea respaldo nuevo.
+
+Que pasa al correr el comando
+-----------------------------
+1) Lee el manifest.
+2) Detecta tareas pendientes (nuevas/modificadas).
+3) Si no hay tareas: termina sin tocar imagenes.
+4) Si hay tareas: crea respaldo fechado y procesa solo esas tareas.
+5) Actualiza el manifest.
+
+Buenas practicas
+----------------
+- Subir nuevas imagenes a _imgs/ (preferentemente nombres limpios).
+- Correr npm run optimize:images despues de agregar/cambiar imagenes.
+- No editar manualmente el manifest.
+- Mantener imgs_legacy/ para recuperacion si se necesita rollback visual.

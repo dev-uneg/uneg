@@ -1,0 +1,438 @@
+{
+  "version": 1,
+  "generatedAt": "2026-02-26T00:56:38.455Z",
+  "files": {
+    "_imgs/calendarios/Calendario-Inteligencia-Artificial-1.webp": {
+      "fingerprint": "180474:1772038612658",
+      "output": "_imgs/calendarios/Calendario-Inteligencia-Artificial-1.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:52.658Z"
+    },
+    "_imgs/calendarios/Calendario-cuatrimestrales.webp": {
+      "fingerprint": "292522:1772038612925",
+      "output": "_imgs/calendarios/Calendario-cuatrimestrales.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:52.925Z"
+    },
+    "_imgs/acerca/slide-1.webp": {
+      "fingerprint": "367944:1772038611298",
+      "output": "_imgs/acerca/slide-1.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:51.299Z"
+    },
+    "_imgs/acerca/slide-2.webp": {
+      "fingerprint": "329718:1772038611478",
+      "output": "_imgs/acerca/slide-2.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:51.478Z"
+    },
+    "_imgs/acerca/slide-3.webp": {
+      "fingerprint": "403138:1772038611672",
+      "output": "_imgs/acerca/slide-3.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:51.673Z"
+    },
+    "_imgs/acerca/slide-4.webp": {
+      "fingerprint": "546990:1772038611877",
+      "output": "_imgs/acerca/slide-4.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:51.878Z"
+    },
+    "_imgs/blog/post-1.webp": {
+      "fingerprint": "176418:1772038612029",
+      "output": "_imgs/blog/post-1.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:52.029Z"
+    },
+    "_imgs/blog/post-2.webp": {
+      "fingerprint": "48768:1772038612066",
+      "output": "_imgs/blog/post-2.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:52.066Z"
+    },
+    "_imgs/blog/post-3.webp": {
+      "fingerprint": "189302:1772038612235",
+      "output": "_imgs/blog/post-3.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:52.236Z"
+    },
+    "_imgs/blog/post-4.webp": {
+      "fingerprint": "280488:1772038612444",
+      "output": "_imgs/blog/post-4.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:52.445Z"
+    },
+    "_imgs/blog/post-5.webp": {
+      "fingerprint": "191266:1772038612540",
+      "output": "_imgs/blog/post-5.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:52.540Z"
+    },
+    "_imgs/calendarios/Calendario-Maestrias-1.webp": {
+      "fingerprint": "182812:1772038612779",
+      "output": "_imgs/calendarios/Calendario-Maestrias-1.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:52.779Z"
+    },
+    "_imgs/calendarios/ISEC_CALENDARIO_DOCTORADO.webp": {
+      "fingerprint": "171618:1772038613038",
+      "output": "_imgs/calendarios/ISEC_CALENDARIO_DOCTORADO.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.038Z"
+    },
+    "_imgs/calendarios/ISEC_Lic.ADM_.NEGOCIOS.webp": {
+      "fingerprint": "221066:1772038613169",
+      "output": "_imgs/calendarios/ISEC_Lic.ADM_.NEGOCIOS.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.169Z"
+    },
+    "_imgs/calendarios/calendario-bachillerato-tecnico.webp": {
+      "fingerprint": "231754:1772038613308",
+      "output": "_imgs/calendarios/calendario-bachillerato-tecnico.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.308Z"
+    },
+    "_imgs/calendarios/calendario_psicologia.webp": {
+      "fingerprint": "290848:1772038613469",
+      "output": "_imgs/calendarios/calendario_psicologia.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.470Z"
+    },
+    "_imgs/comunidad/alumnos/hero-alumnos.webp": {
+      "fingerprint": "102678:1772038613575",
+      "output": "_imgs/comunidad/alumnos/hero-alumnos.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.575Z"
+    },
+    "_imgs/comunidad/docentes/docentes.webp": {
+      "fingerprint": "184630:1772038613688",
+      "output": "_imgs/comunidad/docentes/docentes.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.688Z"
+    },
+    "_imgs/comunidad/rector/hero.webp": {
+      "fingerprint": "54958:1772038613769",
+      "output": "_imgs/comunidad/rector/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.769Z"
+    },
+    "_imgs/diplomados/hero.webp": {
+      "fingerprint": "111596:1772038613846",
+      "output": "_imgs/diplomados/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.846Z"
+    },
+    "_imgs/doctorados/administracion-de-negocios/hero.webp": {
+      "fingerprint": "89356:1772038613946",
+      "output": "_imgs/doctorados/administracion-de-negocios/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:53.946Z"
+    },
+    "_imgs/doctorados/educacion-sistema-de-aprendizaje-en-linea/hero.webp": {
+      "fingerprint": "64964:1772038614036",
+      "output": "_imgs/doctorados/educacion-sistema-de-aprendizaje-en-linea/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.037Z"
+    },
+    "_imgs/doctorados/hero.webp": {
+      "fingerprint": "80528:1772038614119",
+      "output": "_imgs/doctorados/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.120Z"
+    },
+    "_imgs/egresados/egresados-uneg.webp": {
+      "fingerprint": "63764:1772038614143",
+      "output": "_imgs/egresados/egresados-uneg.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.143Z"
+    },
+    "_imgs/egresados/hero.webp": {
+      "fingerprint": "173734:1772038614252",
+      "output": "_imgs/egresados/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.253Z"
+    },
+    "_imgs/home/ChatGPT Image 11 feb 2026, 04_58_18 p.m..webp": {
+      "fingerprint": "13414:1772038614285",
+      "output": "_imgs/home/ChatGPT Image 11 feb 2026, 04_58_18 p.m..webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.285Z"
+    },
+    "_imgs/home/ChatGPT Image 11 feb 2026, 04_58_21 p.m..webp": {
+      "fingerprint": "10558:1772038614315",
+      "output": "_imgs/home/ChatGPT Image 11 feb 2026, 04_58_21 p.m..webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.315Z"
+    },
+    "_imgs/home/ChatGPT Image 11 feb 2026, 04_58_27 p.m..webp": {
+      "fingerprint": "17206:1772038614347",
+      "output": "_imgs/home/ChatGPT Image 11 feb 2026, 04_58_27 p.m..webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.347Z"
+    },
+    "_imgs/home/ChatGPT Image 11 feb 2026, 04_58_30 p.m..webp": {
+      "fingerprint": "12024:1772038614378",
+      "output": "_imgs/home/ChatGPT Image 11 feb 2026, 04_58_30 p.m..webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.378Z"
+    },
+    "_imgs/home/hero.webp": {
+      "fingerprint": "162660:1772038614509",
+      "output": "_imgs/home/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.509Z"
+    },
+    "_imgs/ixu/cursos/Curso_-Coaching-y-creatividad-empresarial.webp": {
+      "fingerprint": "149576:1772038614576",
+      "output": "_imgs/ixu/cursos/Curso_-Coaching-y-creatividad-empresarial.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.577Z"
+    },
+    "_imgs/ixu/cursos/Curso_-TENDENCIAS-PARA-MERCADOTECNIA-DEL-SIGLO-XXI.webp": {
+      "fingerprint": "154290:1772038614645",
+      "output": "_imgs/ixu/cursos/Curso_-TENDENCIAS-PARA-MERCADOTECNIA-DEL-SIGLO-XXI.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.646Z"
+    },
+    "_imgs/ixu/cursos/uneg_Curso-REPSE-1.webp": {
+      "fingerprint": "119114:1772038614706",
+      "output": "_imgs/ixu/cursos/uneg_Curso-REPSE-1.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.707Z"
+    },
+    "_imgs/ixu/cursos/uneg_Curso-REPSE-1_old.webp": {
+      "fingerprint": "119416:1772038614767",
+      "output": "_imgs/ixu/cursos/uneg_Curso-REPSE-1_old.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.767Z"
+    },
+    "_imgs/ixu/diplomados/Diplomado-en-Normas-de-Informacion-Financiera-2.webp": {
+      "fingerprint": "114840:1772038614827",
+      "output": "_imgs/ixu/diplomados/Diplomado-en-Normas-de-Informacion-Financiera-2.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.828Z"
+    },
+    "_imgs/ixu/hero.webp": {
+      "fingerprint": "169362:1772038614939",
+      "output": "_imgs/ixu/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:54.939Z"
+    },
+    "_imgs/licenciaturas/administracion-sua/hero-sua-administracion.webp": {
+      "fingerprint": "87330:1772038615034",
+      "output": "_imgs/licenciaturas/administracion-sua/hero-sua-administracion.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.035Z"
+    },
+    "_imgs/licenciaturas/contaduria-publica-estrategica/hero-contaduria-publica-estrategica.webp": {
+      "fingerprint": "93700:1772038615133",
+      "output": "_imgs/licenciaturas/contaduria-publica-estrategica/hero-contaduria-publica-estrategica.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.134Z"
+    },
+    "_imgs/licenciaturas/contaduria-publica-estrategica/hero.webp": {
+      "fingerprint": "93700:1772038615233",
+      "output": "_imgs/licenciaturas/contaduria-publica-estrategica/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.234Z"
+    },
+    "_imgs/licenciaturas/derecho/hero-derecho.webp": {
+      "fingerprint": "79702:1772038615332",
+      "output": "_imgs/licenciaturas/derecho/hero-derecho.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.332Z"
+    },
+    "_imgs/licenciaturas/derecho-sua/hero-sua-derecho.webp": {
+      "fingerprint": "93722:1772038615433",
+      "output": "_imgs/licenciaturas/derecho-sua/hero-sua-derecho.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.434Z"
+    },
+    "_imgs/licenciaturas/hero.webp": {
+      "fingerprint": "99222:1772038615515",
+      "output": "_imgs/licenciaturas/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.515Z"
+    },
+    "_imgs/licenciaturas/ingenieria-en-administracion-y-negocios/hero-ingenieria-administracion-negocios.webp": {
+      "fingerprint": "90860:1772038615611",
+      "output": "_imgs/licenciaturas/ingenieria-en-administracion-y-negocios/hero-ingenieria-administracion-negocios.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.611Z"
+    },
+    "_imgs/licenciaturas/ingenieria-en-finanzas/hero-ingenieria-finanzas.webp": {
+      "fingerprint": "85754:1772038615711",
+      "output": "_imgs/licenciaturas/ingenieria-en-finanzas/hero-ingenieria-finanzas.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.711Z"
+    },
+    "_imgs/licenciaturas/ingenieria-en-inteligencia-artificial/hero-ingenieria-inteligencia-artificial.webp": {
+      "fingerprint": "196740:1772038615831",
+      "output": "_imgs/licenciaturas/ingenieria-en-inteligencia-artificial/hero-ingenieria-inteligencia-artificial.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.831Z"
+    },
+    "_imgs/licenciaturas/ingenieria-en-tecnologias-de-informacion-para-negocios/hero-ingenieria-ti-negocios.webp": {
+      "fingerprint": "110560:1772038615937",
+      "output": "_imgs/licenciaturas/ingenieria-en-tecnologias-de-informacion-para-negocios/hero-ingenieria-ti-negocios.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:55.937Z"
+    },
+    "_imgs/licenciaturas/innovacion-turistica-y-gastronomica/hero-innovacion-turistica-gastronomica.webp": {
+      "fingerprint": "91762:1772038616036",
+      "output": "_imgs/licenciaturas/innovacion-turistica-y-gastronomica/hero-innovacion-turistica-gastronomica.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.036Z"
+    },
+    "_imgs/licenciaturas/mercadotecnia-estrategica/hero-mercadotecnia-estrategica.webp": {
+      "fingerprint": "100876:1772038616139",
+      "output": "_imgs/licenciaturas/mercadotecnia-estrategica/hero-mercadotecnia-estrategica.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.139Z"
+    },
+    "_imgs/licenciaturas/negocios-internacionales/hero-negocios-internacionales.webp": {
+      "fingerprint": "98344:1772038616236",
+      "output": "_imgs/licenciaturas/negocios-internacionales/hero-negocios-internacionales.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.236Z"
+    },
+    "_imgs/licenciaturas/pedagogia/hero-pedagogia.webp": {
+      "fingerprint": "111982:1772038616346",
+      "output": "_imgs/licenciaturas/pedagogia/hero-pedagogia.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.346Z"
+    },
+    "_imgs/licenciaturas/psicologia/hero-psicologia.webp": {
+      "fingerprint": "87344:1772038616441",
+      "output": "_imgs/licenciaturas/psicologia/hero-psicologia.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.442Z"
+    },
+    "_imgs/logo.webp": {
+      "fingerprint": "3906:1772038616445",
+      "output": "_imgs/logo.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.445Z"
+    },
+    "_imgs/maestrias/administracion-de-negocios/hero.webp": {
+      "fingerprint": "86578:1772038616561",
+      "output": "_imgs/maestrias/administracion-de-negocios/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.561Z"
+    },
+    "_imgs/maestrias/administracion-de-negocios-en-linea/hero.webp": {
+      "fingerprint": "99482:1772038616662",
+      "output": "_imgs/maestrias/administracion-de-negocios-en-linea/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.663Z"
+    },
+    "_imgs/maestrias/derecho-corporativo/hero.webp": {
+      "fingerprint": "73324:1772038616760",
+      "output": "_imgs/maestrias/derecho-corporativo/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.760Z"
+    },
+    "_imgs/maestrias/docencia/hero.webp": {
+      "fingerprint": "70738:1772038616855",
+      "output": "_imgs/maestrias/docencia/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.855Z"
+    },
+    "_imgs/maestrias/finanzas/hero.webp": {
+      "fingerprint": "62654:1772038616947",
+      "output": "_imgs/maestrias/finanzas/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:56.948Z"
+    },
+    "_imgs/maestrias/fiscal/hero.webp": {
+      "fingerprint": "83712:1772038617047",
+      "output": "_imgs/maestrias/fiscal/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.047Z"
+    },
+    "_imgs/maestrias/hero.webp": {
+      "fingerprint": "88320:1772038617134",
+      "output": "_imgs/maestrias/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.134Z"
+    },
+    "_imgs/maestrias/mercadotecnia/hero.webp": {
+      "fingerprint": "74570:1772038617228",
+      "output": "_imgs/maestrias/mercadotecnia/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.228Z"
+    },
+    "_imgs/maestrias/tecnologias-de-informacion-y-comunicaciones/hero.webp": {
+      "fingerprint": "114220:1772038617340",
+      "output": "_imgs/maestrias/tecnologias-de-informacion-y-comunicaciones/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.340Z"
+    },
+    "_imgs/nms/bachillerato-en-linea/hero.webp": {
+      "fingerprint": "123070:1772038617448",
+      "output": "_imgs/nms/bachillerato-en-linea/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.448Z"
+    },
+    "_imgs/nms/bachillerato-tecnico-administracion-empresas-turisticas/hero.webp": {
+      "fingerprint": "108230:1772038617550",
+      "output": "_imgs/nms/bachillerato-tecnico-administracion-empresas-turisticas/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.550Z"
+    },
+    "_imgs/nms/cch/hero.webp": {
+      "fingerprint": "20240:1772038617562",
+      "output": "_imgs/nms/cch/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.563Z"
+    },
+    "_imgs/nms/curso-colbach/hero.webp": {
+      "fingerprint": "159156:1772038617677",
+      "output": "_imgs/nms/curso-colbach/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.678Z"
+    },
+    "_imgs/nms/hero.webp": {
+      "fingerprint": "92616:1772038617769",
+      "output": "_imgs/nms/hero.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.769Z"
+    },
+    "_imgs/noticias/eventos/news-001-b.webp": {
+      "fingerprint": "52504:1772038617808",
+      "output": "_imgs/noticias/eventos/news-001-b.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.808Z"
+    },
+    "_imgs/noticias/eventos/news-001.webp": {
+      "fingerprint": "65626:1772038617848",
+      "output": "_imgs/noticias/eventos/news-001.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.848Z"
+    },
+    "_imgs/pop-ups/uneg_pop-up.webp": {
+      "fingerprint": "103200:1772038617901",
+      "output": "_imgs/pop-ups/uneg_pop-up.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-25T16:56:57.901Z"
+    },
+    "_imgs/home/estudiantes.webp": {
+      "fingerprint": "66646:1772067398237",
+      "output": "_imgs/home/estudiantes.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-26T00:56:38.238Z"
+    },
+    "_imgs/home/si-somos-unam.webp": {
+      "fingerprint": "92404:1772067398316",
+      "output": "_imgs/home/si-somos-unam.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-26T00:56:38.317Z"
+    },
+    "_imgs/logo-blanco.webp": {
+      "fingerprint": "111286:1772067398453",
+      "output": "_imgs/logo-blanco.webp",
+      "sourceExt": ".webp",
+      "optimizedAt": "2026-02-26T00:56:38.453Z"
+    }
+  }
+}

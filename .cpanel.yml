@@ -4,6 +4,6 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH/
     - /bin/cp .htaccess $DEPLOYPATH/
-    - /bin/cp -R app $DEPLOYPATH/
-    - /bin/cp -R assets $DEPLOYPATH/
-    - /bin/cp -R imgs $DEPLOYPATH/
+    - /bin/cp -R _app $DEPLOYPATH/
+    - /bin/cp -R _assets $DEPLOYPATH/
+    - /bin/cp -R _imgs $DEPLOYPATH/

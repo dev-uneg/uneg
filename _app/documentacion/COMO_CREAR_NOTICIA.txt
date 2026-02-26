@@ -1,0 +1,124 @@
+COMO CREAR UNA NOTICIA (UNEG)
+
+Ruta publica del listado general:
+- /comunidad/noticias
+
+Estructura actual:
+- Landing noticias: pages/comunidad/noticias.php
+- Datos de posts: pages/comunidad/noticias/_posts.php
+- Categorias: pages/comunidad/noticias/_categorias.php
+- Plantilla de categoria: pages/comunidad/noticias/_category-page.php
+- Sidebar noticias: pages/comunidad/noticias/_sidebar.php
+- Plantilla de video: pages/comunidad/noticias/_video-post.php
+- Imagenes: _imgs/noticias/
+- Rutas declaradas en: index.php
+
+IMPORTANTE
+- Las categorias y detalles de noticias tambien requieren rutas manuales en index.php.
+- Si no registras la ruta, dara 404.
+
+===================================
+A) CREAR CATEGORIA DE NOTICIAS
+===================================
+1. Agrega la categoria en:
+   - pages/comunidad/noticias/_categorias.php
+
+Estructura:
+[
+  'slug' => 'mi-categoria',
+  'titulo' => 'Mi Categoria',
+  'descripcion' => 'Descripcion corta',
+]
+
+2. Crea carpeta de categoria:
+   - pages/comunidad/noticias/mi-categoria/
+
+3. Crea index de categoria:
+   - pages/comunidad/noticias/mi-categoria/index.php
+
+Contenido base:
+<?php
+$categorySlug = 'mi-categoria';
+require __DIR__ . '/../_category-page.php';
+
+4. Registra ruta GET de categoria en index.php:
+Patron:
+$router->map('GET', '/comunidad/noticias/mi-categoria', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/mi-categoria/index.php';
+});
+
+===================================
+B) CREAR NOTICIA NORMAL (POST)
+===================================
+1. Crea carpeta del detalle:
+   - pages/comunidad/noticias/mi-categoria/mi-noticia/
+
+2. Crea archivo:
+   - pages/comunidad/noticias/mi-categoria/mi-noticia/index.php
+
+3. Usa como base:
+   - pages/comunidad/noticias/eventos-de-nuestra-comunidad/post-1/index.php
+
+4. Agrega card en _posts.php:
+   - pages/comunidad/noticias/_posts.php
+
+Estructura minima:
+[
+  'title' => 'Titulo noticia',
+  'date' => '20 febrero, 2026',
+  'excerpt' => 'Resumen corto',
+  'href' => '/comunidad/noticias/mi-categoria/mi-noticia',
+  'category' => 'mi-categoria',
+  'image' => '/_imgs/noticias/mi-categoria/mi-noticia.jpg',
+]
+
+5. Registra ruta GET del detalle en index.php:
+Patron:
+$router->map('GET', '/comunidad/noticias/mi-categoria/mi-noticia', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/mi-categoria/mi-noticia/index.php';
+});
+
+===================================
+C) NOTICIA DE VIDEO (VIDEO BLOG)
+===================================
+Categoria usada:
+- video-blog-uneg-isec
+
+1. Crea carpeta del video:
+   - pages/comunidad/noticias/video-blog-uneg-isec/mi-video/
+
+2. Crea index del video usando _video-post.php
+   (definiendo variables antes del require):
+- $videoTitle
+- $videoUrl
+- $videoSlug
+
+3. Agrega card en _posts.php con:
+- title
+- date
+- excerpt
+- href
+- category = 'video-blog-uneg-isec'
+- video_url
+- (image opcional para card)
+
+4. Registra ruta GET del video en index.php.
+
+===================================
+D) CATEGORIAS EN USO (ACTUALES)
+===================================
+- comunicados-de-rectoria
+- eventos-de-nuestra-comunidad
+- vida-en-el-campus
+- video-blog-uneg-isec
+
+===================================
+E) CHECKLIST FINAL
+===================================
+- [ ] Categoria existe en _categorias.php
+- [ ] Post existe en _posts.php
+- [ ] Archivo detalle existe en pages/comunidad/noticias/...
+- [ ] Ruta(s) GET agregadas en index.php
+- [ ] Imagen/video existe y carga
+- [ ] URL abre sin 404
+

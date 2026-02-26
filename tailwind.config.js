@@ -2,8 +2,8 @@
 module.exports = {
   content: [
     './index.php',
-    './app/bootstrap.php',
-    './app/pages/**/*.php'
+    './_app/bootstrap.php',
+    './_app/pages/**/*.php'
   ],
   theme: {
     extend: {
