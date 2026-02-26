@@ -219,7 +219,7 @@ if ($popupEnabled): ?>
       <?php foreach ($homePosts as $post): ?>
         <article class="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
           <a href="<?php echo $post['href']; ?>" class="block">
-            <div class="h-44 w-full bg-slate-100 overflow-hidden">
+            <div class="h-56 md:h-64 w-full bg-slate-100 overflow-hidden">
               <img src="<?php echo $post['image']; ?>" alt="<?php echo htmlspecialchars($post['title']); ?>" class="h-full w-full object-cover" loading="lazy" decoding="async">
             </div>
             <div class="p-5">
