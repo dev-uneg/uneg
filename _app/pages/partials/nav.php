@@ -177,7 +177,7 @@
   <div class="bg-white">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-6">
       <a class="flex items-center gap-3" href="<?php echo $base . '/'; ?>">
-        <img src="<?php echo $assetBase; ?>/_imgs/logo.webp" alt="Universidad de Negocios ISEC" class="h-14 w-auto scale-[1.24] origin-left" loading="eager" fetchpriority="high" decoding="async">
+        <img src="<?php echo $assetBase; ?>/_imgs/logo.webp" alt="Universidad de Negocios ISEC" width="150" height="141" class="h-14 w-auto scale-[1.24] origin-left" loading="eager" fetchpriority="high" decoding="async">
       </a>
 
       <button id="menu-toggle" class="lg:hidden inline-flex items-center justify-center p-2 rounded-md border border-slate-200 text-brandBlue hover:bg-slate-100" aria-label="Abrir menú">

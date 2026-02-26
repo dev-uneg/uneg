@@ -24,6 +24,8 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo htmlspecialchars($title); ?></title>
   <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
+  <link rel="preload" href="<?php echo $assetBase; ?>/_assets/fonts/Figtree-wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="<?php echo $assetBase; ?>/_assets/fonts/Figtree-Italic-wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $assetBase; ?>/_imgs/favicon-32.png?v=1">
   <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $assetBase; ?>/_imgs/favicon-16.png?v=1">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $assetBase; ?>/_imgs/apple-touch-icon.png?v=1">
@@ -31,21 +33,21 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
   <!-- DESARROLLO: Tailwind CDN para ver cambios sin compilar -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/vendor/remixicon/remixicon.css">
+  <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/vendor/remixicon/remixicon.min.css">
   <style>
     @font-face {
       font-family: 'Figtree';
       src: url('<?php echo $assetBase; ?>/_assets/fonts/Figtree-wght.ttf') format('truetype');
       font-weight: 100 900;
       font-style: normal;
-      font-display: swap;
+      font-display: optional;
     }
     @font-face {
       font-family: 'Figtree';
       src: url('<?php echo $assetBase; ?>/_assets/fonts/Figtree-Italic-wght.ttf') format('truetype');
       font-weight: 100 900;
       font-style: italic;
-      font-display: swap;
+      font-display: optional;
     }
     body { font-family: 'Figtree', sans-serif; }
     @media (max-width: 639px) {

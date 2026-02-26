@@ -67,7 +67,10 @@ if ($popupEnabled): ?>
                       src="<?php echo $assetBase; ?>/_imgs/home/si-somos-unam.webp"
                       alt="Sí somos UNAM"
                       class="h-full w-full object-contain scale-[1.28] sm:scale-100"
-                      loading="lazy"
+                      width="1024"
+                      height="1024"
+                      loading="eager"
+                      fetchpriority="high"
                       decoding="async"
                     >
                   </div>
