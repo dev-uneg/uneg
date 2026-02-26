@@ -314,6 +314,13 @@ $router->map('GET', '/bachillerato-tecnico-administracion-empresas-turisticas', 
     require __DIR__ . '/pages/nms/bachillerato-tecnico-administracion-empresas-turisticas.php';
 });
 
+// Alias legado de WordPress para el plan de estudios de bachillerato tecnico
+$router->map('GET', '/wp-content/uploads/2025/04/Plan-Estudios-Bachillerato-Tecnico.pdf', function () use ($scriptDir): void {
+    $base = $scriptDir === '' ? '' : $scriptDir;
+    header('Location: ' . $base . '/_assets/planes-de-estudio/Plan-Estudios-Bachillerato-Tecnico.pdf', true, 302);
+    exit;
+});
+
 $router->map('GET', '/curso-colbach', function (): void {
     require __DIR__ . '/pages/nms/curso-colbach.php';
 });

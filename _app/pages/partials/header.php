@@ -111,4 +111,85 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
           if (icon) icon.textContent = isOpen ? '—' : '+';
         });
       });
+
+      // Marca enlaces activos en submenus con base en la ruta actual.
+      const normalizePath = (path) => {
+        const cleaned = (path || '/').replace(/\/+$/, '');
+        return cleaned === '' ? '/' : cleaned;
+      };
+      const currentPath = normalizePath(window.location.pathname);
+      const sectionPrefixes = new Map([
+        ['/blog', '/blog/'],
+        ['/comunidad/noticias', '/comunidad/noticias/'],
+        ['/licenciaturas', '/licenciaturas/'],
+        ['/maestrias', '/maestrias/'],
+        ['/doctorados', '/doctorados/'],
+      ]);
+      const shouldMarkActive = (targetPath) => {
+        if (targetPath === currentPath) return true;
+        const prefix = sectionPrefixes.get(targetPath);
+        return Boolean(prefix && currentPath.startsWith(prefix));
+      };
+
+      document.querySelectorAll('.menu-dropdown a[href], #mobile-nav [id^="mobile-"] a[href]').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        let parsed;
+        try {
+          parsed = new URL(href, window.location.origin);
+        } catch (_error) {
+          return;
+        }
+        if (parsed.origin !== window.location.origin) return;
+        const targetPath = normalizePath(parsed.pathname);
+        if (shouldMarkActive(targetPath)) {
+          link.classList.add('is-active');
+        }
+      });
+
+      // Asegura que Oferta Educativa muestre el panel correcto segun la ruta activa.
+      const ofertaPanelByPath = (() => {
+        if (
+          currentPath === '/nivel-medio-superior' ||
+          currentPath === '/cch-isec' ||
+          currentPath === '/bachillerato-en-linea' ||
+          currentPath === '/bachillerato-tecnico-administracion-empresas-turisticas' ||
+          currentPath === '/curso-colbach'
+        ) return 'nms';
+        if (currentPath.startsWith('/licenciaturas')) return 'lic';
+        if (currentPath === '/diplomados' || currentPath === '/cursos' || currentPath === '/diplomados-online-y-ejecutivos') return 'dip';
+        if (currentPath.startsWith('/maestrias')) return 'mae';
+        if (currentPath.startsWith('/doctorados')) return 'doc';
+        return null;
+      })();
+
+      const ofertaMega = document.querySelector('.mega[data-mega-always="true"]');
+      if (ofertaMega && ofertaPanelByPath) {
+        ofertaMega.querySelectorAll('.mega-item').forEach((item) => {
+          const isActivePanel = item.dataset.panel === ofertaPanelByPath;
+          item.classList.toggle('active', isActivePanel);
+          item.classList.toggle('is-active', isActivePanel);
+        });
+        ofertaMega.querySelectorAll('.mega-panel').forEach((panel) => {
+          panel.classList.toggle('active', panel.dataset.panel === ofertaPanelByPath);
+        });
+      }
+
+      // Si una opcion de submenu anidado esta activa, marca tambien su enlace padre.
+      document.querySelectorAll('.simple-item').forEach((item) => {
+        if (!item.querySelector('.simple-submenu a.is-active')) return;
+        const parentLink = item.querySelector(':scope > a');
+        if (parentLink) parentLink.classList.add('is-active');
+      });
+
+      // En movil, abre automaticamente los acordeones que contienen una ruta activa.
+      document.querySelectorAll('#mobile-nav [id^="mobile-"]').forEach((section) => {
+        if (!section.querySelector('a.is-active')) return;
+        section.classList.remove('hidden');
+        const trigger = document.querySelector(`[data-mobile-toggle="${section.id}"]`);
+        if (!trigger) return;
+        trigger.setAttribute('aria-expanded', 'true');
+        const icon = trigger.querySelector('[data-icon]');
+        if (icon) icon.textContent = '—';
+      });
     </script>
