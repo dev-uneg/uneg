@@ -4,8 +4,14 @@ $active = 'comunidad';
 require __DIR__ . '/../partials/header.php';
 ?>
 <main class="max-w-7xl mx-auto px-4 py-10">
-  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-    <img src="<?php echo $assetBase; ?>/_imgs/comunidad/docentes/docentes.webp" alt="Docentes ISEC" class="block w-full h-auto" loading="eager">
+  <section class="overflow-hidden rounded-2xl border border-slate-200 bg-[linear-gradient(110deg,#082a63_0%,#0b2c65_40%,#1348a7_100%)] shadow-sm">
+    <div class="px-6 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16 text-white">
+      <p class="text-lg sm:text-2xl font-medium tracking-wide">VOCACIÓN AUTÉNTICA</p>
+      <h2 class="mt-3 text-5xl sm:text-6xl lg:text-7xl font-black leading-none text-[#80d7ff]">DOCENTES UNEG</h2>
+      <p class="mt-6 max-w-4xl text-xl sm:text-2xl lg:text-3xl font-medium leading-tight">
+        AQUÍ ENCONTRARÁS TODO LO RELACIONADO CON LOS DOCENTES DE LA UNIVERSIDAD DE NEGOCIOS ISEC
+      </p>
+    </div>
   </section>
   <section class="mt-10 text-center">
     <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Docentes | Información y Recursos para Profesores</h1>

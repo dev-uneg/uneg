@@ -49,7 +49,7 @@ if ($popupEnabled): ?>
                   <p class="mt-1 text-4xl sm:text-4xl md:text-5xl font-black text-white tracking-[0.04em] sm:tracking-[0.08em]">PRESENCIAL</p>
                   <p class="mt-2 sm:mt-3 text-3xl sm:text-3xl md:text-4xl font-bold text-[#f5c44d]">16:00 hrs a 21:00 hrs</p>
                   <p class="mt-3 sm:mt-6 text-xl sm:text-base md:text-xl text-white/95">
-                    Creemos que <span class="text-[#f5c44d] font-semibold">tu futuro no tiene horario</span>, solo ganas, actitud y decision de empezar hoy.
+                    Creemos que <span class="text-[#f5c44d] font-semibold">tu futuro no tiene horario</span>, solo ganas, actitud y decisión de empezar hoy.
                   </p>
                   <a
                     href="<?php echo $base; ?>/cch-isec"
@@ -84,13 +84,13 @@ if ($popupEnabled): ?>
           <div class="h-full grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-0 items-center">
             <div class="flex items-center text-center text-white px-3 sm:px-6 lg:h-full lg:px-8">
               <div class="w-full">
-              <p class="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[#f5c44d]">Aqui si marcamos la</p>
+              <p class="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[#f5c44d]">Aquí sí marcamos la</p>
               <p class="mt-1 text-4xl sm:text-6xl md:text-7xl font-black leading-none tracking-tight text-white">DIFERENCIA</p>
               <div class="mt-3 sm:mt-4 h-[3px] w-full max-w-xl bg-[#2951ff] mx-auto"></div>
               <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[#0f2463] font-semibold text-sm sm:text-lg md:text-xl max-w-xl mx-auto">
                 <li class="rounded-full bg-white px-3 sm:px-5 py-2 flex items-center justify-center gap-2">
                   <i class="ri-check-line shrink-0 text-[20px] leading-none text-[#1d4ed8]" aria-hidden="true"></i>
-                  <span>Atencion y seguimiento academico personalizado</span>
+                  <span>Atención y seguimiento académico personalizado</span>
                 </li>
                 <li class="rounded-full bg-white px-3 sm:px-5 py-2 flex items-center justify-center gap-2">
                   <i class="ri-check-line shrink-0 text-[20px] leading-none text-[#1d4ed8]" aria-hidden="true"></i>
@@ -187,17 +187,32 @@ if ($popupEnabled): ?>
       Sigue leyendo sobre lo que las Universidades Privadas en CDMX tienen para ti
     </h2>
     <?php
-      $homeBlogPosts = require __DIR__ . '/blog/_posts.php';
-      $homeBlogPosts = array_map(function ($p) use ($base, $assetBase) {
+      $newsPosts = require __DIR__ . '/comunidad/noticias/_posts.php';
+      $newsPosts = array_map(function ($p) use ($base, $assetBase) {
         $p['href'] = $base . $p['href'];
         $p['image'] = $assetBase . $p['image'];
+        $p['meta'] = 'Noticias, Comunidad ISEC';
         return $p;
-      }, $homeBlogPosts);
-      shuffle($homeBlogPosts);
-      $homeBlogPosts = array_slice($homeBlogPosts, 0, 3);
+      }, $newsPosts);
+
+      $blogPosts = require __DIR__ . '/blog/_posts.php';
+      $blogPosts = array_map(function ($p) use ($base, $assetBase) {
+        $p['href'] = $base . $p['href'];
+        $p['image'] = $assetBase . $p['image'];
+        $p['meta'] = 'Blog, Comunidad ISEC';
+        return $p;
+      }, $blogPosts);
+
+      $latestNews = $newsPosts[0] ?? null;
+      $latestBlogs = array_slice($blogPosts, -2);
+      $homePosts = [];
+      if ($latestNews) {
+        $homePosts[] = $latestNews;
+      }
+      $homePosts = array_merge($homePosts, $latestBlogs);
     ?>
     <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <?php foreach ($homeBlogPosts as $post): ?>
+      <?php foreach ($homePosts as $post): ?>
         <article class="rounded-2xl border border-slate-200 shadow-sm overflow-hidden bg-white">
           <a href="<?php echo $post['href']; ?>" class="block">
             <div class="h-44 w-full bg-slate-100 overflow-hidden">
@@ -205,7 +220,7 @@ if ($popupEnabled): ?>
             </div>
             <div class="p-5">
               <span class="inline-flex items-center rounded-md bg-[#0d4fb6] px-4 py-2 text-sm font-semibold text-white">Leer más</span>
-              <p class="mt-4 text-sm text-slate-500"><?php echo htmlspecialchars($post['date']); ?> · Blog, Comunidad ISEC</p>
+              <p class="mt-4 text-sm text-slate-500"><?php echo htmlspecialchars($post['date']); ?> · <?php echo htmlspecialchars($post['meta']); ?></p>
               <h3 class="mt-2 text-lg font-semibold text-slate-900"><?php echo htmlspecialchars($post['title']); ?></h3>
               <p class="mt-2 text-sm text-slate-600"><?php echo htmlspecialchars($post['excerpt']); ?></p>
             </div>

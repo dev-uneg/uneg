@@ -61,7 +61,7 @@ $otherNews = array_slice($otherPool, 0, 3);
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 <?php echo count($pagedPosts) === 0 ? 'mt-4' : ''; ?>">
         <?php if (count($pagedPosts) === 0): ?>
           <div class="col-span-full rounded-2xl border border-slate-200 bg-white p-6 text-center text-slate-600">
-            Por el momento no hay noticias en esta categoria. Estamos preparando nuevo contenido.
+            Por el momento no hay noticias en esta categoría. Estamos preparando nuevo contenido.
           </div>
         <?php else: ?>
           <?php foreach ($pagedPosts as $post): ?>
