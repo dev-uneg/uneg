@@ -1,6 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/administrador/public_html/2026.uneg.edu.mx
+    - export DEPLOYPATH=/home/administrador/public_html
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH/
     - /bin/cp .htaccess $DEPLOYPATH/

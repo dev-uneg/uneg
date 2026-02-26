@@ -23,9 +23,9 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo htmlspecialchars($title); ?></title>
   <!-- PRODUCCION: descomentar el CSS compilado -->
-  <!-- <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css"> -->
+  <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
   <!-- DESARROLLO: Tailwind CDN para ver cambios sin compilar -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/vendor/remixicon/remixicon.css">
   <style>
     @font-face {
