@@ -55,12 +55,12 @@
           <span>Crédito y Cobranza WhatsApp: 55 1700 9348 / 56 6747 7007</span>
           <span class="mx-6">•</span>
           <span class="inline-flex items-center gap-3">
-            <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="Facebook" href="https://www.facebook.com/unegoficial/"><?php echo uneg_icon('facebook', 'h-4 w-4'); ?></a>
-            <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="Instagram" href="https://www.instagram.com/unegoficial/"><?php echo uneg_icon('instagram', 'h-4 w-4'); ?></a>
-            <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="YouTube" href="https://youtube.com/c/UniversidaddeNegociosISEC"><?php echo uneg_icon('youtube', 'h-4 w-4'); ?></a>
-            <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="LinkedIn" href="https://www.linkedin.com/edu/school?id=15221&trk=edu-up-nav-menu-home"><?php echo uneg_icon('linkedin', 'h-4 w-4'); ?></a>
-            <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="Twitter" href="https://twitter.com/uneg_edu"><?php echo uneg_icon('twitter-x', 'h-4 w-4'); ?></a>
-            <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="WhatsApp" href="https://wa.me/5215571137882"><?php echo uneg_icon('whatsapp', 'h-4 w-4'); ?></a>
+            <span class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-hidden="true"><?php echo uneg_icon('facebook', 'h-4 w-4'); ?></span>
+            <span class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-hidden="true"><?php echo uneg_icon('instagram', 'h-4 w-4'); ?></span>
+            <span class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-hidden="true"><?php echo uneg_icon('youtube', 'h-4 w-4'); ?></span>
+            <span class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-hidden="true"><?php echo uneg_icon('linkedin', 'h-4 w-4'); ?></span>
+            <span class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-hidden="true"><?php echo uneg_icon('twitter-x', 'h-4 w-4'); ?></span>
+            <span class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-hidden="true"><?php echo uneg_icon('whatsapp', 'h-4 w-4'); ?></span>
           </span>
         </div>
       </div>

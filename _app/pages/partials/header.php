@@ -1,5 +1,6 @@
 <?php
 $title = $title ?? 'UNEG';
+$metaDescription = $metaDescription ?? 'Universidad de Negocios ISEC: oferta educativa de nivel medio superior, licenciaturas, maestrías y doctorados en CDMX.';
 $active = $active ?? '';
 $bodyClass = $bodyClass ?? 'bg-slate-50';
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
@@ -22,6 +23,10 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo htmlspecialchars($title); ?></title>
+  <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $assetBase; ?>/_imgs/favicon-32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $assetBase; ?>/_imgs/favicon-16.png?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $assetBase; ?>/_imgs/apple-touch-icon.png?v=1">
   <!-- PRODUCCION: descomentar el CSS compilado -->
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
   <!-- DESARROLLO: Tailwind CDN para ver cambios sin compilar -->

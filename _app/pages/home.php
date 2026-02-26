@@ -1,5 +1,6 @@
 <?php
 $title = 'Inicio | UNEG';
+$metaDescription = 'Universidad de Negocios ISEC en CDMX: conoce nuestra oferta educativa, recorridos, noticias y blog.';
 $active = 'inicio';
 $bodyClass = 'bg-slate-50';
 require __DIR__ . '/partials/header.php';
@@ -55,7 +56,7 @@ if ($popupEnabled): ?>
                     href="<?php echo $base; ?>/cch-isec"
                     class="mt-4 sm:mt-6 inline-flex items-center justify-center rounded-md bg-[#f5c44d] px-6 py-3 text-base sm:text-lg font-semibold text-[#14215a] shadow-md transition-colors hover:bg-[#ffd46f]"
                   >
-                    Más información
+                    Más información sobre CCH ISEC
                   </a>
                 </div>
               </div>
@@ -180,7 +181,7 @@ if ($popupEnabled): ?>
     </p>
   </section>
   <div class="mt-10 w-full">
-    <iframe id="travel" width="1280" height="600" allowfullscreen loading="lazy" src="https://tourmkr.com/F1WcjpHzDt" class="w-full rounded-2xl border border-slate-200 shadow-sm"></iframe>
+    <iframe id="travel" width="1280" height="600" title="Recorrido virtual de la Universidad de Negocios ISEC" allowfullscreen loading="lazy" src="https://tourmkr.com/F1WcjpHzDt" class="w-full rounded-2xl border border-slate-200 shadow-sm"></iframe>
   </div>
   <section class="mt-14">
     <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65] text-center">
