@@ -35,7 +35,7 @@ $router->map('GET', '/', function (): void {
 // ---------------------------
 // Institucional
 // ---------------------------
-$router->map('GET', '/acerca', function (): void {
+$router->map('GET', '/acerca-de-isec', function (): void {
     require __DIR__ . '/pages/acerca.php';
 });
 

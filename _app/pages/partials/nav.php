@@ -187,7 +187,7 @@
       <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-[#0b2c65]">
         <?php
           echo $navLink('/', 'Inicio', 'inicio');
-          echo $navLink('/acerca', 'Acerca de ISEC.', 'acerca');
+          echo $navLink('/acerca-de-isec', 'Acerca de ISEC.', 'acerca');
           echo $navLink('/recorrido-virtual', 'Recorrido Virtual', 'recorrido');
         ?>
 
@@ -295,7 +295,7 @@
       <div class="px-4 py-3 flex flex-col gap-3 text-sm font-semibold text-[#0b2c65]">
         <?php
           echo $navLink('/', 'Inicio', 'inicio');
-          echo $navLink('/acerca', 'Acerca de ISEC.', 'acerca');
+          echo $navLink('/acerca-de-isec', 'Acerca de ISEC.', 'acerca');
           echo $navLink('/recorrido-virtual', 'Recorrido Virtual', 'recorrido');
         ?>
 
