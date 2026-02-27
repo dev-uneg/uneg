@@ -44,6 +44,12 @@ require_once __DIR__ . '/../../helpers/icons.php';
       </a>
     </section>
 
+    <?php if (!empty($dbError)): ?>
+      <section class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+        <?php echo htmlspecialchars((string) $dbError, ENT_QUOTES, 'UTF-8'); ?>
+      </section>
+    <?php endif; ?>
+
     <section class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
       <a href="<?php echo $base; ?>/admin/leads" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
         <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0b2c65] text-white">

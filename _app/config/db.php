@@ -7,6 +7,6 @@ return [
     'port' => 3306,
     'database' => 'administrador_web2026',
     'username' => 'administrador_web2026',
-    'password' => '&ZV6h6f~UjQUiwC1',
+    'password' => '&ZV6h6f~UjQUiwC1suce',
     'charset' => 'utf8mb4',
 ];
