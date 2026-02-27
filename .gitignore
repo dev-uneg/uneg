@@ -4,3 +4,4 @@ imgs_legacy/
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
+_app/config/db.local.php

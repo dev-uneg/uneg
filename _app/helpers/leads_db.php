@@ -29,11 +29,17 @@ function leads_db_config(): array
         }
     }
 
-    $host = (string) ($config['host'] ?? getenv('DB_HOST') ?: '127.0.0.1');
-    $port = (int) ($config['port'] ?? getenv('DB_PORT') ?: 3306);
-    $database = (string) ($config['database'] ?? getenv('DB_DATABASE') ?: 'administrador_web2026');
-    $username = (string) ($config['username'] ?? getenv('DB_USERNAME') ?: 'administrador_web2026');
-    $password = (string) ($config['password'] ?? getenv('DB_PASSWORD') ?: '');
+    $envHost = (string) (getenv('DB_HOST') ?: '127.0.0.1');
+    $envPort = (string) (getenv('DB_PORT') ?: '3306');
+    $envDatabase = (string) (getenv('DB_DATABASE') ?: 'administrador_web2026');
+    $envUsername = (string) (getenv('DB_USERNAME') ?: 'administrador_web2026');
+    $envPassword = (string) (getenv('DB_PASSWORD') ?: '');
+
+    $host = (string) ($config['host'] ?? $envHost);
+    $port = (int) ($config['port'] ?? $envPort);
+    $database = (string) ($config['database'] ?? $envDatabase);
+    $username = (string) ($config['username'] ?? $envUsername);
+    $password = (string) ($config['password'] ?? $envPassword);
     $charset = (string) ($config['charset'] ?? 'utf8mb4');
 
     return [
@@ -154,7 +160,7 @@ function leads_db_init(PDO $pdo): void
     }
 }
 
-function leads_db_datetime(mixed $value): string
+function leads_db_datetime($value): string
 {
     $raw = is_string($value) ? trim($value) : '';
     if ($raw === '') {
