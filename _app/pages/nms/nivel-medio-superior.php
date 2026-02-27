@@ -41,9 +41,9 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-10 text-center">
-    <h2 class="text-xl sm:text-2xl font-semibold text-[#0b2c65]">
+    <h1 class="text-xl sm:text-2xl font-semibold text-[#0b2c65]">
       ¿Bachilleratos en CDMX? Conoce el plan de estudios de la Universidad de Negocios ISEC
-    </h2>
+    </h1>
     <p class="mt-2 text-slate-600">
       Sigue en tu camino hacia el éxito con el plan de estudios de nuestros bachilleratos en CDMX.
     </p>

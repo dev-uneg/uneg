@@ -43,7 +43,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-10 text-center">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Inscríbete al Bachillerato Técnico en Administración de Empresas Turísticas</h2>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Inscríbete al Bachillerato Técnico en Administración de Empresas Turísticas</h1>
     <p class="mt-3 text-slate-600">
       Si te interesa estudiar un Bachillerato en Turismo, el plan de estudios de nuestro Bachillerato Técnico en Administración de Empresas Turísticas es para ti.
     </p>

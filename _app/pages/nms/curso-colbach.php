@@ -43,7 +43,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-10 text-center">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Inscripciones abiertas para el Curso Colbach Universidad de Negocios ISEC</h2>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Inscripciones abiertas para el Curso Colbach Universidad de Negocios ISEC</h1>
   </section>
 
   <section class="mt-6 rounded-2xl bg-[#072838] text-white px-6 py-6">

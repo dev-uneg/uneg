@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Licenciatura en Administración SUA | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -43,16 +43,16 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Administración SUA</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      Desarrolla habilidades de gestión, liderazgo y estrategia empresarial con un programa sabatino adaptado a tu ritmo.
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        Fortalece tu perfil profesional con herramientas de administración, finanzas y toma de decisiones para organizaciones.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">

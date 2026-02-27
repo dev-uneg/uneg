@@ -43,7 +43,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-10 text-center">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Bachillerato en línea: el camino hacia tus objetivos</h2>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Bachillerato en línea: el camino hacia tus objetivos</h1>
     <p class="mt-3 text-slate-600">
       Logra tus objetivos con una alternativa que se ajuste a tu tiempo y se equilibre con tus demás actividades, con la Universidad de Negocios ISEC es posible.
     </p>

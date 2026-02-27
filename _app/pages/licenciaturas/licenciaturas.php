@@ -43,7 +43,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-10 text-center">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Licenciaturas en CDMX: Educación profesional enfocada a negocios</h2>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Licenciaturas en CDMX: Educación profesional enfocada a negocios</h1>
     <p class="mt-2 text-slate-600">
       El plan de estudios de nuestras licenciaturas en CDMX está enfocado en un entorno profesional de negocios.
     </p>

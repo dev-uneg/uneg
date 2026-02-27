@@ -1,5 +1,5 @@
 <?php
-$title = 'Contaduría Pública Estratégica | UNEG';
+$title = 'Licenciatura en Derecho SUA | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 page-gray';
 require __DIR__ . '/../partials/header.php';
@@ -43,16 +43,16 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Contaduría Pública Estratégica</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce nuestra Licenciatura en Derecho SUA</h1>
     <p class="mt-2 text-slate-600">
-      ¿Tienes curiosidad por los números y las finanzas en los negocios? Saca todo tu potencial con nuestra Licenciatura en Contaduría Pública Estratégica
+      Prepárate en el análisis e interpretación del marco jurídico con un plan sabatino diseñado para tu desarrollo profesional.
     </p>
   </section>
 
   <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="text-center lg:text-left">
       <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">
-        Conocimientos que permitirán un sólido control sobre los aspectos financieros y administrativos empresariales.
+        Adquiere bases sólidas en derecho civil, mercantil, laboral y fiscal para desempeñarte con visión legal integral.
       </h2>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">

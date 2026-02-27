@@ -10,7 +10,7 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <section class="mt-12 text-center">
-    <h2 class="text-xl sm:text-2xl font-semibold text-[#0b2c65]">Oferta IXU</h2>
+    <h1 class="text-xl sm:text-2xl font-semibold text-[#0b2c65]">Oferta IXU</h1>
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
       <a href="<?php echo $base; ?>/diplomados" class="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-8 py-6 text-center font-semibold text-[#0b2c65] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center mb-3">

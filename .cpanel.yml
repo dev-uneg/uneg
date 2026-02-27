@@ -1,9 +1,21 @@
 deployment:
+  # Lista de comandos que cPanel ejecuta al hacer deploy.
   tasks:
+    # Ruta de destino en el servidor (document root del sitio).
     - export DEPLOYPATH=/home/administrador/public_html
+    # Asegura que exista la carpeta destino.
     - /bin/mkdir -p $DEPLOYPATH
+    # Publica el front controller principal.
     - /bin/cp index.php $DEPLOYPATH/
+    # Publica reglas de Apache (rewrites, redirects, cache).
     - /bin/cp .htaccess $DEPLOYPATH/
+    # Publica el sitemap para Search Console/Google.
+    - /bin/cp sitemap.xml $DEPLOYPATH/
+    # Publica robots.txt con referencia al sitemap.
+    - /bin/cp robots.txt $DEPLOYPATH/
+    # Sincroniza la app PHP completa (excepto archivos sqlite temporales).
     - /usr/bin/rsync -a --exclude 'storage/*.sqlite' --exclude 'storage/*.sqlite-shm' --exclude 'storage/*.sqlite-wal' _app/ $DEPLOYPATH/_app/
+    # Publica assets estáticos compilados (css, js, fonts, etc.).
     - /bin/cp -R _assets $DEPLOYPATH/
+    # Publica imágenes del sitio.
     - /bin/cp -R _imgs $DEPLOYPATH/

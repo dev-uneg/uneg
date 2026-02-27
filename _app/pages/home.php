@@ -1,6 +1,6 @@
 <?php
 $title = 'Inicio | UNEG';
-$metaDescription = 'Universidad de Negocios ISEC en CDMX: conoce nuestra oferta educativa, recorridos, noticias y blog.';
+$metaDescription = 'Universidad de Negocios ISEC en CDMX con oferta educativa en bachillerato, licenciaturas, maestrías y doctorados. Conoce modalidades y admisiones.';
 $active = 'inicio';
 $bodyClass = 'bg-slate-50';
 require __DIR__ . '/partials/header.php';
@@ -32,6 +32,7 @@ if ($popupEnabled): ?>
 ?>
 
 <main class="w-full px-0 pb-10">
+  <h1 class="sr-only">Universidad de Negocios ISEC en CDMX</h1>
   <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[700px] lg:h-[600px] w-screen overflow-hidden">
     <div id="home-slider" class="relative h-full w-full">
       <div class="home-slide absolute inset-0 h-full w-full opacity-100 pointer-events-auto transition-opacity duration-700">

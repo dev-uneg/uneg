@@ -43,7 +43,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-10 text-center">
-    <h2 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Tú futuro empieza con una decisión.</h2>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Tú futuro empieza con una decisión.</h1>
     <p class="mt-3 text-slate-600">
       Te preparamos con las herramientas necesarias para que tengas conocimientos a nivel medio superior con certificado oficial de la Universidad Autónoma de México (UNAM).
     </p>

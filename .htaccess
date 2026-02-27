@@ -39,6 +39,9 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Legacy -> nueva URL de licenciatura.
+  RewriteRule ^oferta-educativa/licenciaturas/licenciatura-en-negocios-internacionales/?$ /licenciaturas/negocios-internacionales [R=301,L]
+
   # Acepta URLs con slash final y las canoniza sin slash (excepto directorios reales).
   # Ejemplo: /oferta-educativa/ -> /oferta-educativa
   RewriteCond %{REQUEST_FILENAME} !-d

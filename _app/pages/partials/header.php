@@ -1,6 +1,5 @@
 <?php
 $title = $title ?? 'UNEG';
-$metaDescription = $metaDescription ?? 'Universidad de Negocios ISEC: oferta educativa de nivel medio superior, licenciaturas, maestrías y doctorados en CDMX.';
 $active = $active ?? '';
 $bodyClass = $bodyClass ?? 'bg-slate-50';
 $scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? '/index.php'));
@@ -12,6 +11,30 @@ if (strpos($base, '/home/') === 0 || strpos($base, '/var/') === 0 || strpos($bas
   $base = '';
 }
 $assetBase = $base === '' ? '' : $base;
+
+$requestUri = (string) ($_SERVER['REQUEST_URI'] ?? '/');
+$requestPath = parse_url($requestUri, PHP_URL_PATH);
+$requestPath = is_string($requestPath) && $requestPath !== '' ? $requestPath : '/';
+if ($base !== '' && strpos($requestPath, $base . '/') === 0) {
+  $requestPath = substr($requestPath, strlen($base));
+} elseif ($base !== '' && $requestPath === $base) {
+  $requestPath = '/';
+}
+$canonicalPath = preg_replace('#/index\.php$#', '', $requestPath) ?: '/';
+if ($canonicalPath !== '/' && substr($canonicalPath, -1) === '/') {
+  $canonicalPath = rtrim($canonicalPath, '/');
+}
+$canonicalUrl = 'https://uneg.edu.mx' . $canonicalPath;
+
+if (!isset($metaDescription) || trim((string) $metaDescription) === '') {
+  $topic = preg_replace('/\s+/', ' ', str_replace(['| UNEG', 'UNEG -', ' - UNEG'], '', $title));
+  $topic = trim((string) $topic);
+  if ($topic === '') {
+    $topic = 'la oferta académica';
+  }
+  $metaDescription = 'Conoce ' . $topic . ' en la Universidad de Negocios ISEC en CDMX. Revisa planes de estudio, modalidades y proceso de admisión.';
+}
+
 require_once __DIR__ . '/../../helpers/icons.php';
 
 $navLink = function (string $href, string $label, string $key) use ($active, $base) {
@@ -30,6 +53,7 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo htmlspecialchars($title); ?></title>
   <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
   <link rel="preload" href="<?php echo $assetBase; ?>/_assets/fonts/Figtree-wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="<?php echo $assetBase; ?>/_assets/fonts/Figtree-Italic-wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $assetBase; ?>/_imgs/favicon-32.png?v=1">
