@@ -42,7 +42,7 @@
   # Acepta URLs con slash final y las canoniza sin slash (excepto directorios reales).
   # Ejemplo: /oferta-educativa/ -> /oferta-educativa
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.+)/$ $1 [R=301,L]
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
 
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

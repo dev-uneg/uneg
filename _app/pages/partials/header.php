@@ -3,8 +3,14 @@ $title = $title ?? 'UNEG';
 $metaDescription = $metaDescription ?? 'Universidad de Negocios ISEC: oferta educativa de nivel medio superior, licenciaturas, maestrías y doctorados en CDMX.';
 $active = $active ?? '';
 $bodyClass = $bodyClass ?? 'bg-slate-50';
-$base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
-$base = $base === '.' ? '' : $base;
+$scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? '/index.php'));
+$base = rtrim(dirname($scriptName), '/');
+if ($base === '.' || $base === '/') {
+  $base = '';
+}
+if (strpos($base, '/home/') === 0 || strpos($base, '/var/') === 0 || strpos($base, '/usr/') === 0) {
+  $base = '';
+}
 $assetBase = $base === '' ? '' : $base;
 require_once __DIR__ . '/../../helpers/icons.php';
 

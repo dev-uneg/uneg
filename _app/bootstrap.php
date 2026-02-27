@@ -22,7 +22,15 @@ require $autoload;
 
 $router = new AltoRouter();
 // Ajusta base path automáticamente para funcionar en /uneg y en /
-$scriptDir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+$scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? '/index.php'));
+$scriptDir = rtrim(dirname($scriptName), '/');
+if ($scriptDir === '.' || $scriptDir === '/') {
+    $scriptDir = '';
+}
+// En algunos hosts mal configurados SCRIPT_NAME puede traer ruta física (/home/.../public_html/index.php).
+if (strpos($scriptDir, '/home/') === 0 || strpos($scriptDir, '/var/') === 0 || strpos($scriptDir, '/usr/') === 0) {
+    $scriptDir = '';
+}
 $router->setBasePath($scriptDir === '' ? '' : $scriptDir);
 
 // ---------------------------
