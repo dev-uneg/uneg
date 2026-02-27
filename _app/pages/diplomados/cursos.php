@@ -11,7 +11,7 @@ require __DIR__ . '/../partials/header.php';
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-school-line text-lg"></i>
+            <i class="text-lg" data-lucide="school"></i>
           </span>
           <div>
             <p class="font-semibold">Modalidad Flexible</p>
@@ -20,7 +20,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-time-line text-lg"></i>
+            <i class="text-lg" data-lucide="clock-3"></i>
           </span>
           <div>
             <p class="font-semibold">Horarios Ejecutivos</p>
@@ -29,7 +29,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-medal-line text-lg"></i>
+            <i class="text-lg" data-lucide="medal"></i>
           </span>
           <div>
             <p class="font-semibold">Certificación</p>
@@ -68,7 +68,7 @@ require __DIR__ . '/../partials/header.php';
 
 <div id="ixu-lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/80 p-4">
   <button id="ixu-lightbox-close" class="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/90 text-slate-800 shadow-md" aria-label="Cerrar">
-    <i class="ri-close-line text-2xl"></i>
+    <i class="text-2xl" data-lucide="x"></i>
   </button>
   <img id="ixu-lightbox-img" src="" alt="Vista previa" class="max-h-[85vh] max-w-[90vw] rounded-2xl bg-white p-2 shadow-2xl">
 </div>

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build:icons": "node ./_app/scripts/build-lucide-sprite.js",
     "build:css": "BROWSERSLIST_IGNORE_OLD_DATA=1 tailwindcss -i ./src/input.css -o ./_assets/css/output.css --minify",
     "watch:css": "BROWSERSLIST_IGNORE_OLD_DATA=1 tailwindcss -i ./src/input.css -o ./_assets/css/output.css --watch",
     "optimize:images": "node ./_app/scripts/optimize-images.js",
@@ -29,6 +30,6 @@
     "tailwindcss": "^3.4.19"
   },
   "dependencies": {
-    "remixicon": "^4.3.0"
+    "lucide-static": "^0.575.0"
   }
 }

@@ -13,7 +13,7 @@ require __DIR__ . '/../partials/header.php';
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-school-line text-lg"></i>
+            <i class="text-lg" data-lucide="school"></i>
           </span>
           <div>
             <p class="font-semibold">Modalidad en línea</p>
@@ -22,7 +22,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-time-line text-lg"></i>
+            <i class="text-lg" data-lucide="clock-3"></i>
           </span>
           <div>
             <p class="font-semibold">24 HRS</p>
@@ -31,7 +31,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-medal-line text-lg"></i>
+            <i class="text-lg" data-lucide="medal"></i>
           </span>
           <div>
             <p class="font-semibold">Certificación SEP</p>
@@ -53,7 +53,7 @@ require __DIR__ . '/../partials/header.php';
         <p class="mt-3">Acredita el nivel medio superior y abre un mundo de posibilidades para continuar tus estudios.</p>
       </div>
       <div class="hidden sm:flex h-12 w-12 items-center justify-center rounded-full border border-white/40 text-white/80">
-        <i class="ri-information-line text-2xl"></i>
+        <i class="text-2xl" data-lucide="info"></i>
       </div>
     </div>
   </section>
@@ -100,21 +100,21 @@ require __DIR__ . '/../partials/header.php';
           </div>
           <div class="text-center">
             <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
-              <i class="ri-graduation-cap-line text-2xl"></i>
+              <i class="text-2xl" data-lucide="graduation-cap"></i>
             </div>
             <p class="mt-3 text-lg font-semibold">Plan de Estudios</p>
             <button class="mt-1 text-sm text-white/80 hover:text-white">Ver plan</button>
           </div>
           <div class="text-center">
             <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
-              <i class="ri-time-line text-2xl"></i>
+              <i class="text-2xl" data-lucide="clock-3"></i>
             </div>
             <p class="mt-3 text-lg font-semibold">Horarios</p>
             <button class="mt-1 text-sm text-white/80 hover:text-white">Ver horarios</button>
           </div>
           <div class="text-center">
             <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
-              <i class="ri-mail-line text-2xl"></i>
+              <i class="text-2xl" data-lucide="mail"></i>
             </div>
             <p class="mt-3 text-lg font-semibold">Inscríbete Ahora</p>
             <button class="mt-1 text-sm text-white/80 hover:text-white">Contactar</button>
@@ -125,7 +125,7 @@ require __DIR__ . '/../partials/header.php';
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
-              <i class="ri-folder-2-line text-xl"></i>
+              <i class="text-xl" data-lucide="folder"></i>
             </div>
             <h4 class="mt-3 font-semibold">Requisitos</h4>
             <p class="mt-2 text-sm text-slate-600">Para realizar este curso deberás contar con los siguientes documentos y requisitos:</p>
@@ -139,7 +139,7 @@ require __DIR__ . '/../partials/header.php';
           </div>
           <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
-              <i class="ri-checkbox-circle-line text-xl"></i>
+              <i class="text-xl" data-lucide="check-circle"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de Ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de este curso deberás cubrir el siguiente perfil:</p>
@@ -150,7 +150,7 @@ require __DIR__ . '/../partials/header.php';
           </div>
           <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
-              <i class="ri-graduation-cap-line text-xl"></i>
+              <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de Egreso</h4>
             <p class="mt-2 text-sm text-slate-600">Al egresar concluir el curso, tendrás habilidades para:</p>
@@ -162,7 +162,7 @@ require __DIR__ . '/../partials/header.php';
           </div>
           <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
-              <i class="ri-briefcase-4-line text-xl"></i>
+              <i class="text-xl" data-lucide="briefcase"></i>
             </div>
             <h4 class="mt-3 font-semibold">Campo de Trabajo</h4>
             <p class="mt-2 text-sm text-slate-600">Profesionalmente te desarrollarás en:</p>

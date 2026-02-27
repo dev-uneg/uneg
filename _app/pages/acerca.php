@@ -64,11 +64,11 @@ require __DIR__ . '/partials/header.php';
         <img src="<?php echo $assetBase; ?>/_imgs/acerca/slide-4.webp" alt="Vida universitaria ISEC" class="absolute inset-0 h-full w-full object-cover">
       </div>
     </div>
-    <button id="about-prev" class="absolute left-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/25 text-white shadow-md backdrop-blur hover:bg-white/35" aria-label="Anterior">
-      <i class="ri-arrow-left-line text-[22px] leading-none" aria-hidden="true"></i>
+    <button id="about-prev" class="absolute left-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/25 text-white shadow-md backdrop-blur hover:bg-white/35 flex items-center justify-center" aria-label="Anterior">
+      <i class="text-[22px] leading-none" data-lucide="chevron-left" aria-hidden="true"></i>
     </button>
-    <button id="about-next" class="absolute right-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/25 text-white shadow-md backdrop-blur hover:bg-white/35" aria-label="Siguiente">
-      <i class="ri-arrow-right-line text-[22px] leading-none" aria-hidden="true"></i>
+    <button id="about-next" class="absolute right-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/25 text-white shadow-md backdrop-blur hover:bg-white/35 flex items-center justify-center" aria-label="Siguiente">
+      <i class="text-[22px] leading-none" data-lucide="chevron-right" aria-hidden="true"></i>
     </button>
   </div>
 

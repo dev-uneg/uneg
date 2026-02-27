@@ -17,26 +17,26 @@ require __DIR__ . '/../partials/header.php';
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 rounded-2xl border border-slate-200 bg-white overflow-hidden">
       <div class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-graduation-cap-line text-2xl"></i>
+          <i class="text-2xl" data-lucide="graduation-cap"></i>
         </div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Continúa tu Formación Académica</h3>
       </div>
       <div class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b sm:border-r border-slate-200">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-mail-line text-2xl"></i>
+          <i class="text-2xl" data-lucide="mail"></i>
         </div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Correo Institucional</h3>
         <p class="mt-2 text-sm text-slate-600">Que además te proporciona Office 365 sin costo adicional.</p>
       </div>
       <div class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 lg:border-b">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-briefcase-4-line text-2xl"></i>
+          <i class="text-2xl" data-lucide="briefcase"></i>
         </div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Bolsa de Trabajo</h3>
       </div>
       <div class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 sm:border-l lg:border-b">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-price-tag-3-line text-2xl"></i>
+          <i class="text-2xl" data-lucide="tag"></i>
         </div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Descuentos Especiales</h3>
       </div>

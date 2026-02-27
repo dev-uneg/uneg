@@ -11,7 +11,7 @@ require __DIR__ . '/../partials/header.php';
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-school-line text-lg"></i>
+            <i class="text-lg" data-lucide="school"></i>
           </span>
           <div>
             <p class="font-semibold">Modalidad Presencial</p>
@@ -20,7 +20,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-time-line text-lg"></i>
+            <i class="text-lg" data-lucide="clock-3"></i>
           </span>
           <div>
             <p class="font-semibold">16:00 a 21:00 hrs</p>
@@ -29,7 +29,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-medal-line text-lg"></i>
+            <i class="text-lg" data-lucide="medal"></i>
           </span>
           <div>
             <p class="font-semibold">Certificación UNAM</p>
@@ -53,7 +53,7 @@ require __DIR__ . '/../partials/header.php';
     <a href="<?php echo $base; ?>/bachillerato-en-linea" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <article>
         <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-global-line text-3xl"></i>
+          <i class="text-3xl" data-lucide="globe"></i>
         </div>
         <h3 class="mt-4 font-semibold text-[#0b2c65]">Bachillerato en Línea</h3>
         <p class="mt-1 text-xs text-slate-500">Programa B@ISEC</p>
@@ -62,7 +62,7 @@ require __DIR__ . '/../partials/header.php';
     <a href="<?php echo $base; ?>/bachillerato-tecnico-administracion-empresas-turisticas" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <article>
         <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-briefcase-4-line text-3xl"></i>
+          <i class="text-3xl" data-lucide="briefcase"></i>
         </div>
         <h3 class="mt-4 font-semibold text-[#0b2c65]">Bachillerato Técnico en Administración de Empresas Turísticas</h3>
         <p class="mt-1 text-xs text-slate-500">IPN A-RVOE-DG-NMS/33/99</p>
@@ -71,7 +71,7 @@ require __DIR__ . '/../partials/header.php';
     <a href="<?php echo $base; ?>/cch-isec" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <article>
         <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-file-list-3-line text-3xl"></i>
+          <i class="text-3xl" data-lucide="files"></i>
         </div>
         <h3 class="mt-4 font-semibold text-[#0b2c65]">Curso CENEVAL</h3>
       </article>
@@ -79,7 +79,7 @@ require __DIR__ . '/../partials/header.php';
     <a href="<?php echo $base; ?>/curso-colbach" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <article>
         <div class="mx-auto h-20 w-20 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-pencil-ruler-2-line text-3xl"></i>
+          <i class="text-3xl" data-lucide="pencil-ruler"></i>
         </div>
         <h3 class="mt-4 font-semibold text-[#0b2c65]">Curso COLBACH</h3>
       </article>

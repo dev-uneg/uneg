@@ -16,35 +16,35 @@ require __DIR__ . '/partials/header.php';
   <section class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <a href="<?php echo $base; ?>/comunidad/alumnos" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-graduation-cap-line text-2xl"></i>
+        <i class="text-2xl" data-lucide="graduation-cap"></i>
       </div>
       <h2 class="mt-4 text-xl font-semibold text-[#0b2c65]">Alumnos</h2>
       <p class="mt-2 text-sm text-slate-600">Información y recursos para estudiantes.</p>
     </a>
     <a href="<?php echo $base; ?>/comunidad/docentes" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-team-line text-2xl"></i>
+        <i class="text-2xl" data-lucide="users"></i>
       </div>
       <h2 class="mt-4 text-xl font-semibold text-[#0b2c65]">Docentes</h2>
       <p class="mt-2 text-sm text-slate-600">Herramientas y espacios para profesores.</p>
     </a>
     <a href="<?php echo $base; ?>/comunidad/noticias" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-newspaper-line text-2xl"></i>
+        <i class="text-2xl" data-lucide="newspaper"></i>
       </div>
       <h2 class="mt-4 text-xl font-semibold text-[#0b2c65]">Noticias</h2>
       <p class="mt-2 text-sm text-slate-600">Comunicados y vida en el campus.</p>
     </a>
     <a href="<?php echo $base; ?>/blog" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-article-line text-2xl"></i>
+        <i class="text-2xl" data-lucide="file-text"></i>
       </div>
       <h2 class="mt-4 text-xl font-semibold text-[#0b2c65]">Blog</h2>
       <p class="mt-2 text-sm text-slate-600">Artículos y contenido de interés.</p>
     </a>
     <a href="<?php echo $base; ?>/comunidad/buzon-del-rector" class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-        <i class="ri-mail-send-line text-2xl"></i>
+        <i class="text-2xl" data-lucide="send"></i>
       </div>
       <h2 class="mt-4 text-xl font-semibold text-[#0b2c65]">Buzón del Rector</h2>
       <p class="mt-2 text-sm text-slate-600">Comunicación directa con rectoría.</p>

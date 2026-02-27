@@ -33,7 +33,7 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
   <!-- DESARROLLO: Tailwind CDN para ver cambios sin compilar -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/vendor/remixicon/remixicon.min.css">
+  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=2"></script>
   <style>
     @font-face {
       font-family: 'Figtree';

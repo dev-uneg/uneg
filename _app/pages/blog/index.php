@@ -77,7 +77,7 @@ require __DIR__ . '/../partials/header.php';
           $nextPage = min($totalPages, $currentPage + 1);
         ?>
         <a class="h-10 w-10 rounded-full border border-slate-200 bg-white text-slate-500 flex items-center justify-center <?php echo $currentPage === 1 ? 'pointer-events-none opacity-50' : ''; ?>" aria-label="Página anterior" href="<?php echo $base; ?>/blog?page=<?php echo $prevPage; ?>">
-          <i class="ri-arrow-left-s-line text-xl"></i>
+          <i class="text-xl" data-lucide="chevron-left"></i>
         </a>
         <?php for ($p = 1; $p <= $totalPages; $p++): ?>
           <a class="h-10 w-10 rounded-full <?php echo $p === $currentPage ? 'bg-[#0b2c65] text-white' : 'border border-slate-200 bg-white text-slate-700'; ?> font-semibold flex items-center justify-center" aria-current="<?php echo $p === $currentPage ? 'page' : 'false'; ?>" href="<?php echo $base; ?>/blog?page=<?php echo $p; ?>">
@@ -85,7 +85,7 @@ require __DIR__ . '/../partials/header.php';
           </a>
         <?php endfor; ?>
         <a class="h-10 w-10 rounded-full border border-slate-200 bg-white text-slate-500 flex items-center justify-center <?php echo $currentPage === $totalPages ? 'pointer-events-none opacity-50' : ''; ?>" aria-label="Página siguiente" href="<?php echo $base; ?>/blog?page=<?php echo $nextPage; ?>">
-          <i class="ri-arrow-right-s-line text-xl"></i>
+          <i class="text-xl" data-lucide="chevron-right"></i>
         </a>
       </div>
     </div>

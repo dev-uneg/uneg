@@ -8,7 +8,7 @@ require __DIR__ . '/partials/header.php';
   <section class="rounded-3xl bg-gradient-to-r from-[#0b2c65] via-[#0f3b86] to-[#184792] p-8 text-white shadow-lg">
     <div class="flex flex-wrap items-center gap-4">
       <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white">
-        <i class="ri-customer-service-2-line text-2xl"></i>
+        <i class="text-2xl" data-lucide="headset"></i>
       </span>
       <div>
         <h1 class="text-2xl sm:text-3xl font-semibold">Contacto | Comunícate con Universidad de Negocios ISEC</h1>
@@ -21,7 +21,7 @@ require __DIR__ . '/partials/header.php';
     <div class="lg:col-span-2 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
       <div class="flex items-center gap-3 text-[#0b2c65]">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2c65] text-white">
-          <i class="ri-edit-2-line text-lg"></i>
+          <i class="text-lg" data-lucide="pencil"></i>
         </span>
         <div>
           <h2 class="text-xl sm:text-2xl font-semibold">Formulario de Contacto</h2>
@@ -68,7 +68,7 @@ require __DIR__ . '/partials/header.php';
             <option value="Maestria en Tecnologias de Informacion y Comunicaciones">Maestria en Tecnologias de Informacion y Comunicaciones</option>
           </select>
           <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0b2c65]">
-            <i class="ri-arrow-down-s-line text-xl"></i>
+            <i class="text-xl" data-lucide="chevron-down"></i>
           </span>
         </div>
         <div class="relative sm:col-span-2">
@@ -87,7 +87,7 @@ require __DIR__ . '/partials/header.php';
             <option value="Otro">Otro</option>
           </select>
           <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0b2c65]">
-            <i class="ri-arrow-down-s-line text-xl"></i>
+            <i class="text-xl" data-lucide="chevron-down"></i>
           </span>
         </div>
         <textarea class="w-full rounded-lg border border-slate-300 px-4 py-3 sm:col-span-2 min-h-[160px] focus:outline-none focus:ring-2 focus:ring-[#0b2c65]/30" placeholder="Mensaje" name="message"></textarea>
@@ -102,25 +102,25 @@ require __DIR__ . '/partials/header.php';
     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm self-start">
       <div class="flex items-center gap-3 text-[#0b2c65]">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2c65] text-white">
-          <i class="ri-information-line text-lg"></i>
+          <i class="text-lg" data-lucide="info"></i>
         </span>
         <h3 class="text-lg font-semibold">Datos de Contacto</h3>
       </div>
       <div class="mt-5 space-y-4 text-sm text-slate-600">
         <div class="flex items-start gap-3">
-          <i class="ri-map-pin-line text-lg text-[#0b2c65]"></i>
+          <i class="text-lg text-[#0b2c65]" data-lucide="map-pin"></i>
           <p>Mier y Pesado 227, Col. Del Valle Centro, C.P. 03100, Benito Juárez, CDMX</p>
         </div>
         <div class="flex items-center gap-3">
-          <i class="ri-phone-line text-lg text-[#0b2c65]"></i>
+          <i class="text-lg text-[#0b2c65]" data-lucide="phone"></i>
           <p class="font-semibold text-slate-800">55 5063 1300</p>
         </div>
         <div class="flex items-center gap-3">
-          <i class="ri-mail-line text-lg text-[#0b2c65]"></i>
+          <i class="text-lg text-[#0b2c65]" data-lucide="mail"></i>
           <p>admisiones@uneg.edu.mx</p>
         </div>
         <div class="flex items-center gap-3">
-          <i class="ri-time-line text-lg text-[#0b2c65]"></i>
+          <i class="text-lg text-[#0b2c65]" data-lucide="clock-3"></i>
           <p>Lunes a viernes</p>
         </div>
       </div>
@@ -130,7 +130,7 @@ require __DIR__ . '/partials/header.php';
   <section class="mt-10">
     <div class="flex items-center gap-3 text-[#0b2c65] mb-4">
       <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0b2c65] text-white">
-        <i class="ri-map-2-line text-lg"></i>
+        <i class="text-lg" data-lucide="map"></i>
       </span>
       <h2 class="text-xl sm:text-2xl font-semibold">Ubicación</h2>
     </div>

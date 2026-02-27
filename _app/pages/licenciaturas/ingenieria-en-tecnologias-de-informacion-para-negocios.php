@@ -13,7 +13,7 @@ require __DIR__ . '/../partials/header.php';
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
       <div class="flex items-center gap-3">
         <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-          <i class="ri-school-line text-lg"></i>
+          <i class="text-lg" data-lucide="school"></i>
         </span>
         <div>
           <p class="font-semibold">Modalidad Presencial</p>
@@ -22,7 +22,7 @@ require __DIR__ . '/../partials/header.php';
       </div>
       <div class="flex items-center gap-3">
         <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-          <i class="ri-time-line text-lg"></i>
+          <i class="text-lg" data-lucide="clock-3"></i>
         </span>
         <div>
           <p class="font-semibold">Horarios Flexibles</p>
@@ -31,7 +31,7 @@ require __DIR__ . '/../partials/header.php';
       </div>
       <div class="flex items-center gap-3">
         <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-          <i class="ri-medal-line text-lg"></i>
+          <i class="text-lg" data-lucide="medal"></i>
         </span>
         <div>
           <p class="font-semibold">Validez Oficial</p>
@@ -90,21 +90,21 @@ require __DIR__ . '/../partials/header.php';
           </div>
           <div class="text-center">
             <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
-              <i class="ri-graduation-cap-line text-2xl"></i>
+              <i class="text-2xl" data-lucide="graduation-cap"></i>
             </div>
             <p class="mt-3 text-lg font-semibold">Plan de Estudios</p>
-            <a href="<?php echo $assetBase; ?>/_assets/planes-de-estudio/UNEG-Plan-De-Estudios-Tecnologias.pdf" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-white/90 underline-offset-4 transition hover:text-white hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80">Ver plan <i class="ri-external-link-line text-base" aria-hidden="true"></i></a>
+            <a href="<?php echo $assetBase; ?>/_assets/planes-de-estudio/UNEG-Plan-De-Estudios-Tecnologias.pdf" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-white/90 underline-offset-4 transition hover:text-white hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80">Ver plan <i class="text-base" data-lucide="external-link" aria-hidden="true"></i></a>
           </div>
           <div class="text-center">
             <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
-              <i class="ri-time-line text-2xl"></i>
+              <i class="text-2xl" data-lucide="clock-3"></i>
             </div>
             <p class="mt-3 text-lg font-semibold">Horarios</p>
             <button class="mt-1 text-sm text-white/80 hover:text-white">Ver horarios</button>
           </div>
           <div class="text-center">
             <div class="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
-              <i class="ri-mail-line text-2xl"></i>
+              <i class="text-2xl" data-lucide="mail"></i>
             </div>
             <p class="mt-3 text-lg font-semibold">Inscríbete Ahora</p>
             <button class="mt-1 text-sm text-white/80 hover:text-white">Contactar</button>
@@ -115,7 +115,7 @@ require __DIR__ . '/../partials/header.php';
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
-              <i class="ri-folder-2-line text-xl"></i>
+              <i class="text-xl" data-lucide="folder"></i>
             </div>
             <h4 class="mt-3 font-semibold">Requisitos</h4>
             <p class="mt-2 text-sm text-slate-600">Para cursar esta licenciatura deberás contar con los siguientes documentos:</p>
@@ -130,7 +130,7 @@ require __DIR__ . '/../partials/header.php';
 
           <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
-              <i class="ri-checkbox-circle-line text-xl"></i>
+              <i class="text-xl" data-lucide="check-circle"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de esta licenciatura deberás cubrir el siguiente perfil:</p>
@@ -143,7 +143,7 @@ require __DIR__ . '/../partials/header.php';
 
           <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
-              <i class="ri-graduation-cap-line text-xl"></i>
+              <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
             <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura tendrás habilidades para:</p>
@@ -158,7 +158,7 @@ require __DIR__ . '/../partials/header.php';
 
           <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
-              <i class="ri-briefcase-4-line text-xl"></i>
+              <i class="text-xl" data-lucide="briefcase"></i>
             </div>
             <h4 class="mt-3 font-semibold">Campo de Trabajo</h4>
             <p class="mt-2 text-sm text-slate-600">Profesionalmente te desarrollarás en:</p>

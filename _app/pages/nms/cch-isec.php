@@ -13,7 +13,7 @@ require __DIR__ . '/../partials/header.php';
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-school-line text-lg"></i>
+            <i class="text-lg" data-lucide="school"></i>
           </span>
           <div>
             <p class="font-semibold">Modalidad Presencial</p>
@@ -22,7 +22,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-time-line text-lg"></i>
+            <i class="text-lg" data-lucide="clock-3"></i>
           </span>
           <div>
             <p class="font-semibold">16:00 a 21:00 hrs</p>
@@ -31,7 +31,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-medal-line text-lg"></i>
+            <i class="text-lg" data-lucide="medal"></i>
           </span>
           <div>
             <p class="font-semibold">Certificación UNAM</p>
@@ -53,22 +53,22 @@ require __DIR__ . '/../partials/header.php';
     <div>
       <h3 class="text-lg font-semibold text-slate-800">Beneficios de estudiar con nosotros:</h3>
       <ul class="mt-4 space-y-3 text-slate-600">
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Incorporación a la UNAM (Universidad Nacional de México)</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Servicio Médico durante toda la jornada</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Programa de prevención y contención contra las drogas</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Seguimiento académico personalizado</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Desarrollo de competencias</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Canchas deportivas de Fútbol y Baloncesto</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Certificación de Microsoft Office</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Orientación psicológica y apoyo pedagógico</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Cafetería</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Áreas verdes y zonas de lectura</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Biblioteca</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Foro de Arte y Desarrollo</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Auditorio</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Pase directo al siguiente nivel educativo en Universidad de Negocios ISEC</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Talleres culturales y deportivos</span></li>
-        <li class="flex gap-3"><i class="ri-checkbox-circle-line text-[#0d4fb6] text-lg"></i><span>Certificación del idioma inglés por Cambridge</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Incorporación a la UNAM (Universidad Nacional de México)</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Servicio Médico durante toda la jornada</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Programa de prevención y contención contra las drogas</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Seguimiento académico personalizado</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Desarrollo de competencias</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Canchas deportivas de Fútbol y Baloncesto</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Certificación de Microsoft Office</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Orientación psicológica y apoyo pedagógico</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Cafetería</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Áreas verdes y zonas de lectura</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Biblioteca</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Foro de Arte y Desarrollo</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Auditorio</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Pase directo al siguiente nivel educativo en Universidad de Negocios ISEC</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Talleres culturales y deportivos</span></li>
+        <li class="flex gap-3"><i class="text-[#0d4fb6] text-lg" data-lucide="check-circle"></i><span>Certificación del idioma inglés por Cambridge</span></li>
       </ul>
     </div>
 
@@ -100,7 +100,7 @@ require __DIR__ . '/../partials/header.php';
     <div class="rounded-xl bg-[#5a1c1c] text-white px-6 py-8">
       <div class="flex items-center justify-center gap-3 text-center font-semibold">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
-          <i class="ri-book-open-line text-xl"></i>
+          <i class="text-xl" data-lucide="book-open"></i>
         </span>
         <span>Plan de Estudios</span>
       </div>
@@ -108,7 +108,7 @@ require __DIR__ . '/../partials/header.php';
     <div class="rounded-xl bg-[#5a4a4a] text-white px-6 py-8">
       <div class="flex items-center justify-center gap-3 text-center font-semibold">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
-          <i class="ri-edit-2-line text-xl"></i>
+          <i class="text-xl" data-lucide="pencil"></i>
         </span>
         <span>Inscríbete Ahora</span>
       </div>

@@ -17,7 +17,7 @@ require __DIR__ . '/../partials/header.php';
     <p class="text-slate-600">Consulta las vacantes disponibles en PDF.</p>
     <div class="mt-6 flex justify-center">
       <a href="<?php echo $assetBase; ?>/_assets/docs/Enero-Vacantes-UNEG.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-[#0b2c65] px-6 py-3 text-white font-semibold shadow-sm hover:bg-[#0a2552]">
-        <i class="ri-file-pdf-line text-xl"></i>
+        <i class="text-xl" data-lucide="file-text"></i>
         Ver PDF
       </a>
     </div>

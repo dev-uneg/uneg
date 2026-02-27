@@ -93,15 +93,15 @@ if ($popupEnabled): ?>
               <div class="mt-3 sm:mt-4 h-[3px] w-full max-w-xl bg-[#2951ff] mx-auto"></div>
               <ul class="mt-3 sm:mt-4 space-y-2 sm:space-y-3 text-[#0f2463] font-semibold text-sm sm:text-lg md:text-xl max-w-xl mx-auto">
                 <li class="rounded-full bg-white px-3 sm:px-5 py-2 flex items-center justify-center gap-2">
-                  <i class="ri-check-line shrink-0 text-[20px] leading-none text-[#1d4ed8]" aria-hidden="true"></i>
+                  <i class="shrink-0 text-[20px] leading-none text-[#1d4ed8]" data-lucide="check" aria-hidden="true"></i>
                   <span>Atención y seguimiento académico personalizado</span>
                 </li>
                 <li class="rounded-full bg-white px-3 sm:px-5 py-2 flex items-center justify-center gap-2">
-                  <i class="ri-check-line shrink-0 text-[20px] leading-none text-[#1d4ed8]" aria-hidden="true"></i>
+                  <i class="shrink-0 text-[20px] leading-none text-[#1d4ed8]" data-lucide="check" aria-hidden="true"></i>
                   <span>Profesores altamente calificados</span>
                 </li>
                 <li class="rounded-full bg-white px-3 sm:px-5 py-2 flex items-center justify-center gap-2">
-                  <i class="ri-check-line shrink-0 text-[20px] leading-none text-[#1d4ed8]" aria-hidden="true"></i>
+                  <i class="shrink-0 text-[20px] leading-none text-[#1d4ed8]" data-lucide="check" aria-hidden="true"></i>
                   <span>Instalaciones de vanguardia</span>
                 </li>
               </ul>
@@ -123,7 +123,7 @@ if ($popupEnabled): ?>
         <div data-video-poster class="relative z-10 h-full w-full flex flex-col items-center justify-center text-white text-center px-6 lg:hidden">
           <p class="text-xl sm:text-2xl md:text-3xl font-bold">Video UNEG - Egresados</p>
           <button type="button" class="mt-5 inline-flex h-[72px] w-[72px] items-center justify-center rounded-full border border-white/45 bg-white/20 text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-[6px]" data-video-play aria-label="Reproducir video">
-            <i class="ri-play-fill h-8 w-8 ml-1" aria-hidden="true"></i>
+            <i class="h-8 w-8 ml-1" data-lucide="play" aria-hidden="true"></i>
           </button>
         </div>
         <div data-video-wrap class="absolute inset-0 overflow-hidden hidden lg:block">
@@ -145,7 +145,7 @@ if ($popupEnabled): ?>
         <div data-video-poster class="relative z-10 h-full w-full flex flex-col items-center justify-center text-white text-center px-6 lg:hidden">
           <p class="text-xl sm:text-2xl md:text-3xl font-bold">Video institucional UNEG</p>
           <button type="button" class="mt-5 inline-flex h-[72px] w-[72px] items-center justify-center rounded-full border border-white/45 bg-white/20 text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-[6px]" data-video-play aria-label="Reproducir video">
-            <i class="ri-play-fill h-8 w-8 ml-1" aria-hidden="true"></i>
+            <i class="h-8 w-8 ml-1" data-lucide="play" aria-hidden="true"></i>
           </button>
         </div>
         <div data-video-wrap class="absolute inset-0 overflow-hidden hidden lg:block">
@@ -163,10 +163,10 @@ if ($popupEnabled): ?>
       </div>
     </div>
     <button id="home-prev" class="absolute z-50 left-3 sm:left-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/25 text-white shadow-md backdrop-blur hover:bg-white/35 flex items-center justify-center" aria-label="Anterior">
-      <i class="ri-arrow-left-line text-[22px] leading-none" aria-hidden="true"></i>
+      <i class="text-[22px] leading-none" data-lucide="chevron-left" aria-hidden="true"></i>
     </button>
     <button id="home-next" class="absolute z-50 right-3 sm:right-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-white/25 text-white shadow-md backdrop-blur hover:bg-white/35 flex items-center justify-center" aria-label="Siguiente">
-      <i class="ri-arrow-right-line text-[22px] leading-none" aria-hidden="true"></i>
+      <i class="text-[22px] leading-none" data-lucide="chevron-right" aria-hidden="true"></i>
     </button>
     <div id="home-dots" class="pointer-events-none absolute bottom-3 sm:bottom-2 left-1/2 z-50 -translate-x-1/2 flex items-center gap-2" aria-hidden="true"></div>
   </div>

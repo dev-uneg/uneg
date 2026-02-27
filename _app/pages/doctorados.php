@@ -11,7 +11,7 @@ require __DIR__ . '/partials/header.php';
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 px-5 py-4 text-sm">
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-school-line text-lg"></i>
+            <i class="text-lg" data-lucide="school"></i>
           </span>
           <div>
             <p class="font-semibold">Modalidad Presencial</p>
@@ -20,7 +20,7 @@ require __DIR__ . '/partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-time-line text-lg"></i>
+            <i class="text-lg" data-lucide="clock-3"></i>
           </span>
           <div>
             <p class="font-semibold">Horarios Flexibles</p>
@@ -29,7 +29,7 @@ require __DIR__ . '/partials/header.php';
         </div>
         <div class="flex items-center gap-3">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-            <i class="ri-medal-line text-lg"></i>
+            <i class="text-lg" data-lucide="medal"></i>
           </span>
           <div>
             <p class="font-semibold">Validez Oficial</p>
@@ -51,7 +51,7 @@ require __DIR__ . '/partials/header.php';
     <a href="<?php echo $base; ?>/doctorados/doctorado-en-administracion-de-negocios" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <article>
         <div class="mx-auto h-28 w-28 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-briefcase-4-line text-4xl"></i>
+          <i class="text-4xl" data-lucide="briefcase"></i>
         </div>
         <h3 class="mt-4 font-semibold text-[#0b2c65]">Doctorado en Administración de Negocios</h3>
         <p class="mt-1 text-xs text-slate-500">SEP RVOE 20110798</p>
@@ -60,7 +60,7 @@ require __DIR__ . '/partials/header.php';
     <a href="<?php echo $base; ?>/doctorados/doctorado-en-educacion-sistema-de-aprendizaje-en-linea" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <article>
         <div class="mx-auto h-28 w-28 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-graduation-cap-line text-4xl"></i>
+          <i class="text-4xl" data-lucide="graduation-cap"></i>
         </div>
         <h3 class="mt-4 font-semibold text-[#0b2c65]">Doctorado en Educación, Sistema de Aprendizaje en Línea</h3>
         <p class="mt-1 text-xs text-slate-500">RVOE SEP 20160644</p>

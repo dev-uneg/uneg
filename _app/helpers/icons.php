@@ -5,26 +5,26 @@ if (!function_exists('uneg_icon')) {
   function uneg_icon(string $name, string $class = 'h-4 w-4', bool $decorative = true): string
   {
     $icons = [
-      'menu' => 'ri-menu-line',
-      'check' => 'ri-check-line',
-      'filter' => 'ri-filter-3-line',
-      'download' => 'ri-download-line',
-      'layout-grid' => 'ri-layout-grid-line',
-      'log-out' => 'ri-logout-box-r-line',
-      'trash-2' => 'ri-delete-bin-line',
-      'chevron-down' => 'ri-arrow-down-s-line',
-      'eye' => 'ri-eye-line',
-      'users' => 'ri-team-line',
-      'graduation-cap' => 'ri-graduation-cap-line',
-      'mailbox' => 'ri-mail-line',
-      'shield-check' => 'ri-shield-check-fill',
-      'key-round' => 'ri-key-2-line',
-      'facebook' => 'ri-facebook-fill',
-      'instagram' => 'ri-instagram-fill',
-      'youtube' => 'ri-youtube-fill',
-      'linkedin' => 'ri-linkedin-fill',
-      'twitter-x' => 'ri-twitter-x-fill',
-      'whatsapp' => 'ri-whatsapp-fill',
+      'menu' => 'menu',
+      'check' => 'check',
+      'filter' => 'filter',
+      'download' => 'download',
+      'layout-grid' => 'layout-grid',
+      'log-out' => 'log-out',
+      'trash-2' => 'trash-2',
+      'chevron-down' => 'chevron-down',
+      'eye' => 'eye',
+      'users' => 'users',
+      'graduation-cap' => 'graduation-cap',
+      'mailbox' => 'mail',
+      'shield-check' => 'check-circle',
+      'key-round' => 'key-round',
+      'facebook' => 'facebook',
+      'instagram' => 'instagram',
+      'youtube' => 'youtube',
+      'linkedin' => 'linkedin',
+      'twitter-x' => 'twitter',
+      'whatsapp' => 'whatsapp',
     ];
 
     if (!isset($icons[$name])) {
@@ -32,29 +32,22 @@ if (!function_exists('uneg_icon')) {
     }
 
     $safeClass = htmlspecialchars($class, ENT_QUOTES, 'UTF-8');
-    $iconClass = htmlspecialchars($icons[$name], ENT_QUOTES, 'UTF-8');
+    $iconName = htmlspecialchars($icons[$name], ENT_QUOTES, 'UTF-8');
     $ariaHidden = $decorative ? ' aria-hidden="true"' : '';
-    $fontSizeRem = null;
 
-    $tokens = preg_split('/\s+/', trim($class)) ?: [];
-    foreach ($tokens as $token) {
-      if (preg_match('/^h-(\d+(?:\.\d+)?)$/', $token, $matches) === 1) {
-        $fontSizeRem = ((float) $matches[1]) * 0.25;
-        break;
+    if ($name === 'whatsapp') {
+      static $whatsappSvg = null;
+      if ($whatsappSvg === null) {
+        $svgPath = __DIR__ . '/../../_assets/svg/whatsapp.svg';
+        $whatsappSvg = is_file($svgPath) ? (string) file_get_contents($svgPath) : '';
       }
-    }
-    if ($fontSizeRem === null) {
-      foreach ($tokens as $token) {
-        if (preg_match('/^w-(\d+(?:\.\d+)?)$/', $token, $matches) === 1) {
-          $fontSizeRem = ((float) $matches[1]) * 0.25;
-          break;
-        }
+      if ($whatsappSvg !== '') {
+        $svgAttrs = ' class="' . $safeClass . '"' . $ariaHidden . ' focusable="false"';
+        return preg_replace('/<svg\\b/i', '<svg' . $svgAttrs, $whatsappSvg, 1) ?: '';
       }
+      return '<i class="' . $safeClass . '" data-lucide="message-circle"' . $ariaHidden . '></i>';
     }
-    $style = $fontSizeRem !== null
-      ? ' style="font-size:' . rtrim(rtrim((string) $fontSizeRem, '0'), '.') . 'rem;line-height:1;"'
-      : ' style="line-height:1;"';
 
-    return '<i class="' . $iconClass . ' ' . $safeClass . '"' . $ariaHidden . $style . '></i>';
+    return '<i class="' . $safeClass . '" data-lucide="' . $iconName . '"' . $ariaHidden . '></i>';
   }
 }

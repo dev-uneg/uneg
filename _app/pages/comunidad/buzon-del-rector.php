@@ -20,7 +20,7 @@ require __DIR__ . '/../partials/header.php';
       <div class="rounded-2xl border border-emerald-300 bg-emerald-50 px-5 py-4 text-emerald-900 shadow-sm" role="status" aria-live="polite">
         <div class="flex items-start gap-3">
           <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-200 text-emerald-800">
-            <i class="ri-checkbox-circle-line text-lg"></i>
+            <i class="text-lg" data-lucide="check-circle"></i>
           </span>
           <div>
             <p class="text-sm font-semibold">Mensaje enviado correctamente</p>
@@ -35,7 +35,7 @@ require __DIR__ . '/../partials/header.php';
       <div class="rounded-2xl border border-rose-300 bg-rose-50 px-5 py-4 text-rose-900 shadow-sm" role="alert">
         <div class="flex items-start gap-3">
           <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-200 text-rose-800">
-            <i class="ri-error-warning-line text-lg"></i>
+            <i class="text-lg" data-lucide="alert-triangle"></i>
           </span>
           <div>
             <p class="text-sm font-semibold">No se pudo enviar el mensaje</p>

@@ -19,37 +19,37 @@ require __DIR__ . '/../partials/header.php';
   <section class="mt-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 rounded-2xl border border-slate-200 bg-white overflow-hidden">
       <a href="https://login.microsoftonline.com/login.srf" target="_blank" rel="noopener" class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200 block">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-mail-line text-2xl"></i></div>
+        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="text-2xl" data-lucide="mail"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Office 365</h3>
         <p class="mt-2 text-sm text-slate-600">Acceder a correo electrónico</p>
       </a>
       <a href="<?php echo $base; ?>/comunidad/calendario-academico" class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b sm:border-r border-slate-200 block">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-calendar-line text-2xl"></i></div>
+        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="text-2xl" data-lucide="calendar"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Calendario Académico</h3>
         <p class="mt-2 text-sm text-slate-600">Consultar calendarios para diferentes modalidades y niveles</p>
       </a>
       <a href="https://uneg.academic.lat/Autenticacion.aspx" target="_blank" rel="noopener" class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 lg:border-b block">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-book-2-line text-2xl"></i></div>
+        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="text-2xl" data-lucide="book-open"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Portal Escolar</h3>
       </a>
 
       <a href="<?php echo $base; ?>/comunidad/eventos-docentes" class="p-6 text-center transition hover:bg-slate-50 border-b sm:border-r border-slate-200 block">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-list-check-2 text-2xl"></i></div>
+        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="text-2xl" data-lucide="list-checks"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Eventos Docentes</h3>
         <p class="mt-2 text-sm text-slate-600">Consultar próximas actividades</p>
       </a>
       <a href="<?php echo $base; ?>/comunidad/buzon-del-rector" class="p-6 text-center transition hover:bg-slate-50 border-b lg:border-b sm:border-r border-slate-200 block">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-send-plane-line text-2xl"></i></div>
+        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="text-2xl" data-lucide="send"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Buzón del Rector</h3>
         <p class="mt-2 text-sm text-slate-600">Comunicación directa para brindarte la mejor atención</p>
       </a>
       <div class="p-6 text-center transition hover:bg-slate-50 border-b border-slate-200 lg:border-b">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-earth-line text-2xl"></i></div>
+        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="text-2xl" data-lucide="earth"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">E-Learning</h3>
       </div>
 
       <a href="<?php echo $base; ?>/comunidad/claustro-docente" class="p-6 text-center transition hover:bg-slate-50 border-slate-200">
-        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="ri-user-line text-2xl"></i></div>
+        <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center"><i class="text-2xl" data-lucide="user"></i></div>
         <h3 class="mt-3 font-semibold text-[#0b2c65]">Nuestro Claustro Docente</h3>
       </a>
     </div>

@@ -7,7 +7,7 @@ require __DIR__ . '/partials/header.php';
 <main class="mx-auto flex min-h-[calc(100vh-220px)] max-w-3xl items-center px-4 py-12">
   <section class="w-full rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm sm:p-10">
     <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#0b2c65] text-white">
-      <i class="ri-checkbox-circle-line text-3xl"></i>
+      <i class="text-3xl" data-lucide="check-circle"></i>
     </div>
     <h1 class="mt-4 text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Gracias por contactarnos</h1>
     <p class="mx-auto mt-3 max-w-2xl text-slate-600">

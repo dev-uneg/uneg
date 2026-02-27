@@ -17,21 +17,21 @@ require __DIR__ . '/../partials/header.php';
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <a href="<?php echo $assetBase; ?>/_assets/docs/Reglamento-Escolar-UNEG-2025.pdf" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-file-pdf-line text-2xl"></i>
+          <i class="text-2xl" data-lucide="file-text"></i>
         </div>
         <h3 class="mt-5 text-center font-semibold text-[#0b2c65]">Reglamento general para estudios de bachillerato técnico, licenciatura y posgrado</h3>
         <p class="mt-2 text-center text-sm text-slate-500">Abrir PDF</p>
       </a>
       <a href="<?php echo $assetBase; ?>/_assets/docs/Reglamento-De-Biblioteca-Adrian-Mora-Duhart.pdf" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-book-2-line text-2xl"></i>
+          <i class="text-2xl" data-lucide="book-open"></i>
         </div>
         <h3 class="mt-5 text-center font-semibold text-[#0b2c65]">Reglamento de Biblioteca Adrián Mora Duhart</h3>
         <p class="mt-2 text-center text-sm text-slate-500">Abrir PDF</p>
       </a>
       <a href="<?php echo $assetBase; ?>/_assets/docs/Reglamento-General-Para-Estudios-De-Licenciatura-Y-Posgrado.pdf" target="_blank" rel="noopener" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
         <div class="mx-auto h-14 w-14 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
-          <i class="ri-file-list-3-line text-2xl"></i>
+          <i class="text-2xl" data-lucide="files"></i>
         </div>
         <h3 class="mt-5 text-center font-semibold text-[#0b2c65]">Reglamento general para estudios de licenciatura y posgrado</h3>
         <p class="mt-2 text-center text-sm text-slate-500">Abrir PDF</p>
