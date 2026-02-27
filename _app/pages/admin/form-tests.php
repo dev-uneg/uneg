@@ -50,11 +50,13 @@ require_once __DIR__ . '/../../helpers/icons.php';
     </section>
 
     <section class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <form method="post" action="<?php echo $base; ?>/admin/form-tests">
+      <form method="post" action="<?php echo $base; ?>/admin/form-tests" id="form-tests-runner">
         <input type="hidden" name="csrf" value="<?php echo htmlspecialchars($csrf, ENT_QUOTES, 'UTF-8'); ?>">
-        <button type="submit" class="inline-flex items-center gap-2 rounded-lg bg-[#0b2c65] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#09306e]">
-          <?php echo uneg_icon('check', 'h-4 w-4'); ?> Ejecutar test
+        <button type="submit" id="run-tests-btn" class="inline-flex items-center gap-2 rounded-lg bg-[#0b2c65] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#09306e] disabled:cursor-not-allowed disabled:opacity-70">
+          <span id="run-tests-icon"><?php echo uneg_icon('check', 'h-4 w-4'); ?></span>
+          <span id="run-tests-label">Ejecutar test</span>
         </button>
+        <p id="run-tests-progress" class="mt-3 hidden text-sm text-slate-500" aria-live="polite">Ejecutando pruebas<span id="run-tests-dots">.</span></p>
         <?php if (!empty($ranAt)): ?>
           <p class="mt-3 text-sm text-slate-500">Última ejecución: <?php echo htmlspecialchars((string) $ranAt, ENT_QUOTES, 'UTF-8'); ?></p>
         <?php endif; ?>
@@ -97,5 +99,30 @@ require_once __DIR__ . '/../../helpers/icons.php';
       </section>
     <?php endif; ?>
   </main>
+  <script>
+    (function () {
+      var form = document.getElementById('form-tests-runner');
+      var button = document.getElementById('run-tests-btn');
+      var icon = document.getElementById('run-tests-icon');
+      var label = document.getElementById('run-tests-label');
+      var progress = document.getElementById('run-tests-progress');
+      var dots = document.getElementById('run-tests-dots');
+      if (!form || !button || !icon || !label || !progress || !dots) return;
+
+      var timer = null;
+      form.addEventListener('submit', function () {
+        button.disabled = true;
+        icon.innerHTML = '';
+        label.textContent = 'Ejecutando...';
+        progress.classList.remove('hidden');
+
+        var step = 1;
+        timer = window.setInterval(function () {
+          step = step >= 4 ? 1 : step + 1;
+          dots.textContent = '.'.repeat(step);
+        }, 350);
+      });
+    })();
+  </script>
 </body>
 </html>
