@@ -42,7 +42,7 @@
             <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="YouTube" href="https://youtube.com/c/UniversidaddeNegociosISEC"><?php echo uneg_icon('youtube', 'h-4 w-4'); ?></a>
             <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="LinkedIn" href="https://www.linkedin.com/edu/school?id=15221&trk=edu-up-nav-menu-home"><?php echo uneg_icon('linkedin', 'h-4 w-4'); ?></a>
             <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="Twitter" href="https://twitter.com/uneg_edu"><?php echo uneg_icon('twitter-x', 'h-4 w-4'); ?></a>
-            <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="WhatsApp" href="https://wa.me/5215571137882"><?php echo uneg_icon('whatsapp', 'h-4 w-4'); ?></a>
+            <a class="h-8 w-8 rounded-full bg-white text-[#0d4fb6] inline-flex items-center justify-center" aria-label="WhatsApp" href="https://wa.me/5215571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20y%20quiero%20informes%20de%20inscripciones%20y%20costos."><?php echo uneg_icon('whatsapp', 'h-4 w-4'); ?></a>
           </span>
         </div>
         <div class="marquee__track" aria-hidden="true">

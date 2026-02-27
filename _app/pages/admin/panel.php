@@ -12,6 +12,7 @@ require_once __DIR__ . '/../../helpers/icons.php';
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Panel Admin | UNEG</title>
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
+  <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/vendor/remixicon/remixicon.min.css">
   <style>
     @font-face {
       font-family: 'Figtree';

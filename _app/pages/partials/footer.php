@@ -75,9 +75,10 @@
         </div>
       </div>
     </footer>
-    <a href="https://wa.me/5215571137882" class="whatsapp-float" aria-label="WhatsApp">
+    <a href="https://wa.me/5215571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20y%20quiero%20informes%20de%20inscripciones%20y%20costos." class="whatsapp-float" aria-label="WhatsApp">
       <?php echo uneg_icon('whatsapp', 'h-7 w-7'); ?>
     </a>
+    <script src="<?php echo $assetBase; ?>/_assets/js/rate-limit-countdown.js"></script>
     <script>
       (function () {
         const isApiForm = (form) => {
@@ -145,6 +146,19 @@
       .whatsapp-float:focus-visible {
         outline: 3px solid rgba(37, 211, 102, 0.4);
         outline-offset: 3px;
+      }
+      .rate-limit-alert {
+        margin-bottom: 1rem;
+        border: 1px solid #fecaca;
+        background: #fff1f2;
+        color: #9f1239;
+        border-radius: 0.75rem;
+        padding: 0.75rem 1rem;
+      }
+      .rate-limit-alert__text {
+        margin: 0;
+        font-size: 0.875rem;
+        font-weight: 600;
       }
     </style>
   </body>

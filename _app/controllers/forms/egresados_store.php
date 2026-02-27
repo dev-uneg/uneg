@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
+require __DIR__ . '/../../helpers/rate_limit_forms.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -10,6 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? ''), '/');
 $base = $base === '.' ? '' : $base;
+
+$rateLimit = forms_rate_limit_check($_SERVER['REQUEST_URI'] ?? '');
+if (!$rateLimit['allowed']) {
+    $wait = (int) ($rateLimit['retry_after'] ?? 60);
+    header('Location: ' . $base . '/egresados/dejanos-saber?error=1&wait=' . $wait, true, 302);
+    exit;
+}
 
 $honeypot = trim((string) ($_POST['company_website'] ?? ''));
 if ($honeypot !== '') {

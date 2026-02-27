@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
+require __DIR__ . '/../../helpers/rate_limit_forms.php';
 
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? ''), '/');
 $base = $base === '.' ? '' : $base;
@@ -66,6 +67,12 @@ $pipedriveRequest = static function (string $endpoint, string $token, array $pay
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $fail('Metodo no permitido.', 405);
+}
+
+$rateLimit = forms_rate_limit_check($_SERVER['REQUEST_URI'] ?? '');
+if (!$rateLimit['allowed']) {
+    $wait = (int) ($rateLimit['retry_after'] ?? 60);
+    $fail('Demasiados intentos. Intenta nuevamente en ' . $wait . ' segundos.', 429);
 }
 
 $honeypot = trim((string) ($_POST['company_website'] ?? ''));

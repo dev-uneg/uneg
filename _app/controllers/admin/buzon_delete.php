@@ -19,11 +19,29 @@ if ($csrf === '' || !hash_equals((string) ($_SESSION['leads_csrf'] ?? ''), $csrf
     exit;
 }
 
-$id = (int) ($_POST['id'] ?? 0);
-if ($id > 0) {
+/** @var mixed $rawIds */
+$rawIds = $_POST['ids'] ?? [];
+$ids = [];
+if (is_array($rawIds)) {
+    foreach ($rawIds as $rawId) {
+        $id = (int) $rawId;
+        if ($id > 0) {
+            $ids[] = $id;
+        }
+    }
+}
+
+$singleId = (int) ($_POST['id'] ?? 0);
+if ($singleId > 0) {
+    $ids[] = $singleId;
+}
+
+$ids = array_values(array_unique($ids));
+if ($ids !== []) {
     $pdo = leads_db();
-    $stmt = $pdo->prepare('DELETE FROM buzon_rector WHERE id = :id');
-    $stmt->execute([':id' => $id]);
+    $placeholders = implode(',', array_fill(0, count($ids), '?'));
+    $stmt = $pdo->prepare('DELETE FROM buzon_rector WHERE id IN (' . $placeholders . ')');
+    $stmt->execute($ids);
 }
 
 header('Location: ' . $base . '/admin/buzon-rector', true, 302);

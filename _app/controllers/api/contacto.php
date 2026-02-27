@@ -7,6 +7,7 @@ declare(strict_types=1);
 // en Pipedrive (y su nota). Al final responde en JSON o redirige a /gracias según el tipo de request.
 
 require __DIR__ . '/../../helpers/leads_db.php';
+require __DIR__ . '/../../helpers/rate_limit_forms.php';
 
 // Respuesta JSON estandar.
 function respond_json(int $status, array $payload): void
@@ -94,6 +95,12 @@ function pipedrive_request(string $endpoint, string $token, array $payload): arr
 // Solo aceptamos POST.
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     fail_request('Metodo no permitido.', 405);
+}
+
+$rateLimit = forms_rate_limit_check($_SERVER['REQUEST_URI'] ?? '');
+if (!$rateLimit['allowed']) {
+    $wait = (int) ($rateLimit['retry_after'] ?? 60);
+    fail_request('Demasiados intentos. Intenta nuevamente en ' . $wait . ' segundos.', 429);
 }
 
 $honeypot = trim((string) ($_POST['company_website'] ?? ''));

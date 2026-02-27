@@ -12,6 +12,7 @@ require_once __DIR__ . '/../../helpers/icons.php';
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Acceso Admin | UNEG</title>
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
+  <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/vendor/remixicon/remixicon.min.css">
   <style>
     @font-face {
       font-family: 'Figtree';
@@ -46,6 +47,11 @@ require_once __DIR__ . '/../../helpers/icons.php';
       <?php if ($error !== ''): ?>
         <div class="mt-6 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
           <?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?>
+          <?php if (!empty($waitSeconds)): ?>
+            <div id="login-rate-wait" class="mt-2 font-semibold" data-seconds="<?php echo (int) $waitSeconds; ?>">
+              Tiempo restante: <?php echo (int) $waitSeconds; ?>s
+            </div>
+          <?php endif; ?>
         </div>
       <?php endif; ?>
 
@@ -61,5 +67,22 @@ require_once __DIR__ . '/../../helpers/icons.php';
       </form>
     </section>
   </main>
+  <script>
+    (function () {
+      const el = document.getElementById('login-rate-wait');
+      if (!el) return;
+      let remaining = Number(el.getAttribute('data-seconds') || 0);
+      if (!Number.isFinite(remaining) || remaining <= 0) return;
+      const timer = setInterval(() => {
+        remaining -= 1;
+        if (remaining <= 0) {
+          el.textContent = 'Ya puedes volver a intentar.';
+          clearInterval(timer);
+          return;
+        }
+        el.textContent = 'Tiempo restante: ' + remaining + 's';
+      }, 1000);
+    })();
+  </script>
 </body>
 </html>
