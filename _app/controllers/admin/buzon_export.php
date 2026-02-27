@@ -20,16 +20,16 @@ $pdo = leads_db();
 $where = [];
 $params = [];
 if ($dateFrom !== '') {
-    $where[] = 'datetime(created_at) >= datetime(:from)';
+    $where[] = 'created_at >= :from';
     $params[':from'] = $dateFrom . ' 00:00:00';
 }
 if ($dateTo !== '') {
-    $where[] = 'datetime(created_at) <= datetime(:to)';
+    $where[] = 'created_at <= :to';
     $params[':to'] = $dateTo . ' 23:59:59';
 }
 
 $whereSql = $where ? (' WHERE ' . implode(' AND ', $where)) : '';
-$stmt = $pdo->prepare('SELECT * FROM buzon_rector' . $whereSql . ' ORDER BY datetime(created_at) DESC');
+$stmt = $pdo->prepare('SELECT * FROM buzon_rector' . $whereSql . ' ORDER BY created_at DESC');
 $stmt->execute($params);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

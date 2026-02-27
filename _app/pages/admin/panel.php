@@ -44,7 +44,7 @@ require_once __DIR__ . '/../../helpers/icons.php';
       </a>
     </section>
 
-    <section class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+    <section class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
       <a href="<?php echo $base; ?>/admin/leads" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
         <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0b2c65] text-white">
           <?php echo uneg_icon('users', 'h-6 w-6'); ?>
@@ -70,6 +70,15 @@ require_once __DIR__ . '/../../helpers/icons.php';
         <h2 class="mt-4 text-lg font-semibold text-[#0b2c65]">Buzón del Rector</h2>
         <p class="mt-1 text-sm text-slate-600">Tabla CRUD de mensajes enviados al rector.</p>
         <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo $buzonCount; ?></p>
+      </a>
+
+      <a href="<?php echo $base; ?>/admin/form-tests" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1d4ed8] text-white">
+          <?php echo uneg_icon('shield-check', 'h-6 w-6'); ?>
+        </div>
+        <h2 class="mt-4 text-lg font-semibold text-[#0b2c65]">Pruebas de Forms</h2>
+        <p class="mt-1 text-sm text-slate-600">Ejecuta pruebas de envío, guardado en BD y estado Pipedrive.</p>
+        <p class="mt-4 text-sm font-semibold text-slate-700">Diagnóstico</p>
       </a>
     </section>
   </main>

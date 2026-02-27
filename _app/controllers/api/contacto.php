@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 // Este archivo es el controlador del endpoint /api/contacto.
 // Su razón de existir es centralizar la lógica de envío de TODOS los forms del sitio:
-// valida los datos obligatorios, guarda el lead en SQLite y luego crea la Persona
+// valida los datos obligatorios, guarda el lead en base de datos y luego crea la Persona
 // en Pipedrive (y su nota). Al final responde en JSON o redirige a /gracias según el tipo de request.
 
 require __DIR__ . '/../../helpers/leads_db.php';

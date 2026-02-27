@@ -2,33 +2,48 @@
 declare(strict_types=1);
 
 /**
- * Helper de persistencia SQLite para formularios del sitio.
+ * Helper de persistencia MySQL/MariaDB para formularios del sitio.
  *
- * Este archivo se encarga de:
- * - Resolver y preparar la ruta de la base de datos (_app/storage/leads.sqlite).
- * - Abrir una unica conexion PDO reutilizable durante la peticion.
- * - Crear/actualizar tablas e indices necesarios (leads, egresados, buzon_rector).
- * - Exponer funciones de insercion y actualizacion para controllers.
- *
- * La idea es centralizar toda la logica de BD en un solo lugar para mantener
- * consistencia en estructura, permisos y manejo de errores.
+ * Centraliza:
+ * - Conexion PDO a la BD real (cPanel).
+ * - Creacion de tablas e indices requeridos.
+ * - Insercion/actualizacion usada por controllers.
  */
-function leads_db_path(): string
+
+function leads_db_config(): array
 {
-    $storageDir = __DIR__ . '/../storage';
-    if (!is_dir($storageDir)) {
-        @mkdir($storageDir, 0775, true);
-    }
-    if (is_dir($storageDir) && !is_writable($storageDir)) {
-        @chmod($storageDir, 0777);
-    }
-
-    $dbPath = $storageDir . '/leads.sqlite';
-    if (file_exists($dbPath) && !is_writable($dbPath)) {
-        @chmod($dbPath, 0666);
+    $config = [];
+    $baseConfigPath = __DIR__ . '/../config/db.php';
+    if (file_exists($baseConfigPath)) {
+        $loaded = require $baseConfigPath;
+        if (is_array($loaded)) {
+            $config = $loaded;
+        }
     }
 
-    return $dbPath;
+    $localConfigPath = __DIR__ . '/../config/db.local.php';
+    if (file_exists($localConfigPath)) {
+        $loadedLocal = require $localConfigPath;
+        if (is_array($loadedLocal)) {
+            $config = array_merge($config, $loadedLocal);
+        }
+    }
+
+    $host = (string) ($config['host'] ?? getenv('DB_HOST') ?: '127.0.0.1');
+    $port = (int) ($config['port'] ?? getenv('DB_PORT') ?: 3306);
+    $database = (string) ($config['database'] ?? getenv('DB_DATABASE') ?: 'administrador_web2026');
+    $username = (string) ($config['username'] ?? getenv('DB_USERNAME') ?: 'administrador_web2026');
+    $password = (string) ($config['password'] ?? getenv('DB_PASSWORD') ?: '');
+    $charset = (string) ($config['charset'] ?? 'utf8mb4');
+
+    return [
+        'host' => $host,
+        'port' => $port,
+        'database' => $database,
+        'username' => $username,
+        'password' => $password,
+        'charset' => $charset,
+    ];
 }
 
 function leads_db(): PDO
@@ -38,70 +53,120 @@ function leads_db(): PDO
         return $pdo;
     }
 
-    $dsn = 'sqlite:' . leads_db_path();
-    $pdo = new PDO($dsn);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $dbPath = leads_db_path();
-    if (file_exists($dbPath) && !is_writable($dbPath)) {
-        @chmod($dbPath, 0666);
-    }
+    $db = leads_db_config();
+    $dsn = sprintf(
+        'mysql:host=%s;port=%d;dbname=%s;charset=%s',
+        $db['host'],
+        $db['port'],
+        $db['database'],
+        $db['charset']
+    );
+
+    $pdo = new PDO($dsn, $db['username'], $db['password'], [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ]);
+
     leads_db_init($pdo);
 
     return $pdo;
 }
 
+function leads_db_index_exists(PDO $pdo, string $table, string $index): bool
+{
+    $stmt = $pdo->prepare(
+        'SELECT 1 FROM INFORMATION_SCHEMA.STATISTICS
+         WHERE TABLE_SCHEMA = DATABASE()
+           AND TABLE_NAME = :table
+           AND INDEX_NAME = :indexName
+         LIMIT 1'
+    );
+    $stmt->execute([
+        ':table' => $table,
+        ':indexName' => $index,
+    ]);
+
+    return (bool) $stmt->fetchColumn();
+}
+
 function leads_db_init(PDO $pdo): void
 {
     $pdo->exec('CREATE TABLE IF NOT EXISTS leads (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        full_name TEXT NOT NULL,
-        email TEXT NOT NULL,
-        phone TEXT NOT NULL,
-        interest TEXT NOT NULL,
-        source TEXT,
-        message TEXT,
-        channel TEXT,
-        medium TEXT,
-        pipedrive_person_id TEXT,
-        status TEXT NOT NULL,
-        error_message TEXT,
-        ip TEXT,
-        user_agent TEXT,
-        created_at TEXT NOT NULL
-    )');
-    $pdo->exec('CREATE INDEX IF NOT EXISTS leads_created_at_idx ON leads (created_at DESC)');
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        full_name VARCHAR(190) NOT NULL,
+        email VARCHAR(190) NOT NULL,
+        phone VARCHAR(60) NOT NULL,
+        interest VARCHAR(190) NOT NULL,
+        source VARCHAR(255) NULL,
+        message TEXT NULL,
+        channel VARCHAR(120) NULL,
+        medium VARCHAR(120) NULL,
+        pipedrive_person_id VARCHAR(80) NULL,
+        status VARCHAR(60) NOT NULL,
+        error_message TEXT NULL,
+        ip VARCHAR(64) NULL,
+        user_agent TEXT NULL,
+        created_at DATETIME NOT NULL,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
     $pdo->exec('CREATE TABLE IF NOT EXISTS egresados (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nombre TEXT NOT NULL,
-        apellido_paterno TEXT NOT NULL,
-        apellido_materno TEXT NOT NULL,
-        anio_ingreso TEXT NOT NULL,
-        anio_egreso TEXT NOT NULL,
-        nivel_egreso TEXT NOT NULL,
-        carrera_egreso TEXT NOT NULL,
-        telefono TEXT NOT NULL,
-        correo TEXT NOT NULL,
-        trabajando TEXT NOT NULL,
-        empresa TEXT,
-        cargo TEXT,
-        ip TEXT,
-        user_agent TEXT,
-        created_at TEXT NOT NULL
-    )');
-    $pdo->exec('CREATE INDEX IF NOT EXISTS egresados_created_at_idx ON egresados (created_at DESC)');
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        nombre VARCHAR(120) NOT NULL,
+        apellido_paterno VARCHAR(120) NOT NULL,
+        apellido_materno VARCHAR(120) NOT NULL,
+        anio_ingreso VARCHAR(10) NOT NULL,
+        anio_egreso VARCHAR(10) NOT NULL,
+        nivel_egreso VARCHAR(120) NOT NULL,
+        carrera_egreso VARCHAR(190) NOT NULL,
+        telefono VARCHAR(60) NOT NULL,
+        correo VARCHAR(190) NOT NULL,
+        trabajando VARCHAR(10) NOT NULL,
+        empresa VARCHAR(190) NULL,
+        cargo VARCHAR(190) NULL,
+        ip VARCHAR(64) NULL,
+        user_agent TEXT NULL,
+        created_at DATETIME NOT NULL,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
     $pdo->exec('CREATE TABLE IF NOT EXISTS buzon_rector (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nombre TEXT NOT NULL,
-        correo TEXT NOT NULL,
-        asunto TEXT NOT NULL,
-        mensaje TEXT NOT NULL,
-        ip TEXT,
-        user_agent TEXT,
-        created_at TEXT NOT NULL
-    )');
-    $pdo->exec('CREATE INDEX IF NOT EXISTS buzon_rector_created_at_idx ON buzon_rector (created_at DESC)');
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        nombre VARCHAR(190) NOT NULL,
+        correo VARCHAR(190) NOT NULL,
+        asunto VARCHAR(255) NOT NULL,
+        mensaje LONGTEXT NOT NULL,
+        ip VARCHAR(64) NULL,
+        user_agent TEXT NULL,
+        created_at DATETIME NOT NULL,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
+
+    if (!leads_db_index_exists($pdo, 'leads', 'leads_created_at_idx')) {
+        $pdo->exec('CREATE INDEX leads_created_at_idx ON leads (created_at)');
+    }
+    if (!leads_db_index_exists($pdo, 'egresados', 'egresados_created_at_idx')) {
+        $pdo->exec('CREATE INDEX egresados_created_at_idx ON egresados (created_at)');
+    }
+    if (!leads_db_index_exists($pdo, 'buzon_rector', 'buzon_rector_created_at_idx')) {
+        $pdo->exec('CREATE INDEX buzon_rector_created_at_idx ON buzon_rector (created_at)');
+    }
+}
+
+function leads_db_datetime(mixed $value): string
+{
+    $raw = is_string($value) ? trim($value) : '';
+    if ($raw === '') {
+        return date('Y-m-d H:i:s');
+    }
+
+    $timestamp = strtotime($raw);
+    if ($timestamp === false) {
+        return date('Y-m-d H:i:s');
+    }
+
+    return date('Y-m-d H:i:s', $timestamp);
 }
 
 function leads_db_insert(array $data): ?int
@@ -116,20 +181,20 @@ function leads_db_insert(array $data): ?int
             :pipedrive_person_id, :status, :error_message, :ip, :user_agent, :created_at
         )');
         $stmt->execute([
-            ':full_name' => $data['full_name'],
-            ':email' => $data['email'],
-            ':phone' => $data['phone'],
-            ':interest' => $data['interest'],
-            ':source' => $data['source'],
-            ':message' => $data['message'],
-            ':channel' => $data['channel'],
-            ':medium' => $data['medium'],
-            ':pipedrive_person_id' => $data['pipedrive_person_id'],
-            ':status' => $data['status'],
-            ':error_message' => $data['error_message'],
-            ':ip' => $data['ip'],
-            ':user_agent' => $data['user_agent'],
-            ':created_at' => $data['created_at'],
+            ':full_name' => $data['full_name'] ?? '',
+            ':email' => $data['email'] ?? '',
+            ':phone' => $data['phone'] ?? '',
+            ':interest' => $data['interest'] ?? '',
+            ':source' => $data['source'] ?? null,
+            ':message' => $data['message'] ?? null,
+            ':channel' => $data['channel'] ?? null,
+            ':medium' => $data['medium'] ?? null,
+            ':pipedrive_person_id' => $data['pipedrive_person_id'] ?? null,
+            ':status' => $data['status'] ?? 'received',
+            ':error_message' => $data['error_message'] ?? null,
+            ':ip' => $data['ip'] ?? null,
+            ':user_agent' => $data['user_agent'] ?? null,
+            ':created_at' => leads_db_datetime($data['created_at'] ?? null),
         ]);
 
         return (int) $pdo->lastInsertId();
@@ -149,6 +214,9 @@ function leads_db_update(int $id, array $data): void
         $sets = [];
         $params = [':id' => $id];
         foreach ($data as $key => $value) {
+            if ($key === 'created_at') {
+                $value = leads_db_datetime($value);
+            }
             $sets[] = $key . ' = :' . $key;
             $params[':' . $key] = $value;
         }
@@ -178,21 +246,21 @@ function egresados_db_insert(array $data): ?int
         )');
 
         $stmt->execute([
-            ':nombre' => $data['nombre'],
-            ':apellido_paterno' => $data['apellido_paterno'],
-            ':apellido_materno' => $data['apellido_materno'],
-            ':anio_ingreso' => $data['anio_ingreso'],
-            ':anio_egreso' => $data['anio_egreso'],
-            ':nivel_egreso' => $data['nivel_egreso'],
-            ':carrera_egreso' => $data['carrera_egreso'],
-            ':telefono' => $data['telefono'],
-            ':correo' => $data['correo'],
-            ':trabajando' => $data['trabajando'],
-            ':empresa' => $data['empresa'],
-            ':cargo' => $data['cargo'],
-            ':ip' => $data['ip'],
-            ':user_agent' => $data['user_agent'],
-            ':created_at' => $data['created_at'],
+            ':nombre' => $data['nombre'] ?? '',
+            ':apellido_paterno' => $data['apellido_paterno'] ?? '',
+            ':apellido_materno' => $data['apellido_materno'] ?? '',
+            ':anio_ingreso' => $data['anio_ingreso'] ?? '',
+            ':anio_egreso' => $data['anio_egreso'] ?? '',
+            ':nivel_egreso' => $data['nivel_egreso'] ?? '',
+            ':carrera_egreso' => $data['carrera_egreso'] ?? '',
+            ':telefono' => $data['telefono'] ?? '',
+            ':correo' => $data['correo'] ?? '',
+            ':trabajando' => $data['trabajando'] ?? '',
+            ':empresa' => $data['empresa'] ?? null,
+            ':cargo' => $data['cargo'] ?? null,
+            ':ip' => $data['ip'] ?? null,
+            ':user_agent' => $data['user_agent'] ?? null,
+            ':created_at' => leads_db_datetime($data['created_at'] ?? null),
         ]);
 
         return (int) $pdo->lastInsertId();
@@ -212,13 +280,13 @@ function buzon_rector_db_insert(array $data): ?int
         )');
 
         $stmt->execute([
-            ':nombre' => $data['nombre'],
-            ':correo' => $data['correo'],
-            ':asunto' => $data['asunto'],
-            ':mensaje' => $data['mensaje'],
-            ':ip' => $data['ip'],
-            ':user_agent' => $data['user_agent'],
-            ':created_at' => $data['created_at'],
+            ':nombre' => $data['nombre'] ?? '',
+            ':correo' => $data['correo'] ?? '',
+            ':asunto' => $data['asunto'] ?? '',
+            ':mensaje' => $data['mensaje'] ?? '',
+            ':ip' => $data['ip'] ?? null,
+            ':user_agent' => $data['user_agent'] ?? null,
+            ':created_at' => leads_db_datetime($data['created_at'] ?? null),
         ]);
 
         return (int) $pdo->lastInsertId();

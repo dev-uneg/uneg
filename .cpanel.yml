@@ -4,6 +4,6 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH/
     - /bin/cp .htaccess $DEPLOYPATH/
-    - /bin/cp -R _app $DEPLOYPATH/
+    - /usr/bin/rsync -a --exclude 'storage/*.sqlite' --exclude 'storage/*.sqlite-shm' --exclude 'storage/*.sqlite-wal' _app/ $DEPLOYPATH/_app/
     - /bin/cp -R _assets $DEPLOYPATH/
     - /bin/cp -R _imgs $DEPLOYPATH/

@@ -208,6 +208,9 @@ $router->map('GET|POST', '/admin/leads-login', function (): void {
 $router->map('GET', '/admin/panel', function (): void {
     require __DIR__ . '/controllers/admin/panel.php';
 });
+$router->map('GET|POST', '/admin/form-tests', function (): void {
+    require __DIR__ . '/controllers/admin/form_tests.php';
+});
 $router->map('GET', '/admin/leads', function (): void {
     require __DIR__ . '/controllers/admin/leads_index.php';
 });
