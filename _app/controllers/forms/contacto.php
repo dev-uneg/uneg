@@ -137,6 +137,21 @@ if ($medium === '') {
     $medium = 'Sitio web';
 }
 
+// Pipedrive "Medio" suele ser campo tipo opciones.
+// Si llega un valor LP no registrado como opcion, enviamos fallback para evitar que quede vacio.
+$mediumForPipedrive = $medium;
+$mediumLower = strtolower($mediumForPipedrive);
+$isLpMedium = strpos($mediumLower, 'lp ') !== false || strpos($mediumLower, 'landing page') !== false;
+if ($isLpMedium) {
+    $mediumForPipedrive = (string) ($config['pipedrive_medium_fallback'] ?? 'Sitio web');
+}
+
+// Permite mapear texto -> option id desde config local cuando "Medio" es enum/set.
+$mediumOptionIds = $config['pipedrive_medium_option_ids'] ?? null;
+if (is_array($mediumOptionIds) && array_key_exists($medium, $mediumOptionIds)) {
+    $mediumForPipedrive = $mediumOptionIds[$medium];
+}
+
 $personPayload = [
     'name' => $fullName,
     'email' => [[
@@ -148,7 +163,7 @@ $personPayload = [
         'primary' => true,
     ]],
     'cd1724715699c7674b53fd7e5918a1c853fa340f' => $interest,
-    '1cd81947451e14a3c30084a31db4d6eef6fef63e' => $medium,
+    '1cd81947451e14a3c30084a31db4d6eef6fef63e' => $mediumForPipedrive,
 ];
 
 $personResponse = $pipedriveRequest('https://api.pipedrive.com/v1/persons', $token, $personPayload);
