@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
+require __DIR__ . '/../../helpers/turnstile.php';
 
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? ''), '/');
 $base = $base === '.' ? '' : $base;
@@ -66,6 +67,16 @@ $pipedriveRequest = static function (string $endpoint, string $token, array $pay
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $fail('Metodo no permitido.', 405);
+}
+
+$turnstileToken = trim((string) ($_POST['cf-turnstile-response'] ?? ''));
+if ($turnstileToken === '') {
+    $fail('Completa la validacion de seguridad.');
+}
+
+$turnstileResponse = verify_turnstile_token($turnstileToken, (string) ($_SERVER['REMOTE_ADDR'] ?? ''));
+if (!($turnstileResponse['success'] ?? false)) {
+    $fail('No se pudo validar la verificacion de seguridad.');
 }
 
 $fullName = trim((string) ($_POST['full_name'] ?? ''));

@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
+require __DIR__ . '/../../helpers/turnstile.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -10,6 +11,18 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? ''), '/');
 $base = $base === '.' ? '' : $base;
+
+$turnstileToken = trim((string) ($_POST['cf-turnstile-response'] ?? ''));
+if ($turnstileToken === '') {
+    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
+    exit;
+}
+
+$turnstileResponse = verify_turnstile_token($turnstileToken, (string) ($_SERVER['REMOTE_ADDR'] ?? ''));
+if (!($turnstileResponse['success'] ?? false)) {
+    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
+    exit;
+}
 
 $nombre = trim((string) ($_POST['nombre'] ?? ''));
 $correo = trim((string) ($_POST['correo'] ?? ''));

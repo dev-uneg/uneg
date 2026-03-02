@@ -78,6 +78,45 @@
     <a href="https://wa.me/5215571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20y%20quiero%20informes%20de%20inscripciones%20y%20costos." class="whatsapp-float" aria-label="WhatsApp">
       <?php echo uneg_icon('whatsapp', 'h-7 w-7'); ?>
     </a>
+    <?php
+      require_once __DIR__ . '/../../helpers/turnstile.php';
+      $turnstileSiteKey = turnstile_site_key();
+    ?>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+    <script>
+      (function () {
+        const siteKey = <?php echo json_encode($turnstileSiteKey, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
+        if (!siteKey) return;
+
+        const isPublicApiForm = (form) => {
+          if (!(form instanceof HTMLFormElement)) return false;
+          const action = form.getAttribute('action') || '';
+          return action.includes('/api/') && !action.includes('/admin/');
+        };
+
+        const addTurnstile = (form) => {
+          if (!isPublicApiForm(form)) return;
+          if (form.querySelector('.cf-turnstile')) return;
+
+          const wrap = document.createElement('div');
+          wrap.className = 'turnstile-wrap sm:col-span-2';
+
+          const widget = document.createElement('div');
+          widget.className = 'cf-turnstile';
+          widget.setAttribute('data-sitekey', siteKey);
+          wrap.appendChild(widget);
+
+          const submit = form.querySelector('button[type="submit"], input[type="submit"]');
+          if (submit && submit.parentNode) {
+            submit.parentNode.insertBefore(wrap, submit);
+          } else {
+            form.appendChild(wrap);
+          }
+        };
+
+        document.querySelectorAll('form').forEach(addTurnstile);
+      })();
+    </script>
     <style>
       .whatsapp-float {
         position: fixed;

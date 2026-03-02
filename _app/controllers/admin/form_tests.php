@@ -93,7 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = leads_db();
 
     $testDefinitions = [
-        ['label' => 'Contacto (legacy)', 'endpoint' => '/api/contacto', 'type' => 'lead'],
         ['label' => 'Contacto (forms)', 'endpoint' => '/api/forms/contacto', 'type' => 'lead'],
         ['label' => 'CCH ISEC', 'endpoint' => '/api/forms/cch-isec', 'type' => 'lead'],
         ['label' => 'Bachillerato en linea', 'endpoint' => '/api/forms/bachillerato-en-linea', 'type' => 'lead'],

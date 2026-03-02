@@ -5,7 +5,6 @@ require __DIR__ . '/../helpers/turnstile.php';
 $turnstileSiteKey = turnstile_site_key();
 require __DIR__ . '/partials/header.php';
 ?>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <main class="max-w-7xl mx-auto px-4 py-12">
   <section class="rounded-3xl bg-gradient-to-r from-[#0b2c65] via-[#0f3b86] to-[#184792] p-8 text-white shadow-lg">

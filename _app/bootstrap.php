@@ -363,9 +363,6 @@ $router->map('GET', '/egresados/dejanos-saber', function (): void {
 // ---------------------------
 // API
 // ---------------------------
-$router->map('POST', '/api/contacto', function (): void {
-    require __DIR__ . '/controllers/api/contacto.php';
-});
 $router->map('POST', '/api/forms/cch-isec', function (): void {
     require __DIR__ . '/controllers/forms/cch-isec.php';
 });
