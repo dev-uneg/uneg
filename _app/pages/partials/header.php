@@ -77,6 +77,9 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
     fbq('init', '859187747169401');
     fbq('track', 'PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=859187747169401&ev=PageView&noscript=1"
+  /></noscript>
   <!-- End Meta Pixel Code -->
   <style>
     @font-face {
@@ -114,9 +117,6 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   </style>
 </head>
 <body class="antialiased <?php echo htmlspecialchars($bodyClass); ?>">
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=859187747169401&ev=PageView&noscript=1"
-  /></noscript>
   <?php include __DIR__ . '/subheader.php'; ?>
   <?php include __DIR__ . '/nav.php'; ?>
 
