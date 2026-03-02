@@ -205,6 +205,16 @@ $router->map('GET', '/oferta-educativa', function (): void {
 });
 
 // ---------------------------
+// Landing pages
+// ---------------------------
+$router->map('GET', '/lp-licenciaturas', function (): void {
+    require __DIR__ . '/pages/landing/lp-licenciaturas.php';
+});
+$router->map('GET', '/lp-maestrias', function (): void {
+    require __DIR__ . '/pages/landing/lp-maestrias.php';
+});
+
+// ---------------------------
 // Admin Leads
 // ---------------------------
 $router->map('GET|POST', '/admin/login', function (): void {
