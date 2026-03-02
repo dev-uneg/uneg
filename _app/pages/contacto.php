@@ -1,8 +1,11 @@
 <?php
 $title = 'Contacto | UNEG';
 $active = 'contacto';
+require __DIR__ . '/../helpers/turnstile.php';
+$turnstileSiteKey = turnstile_site_key();
 require __DIR__ . '/partials/header.php';
 ?>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <main class="max-w-7xl mx-auto px-4 py-12">
   <section class="rounded-3xl bg-gradient-to-r from-[#0b2c65] via-[#0f3b86] to-[#184792] p-8 text-white shadow-lg">
@@ -95,6 +98,9 @@ require __DIR__ . '/partials/header.php';
           <input type="checkbox" class="h-4 w-4" name="privacy" required />
           He leído y acepto el Aviso de Privacidad
         </label>
+        <div class="sm:col-span-2">
+          <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"></div>
+        </div>
         <button class="sm:col-span-2 w-max rounded-md bg-[#0b2c65] px-6 py-2.5 text-white font-semibold shadow-sm hover:bg-[#09306e]">Enviar</button>
       </form>
     </div>

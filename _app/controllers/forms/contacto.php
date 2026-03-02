@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
 require __DIR__ . '/../../helpers/rate_limit_forms.php';
+require __DIR__ . '/../../helpers/turnstile.php';
 
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? ''), '/');
 $base = $base === '.' ? '' : $base;
@@ -78,6 +79,16 @@ if (!$rateLimit['allowed']) {
 $honeypot = trim((string) ($_POST['company_website'] ?? ''));
 if ($honeypot !== '') {
     $fail('Solicitud invalida.', 400);
+}
+
+$turnstileToken = trim((string) ($_POST['cf-turnstile-response'] ?? ''));
+if ($turnstileToken === '') {
+    $fail('Completa la validacion de seguridad.');
+}
+
+$turnstileResponse = verify_turnstile_token($turnstileToken, (string) ($_SERVER['REMOTE_ADDR'] ?? ''));
+if (!($turnstileResponse['success'] ?? false)) {
+    $fail('No se pudo validar la verificacion de seguridad.');
 }
 
 $fullName = trim((string) ($_POST['full_name'] ?? ''));
