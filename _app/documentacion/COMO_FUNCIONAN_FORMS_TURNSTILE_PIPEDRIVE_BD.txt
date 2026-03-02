@@ -1,0 +1,140 @@
+COMO FUNCIONAN LOS FORMS (UNEG)
+Turnstile + Base de Datos + Pipedrive
+
+Resumen rapido
+- Todos los formularios publicos del sitio envian a endpoints /api/... definidos en _app/bootstrap.php.
+- Esos endpoints ejecutan controladores en _app/controllers/forms/.
+- Antes de procesar, cada controlador valida Cloudflare Turnstile (token server-side).
+- Si pasa Turnstile, el form guarda en BD (tablas leads/egresados/buzon_rector).
+- En forms tipo lead, despues del guardado tambien se crea contacto en Pipedrive.
+
+-----------------------------------
+1) RUTEO DE FORMULARIOS
+-----------------------------------
+Archivo clave:
+- _app/bootstrap.php
+
+Ahi se mapean rutas POST como:
+- /api/forms/contacto
+- /api/forms/licenciaturas-...
+- /api/forms/maestrias-...
+- /api/forms/doctorados-...
+- /api/forms/bachillerato-...
+- /api/buzon-rector
+- /api/egresados
+
+Nota:
+- El endpoint legacy /api/contacto ya fue eliminado.
+
+-----------------------------------
+2) TURNSTILE (PROTECCION ANTIBOT)
+-----------------------------------
+Archivos clave:
+- Helper backend: _app/helpers/turnstile.php
+- Config local: _app/config/turnstile.local.php
+- Inyeccion widget en frontend: _app/pages/partials/footer.php
+
+Como funciona:
+1. Frontend:
+   - footer.php carga script oficial de Turnstile.
+   - footer.php inserta automaticamente el widget .cf-turnstile en forms publicos con action /api/.
+   - Si un form ya tiene widget (ej. contacto), no lo duplica.
+
+2. Backend:
+   - Cada controller de _app/controllers/forms/*.php toma:
+     - $_POST['cf-turnstile-response']
+   - Llama:
+     - verify_turnstile_token($token, $_SERVER['REMOTE_ADDR'])
+   - Si falla: corta flujo y responde error/redirect.
+   - Si pasa: continua con validaciones de campos, BD y/o Pipedrive.
+
+Orden de carga de keys de Turnstile:
+- Variables de entorno: TURNSTILE_SITE_KEY / TURNSTILE_SECRET_KEY
+- _app/config/turnstile.local.php (site_key, secret_key)
+- Keys default de prueba (solo fallback)
+
+-----------------------------------
+3) GUARDADO EN BASE DE DATOS
+-----------------------------------
+Archivo clave:
+- _app/helpers/leads_db.php
+
+Que hace:
+- Abre conexion PDO MySQL/MariaDB.
+- Lee config desde:
+  - _app/config/db.php
+  - _app/config/db.local.php (si existe)
+  - o variables de entorno DB_*
+- Crea/asegura tablas e indices:
+  - leads
+  - egresados
+  - buzon_rector
+
+Funciones importantes:
+- leads_db_insert(...)
+- leads_db_update(...)
+- egresados_db_insert(...)
+- buzon_rector_db_insert(...)
+
+-----------------------------------
+4) ENVIO A PIPEDRIVE
+-----------------------------------
+Aplica a forms tipo lead (contacto, licenciaturas, maestrias, doctorados, nms).
+
+Archivos:
+- Controllers en _app/controllers/forms/*.php (excepto buzon_rector_store.php y egresados_store.php)
+- Config token: _app/config/pipedrive.local.php (api_token)
+  o variable de entorno PIPEDRIVE_API_TOKEN
+
+Flujo en cada controller lead:
+1. Valida metodo POST.
+2. Valida Turnstile.
+3. Valida campos requeridos.
+4. Inserta lead en tabla leads con status=received.
+5. Crea Persona en Pipedrive (endpoint /v1/persons).
+6. Si falla Pipedrive:
+   - actualiza lead status=pipedrive_failed
+   - guarda error_message
+7. Si Pipedrive OK:
+   - actualiza lead status=pipedrive_ok
+   - guarda pipedrive_person_id
+8. Opcional: crea nota en /v1/notes con detalles del form.
+
+-----------------------------------
+5) ARCHIVOS QUE NECESITAS SIEMPRE
+-----------------------------------
+Minimo para forms lead funcionando:
+- _app/bootstrap.php
+- _app/pages/* (vistas con form)
+- _app/pages/partials/footer.php
+- _app/helpers/turnstile.php
+- _app/config/turnstile.local.php (o env vars)
+- _app/helpers/leads_db.php
+- _app/config/db.php (+ db.local.php opcional)
+- _app/controllers/forms/*.php
+- _app/config/pipedrive.local.php (o env var)
+
+-----------------------------------
+6) CHECKLIST DE DIAGNOSTICO (SI FALLA UN FORM)
+-----------------------------------
+1. Revisar que el form apunte a un endpoint existente en _app/bootstrap.php.
+2. Revisar que el hostname usado este autorizado en Cloudflare Turnstile.
+3. Revisar keys Turnstile correctas (site_key y secret_key).
+4. Revisar conexion BD (db.php / db.local.php / DB_*).
+5. Revisar token de Pipedrive (pipedrive.local.php o env var).
+6. Revisar que cURL saliente del servidor funcione (Cloudflare y Pipedrive).
+7. Revisar tabla leads:
+   - status y error_message para saber en que paso fallo.
+
+-----------------------------------
+7) DIFERENCIA ENTRE TIPOS DE FORM
+-----------------------------------
+- Forms lead (la mayoria):
+  Turnstile + BD (leads) + Pipedrive.
+
+- Buzon del Rector:
+  Turnstile + BD (buzon_rector), sin Pipedrive.
+
+- Egresados:
+  Turnstile + BD (egresados), sin Pipedrive.
+
