@@ -55,7 +55,6 @@ require __DIR__ . '/../partials/header.php';
                 <option value="Maestria en Derecho Corporativo">Maestr&iacute;a en Derecho Corporativo</option>
                 <option value="Maestria en Mercadotecnia">Maestr&iacute;a en Mercadotecnia</option>
                 <option value="Maestria en Tecnologias de la Informacion">Maestr&iacute;a en Tecnolog&iacute;as de la Informaci&oacute;n</option>
-                <option value="Maestria en Administracion de Negocios en Linea">Maestr&iacute;a en Administraci&oacute;n de Negocios en L&iacute;nea</option>
                 <option value="Maestria en Arquitectura de Negocios">Maestr&iacute;a en Arquitectura de Negocios</option>
               </select>
               <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0b2c86]">
