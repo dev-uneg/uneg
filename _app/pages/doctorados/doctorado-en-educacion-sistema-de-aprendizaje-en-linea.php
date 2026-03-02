@@ -69,7 +69,7 @@ require __DIR__ . '/../partials/header.php';
         <input type="hidden" name="interest" value="Doctorado en Educación Sabatino (SUA)" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" name="privacy" value="1" class="h-4 w-4" required />
-          He leído y acepto el <span class="font-semibold text-slate-700">Aviso de Privacidad</span>
+          He leído y acepto el <a href="<?php echo $base; ?>/aviso-de-privacidad" class="font-semibold text-slate-700 underline" target="_blank" rel="noopener">Aviso de Privacidad</a>
         </label>
         <button class="col-span-1 sm:col-span-2 rounded-md bg-[#0b2c65] px-4 py-2 text-white font-semibold">Enviar</button>
       </form>

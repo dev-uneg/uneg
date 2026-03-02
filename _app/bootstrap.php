@@ -463,6 +463,9 @@ $router->map('POST', '/api/buzon-rector', function (): void {
 $router->map('GET', '/contacto', function (): void {
     require __DIR__ . '/pages/contacto.php';
 });
+$router->map('GET', '/aviso-de-privacidad', function (): void {
+    require __DIR__ . '/pages/aviso-de-privacidad.php';
+});
 
 // ---------------------------
 // Gracias

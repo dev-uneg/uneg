@@ -96,7 +96,7 @@ require __DIR__ . '/partials/header.php';
         <textarea class="w-full rounded-lg border border-slate-300 px-4 py-3 sm:col-span-2 min-h-[160px] focus:outline-none focus:ring-2 focus:ring-[#0b2c65]/30" placeholder="Mensaje" name="message"></textarea>
         <label class="sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" class="h-4 w-4" name="privacy" required />
-          He leído y acepto el Aviso de Privacidad
+          He leído y acepto el <a href="<?php echo $base; ?>/aviso-de-privacidad" class="font-semibold text-slate-700 underline" target="_blank" rel="noopener">Aviso de Privacidad</a>
         </label>
         <div class="sm:col-span-2">
           <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"></div>
