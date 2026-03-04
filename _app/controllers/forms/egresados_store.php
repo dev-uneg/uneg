@@ -92,7 +92,7 @@ if (!$id) {
 }
 
 $nombreCompleto = trim($nombre . ' ' . $apellidoPaterno . ' ' . $apellidoMaterno);
-$relayUrl = trim((string) (getenv('EGRESADOS_POST_URL') ?: 'https://delvalle.qodexia.site/egresados-uneg-relay-mailer.php'));
+$relayUrl = 'https://delvalle.qodexia.site/egresados-uneg-relay-mailer.php';
 $payload = [
     'nombre' => $nombre,
     'apellido_paterno' => $apellidoPaterno,
@@ -124,6 +124,11 @@ if ($raw === false) {
     $curlError = curl_error($ch);
     curl_close($ch);
     error_log('Relay egresados fallo cURL: ' . $curlError);
+    @file_put_contents(
+        __DIR__ . '/../../storage/forms.log',
+        '[' . date('Y-m-d H:i:s') . '] Egresados relay cURL error url=' . $relayUrl . ' detail=' . $curlError . PHP_EOL,
+        FILE_APPEND
+    );
     header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
     exit;
 }
@@ -131,15 +136,31 @@ $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 if ($status < 200 || $status >= 300) {
     error_log('Relay egresados HTTP ' . $status . '. Body: ' . (string) $raw);
+    @file_put_contents(
+        __DIR__ . '/../../storage/forms.log',
+        '[' . date('Y-m-d H:i:s') . '] Egresados relay HTTP error url=' . $relayUrl . ' status=' . $status . ' body=' . (string) $raw . PHP_EOL,
+        FILE_APPEND
+    );
     header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
     exit;
 }
 $decoded = json_decode((string) $raw, true);
 if (is_array($decoded) && isset($decoded['ok']) && !$decoded['ok']) {
     error_log('Relay egresados ok=false: ' . (string) ($decoded['error'] ?? 'Sin detalle'));
+    @file_put_contents(
+        __DIR__ . '/../../storage/forms.log',
+        '[' . date('Y-m-d H:i:s') . '] Egresados relay rejected url=' . $relayUrl . ' detail=' . (string) ($decoded['error'] ?? 'Sin detalle') . PHP_EOL,
+        FILE_APPEND
+    );
     header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
     exit;
 }
+
+@file_put_contents(
+    __DIR__ . '/../../storage/forms.log',
+    '[' . date('Y-m-d H:i:s') . '] Egresados relay ok url=' . $relayUrl . PHP_EOL,
+    FILE_APPEND
+);
 
 header('Location: ' . $base . '/egresados/dejanos-saber?ok=1', true, 302);
 exit;
