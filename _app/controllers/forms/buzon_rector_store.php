@@ -21,6 +21,15 @@ $redirectWithError = static function (string $reason, string $logDetail = '') us
     }
     if ($logDetail !== '') {
         error_log(sprintf('Buzon rector error [%s] %s', $debugId, $logDetail));
+        $line = sprintf(
+            "[%s] Buzon rector error [%s] reason=%s ip=%s detail=%s\n",
+            date('Y-m-d H:i:s'),
+            $debugId,
+            $reason,
+            (string) ($_SERVER['REMOTE_ADDR'] ?? 'N/D'),
+            $logDetail
+        );
+        @file_put_contents(__DIR__ . '/../../storage/forms.log', $line, FILE_APPEND);
     }
 
     $query = http_build_query([

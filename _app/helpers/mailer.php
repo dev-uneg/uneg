@@ -83,6 +83,29 @@ function mailer_config(): array
         'recipients' => $recipients,
     ];
 
+    foreach ($localConfig as $key => $value) {
+        if (!is_string($key) || strpos($key, 'recipients_') !== 0 || !is_array($value)) {
+            continue;
+        }
+        $groupRecipients = [];
+        foreach ($value as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $mail = trim((string) ($item['email'] ?? ''));
+            if ($mail === '') {
+                continue;
+            }
+            $groupRecipients[] = [
+                'email' => $mail,
+                'name' => trim((string) ($item['name'] ?? '')),
+            ];
+        }
+        if ($groupRecipients !== []) {
+            $resolved[$key] = $groupRecipients;
+        }
+    }
+
     return $resolved;
 }
 
