@@ -86,6 +86,9 @@ require __DIR__ . '/../partials/header.php';
           Mensaje
           <textarea name="mensaje" rows="6" required class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0d4fb6]/30" placeholder="Escribe tu mensaje"></textarea>
         </label>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">
+          Tu mensaje será recibido y atendido con responsabilidad por nuestro equipo. La información que compartas se tratará con respeto y confidencialidad para darte seguimiento de forma clara, oportuna y brindarte la mejor atención posible.
+        </p>
       </div>
       <div class="mt-8 flex flex-col items-center gap-4">
         <button type="submit" class="rounded-xl bg-[#0b2c65] px-10 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0a2552]">

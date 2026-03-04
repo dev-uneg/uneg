@@ -81,6 +81,29 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   src="https://www.facebook.com/tr?id=859187747169401&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+  <!-- Spotify Pixel: base global + event_id dinamico por carga para deduplicacion -->
+  <script>
+    (function (w, d) {
+      var id = 'spdt-capture', n = 'script';
+      if (!d.getElementById(id)) {
+        w.spdt = w.spdt || function () {
+          (w.spdt.q = w.spdt.q || []).push(arguments);
+        };
+        var e = d.createElement(n); e.id = id; e.async = 1;
+        e.src = 'https://pixel.byspotify.com/ping.min.js';
+        var s = d.getElementsByTagName(n)[0];
+        s.parentNode.insertBefore(e, s);
+      }
+
+      // Genera un ID unico por vista (simple y suficiente para medicion basica).
+      var eventId = (w.crypto && typeof w.crypto.randomUUID === 'function')
+        ? w.crypto.randomUUID()
+        : ('uneg-view-' + Date.now() + '-' + Math.random().toString(16).slice(2, 10));
+
+      w.spdt('conf', { key: '14c182851580462a8db1af7fa7e8491c' });
+      w.spdt('view', { event_id: eventId });
+    })(window, document);
+  </script>
   <style>
     @font-face {
       font-family: 'Figtree';
