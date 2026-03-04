@@ -17,5 +17,7 @@ deployment:
     - /usr/bin/rsync -a --exclude 'storage/*.sqlite' --exclude 'storage/*.sqlite-shm' --exclude 'storage/*.sqlite-wal' _app/ $DEPLOYPATH/_app/
     # Publica assets estáticos compilados (css, js, fonts, etc.).
     - /bin/cp -R _assets $DEPLOYPATH/
+    # Publica dependencias Composer instaladas en la raiz (autoload + librerias).
+    - /bin/cp -R vendor $DEPLOYPATH/
     # Publica imágenes del sitio.
     - /bin/cp -R _imgs $DEPLOYPATH/
