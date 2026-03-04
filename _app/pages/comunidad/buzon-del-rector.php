@@ -1,6 +1,19 @@
 <?php
 $title = 'Buzón del Rector | UNEG';
 $active = 'comunidad';
+
+$errorReason = trim((string) ($_GET['reason'] ?? ''));
+$errorDebugId = trim((string) ($_GET['debug_id'] ?? ''));
+$errorMessages = [
+  'turnstile_missing' => 'Valida el captcha de seguridad para poder enviar el mensaje.',
+  'turnstile_invalid' => 'La validación de seguridad (captcha) falló. Inténtalo de nuevo.',
+  'missing_fields' => 'Completa todos los campos obligatorios del formulario.',
+  'invalid_email' => 'El correo electrónico no tiene un formato válido.',
+  'db_insert_failed' => 'No se pudo guardar tu mensaje en este momento. Inténtalo nuevamente en unos minutos.',
+  'smtp_failed' => 'Tu mensaje se guardó, pero falló la notificación por correo interno.',
+];
+$resolvedErrorMessage = $errorMessages[$errorReason] ?? 'Revisa tus datos e inténtalo nuevamente.';
+
 require __DIR__ . '/../partials/header.php';
 ?>
 <main class="max-w-7xl mx-auto px-4 py-10">
@@ -39,7 +52,10 @@ require __DIR__ . '/../partials/header.php';
           </span>
           <div>
             <p class="text-sm font-semibold">No se pudo enviar el mensaje</p>
-            <p class="mt-1 text-sm text-rose-800">Revisa tus datos e inténtalo nuevamente.</p>
+            <p class="mt-1 text-sm text-rose-800"><?php echo htmlspecialchars($resolvedErrorMessage, ENT_QUOTES, 'UTF-8'); ?></p>
+            <?php if ($errorDebugId !== ''): ?>
+              <p class="mt-2 text-xs text-rose-700">Código de seguimiento: <?php echo htmlspecialchars($errorDebugId, ENT_QUOTES, 'UTF-8'); ?></p>
+            <?php endif; ?>
           </div>
         </div>
       </div>

@@ -13,16 +13,35 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? ''), '/');
 $base = $base === '.' ? '' : $base;
 
+$redirectWithError = static function (string $reason, string $logDetail = '') use ($base): void {
+    try {
+        $debugId = strtoupper(bin2hex(random_bytes(4)));
+    } catch (Throwable $e) {
+        $debugId = strtoupper(substr(md5(uniqid('', true)), 0, 8));
+    }
+    if ($logDetail !== '') {
+        error_log(sprintf('Buzon rector error [%s] %s', $debugId, $logDetail));
+    }
+
+    $query = http_build_query([
+        'error' => '1',
+        'reason' => $reason,
+        'debug_id' => $debugId,
+    ]);
+    header('Location: ' . $base . '/comunidad/buzon-del-rector?' . $query, true, 302);
+    exit;
+};
+
 $turnstileToken = trim((string) ($_POST['cf-turnstile-response'] ?? ''));
 if ($turnstileToken === '') {
-    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
-    exit;
+    $redirectWithError('turnstile_missing', 'Falta token de Turnstile.');
 }
 
 $turnstileResponse = verify_turnstile_token($turnstileToken, (string) ($_SERVER['REMOTE_ADDR'] ?? ''));
 if (!($turnstileResponse['success'] ?? false)) {
-    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
-    exit;
+    $codes = $turnstileResponse['error-codes'] ?? [];
+    $codesList = is_array($codes) ? implode(', ', array_map('strval', $codes)) : '';
+    $redirectWithError('turnstile_invalid', 'Turnstile rechazado. Códigos: ' . $codesList);
 }
 
 $nombre = trim((string) ($_POST['nombre'] ?? ''));
@@ -31,13 +50,11 @@ $asunto = trim((string) ($_POST['asunto'] ?? ''));
 $mensaje = trim((string) ($_POST['mensaje'] ?? ''));
 
 if ($nombre === '' || $correo === '' || $asunto === '' || $mensaje === '') {
-    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
-    exit;
+    $redirectWithError('missing_fields', 'Faltan campos obligatorios.');
 }
 
 if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
-    exit;
+    $redirectWithError('invalid_email', 'Correo inválido: ' . $correo);
 }
 
 $id = buzon_rector_db_insert([
@@ -51,8 +68,7 @@ $id = buzon_rector_db_insert([
 ]);
 
 if (!$id) {
-    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
-    exit;
+    $redirectWithError('db_insert_failed', 'No se pudo guardar el mensaje en BD.');
 }
 
 $safeNombre = str_replace(["\r", "\n"], ' ', $nombre);
@@ -69,9 +85,8 @@ $cuerpo = "Nuevo mensaje recibido desde el Buzon del Rector:\n\n"
 
 $mailResult = send_smtp_notification($asuntoMail, $cuerpo, $safeCorreo, $safeNombre, 'buzon');
 if (!($mailResult['ok'] ?? false)) {
-    error_log('SMTP buzon rector fallo: ' . (string) ($mailResult['error'] ?? 'Error SMTP desconocido'));
-    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
-    exit;
+    $mailError = (string) ($mailResult['error'] ?? 'Error SMTP desconocido');
+    $redirectWithError('smtp_failed', 'SMTP buzon rector fallo: ' . $mailError);
 }
 
 header('Location: ' . $base . '/gracias?origen=buzon', true, 302);
