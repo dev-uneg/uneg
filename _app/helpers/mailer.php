@@ -117,6 +117,9 @@ function mailer_config(): array
         'mail_fallback_enabled' => $fallbackMail,
         'from_email' => $fromEmail,
         'from_name' => $get('SMTP_FROM_NAME', 'from_name', 'UNEG Sitio Web'),
+        'relay_url' => $get('MAIL_RELAY_URL', 'relay_url', ''),
+        'relay_token' => $get('MAIL_RELAY_TOKEN', 'relay_token', ''),
+        'relay_timeout' => (int) $get('MAIL_RELAY_TIMEOUT', 'relay_timeout', '12'),
         'recipients' => $recipients,
     ];
 
@@ -146,6 +149,94 @@ function mailer_config(): array
     return $resolved;
 }
 
+function send_http_mail_relay(
+    string $relayUrl,
+    string $relayToken,
+    string $subject,
+    string $plainBody,
+    string $replyEmail = '',
+    string $replyName = '',
+    string $recipientGroup = 'default',
+    int $timeout = 12
+): array
+{
+    if ($relayUrl === '') {
+        return [
+            'ok' => false,
+            'error' => 'Relay URL no configurado.',
+        ];
+    }
+    if ($relayToken === '') {
+        return [
+            'ok' => false,
+            'error' => 'Relay token no configurado.',
+        ];
+    }
+
+    $payload = [
+        'subject' => $subject,
+        'plain_body' => $plainBody,
+        'reply_email' => $replyEmail,
+        'reply_name' => $replyName,
+        'recipient_group' => $recipientGroup !== '' ? $recipientGroup : 'default',
+        'sent_at' => date('c'),
+    ];
+
+    $ch = curl_init($relayUrl);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/json',
+            'Accept: application/json',
+            'Authorization: Bearer ' . $relayToken,
+        ],
+        CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+        CURLOPT_TIMEOUT => $timeout > 0 ? $timeout : 12,
+    ]);
+
+    $raw = curl_exec($ch);
+    if ($raw === false) {
+        $error = curl_error($ch);
+        curl_close($ch);
+        return [
+            'ok' => false,
+            'error' => 'Relay cURL error: ' . $error,
+        ];
+    }
+
+    $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    $decoded = json_decode($raw, true);
+    if ($status < 200 || $status >= 300) {
+        $message = is_array($decoded) ? (string) ($decoded['error'] ?? $decoded['message'] ?? 'HTTP error ' . $status) : 'HTTP error ' . $status;
+        return [
+            'ok' => false,
+            'error' => 'Relay rechazo solicitud: ' . $message,
+        ];
+    }
+
+    if (!is_array($decoded)) {
+        return [
+            'ok' => true,
+            'error' => null,
+        ];
+    }
+
+    if (!($decoded['ok'] ?? true)) {
+        return [
+            'ok' => false,
+            'error' => (string) ($decoded['error'] ?? 'Relay respondió error.'),
+        ];
+    }
+
+    return [
+        'ok' => true,
+        'error' => null,
+    ];
+}
+
 function send_smtp_notification(
     string $subject,
     string $plainBody,
@@ -155,6 +246,21 @@ function send_smtp_notification(
 ): array
 {
     $cfg = mailer_config();
+    $relayUrl = trim((string) ($cfg['relay_url'] ?? ''));
+    $relayToken = trim((string) ($cfg['relay_token'] ?? ''));
+    if ($relayUrl !== '' && $relayToken !== '') {
+        return send_http_mail_relay(
+            $relayUrl,
+            $relayToken,
+            $subject,
+            $plainBody,
+            $replyEmail,
+            $replyName,
+            $recipientGroup,
+            (int) ($cfg['relay_timeout'] ?? 12)
+        );
+    }
+
     $smtpAuth = (bool) ($cfg['smtp_auth'] ?? true);
     $password = trim((string) ($cfg['password'] ?? ''));
     if ($smtpAuth && ($password === '' || stripos($password, 'PON_AQUI') !== false)) {

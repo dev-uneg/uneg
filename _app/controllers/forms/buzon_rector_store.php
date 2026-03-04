@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
 require __DIR__ . '/../../helpers/turnstile.php';
-require __DIR__ . '/../../helpers/mailer.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -83,19 +82,40 @@ if (!$id) {
 $safeNombre = str_replace(["\r", "\n"], ' ', $nombre);
 $safeCorreo = str_replace(["\r", "\n"], '', $correo);
 $safeAsunto = str_replace(["\r", "\n"], ' ', $asunto);
-$asuntoMail = 'Buzon del Rector - ' . $safeAsunto;
-$cuerpo = "Nuevo mensaje recibido desde el Buzon del Rector:\n\n"
-    . "Nombre: {$safeNombre}\n"
-    . "Correo: {$safeCorreo}\n"
-    . "Asunto: {$safeAsunto}\n\n"
-    . "Mensaje:\n{$mensaje}\n\n"
-    . "Fecha: " . date('Y-m-d H:i:s') . "\n"
-    . "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'N/D') . "\n";
+$relayUrl = trim((string) (getenv('BUZON_POST_URL') ?: 'https://delvalle.qodexia.site/buzon-uneg-relay-mailer.php'));
+$payload = [
+    'nombre' => $safeNombre,
+    'correo' => $safeCorreo,
+    'asunto' => $safeAsunto,
+    'mensaje' => $mensaje,
+    'ip' => (string) ($_SERVER['REMOTE_ADDR'] ?? ''),
+    'created_at' => date('c'),
+];
 
-$mailResult = send_smtp_notification($asuntoMail, $cuerpo, $safeCorreo, $safeNombre, 'buzon');
-if (!($mailResult['ok'] ?? false)) {
-    $mailError = (string) ($mailResult['error'] ?? 'Error SMTP desconocido');
-    $redirectWithError('smtp_failed', 'SMTP buzon rector fallo: ' . $mailError);
+$ch = curl_init($relayUrl);
+curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_HTTPHEADER => ['Content-Type: application/json', 'Accept: application/json'],
+    CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+    CURLOPT_TIMEOUT => 12,
+]);
+$raw = curl_exec($ch);
+if ($raw === false) {
+    $curlError = curl_error($ch);
+    curl_close($ch);
+    $redirectWithError('relay_failed', 'POST a relay falló por cURL: ' . $curlError);
+}
+$status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+if ($status < 200 || $status >= 300) {
+    $redirectWithError('relay_failed', 'POST a relay respondió HTTP ' . $status . '. Body: ' . (string) $raw);
+}
+
+$decoded = json_decode((string) $raw, true);
+if (is_array($decoded) && isset($decoded['ok']) && !$decoded['ok']) {
+    $relayError = (string) ($decoded['error'] ?? 'Error no especificado en relay.');
+    $redirectWithError('relay_failed', 'POST a relay devolvió ok=false: ' . $relayError);
 }
 
 header('Location: ' . $base . '/gracias?origen=buzon', true, 302);

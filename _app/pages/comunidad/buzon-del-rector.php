@@ -11,6 +11,7 @@ $errorMessages = [
   'invalid_email' => 'El correo electrónico no tiene un formato válido.',
   'db_insert_failed' => 'No se pudo guardar tu mensaje en este momento. Inténtalo nuevamente en unos minutos.',
   'smtp_failed' => 'Tu mensaje se guardó, pero falló la notificación por correo interno.',
+  'relay_failed' => 'Tu mensaje se guardó, pero falló el envío al servidor externo de correo.',
 ];
 $resolvedErrorMessage = $errorMessages[$errorReason] ?? 'Revisa tus datos e inténtalo nuevamente.';
 
