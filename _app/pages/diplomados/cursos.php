@@ -57,8 +57,8 @@ require __DIR__ . '/../partials/header.php';
         <p class="mt-3 text-sm font-semibold text-[#0b2c65]">Coaching y creatividad empresarial</p>
         <p class="mt-1 text-xs text-slate-500">Click para ver en grande</p>
       </button>
-      <button type="button" class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" data-lightbox-src="<?php echo $assetBase; ?>/_imgs/ixu/cursos/uneg_Curso-REPSE-1.webp">
-        <img src="<?php echo $assetBase; ?>/_imgs/ixu/cursos/uneg_Curso-REPSE-1.webp" alt="Curso REPSE" class="w-full h-56 object-contain">
+      <button type="button" class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" data-lightbox-src="<?php echo $assetBase; ?>/_imgs/ixu/uneg_Curso-REPSE.png">
+        <img src="<?php echo $assetBase; ?>/_imgs/ixu/uneg_Curso-REPSE.png" alt="Curso REPSE" class="w-full h-56 object-contain">
         <p class="mt-3 text-sm font-semibold text-[#0b2c65]">Curso REPSE</p>
         <p class="mt-1 text-xs text-slate-500">Click para ver en grande</p>
       </button>
