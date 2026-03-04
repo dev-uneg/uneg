@@ -72,12 +72,16 @@ function mailer_config(): array
         ];
     }
 
+    $smtpAuthRaw = $get('SMTP_AUTH', 'smtp_auth', '1');
+    $smtpAuth = !in_array(strtolower(trim($smtpAuthRaw)), ['0', 'false', 'off', 'no'], true);
+
     $resolved = [
         'host' => $get('SMTP_HOST', 'host', 'smtp.gmail.com'),
         'port' => $port,
         'encryption' => strtolower($get('SMTP_ENCRYPTION', 'encryption', 'tls')),
         'username' => $username,
         'password' => $get('SMTP_PASSWORD', 'password', ''),
+        'smtp_auth' => $smtpAuth,
         'from_email' => $fromEmail,
         'from_name' => $get('SMTP_FROM_NAME', 'from_name', 'UNEG Sitio Web'),
         'recipients' => $recipients,
@@ -118,8 +122,9 @@ function send_smtp_notification(
 ): array
 {
     $cfg = mailer_config();
+    $smtpAuth = (bool) ($cfg['smtp_auth'] ?? true);
     $password = trim((string) ($cfg['password'] ?? ''));
-    if ($password === '' || stripos($password, 'PON_AQUI') !== false) {
+    if ($smtpAuth && ($password === '' || stripos($password, 'PON_AQUI') !== false)) {
         return [
             'ok' => false,
             'error' => 'SMTP password no configurado.',
@@ -143,16 +148,23 @@ function send_smtp_notification(
     try {
         $mail->isSMTP();
         $mail->Host = (string) $cfg['host'];
-        $mail->SMTPAuth = true;
-        $mail->Username = (string) $cfg['username'];
-        $mail->Password = $password;
+        $mail->SMTPAuth = $smtpAuth;
+        if ($smtpAuth) {
+            $mail->Username = (string) $cfg['username'];
+            $mail->Password = $password;
+        }
         $mail->Port = (int) $cfg['port'];
         $mail->CharSet = 'UTF-8';
 
         $encryption = (string) ($cfg['encryption'] ?? 'tls');
-        $mail->SMTPSecure = $encryption === 'ssl'
-            ? PHPMailer::ENCRYPTION_SMTPS
-            : PHPMailer::ENCRYPTION_STARTTLS;
+        if ($encryption === 'ssl') {
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        } elseif ($encryption === 'tls') {
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        } else {
+            $mail->SMTPSecure = '';
+            $mail->SMTPAutoTLS = false;
+        }
 
         $mail->setFrom((string) $cfg['from_email'], (string) $cfg['from_name']);
         foreach ($recipients as $recipient) {
