@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
 require __DIR__ . '/../../helpers/turnstile.php';
-require __DIR__ . '/../../helpers/mailer.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -93,24 +92,51 @@ if (!$id) {
 }
 
 $nombreCompleto = trim($nombre . ' ' . $apellidoPaterno . ' ' . $apellidoMaterno);
-$asuntoMail = 'Egresados - Nuevo registro';
-$cuerpo = "Nuevo registro recibido desde Egresados:\n\n"
-    . "Nombre: {$nombreCompleto}\n"
-    . "Anio de ingreso: {$anioIngreso}\n"
-    . "Anio de egreso: {$anioEgreso}\n"
-    . "Nivel de egreso: {$nivelEgreso}\n"
-    . "Carrera de egreso: {$carreraEgreso}\n"
-    . "Telefono: {$telefono}\n"
-    . "Correo: {$correo}\n"
-    . "Trabajando: {$trabajando}\n"
-    . "Empresa: {$empresa}\n"
-    . "Cargo: {$cargo}\n\n"
-    . "Fecha: " . date('Y-m-d H:i:s') . "\n"
-    . "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'N/D') . "\n";
+$relayUrl = trim((string) (getenv('EGRESADOS_POST_URL') ?: 'https://delvalle.qodexia.site/egresados-uneg-relay-mailer.php'));
+$payload = [
+    'nombre' => $nombre,
+    'apellido_paterno' => $apellidoPaterno,
+    'apellido_materno' => $apellidoMaterno,
+    'anio_ingreso' => $anioIngreso,
+    'anio_egreso' => $anioEgreso,
+    'nivel_egreso' => $nivelEgreso,
+    'carrera_egreso' => $carreraEgreso,
+    'telefono' => $telefono,
+    'correo' => $correo,
+    'trabajando' => $trabajando,
+    'empresa' => $empresa,
+    'cargo' => $cargo,
+    'nombre_completo' => $nombreCompleto,
+    'ip' => (string) ($_SERVER['REMOTE_ADDR'] ?? ''),
+    'created_at' => date('c'),
+];
 
-$mailResult = send_smtp_notification($asuntoMail, $cuerpo, $correo, $nombreCompleto, 'egresados');
-if (!($mailResult['ok'] ?? false)) {
-    error_log('SMTP egresados fallo: ' . (string) ($mailResult['error'] ?? 'Error SMTP desconocido'));
+$ch = curl_init($relayUrl);
+curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_HTTPHEADER => ['Content-Type: application/json', 'Accept: application/json'],
+    CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+    CURLOPT_TIMEOUT => 12,
+]);
+$raw = curl_exec($ch);
+if ($raw === false) {
+    $curlError = curl_error($ch);
+    curl_close($ch);
+    error_log('Relay egresados fallo cURL: ' . $curlError);
+    header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
+    exit;
+}
+$status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+if ($status < 200 || $status >= 300) {
+    error_log('Relay egresados HTTP ' . $status . '. Body: ' . (string) $raw);
+    header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
+    exit;
+}
+$decoded = json_decode((string) $raw, true);
+if (is_array($decoded) && isset($decoded['ok']) && !$decoded['ok']) {
+    error_log('Relay egresados ok=false: ' . (string) ($decoded['error'] ?? 'Sin detalle'));
     header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
     exit;
 }
