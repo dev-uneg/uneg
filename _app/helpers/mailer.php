@@ -72,8 +72,40 @@ function mailer_config(): array
         ];
     }
 
-    $smtpAuthRaw = $get('SMTP_AUTH', 'smtp_auth', '1');
-    $smtpAuth = !in_array(strtolower(trim($smtpAuthRaw)), ['0', 'false', 'off', 'no'], true);
+    $toBool = static function ($value, bool $default): bool {
+        if (is_bool($value)) {
+            return $value;
+        }
+        if (is_int($value)) {
+            return $value !== 0;
+        }
+        if (is_string($value)) {
+            $raw = strtolower(trim($value));
+            if ($raw === '') {
+                return $default;
+            }
+            if (in_array($raw, ['1', 'true', 'on', 'yes'], true)) {
+                return true;
+            }
+            if (in_array($raw, ['0', 'false', 'off', 'no'], true)) {
+                return false;
+            }
+        }
+        return $default;
+    };
+
+    $smtpAuthEnv = getenv('SMTP_AUTH');
+    if (is_string($smtpAuthEnv) && trim($smtpAuthEnv) !== '') {
+        $smtpAuth = $toBool($smtpAuthEnv, true);
+    } else {
+        $smtpAuth = $toBool($localConfig['smtp_auth'] ?? true, true);
+    }
+    $fallbackMailEnv = getenv('MAIL_FALLBACK_ENABLED');
+    if (is_string($fallbackMailEnv) && trim($fallbackMailEnv) !== '') {
+        $fallbackMail = $toBool($fallbackMailEnv, true);
+    } else {
+        $fallbackMail = $toBool($localConfig['mail_fallback_enabled'] ?? true, true);
+    }
 
     $resolved = [
         'host' => $get('SMTP_HOST', 'host', 'smtp.gmail.com'),
@@ -82,6 +114,7 @@ function mailer_config(): array
         'username' => $username,
         'password' => $get('SMTP_PASSWORD', 'password', ''),
         'smtp_auth' => $smtpAuth,
+        'mail_fallback_enabled' => $fallbackMail,
         'from_email' => $fromEmail,
         'from_name' => $get('SMTP_FROM_NAME', 'from_name', 'UNEG Sitio Web'),
         'recipients' => $recipients,
@@ -193,6 +226,44 @@ function send_smtp_notification(
             'error' => null,
         ];
     } catch (Exception $e) {
+        if ((bool) ($cfg['mail_fallback_enabled'] ?? true)) {
+            try {
+                $mailFallback = new PHPMailer(true);
+                $mailFallback->isMail();
+                $mailFallback->CharSet = 'UTF-8';
+                $mailFallback->setFrom((string) $cfg['from_email'], (string) $cfg['from_name']);
+                foreach ($recipients as $recipient) {
+                    if (!is_array($recipient)) {
+                        continue;
+                    }
+                    $toEmail = trim((string) ($recipient['email'] ?? ''));
+                    if ($toEmail === '') {
+                        continue;
+                    }
+                    $toName = trim((string) ($recipient['name'] ?? ''));
+                    $mailFallback->addAddress($toEmail, $toName);
+                }
+                if ($replyEmail !== '') {
+                    $mailFallback->addReplyTo($replyEmail, $replyName !== '' ? $replyName : $replyEmail);
+                }
+                $mailFallback->isHTML(true);
+                $mailFallback->Subject = $subject;
+                $mailFallback->Body = $htmlBody;
+                $mailFallback->AltBody = $plainBody;
+                $mailFallback->send();
+
+                return [
+                    'ok' => true,
+                    'error' => null,
+                ];
+            } catch (Exception $fallbackException) {
+                return [
+                    'ok' => false,
+                    'error' => 'SMTP fallo: ' . $e->getMessage() . ' | mail() fallo: ' . $fallbackException->getMessage(),
+                ];
+            }
+        }
+
         return [
             'ok' => false,
             'error' => $e->getMessage(),

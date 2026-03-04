@@ -5,6 +5,7 @@ return [
     'port' => 25,
     'encryption' => 'none', // tls (STARTTLS), ssl (SMTPS) o none (relay local)
     'smtp_auth' => false,
+    'mail_fallback_enabled' => true,
     'username' => '',
     'password' => '',
     'from_email' => 'no-reply@uneg.edu.mx',
