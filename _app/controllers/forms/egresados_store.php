@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
 require __DIR__ . '/../../helpers/turnstile.php';
+require __DIR__ . '/../../helpers/mailer.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -55,7 +56,9 @@ if (
     $carreraEgreso === '' ||
     $telefono === '' ||
     $correo === '' ||
-    $trabajando === ''
+    $trabajando === '' ||
+    $empresa === '' ||
+    $cargo === ''
 ) {
     header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
     exit;
@@ -85,6 +88,29 @@ $id = egresados_db_insert([
 ]);
 
 if (!$id) {
+    header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
+    exit;
+}
+
+$nombreCompleto = trim($nombre . ' ' . $apellidoPaterno . ' ' . $apellidoMaterno);
+$asuntoMail = 'Egresados - Nuevo registro';
+$cuerpo = "Nuevo registro recibido desde Egresados:\n\n"
+    . "Nombre: {$nombreCompleto}\n"
+    . "Anio de ingreso: {$anioIngreso}\n"
+    . "Anio de egreso: {$anioEgreso}\n"
+    . "Nivel de egreso: {$nivelEgreso}\n"
+    . "Carrera de egreso: {$carreraEgreso}\n"
+    . "Telefono: {$telefono}\n"
+    . "Correo: {$correo}\n"
+    . "Trabajando: {$trabajando}\n"
+    . "Empresa: {$empresa}\n"
+    . "Cargo: {$cargo}\n\n"
+    . "Fecha: " . date('Y-m-d H:i:s') . "\n"
+    . "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'N/D') . "\n";
+
+$mailResult = send_smtp_notification($asuntoMail, $cuerpo, $correo, $nombreCompleto, 'egresados');
+if (!($mailResult['ok'] ?? false)) {
+    error_log('SMTP egresados fallo: ' . (string) ($mailResult['error'] ?? 'Error SMTP desconocido'));
     header('Location: ' . $base . '/egresados/dejanos-saber?error=1', true, 302);
     exit;
 }

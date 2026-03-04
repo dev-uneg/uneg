@@ -1,20 +1,10 @@
 <?php
 declare(strict_types=1);
 
-$autoloadCandidates = [
-    __DIR__ . '/vendor/autoload.php',
-    dirname(__DIR__) . '/vendor/autoload.php',
-];
-$autoload = null;
-foreach ($autoloadCandidates as $candidate) {
-    if (file_exists($candidate)) {
-        $autoload = $candidate;
-        break;
-    }
-}
-if ($autoload === null) {
+$autoload = dirname(__DIR__) . '/vendor/autoload.php';
+if (!file_exists($autoload)) {
     http_response_code(500);
-    echo 'Falta autoload de Composer. Sube _app/vendor o ejecuta composer install en _app/ o en raiz.';
+    echo 'Falta autoload de Composer en vendor/. Ejecuta composer install en la raiz del proyecto.';
     exit;
 }
 

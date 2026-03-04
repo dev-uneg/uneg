@@ -5,6 +5,19 @@ require __DIR__ . '/../partials/header.php';
 ?>
 
 <main class="max-w-7xl mx-auto px-4 py-10">
+  <style>
+    .egresados-form > * {
+      width: 100% !important;
+      float: none !important;
+      clear: both !important;
+    }
+    .egresados-form label,
+    .egresados-form input:not([type="radio"]),
+    .egresados-form select {
+      display: block !important;
+      width: 100% !important;
+    }
+  </style>
   <section class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
     <img src="<?php echo $assetBase; ?>/_imgs/egresados/hero.webp" alt="Egresados ISEC" class="block w-full h-auto" loading="eager">
     <div class="bg-[#0b2c65] text-white">
@@ -83,35 +96,36 @@ require __DIR__ . '/../partials/header.php';
     </div>
 
     <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
-      <form class="grid grid-cols-1 gap-4 text-base" method="post" action="<?php echo $base; ?>/api/egresados" autocomplete="on">
-        <label class="text-sm font-semibold text-slate-700">
-          Nombre
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="nombre" required>
+      <form class="egresados-form flex flex-col gap-4 text-base" method="post" action="<?php echo $base; ?>/api/egresados" autocomplete="on">
+        <p class="text-xs text-slate-500">Los campos con <span class="text-rose-600">*</span> son obligatorios.</p>
+        <label class="block text-sm font-semibold text-slate-700">
+          Nombre <span class="text-rose-600">*</span>
+          <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="nombre" required>
         </label>
-        <label class="text-sm font-semibold text-slate-700">
-          Apellido Paterno
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="apellido_paterno" required>
+        <label class="block text-sm font-semibold text-slate-700">
+          Apellido Paterno <span class="text-rose-600">*</span>
+          <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="apellido_paterno" required>
         </label>
-        <label class="text-sm font-semibold text-slate-700">
-          Apellido Materno
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="apellido_materno" required>
+        <label class="block text-sm font-semibold text-slate-700">
+          Apellido Materno <span class="text-rose-600">*</span>
+          <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="apellido_materno" required>
         </label>
         <div class="text-sm font-semibold text-slate-700">
-          Generacion:
-          <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          Generacion <span class="text-rose-600">*</span>:
+          <div class="mt-2 grid grid-cols-1 gap-3">
             <div>
-              <label class="text-sm font-semibold text-slate-700">Año de ingreso</label>
-              <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="anio_ingreso" required>
+              <label class="block text-sm font-semibold text-slate-700">Año de ingreso <span class="text-rose-600">*</span></label>
+              <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="anio_ingreso" required>
             </div>
             <div>
-              <label class="text-sm font-semibold text-slate-700">Año de egreso</label>
-              <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="anio_egreso" required>
+              <label class="block text-sm font-semibold text-slate-700">Año de egreso <span class="text-rose-600">*</span></label>
+              <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="anio_egreso" required>
             </div>
           </div>
         </div>
-        <label class="text-sm font-semibold text-slate-700">
-          Nivel de egreso
-          <select class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" name="nivel_egreso" required>
+        <label class="block text-sm font-semibold text-slate-700">
+          Nivel de egreso <span class="text-rose-600">*</span>
+          <select class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" name="nivel_egreso" required>
             <option value="" selected>Por favor, seleccione una opción</option>
             <option value="Bachillerato">Bachillerato</option>
             <option value="Licenciatura">Licenciatura</option>
@@ -120,21 +134,21 @@ require __DIR__ . '/../partials/header.php';
             <option value="Diplomado">Diplomado</option>
           </select>
         </label>
-        <label class="text-sm font-semibold text-slate-700">
-          Carrera de egreso
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="carrera_egreso" required>
+        <label class="block text-sm font-semibold text-slate-700">
+          Carrera de egreso <span class="text-rose-600">*</span>
+          <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="carrera_egreso" required>
         </label>
-        <label class="text-sm font-semibold text-slate-700">
-          Teléfono
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="tel" name="telefono" required>
+        <label class="block text-sm font-semibold text-slate-700">
+          Teléfono <span class="text-rose-600">*</span>
+          <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="tel" name="telefono" required>
         </label>
-        <label class="text-sm font-semibold text-slate-700">
-          Correo electrónico
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="email" name="correo" required>
+        <label class="block text-sm font-semibold text-slate-700">
+          Correo electrónico <span class="text-rose-600">*</span>
+          <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="email" name="correo" required>
         </label>
         <div class="text-sm font-semibold text-slate-700">
-          ¿Actualmente estás trabajando?
-          <div class="mt-2 flex items-center gap-5 text-base text-slate-700 font-normal">
+          ¿Actualmente estás trabajando? <span class="text-rose-600">*</span>
+          <div class="mt-2 flex flex-wrap items-center gap-5 text-base text-slate-700 font-normal">
             <label class="inline-flex items-center gap-2">
               <input type="radio" name="trabajando" value="si" required>
               Sí
@@ -145,13 +159,13 @@ require __DIR__ . '/../partials/header.php';
             </label>
           </div>
         </div>
-        <label class="text-sm font-semibold text-slate-700">
-          Empresa
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="empresa">
+        <label class="block text-sm font-semibold text-slate-700">
+          Empresa <span class="text-rose-600">*</span>
+          <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="empresa" required>
         </label>
-        <label class="text-sm font-semibold text-slate-700">
-          Cargo actual
-          <input class="mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="cargo">
+        <label class="block text-sm font-semibold text-slate-700">
+          Cargo actual <span class="text-rose-600">*</span>
+          <input class="block mt-2 w-full rounded-md border border-slate-300 px-3 py-2.5 text-base" type="text" name="cargo" required>
         </label>
         <button class="mt-2 w-max rounded-md bg-[#0b2c65] px-6 py-2.5 text-white font-semibold shadow-sm hover:bg-[#09306e]" type="submit">Enviar</button>
       </form>

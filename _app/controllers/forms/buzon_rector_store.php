@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../helpers/leads_db.php';
 require __DIR__ . '/../../helpers/turnstile.php';
+require __DIR__ . '/../../helpers/mailer.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -57,7 +58,6 @@ if (!$id) {
 $safeNombre = str_replace(["\r", "\n"], ' ', $nombre);
 $safeCorreo = str_replace(["\r", "\n"], '', $correo);
 $safeAsunto = str_replace(["\r", "\n"], ' ', $asunto);
-$destinatarios = 'gabriel.riancho@uneg.edu.mx,elizabeth.cisneros@uneg.edu.mx';
 $asuntoMail = 'Buzon del Rector - ' . $safeAsunto;
 $cuerpo = "Nuevo mensaje recibido desde el Buzon del Rector:\n\n"
     . "Nombre: {$safeNombre}\n"
@@ -66,15 +66,10 @@ $cuerpo = "Nuevo mensaje recibido desde el Buzon del Rector:\n\n"
     . "Mensaje:\n{$mensaje}\n\n"
     . "Fecha: " . date('Y-m-d H:i:s') . "\n"
     . "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'N/D') . "\n";
-$headers = [];
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-Type: text/plain; charset=UTF-8';
-$headers[] = 'From: UNEG Buzon del Rector <no-reply@uneg.edu.mx>';
-$headers[] = 'Reply-To: ' . $safeNombre . ' <' . $safeCorreo . '>';
-$headers[] = 'X-Mailer: PHP/' . phpversion();
 
-$mailEnviado = mail($destinatarios, $asuntoMail, $cuerpo, implode("\r\n", $headers));
-if (!$mailEnviado) {
+$mailResult = send_smtp_notification($asuntoMail, $cuerpo, $safeCorreo, $safeNombre, 'buzon');
+if (!($mailResult['ok'] ?? false)) {
+    error_log('SMTP buzon rector fallo: ' . (string) ($mailResult['error'] ?? 'Error SMTP desconocido'));
     header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
     exit;
 }
