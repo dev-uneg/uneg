@@ -81,6 +81,9 @@ $router->map('GET', '/comunidad/noticias/video-blog-uneg-isec', function (): voi
 $router->map('GET', '/comunidad/noticias/eventos-de-nuestra-comunidad/firma-convenio-camic', function (): void {
   require __DIR__ . '/pages/comunidad/noticias/eventos-de-nuestra-comunidad/post-1/index.php';
 });
+$router->map('GET', '/comunidad/noticias/vida-en-el-campus/emociones-en-la-adolescencia', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/vida-en-el-campus/emociones-en-la-adolescencia/index.php';
+});
 // ---------------------------
 // Blog
 // ---------------------------
@@ -101,6 +104,9 @@ $router->map('GET', '/blog/turismo-gastronomico-una-experiencia-unica', function
 });
 $router->map('GET', '/blog/bachillerato-tecnico-en-contabilidad', function (): void {
   require __DIR__ . '/pages/blog/post-5/index.php';
+});
+$router->map('GET', '/blog/emociones-en-la-adolescencia-comprender-para-acompanar', function (): void {
+  require __DIR__ . '/pages/blog/post-6/index.php';
 });
 
 $router->map('GET', '/comunidad/buzon-del-rector', function (): void {

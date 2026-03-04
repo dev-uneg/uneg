@@ -1,6 +1,14 @@
 <?php
 return [
   [
+    'title' => 'Emociones en la adolescencia: comprender para acompañar',
+    'date' => '4 marzo, 2026',
+    'excerpt' => 'Acompañar y escuchar sin juzgar fortalece la autoestima y el desarrollo emocional.',
+    'href' => '/comunidad/noticias/vida-en-el-campus/emociones-en-la-adolescencia',
+    'category' => 'vida-en-el-campus',
+    'image' => '/_imgs/noticias/vida-en-el-campus/emociones-adolescencia.webp',
+  ],
+  [
     'title' => 'Evento de nuestra comunidad',
     'date' => '11 febrero, 2026',
     'excerpt' => 'Universidad de Negocios ISEC firma convenio con la Cámara Árabe Mexicana de Industria y Comercio.',
