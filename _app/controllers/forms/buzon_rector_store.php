@@ -54,5 +54,30 @@ if (!$id) {
     exit;
 }
 
-header('Location: ' . $base . '/comunidad/buzon-del-rector?ok=1', true, 302);
+$safeNombre = str_replace(["\r", "\n"], ' ', $nombre);
+$safeCorreo = str_replace(["\r", "\n"], '', $correo);
+$safeAsunto = str_replace(["\r", "\n"], ' ', $asunto);
+$destinatarios = 'gabriel.riancho@uneg.edu.mx,elizabeth.cisneros@uneg.edu.mx';
+$asuntoMail = 'Buzon del Rector - ' . $safeAsunto;
+$cuerpo = "Nuevo mensaje recibido desde el Buzon del Rector:\n\n"
+    . "Nombre: {$safeNombre}\n"
+    . "Correo: {$safeCorreo}\n"
+    . "Asunto: {$safeAsunto}\n\n"
+    . "Mensaje:\n{$mensaje}\n\n"
+    . "Fecha: " . date('Y-m-d H:i:s') . "\n"
+    . "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'N/D') . "\n";
+$headers = [];
+$headers[] = 'MIME-Version: 1.0';
+$headers[] = 'Content-Type: text/plain; charset=UTF-8';
+$headers[] = 'From: UNEG Buzon del Rector <no-reply@uneg.edu.mx>';
+$headers[] = 'Reply-To: ' . $safeNombre . ' <' . $safeCorreo . '>';
+$headers[] = 'X-Mailer: PHP/' . phpversion();
+
+$mailEnviado = mail($destinatarios, $asuntoMail, $cuerpo, implode("\r\n", $headers));
+if (!$mailEnviado) {
+    header('Location: ' . $base . '/comunidad/buzon-del-rector?error=1', true, 302);
+    exit;
+}
+
+header('Location: ' . $base . '/gracias?origen=buzon', true, 302);
 exit;
