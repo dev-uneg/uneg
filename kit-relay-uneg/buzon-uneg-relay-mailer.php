@@ -79,13 +79,30 @@ $safeNombre = str_replace(["\r", "\n"], ' ', $nombre);
 $safeCorreo = str_replace(["\r", "\n"], '', $correo);
 $safeAsunto = str_replace(["\r", "\n"], ' ', $asunto);
 $subject = 'Buzon del Rector - ' . $safeAsunto;
-$plainBody = "Nuevo mensaje recibido desde el Buzon del Rector:\n\n"
+$bodyText = "Nuevo mensaje recibido desde el Buzon del Rector:\n\n"
     . "Nombre: {$safeNombre}\n"
     . "Correo: {$safeCorreo}\n"
     . "Asunto: {$safeAsunto}\n\n"
     . "Mensaje:\n{$mensaje}\n\n"
     . "Fecha: {$createdAt}\n"
     . "IP: " . ($ip !== '' ? $ip : 'N/D') . "\n";
+$h = static function (string $value): string {
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+};
+$bodyHtml = '<div style="font-family:Arial,sans-serif;font-size:14px;color:#0f172a;line-height:1.5;">'
+    . '<h2 style="margin:0 0 14px;font-size:18px;color:#0f172a;">Nuevo mensaje desde el Buzon del Rector</h2>'
+    . '<table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">'
+    . '<tr><td style="font-weight:bold;">Nombre:</td><td>' . $h($safeNombre) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">Correo:</td><td>' . $h($safeCorreo) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">Asunto:</td><td>' . $h($safeAsunto) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">Fecha:</td><td>' . $h($createdAt) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">IP:</td><td>' . $h($ip !== '' ? $ip : 'N/D') . '</td></tr>'
+    . '</table>'
+    . '<p style="margin:16px 0 6px;font-weight:bold;">Mensaje:</p>'
+    . '<div style="white-space:pre-wrap;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">'
+    . $h($mensaje)
+    . '</div>'
+    . '</div>';
 
 try {
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
@@ -113,8 +130,8 @@ try {
 
     $mail->isHTML(true);
     $mail->Subject = $subject;
-    $mail->Body = nl2br(htmlspecialchars($plainBody, ENT_QUOTES, 'UTF-8'));
-    $mail->AltBody = $plainBody;
+    $mail->Body = $bodyHtml;
+    $mail->AltBody = $bodyText;
     $mail->send();
 
     echo json_encode(['ok' => true]);
