@@ -21,6 +21,9 @@ require __DIR__ . '/../partials/header.php';
             alt="Aspirante a maestria UNEG"
             class="block w-full h-auto rounded-3xl"
             loading="eager"
+            fetchpriority="high"
+            width="1024"
+            height="1536"
           >
         </figure>
       </div>
