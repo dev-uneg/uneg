@@ -9,7 +9,7 @@ require __DIR__ . '/../partials/header.php';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-sm uppercase tracking-[0.18em] text-white/75">Universidad de Negocios ISEC</p>
-      <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">Forma parte de una universidad dise&ntilde;ada para tu crecimiento profesional</h1>
+      <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">&iexcl;Inicia tu Licenciatura en Mayo y despega tu futuro profesional!</h1>
       <p class="mt-4 text-[#ffd23f] text-base sm:text-lg font-medium">Tu carrera, tu &eacute;xito: seguridad de avanzar con Universidad de Negocios ISEC.</p>
     </div>
 
@@ -26,7 +26,7 @@ require __DIR__ . '/../partials/header.php';
             >
           </div>
           <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-100 text-center">
-            En Universidad de Negocios ISEC, te ofrecemos licenciaturas dise&ntilde;adas para que avances con seguridad en el mundo profesional.
+            En Universidad de Negocios ISEC, te ofrecemos Licenciaturas dise&ntilde;adas para que avances con seguridad en el mundo profesional.
             Con planes de estudio actualizados y alianzas estrat&eacute;gicas, te preparamos para destacar en el campo que elijas.
           </p>
         </div>
@@ -47,16 +47,9 @@ require __DIR__ . '/../partials/header.php';
             <div class="relative">
               <select class="block w-full appearance-none rounded-md border border-slate-300 px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" name="interest" required>
                 <option value="" selected>Selecciona una oferta educativa</option>
-                <option value="Licenciatura en Contaduria Publica">Licenciatura en Contadur&iacute;a P&uacute;blica</option>
-                <option value="Licenciatura en Administracion y Negocios">Licenciatura en Administraci&oacute;n y Negocios</option>
-                <option value="Licenciatura en Mercadotecnia">Licenciatura en Mercadotecnia</option>
-                <option value="Licenciatura en Finanzas">Licenciatura en Finanzas</option>
-                <option value="Licenciatura en Derecho">Licenciatura en Derecho</option>
-                <option value="Licenciatura en Tecnologias de la Informacion">Licenciatura en Tecnolog&iacute;as de la Informaci&oacute;n</option>
-                <option value="Licenciatura en Turismo">Licenciatura en Turismo</option>
                 <option value="Licenciatura en Negocios Internacionales">Licenciatura en Negocios Internacionales</option>
-                <option value="Licenciatura en Psicologia">Licenciatura en Psicolog&iacute;a</option>
-                <option value="Ingenieria en Inteligencia Artificial">Ingenier&iacute;a en Inteligencia Artificial</option>
+                <option value="Ingenieria en Administracion y Negocios">Ingenier&iacute;a en Administraci&oacute;n y Negocios</option>
+                <option value="Licenciatura en Derecho">Licenciatura en Derecho</option>
               </select>
               <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0b2c86]">
                 <i class="text-xl" data-lucide="chevron-down"></i>
@@ -91,19 +84,11 @@ require __DIR__ . '/../partials/header.php';
     </div>
 
     <div class="mt-12 rounded-2xl bg-[#d9dcec] text-slate-900 px-6 sm:px-8 py-8">
-      <h2 class="text-2xl sm:text-3xl font-semibold text-center">Conoce nuestras licenciaturas</h2>
+      <h2 class="text-2xl sm:text-3xl font-semibold text-center">Conoce nuestras Licenciaturas</h2>
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-base">
-        <div class="flex items-start gap-3"><i data-lucide="cpu" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Ingenier&iacute;a en Inteligencia Artificial</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="calculator" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Contadur&iacute;a P&uacute;blica Estrat&eacute;gica</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="scale" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Derecho</span></div>
+        <div class="flex items-start gap-3"><i data-lucide="graduation-cap" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Licenciatura en Negocios Internacionales</span></div>
         <div class="flex items-start gap-3"><i data-lucide="building-2" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Ingenier&iacute;a en Administraci&oacute;n y Negocios</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="line-chart" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Finanzas</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="monitor" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Ingenier&iacute;a en Tecnolog&iacute;as de Informaci&oacute;n para Negocios</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="megaphone" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Mercadotecnia Estrat&eacute;gica</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="graduation-cap" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Negocios Internacionales</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="book-open" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Pedagog&iacute;a</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="brain" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Psicolog&iacute;a</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="utensils-crossed" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Innovaci&oacute;n Tur&iacute;stica y Gastron&oacute;mica</span></div>
+        <div class="flex items-start gap-3"><i data-lucide="scale" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Licenciatura en Derecho</span></div>
       </div>
     </div>
   </div>

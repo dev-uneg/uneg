@@ -9,7 +9,7 @@ require __DIR__ . '/../partials/header.php';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-sm uppercase tracking-[0.18em] text-white/75">Universidad de Negocios ISEC</p>
-      <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">&iexcl;Lidera el futuro con una maestr&iacute;a en Universidad de Negocios ISEC!</h1>
+      <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">&iexcl;Inicia tu Maestr&iacute;a en Mayo y lleva tu carrera al siguiente nivel!</h1>
       <p class="mt-4 text-[#ffd23f] text-base sm:text-lg font-medium">Convierte tu conocimiento en una ventaja competitiva con programas dise&ntilde;ados para profesionales que buscan flexibilidad y conexiones con la industria.</p>
     </div>
 
@@ -48,14 +48,10 @@ require __DIR__ . '/../partials/header.php';
             <div class="relative">
               <select class="block w-full appearance-none rounded-md border border-slate-300 px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" name="interest" required>
                 <option value="" selected>Selecciona una oferta educativa</option>
-                <option value="Maestria en Docencia">Maestr&iacute;a en Docencia</option>
                 <option value="Maestria en Administracion de Negocios">Maestr&iacute;a en Administraci&oacute;n de Negocios</option>
                 <option value="Maestria en Finanzas">Maestr&iacute;a en Finanzas</option>
-                <option value="Maestria en Derecho Fiscal">Maestr&iacute;a en Derecho Fiscal</option>
-                <option value="Maestria en Derecho Corporativo">Maestr&iacute;a en Derecho Corporativo</option>
+                <option value="Maestria en Fiscal">Maestr&iacute;a en Fiscal</option>
                 <option value="Maestria en Mercadotecnia">Maestr&iacute;a en Mercadotecnia</option>
-                <option value="Maestria en Tecnologias de la Informacion">Maestr&iacute;a en Tecnolog&iacute;as de la Informaci&oacute;n</option>
-                <option value="Maestria en Arquitectura de Negocios">Maestr&iacute;a en Arquitectura de Negocios</option>
               </select>
               <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0b2c86]">
                 <i class="text-xl" data-lucide="chevron-down"></i>
@@ -94,12 +90,8 @@ require __DIR__ . '/../partials/header.php';
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-base">
         <div class="flex items-start gap-3"><i data-lucide="megaphone" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Mercadotecnia</span></div>
         <div class="flex items-start gap-3"><i data-lucide="book-open" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Finanzas</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="cpu" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Tecnolog&iacute;as de la Informaci&oacute;n</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="graduation-cap" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Docencia</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="users" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Derecho Fiscal</span></div>
+        <div class="flex items-start gap-3"><i data-lucide="users" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Fiscal</span></div>
         <div class="flex items-start gap-3"><i data-lucide="line-chart" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Administraci&oacute;n de Negocios</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="scale" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Derecho Corporativo</span></div>
-        <div class="flex items-start gap-3"><i data-lucide="building-2" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Arquitectura de Negocios</span></div>
       </div>
     </div>
   </div>
@@ -132,7 +124,7 @@ require __DIR__ . '/../partials/header.php';
       </article>
       <article class="rounded-3xl bg-[#d9dcec] p-7 text-center sm:col-span-1 lg:col-start-2">
         <i data-lucide="medal" class="mx-auto h-8 w-8 text-[#0b2c86]"></i>
-        <p class="mt-4 text-lg leading-relaxed">Dirige tu empresa con seguridad. Desarrolla habilidades estrat&eacute;gicas para tomar decisiones clave y hacer crecer tu negocio.</p>
+        <p class="mt-4 text-lg leading-relaxed"><strong>Dirige tu empresa</strong> con seguridad. Desarrolla habilidades estrat&eacute;gicas para tomar decisiones clave y hacer crecer tu negocio.</p>
       </article>
       <article class="rounded-3xl bg-[#d9dcec] p-7 text-center sm:col-span-1">
         <i data-lucide="medal" class="mx-auto h-8 w-8 text-[#0b2c86]"></i>
