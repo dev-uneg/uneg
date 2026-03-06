@@ -13,24 +13,16 @@ require __DIR__ . '/../partials/header.php';
       <p class="mt-4 text-[#ffd23f] text-base sm:text-lg font-medium">Convierte tu conocimiento en una ventaja competitiva con programas dise&ntilde;ados para profesionales que buscan flexibilidad y conexiones con la industria.</p>
     </div>
 
-    <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <div class="p-6">
-          <div class="relative w-[70%] mx-auto">
-            <img
-              src="<?php echo $assetBase; ?>/_imgs/landings/maestrias/fondo_persona.png"
-              alt="Aspirante a maestria UNEG"
-              class="block w-full h-auto"
-              style="-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);"
-              loading="eager"
-            >
-          </div>
-          <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-100 text-center">
-            El mundo profesional exige m&aacute;s que solo experiencia: requiere conocimiento estrat&eacute;gico y visi&oacute;n de liderazgo.
-            Nuestras maestr&iacute;as est&aacute;n dise&ntilde;adas para impulsar tu crecimiento, con un modelo educativo que combina practicidad,
-            innovaci&oacute;n y conexi&oacute;n con el mundo empresarial.
-          </p>
-        </div>
+    <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start lg:items-center">
+      <div class="lg:flex lg:items-center">
+        <figure class="w-[90%] lg:w-[80%] mx-auto">
+          <img
+            src="<?php echo $assetBase; ?>/_imgs/landings/maestrias/chatgpt-maestrias-12_56_52.webp"
+            alt="Aspirante a maestria UNEG"
+            class="block w-full h-auto rounded-3xl"
+            loading="eager"
+          >
+        </figure>
       </div>
 
       <div>
@@ -87,6 +79,11 @@ require __DIR__ . '/../partials/header.php';
 
     <div class="mt-12 rounded-2xl bg-[#d9dcec] text-slate-900 px-6 sm:px-8 py-8">
       <h2 class="text-2xl sm:text-3xl font-semibold text-center">Conoce nuestras Maestr&iacute;as</h2>
+      <p class="mt-4 text-base sm:text-lg leading-relaxed text-center max-w-4xl mx-auto">
+        El mundo profesional exige m&aacute;s que solo experiencia: requiere conocimiento estrat&eacute;gico y visi&oacute;n de liderazgo.
+        Nuestras maestr&iacute;as est&aacute;n dise&ntilde;adas para impulsar tu crecimiento, con un modelo educativo que combina practicidad,
+        innovaci&oacute;n y conexi&oacute;n con el mundo empresarial.
+      </p>
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-base">
         <div class="flex items-start gap-3"><i data-lucide="megaphone" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Mercadotecnia</span></div>
         <div class="flex items-start gap-3"><i data-lucide="book-open" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Maestr&iacute;a en Finanzas</span></div>

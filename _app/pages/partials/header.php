@@ -59,9 +59,9 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $assetBase; ?>/_imgs/favicon-32.png?v=1">
   <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $assetBase; ?>/_imgs/favicon-16.png?v=1">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $assetBase; ?>/_imgs/apple-touch-icon.png?v=1">
-  <!-- PRODUCCION: descomentar el CSS compilado -->
+  <!-- PRODUCCION: CSS compilado activo -->
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
-  <!-- DESARROLLO: Tailwind CDN para ver cambios sin compilar -->
+  <!-- DESARROLLO: Tailwind CDN desactivado (usar solo output.css compilado) -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=2"></script>
   <!-- Meta Pixel Code -->

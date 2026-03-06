@@ -13,23 +13,16 @@ require __DIR__ . '/../partials/header.php';
       <p class="mt-4 text-[#ffd23f] text-base sm:text-lg font-medium">Tu carrera, tu &eacute;xito: seguridad de avanzar con Universidad de Negocios ISEC.</p>
     </div>
 
-    <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <div class="p-6">
-          <div class="relative w-[70%] mx-auto">
-            <img
-              src="<?php echo $assetBase; ?>/_imgs/landings/licenciaturas/persona_fondo.png"
-              alt="Aspirante a licenciatura UNEG"
-              class="block w-full h-auto"
-              style="-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);"
-              loading="eager"
-            >
-          </div>
-          <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-100 text-center">
-            En Universidad de Negocios ISEC, te ofrecemos Licenciaturas dise&ntilde;adas para que avances con seguridad en el mundo profesional.
-            Con planes de estudio actualizados y alianzas estrat&eacute;gicas, te preparamos para destacar en el campo que elijas.
-          </p>
-        </div>
+    <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start lg:items-center">
+      <div class="lg:flex lg:items-center">
+        <figure class="w-[90%] lg:w-[80%] mx-auto">
+          <img
+            src="<?php echo $assetBase; ?>/_imgs/landings/licenciaturas/chatgpt-licenciaturas-12_21_44.webp"
+            alt="Aspirante a licenciatura UNEG"
+            class="block w-full h-auto rounded-3xl"
+            loading="eager"
+          >
+        </figure>
       </div>
 
       <div>
