@@ -85,10 +85,10 @@ require __DIR__ . '/../partials/header.php';
 
     <div class="mt-12 rounded-2xl bg-[#d9dcec] text-slate-900 px-6 sm:px-8 py-8">
       <h2 class="text-2xl sm:text-3xl font-semibold text-center">Conoce nuestras Licenciaturas</h2>
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-base max-w-5xl mx-auto">
-        <div class="flex items-start justify-center gap-3 text-center"><i data-lucide="graduation-cap" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Licenciatura en Negocios Internacionales</span></div>
-        <div class="flex items-start justify-center gap-3 text-center"><i data-lucide="building-2" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Ingenier&iacute;a en Administraci&oacute;n y Negocios</span></div>
-        <div class="flex items-start justify-center gap-3 text-center"><i data-lucide="scale" class="mt-0.5 h-7 w-7 text-[#0b2c86]"></i><span>Licenciatura en Derecho</span></div>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-base max-w-5xl mx-auto">
+        <div class="flex flex-col items-center gap-2 text-center"><i data-lucide="graduation-cap" class="h-7 w-7 text-[#0b2c86]"></i><span>Licenciatura en Negocios Internacionales</span></div>
+        <div class="flex flex-col items-center gap-2 text-center"><i data-lucide="building-2" class="h-7 w-7 text-[#0b2c86]"></i><span>Ingenier&iacute;a en Administraci&oacute;n y Negocios</span></div>
+        <div class="flex flex-col items-center gap-2 text-center"><i data-lucide="scale" class="h-7 w-7 text-[#0b2c86]"></i><span>Licenciatura en Derecho</span></div>
       </div>
     </div>
   </div>
