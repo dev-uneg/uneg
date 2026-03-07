@@ -14,18 +14,22 @@ require __DIR__ . '/../partials/header.php';
     </div>
 
     <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start lg:items-center">
-      <div class="lg:flex lg:items-center">
-        <figure class="w-[90%] lg:w-[80%] mx-auto">
+      <div class="flex flex-col items-center">
+        <figure class="w-[80%] lg:w-[72%] mx-auto">
           <img
-            src="<?php echo $assetBase; ?>/_imgs/landings/licenciaturas/chatgpt-licenciaturas-12_21_44.webp"
+            src="<?php echo $assetBase; ?>/_imgs/landings/licenciaturas/alumno-sudadera-naranja.png"
             alt="Aspirante a licenciatura UNEG"
             class="block w-full h-auto rounded-3xl"
+            style="-webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);"
             loading="eager"
             fetchpriority="high"
-            width="1024"
-            height="1536"
+            width="1080"
+            height="1350"
           >
         </figure>
+        <p class="mt-4 text-sm sm:text-base text-white/90 leading-relaxed text-center max-w-xl mx-auto">
+          En Universidad de Negocios ISEC, te ofrecemos licenciaturas dise&ntilde;adas para que avances con seguridad en el mundo profesional. Con planes de estudio actualizados, profesores con experiencia real en el mercado laboral y alianzas estrat&eacute;gicas con empresas l&iacute;deres, te preparamos para destacar en el campo que elijas.
+        </p>
       </div>
 
       <div>
