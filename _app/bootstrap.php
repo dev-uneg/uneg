@@ -95,10 +95,6 @@ $router->map('GET', '/blog/turismo-gastronomico-una-experiencia-unica', function
 $router->map('GET', '/blog/bachillerato-tecnico-en-contabilidad', function (): void {
   require __DIR__ . '/pages/blog/post-5/index.php';
 });
-$router->map('GET', '/blog/emociones-en-la-adolescencia-comprender-para-acompanar', function (): void {
-  require __DIR__ . '/pages/blog/post-6/index.php';
-});
-
 $router->map('GET', '/comunidad/buzon-del-rector', function (): void {
     require __DIR__ . '/pages/comunidad/buzon-del-rector.php';
 });

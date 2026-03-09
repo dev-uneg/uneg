@@ -35,11 +35,4 @@ return [
     'href' => '/blog/el-turismo-como-actividad-economica',
     'image' => '/_imgs/blog/post-1.webp',
   ],
-  [
-    'title' => 'Emociones en la adolescencia: comprender para acompañar',
-    'date' => '4 marzo, 2026',
-    'excerpt' => 'Las emociones en la adolescencia son señales para entender y acompañar mejor.',
-    'href' => '/blog/emociones-en-la-adolescencia-comprender-para-acompanar',
-    'image' => '/_imgs/blog/post-6.webp',
-  ],
 ];
