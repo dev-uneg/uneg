@@ -17,7 +17,7 @@ require __DIR__ . '/../partials/header.php';
       <div class="flex flex-col items-center">
         <figure class="w-[80%] lg:w-[72%] mx-auto">
           <img
-            src="<?php echo $assetBase; ?>/_imgs/landings/licenciaturas/alumno-sudadera-naranja.jpg"
+            src="<?php echo $assetBase; ?>/_imgs/landings/licenciaturas/persona_optimized.webp"
             alt="Aspirante a licenciatura UNEG"
             class="block w-full h-auto rounded-3xl"
             style="-webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);"
