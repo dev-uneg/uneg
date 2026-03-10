@@ -17,7 +17,7 @@ require __DIR__ . '/../partials/header.php';
       <div class="flex flex-col items-center">
         <figure class="w-[80%] lg:w-[72%] mx-auto">
           <img
-            src="<?php echo $assetBase; ?>/_imgs/landings/licenciaturas/alumno-sudadera-naranja.png"
+            src="<?php echo $assetBase; ?>/_imgs/landings/licenciaturas/alumno-sudadera-naranja.jpg"
             alt="Aspirante a licenciatura UNEG"
             class="block w-full h-auto rounded-3xl"
             style="-webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);"
@@ -42,7 +42,7 @@ require __DIR__ . '/../partials/header.php';
             <input class="block w-full rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" type="email" name="email" placeholder="Correo electr&oacute;nico" required>
             <input class="block w-full rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" type="tel" name="phone" placeholder="Tel&eacute;fono (10 d&iacute;gitos)" required>
             <input type="hidden" name="channel" value="Landing Licenciaturas">
-            <input type="hidden" name="medium" value="LP Licenciaturas">
+            <input type="hidden" name="medium" value="Landing">
 
             <div class="relative">
               <select class="block w-full appearance-none rounded-md border border-slate-300 px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" name="interest" required>

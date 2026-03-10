@@ -38,7 +38,7 @@ require __DIR__ . '/../partials/header.php';
             <input class="block w-full rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" type="email" name="email" placeholder="Correo electr&oacute;nico" required>
             <input class="block w-full rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" type="tel" name="phone" placeholder="Tel&eacute;fono (10 d&iacute;gitos)" required>
             <input type="hidden" name="channel" value="Landing Maestrias">
-            <input type="hidden" name="medium" value="landing page (LP Maestrias)">
+            <input type="hidden" name="medium" value="Landing">
 
             <div class="relative">
               <select class="block w-full appearance-none rounded-md border border-slate-300 px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" name="interest" required>
