@@ -65,6 +65,41 @@ $pipedriveRequest = static function (string $endpoint, string $token, array $pay
     ];
 };
 
+$pipedriveGet = static function (string $endpoint, string $token): array {
+    $ch = curl_init($endpoint);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            'Accept: application/json',
+            'x-api-token: ' . $token,
+        ],
+        CURLOPT_TIMEOUT => 15,
+    ]);
+
+    $response = curl_exec($ch);
+    $error = curl_error($ch);
+    $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($response === false) {
+        return [
+            'ok' => false,
+            'status' => 500,
+            'error' => $error ?: 'No se pudo conectar con Pipedrive.',
+            'data' => null,
+        ];
+    }
+
+    $data = json_decode($response, true);
+
+    return [
+        'ok' => $status >= 200 && $status < 300,
+        'status' => $status,
+        'error' => $data['error'] ?? null,
+        'data' => $data,
+    ];
+};
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $fail('Metodo no permitido.', 405);
 }
@@ -152,6 +187,32 @@ if (is_array($mediumOptionIds) && array_key_exists($medium, $mediumOptionIds)) {
     $mediumForPipedrive = $mediumOptionIds[$medium];
 }
 
+// Si llega texto (ej: "Landing"), intenta resolverlo al option id real del campo "Medio"
+// para evitar que Pipedrive lo ignore en campos de opciones.
+$mediumFieldKey = '1cd81947451e14a3c30084a31db4d6eef6fef63e';
+if (!is_int($mediumForPipedrive) && !ctype_digit((string) $mediumForPipedrive) && $mediumForPipedrive !== '') {
+    $fieldsResponse = $pipedriveGet('https://api.pipedrive.com/v1/personFields?start=0&limit=500', $token);
+    if (($fieldsResponse['data']['success'] ?? false) && is_array($fieldsResponse['data']['data'] ?? null)) {
+        $normalize = static function (string $value): string {
+            $value = trim($value);
+            return function_exists('mb_strtolower') ? mb_strtolower($value, 'UTF-8') : strtolower($value);
+        };
+        $targetLabel = $normalize((string) $mediumForPipedrive);
+        foreach ($fieldsResponse['data']['data'] as $field) {
+            if (($field['key'] ?? '') !== $mediumFieldKey || !is_array($field['options'] ?? null)) {
+                continue;
+            }
+            foreach ($field['options'] as $option) {
+                $label = $normalize((string) ($option['label'] ?? ''));
+                if ($label === $targetLabel && isset($option['id'])) {
+                    $mediumForPipedrive = (int) $option['id'];
+                    break 2;
+                }
+            }
+        }
+    }
+}
+
 $personPayload = [
     'name' => $fullName,
     'email' => [[
@@ -163,7 +224,7 @@ $personPayload = [
         'primary' => true,
     ]],
     'cd1724715699c7674b53fd7e5918a1c853fa340f' => $interest,
-    '1cd81947451e14a3c30084a31db4d6eef6fef63e' => $mediumForPipedrive,
+    $mediumFieldKey => $mediumForPipedrive,
 ];
 
 $personResponse = $pipedriveRequest('https://api.pipedrive.com/v1/persons', $token, $personPayload);
