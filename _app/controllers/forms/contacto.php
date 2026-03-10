@@ -268,7 +268,15 @@ if ($personId && ($interest !== '' || $source !== '' || $message !== '' || $chan
 }
 
 if ($isHtmlRequest) {
-    header('Location: ' . $base . '/gracias', true, 302);
+    $redirectPath = '/gracias';
+    $channelNormalized = strtolower(trim($channel));
+    if ($channelNormalized === 'landing licenciaturas') {
+        $redirectPath = '/gracias-lp-licenciaturas';
+    } elseif ($channelNormalized === 'landing maestrias') {
+        $redirectPath = '/gracias-lp-maestrias';
+    }
+
+    header('Location: ' . $base . $redirectPath, true, 302);
     exit;
 }
 

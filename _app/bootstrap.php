@@ -472,6 +472,12 @@ $router->map('GET', '/aviso-de-privacidad', function (): void {
 $router->map('GET', '/gracias', function (): void {
     require __DIR__ . '/pages/gracias.php';
 });
+$router->map('GET', '/gracias-lp-licenciaturas', function (): void {
+    require __DIR__ . '/pages/gracias-lp-licenciaturas.php';
+});
+$router->map('GET', '/gracias-lp-maestrias', function (): void {
+    require __DIR__ . '/pages/gracias-lp-maestrias.php';
+});
 
 // ---------------------------
 // 404
