@@ -2,6 +2,15 @@
 $title = 'CCH ISEC | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-slate-50 cch-isec';
+$utmSource = trim((string) ($_GET['utm_source'] ?? ''));
+if ($utmSource === '') {
+  $utmSource = 'organico';
+}
+if (function_exists('mb_strtolower')) {
+  $utmSource = mb_strtolower($utmSource, 'UTF-8');
+} else {
+  $utmSource = strtolower($utmSource);
+}
 require __DIR__ . '/../partials/header.php';
 ?>
 
@@ -84,6 +93,7 @@ require __DIR__ . '/../partials/header.php';
         <input class="w-full rounded-md border border-slate-300 px-3 py-2" name="email" placeholder="Correo Electrónico*" type="email" required />
         <input class="w-full rounded-md border border-slate-300 px-3 py-2" name="phone" placeholder="Teléfono*" type="tel" required />
         <input type="hidden" name="interest" value="CCH ISEC" />
+        <input type="hidden" name="source" value="<?php echo htmlspecialchars($utmSource, ENT_QUOTES, 'UTF-8'); ?>" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" name="privacy" value="1" class="h-4 w-4" required />
           He leído y acepto el <a href="<?php echo $base; ?>/aviso-de-privacidad" class="font-semibold text-slate-700 underline" target="_blank" rel="noopener">Aviso de Privacidad</a>

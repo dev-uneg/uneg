@@ -89,6 +89,10 @@ $channel = trim((string) ($_POST['channel'] ?? ''));
 $medium = trim((string) ($_POST['medium'] ?? ''));
 $privacyAccepted = isset($_POST['privacy']);
 
+if ($source === '') {
+    $source = 'organico';
+}
+
 if ($fullName === '' || $email === '' || $phone === '' || $interest === '' || !$privacyAccepted) {
     $fail('Faltan campos obligatorios.');
 }
@@ -149,6 +153,7 @@ $personPayload = [
     ]],
     'cd1724715699c7674b53fd7e5918a1c853fa340f' => $interest,
     '1cd81947451e14a3c30084a31db4d6eef6fef63e' => $medium,
+    '28c972a5db524e5d6a0b97af596d5c7a5aea43cc' => $source,
 ];
 
 $personResponse = $pipedriveRequest('https://api.pipedrive.com/v1/persons', $token, $personPayload);
