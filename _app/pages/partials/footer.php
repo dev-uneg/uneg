@@ -94,6 +94,41 @@
           return action.includes('/api/') && !action.includes('/admin/');
         };
 
+        const isOfferApiForm = (form) => {
+          if (!(form instanceof HTMLFormElement)) return false;
+          const action = form.getAttribute('action') || '';
+          return action.includes('/api/forms/') && !action.includes('/api/forms/contacto');
+        };
+
+        const setOrCreateHidden = (form, name, value) => {
+          const selector = '[name=\"' + name + '\"]';
+          let field = form.querySelector(selector);
+
+          if (field) {
+            field.value = value;
+            return;
+          }
+
+          field = document.createElement('input');
+          field.type = 'hidden';
+          field.name = name;
+          field.value = value;
+          form.appendChild(field);
+        };
+
+        const addUtmFields = (form) => {
+          if (!isOfferApiForm(form)) return;
+
+          const params = new URLSearchParams(window.location.search);
+          const source = (params.get('utm_source') || '').trim() || 'organico';
+          const medium = (params.get('utm_medium') || '').trim() || 'organico';
+          const campaign = (params.get('utm_campaign') || '').trim() || 'organico';
+
+          setOrCreateHidden(form, 'source', source);
+          setOrCreateHidden(form, 'medium', medium);
+          setOrCreateHidden(form, 'campaign', campaign);
+        };
+
         const addTurnstile = (form) => {
           if (!isPublicApiForm(form)) return;
           if (form.querySelector('.cf-turnstile')) return;
@@ -114,7 +149,10 @@
           }
         };
 
-        document.querySelectorAll('form').forEach(addTurnstile);
+        document.querySelectorAll('form').forEach((form) => {
+          addUtmFields(form);
+          addTurnstile(form);
+        });
       })();
     </script>
     <style>

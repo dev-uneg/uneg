@@ -87,7 +87,18 @@ $source = trim((string) ($_POST['source'] ?? ''));
 $message = trim((string) ($_POST['message'] ?? ''));
 $channel = trim((string) ($_POST['channel'] ?? ''));
 $medium = trim((string) ($_POST['medium'] ?? ''));
+$campaign = trim((string) ($_POST['campaign'] ?? ''));
 $privacyAccepted = isset($_POST['privacy']);
+
+if ($source === '') {
+    $source = 'organico';
+}
+if ($medium === '') {
+    $medium = 'organico';
+}
+if ($campaign === '') {
+    $campaign = 'organico';
+}
 
 if ($fullName === '' || $email === '' || $phone === '' || $interest === '' || !$privacyAccepted) {
     $fail('Faltan campos obligatorios.');
@@ -133,10 +144,6 @@ if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
     $fail('Falta configurar el API token de Pipedrive.', 500);
 }
 
-if ($medium === '') {
-    $medium = 'Sitio web';
-}
-
 $personPayload = [
     'name' => $fullName,
     'email' => [[
@@ -148,7 +155,9 @@ $personPayload = [
         'primary' => true,
     ]],
     'cd1724715699c7674b53fd7e5918a1c853fa340f' => $interest,
-    '1cd81947451e14a3c30084a31db4d6eef6fef63e' => $medium,
+    '28c972a5db524e5d6a0b97af596d5c7a5aea43cc' => $source,
+    'b73acfba916febba8cc8ec9c345bf6832caef86e' => $medium,
+    '51afe9f4a6aefe4190fc45e0b0f7c5e8c3063510' => $campaign,
 ];
 
 $personResponse = $pipedriveRequest('https://api.pipedrive.com/v1/persons', $token, $personPayload);
@@ -167,13 +176,16 @@ leads_db_update($leadId, [
     'pipedrive_person_id' => $personId ? (string) $personId : null,
 ]);
 
-if ($personId && ($interest !== '' || $source !== '' || $message !== '' || $channel !== '' || $medium !== '')) {
+if ($personId && ($interest !== '' || $source !== '' || $message !== '' || $channel !== '' || $medium !== '' || $campaign !== '')) {
     $noteLines = [];
     if ($channel !== '') {
         $noteLines[] = 'Canal: ' . $channel;
     }
     if ($medium !== '') {
         $noteLines[] = 'Medio: ' . $medium;
+    }
+    if ($campaign !== '') {
+        $noteLines[] = 'Campaign: ' . $campaign;
     }
     if ($interest !== '') {
         $noteLines[] = 'Interes: ' . $interest;
