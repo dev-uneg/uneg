@@ -2,7 +2,7 @@
 $title = 'Landing Licenciaturas | UNEG';
 $active = 'oferta';
 $bodyClass = 'bg-white lp-licenciaturas-page';
-require __DIR__ . '/../partials/header.php';
+require __DIR__ . '/../partials/header-lp.php';
 ?>
 
 <section class="-mx-6 bg-[radial-gradient(circle_at_top_left,_#1842b8_0%,_#0b2c86_45%,_#0a1f66_100%)] text-white">

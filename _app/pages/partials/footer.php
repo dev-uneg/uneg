@@ -75,9 +75,34 @@
         </div>
       </div>
     </footer>
-    <a href="https://wa.me/5215571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20y%20quiero%20informes%20de%20inscripciones%20y%20costos." class="whatsapp-float" aria-label="WhatsApp">
-      <?php echo uneg_icon('whatsapp', 'h-7 w-7'); ?>
-    </a>
+    <?php
+      $requestPath = (string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+      if ($requestPath === '') {
+        $requestPath = '/';
+      }
+
+      if (isset($base) && is_string($base) && $base !== '' && strpos($requestPath, $base . '/') === 0) {
+        $requestPath = substr($requestPath, strlen($base));
+      }
+
+      $isOfferOrLandingPath =
+        $requestPath === '/lp-licenciaturas' ||
+        $requestPath === '/lp-maestrias' ||
+        $requestPath === '/oferta-educativa' ||
+        $requestPath === '/nivel-medio-superior' ||
+        $requestPath === '/cch-isec' ||
+        $requestPath === '/bachillerato-en-linea' ||
+        $requestPath === '/bachillerato-tecnico-administracion-empresas-turisticas' ||
+        $requestPath === '/curso-colbach' ||
+        strpos($requestPath, '/licenciaturas') === 0 ||
+        strpos($requestPath, '/maestrias') === 0 ||
+        strpos($requestPath, '/doctorados') === 0;
+    ?>
+    <?php if (!$isOfferOrLandingPath): ?>
+      <a href="https://wa.me/5215571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20y%20quiero%20informes%20de%20inscripciones%20y%20costos." class="whatsapp-float" aria-label="WhatsApp">
+        <?php echo uneg_icon('whatsapp', 'h-7 w-7'); ?>
+      </a>
+    <?php endif; ?>
     <?php
       require_once __DIR__ . '/../../helpers/turnstile.php';
       $turnstileSiteKey = turnstile_site_key();
