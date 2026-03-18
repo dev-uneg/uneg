@@ -27,4 +27,14 @@ $mensajeGracias = $esBuzon
   </section>
 </main>
 
+<?php if (!$esBuzon): ?>
+  <script>
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17972441356/n6SkCJLK2f0bEIzi9vlC',
+      'value': 1.0,
+      'currency': 'MXN'
+    });
+  </script>
+<?php endif; ?>
+
 <?php require __DIR__ . '/partials/footer.php'; ?>

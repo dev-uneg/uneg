@@ -58,6 +58,15 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
     })(window,document,'script','dataLayer','GTM-NQ672S4');
   </script>
   <!-- End Google Tag Manager -->
+  <!-- Google Ads tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17972441356"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17972441356');
+  </script>
+  <!-- End Google Ads tag (gtag.js) -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo htmlspecialchars($title); ?></title>
