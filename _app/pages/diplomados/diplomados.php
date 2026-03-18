@@ -47,6 +47,11 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <button type="button" class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" data-lightbox-src="<?php echo $assetBase; ?>/_imgs/ixu/diplomados/Diplomado-en-Defensa-Fiscal.png">
+        <img src="<?php echo $assetBase; ?>/_imgs/ixu/diplomados/Diplomado-en-Defensa-Fiscal.png" alt="Diplomado en Defensa Fiscal" class="w-full h-56 object-contain">
+        <p class="mt-3 text-sm font-semibold text-[#0b2c65]">Diplomado en Defensa Fiscal</p>
+        <p class="mt-1 text-xs text-slate-500">Click para ver en grande</p>
+      </button>
       <button type="button" class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" data-lightbox-src="<?php echo $assetBase; ?>/_imgs/ixu/diplomados/Diplomado-en-Normas-de-Informacion-Financiera-2.webp">
         <img src="<?php echo $assetBase; ?>/_imgs/ixu/diplomados/Diplomado-en-Normas-de-Informacion-Financiera-2.webp" alt="Diplomado en Normas de Información Financiera" class="w-full h-56 object-contain">
         <p class="mt-3 text-sm font-semibold text-[#0b2c65]">Diplomado en Normas de Información Financiera</p>

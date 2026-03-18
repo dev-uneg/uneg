@@ -47,6 +47,11 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <button type="button" class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" data-lightbox-src="<?php echo $assetBase; ?>/_imgs/ixu/cursos/Curso_-Desarrollo-de-habilidades-para-un-liderazgo-efectivo.png">
+        <img src="<?php echo $assetBase; ?>/_imgs/ixu/cursos/Curso_-Desarrollo-de-habilidades-para-un-liderazgo-efectivo.png" alt="Curso desarrollo de habilidades para un liderazgo efectivo" class="w-full h-56 object-contain">
+        <p class="mt-3 text-sm font-semibold text-[#0b2c65]">Desarrollo de habilidades para un liderazgo efectivo</p>
+        <p class="mt-1 text-xs text-slate-500">Click para ver en grande</p>
+      </button>
       <button type="button" class="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" data-lightbox-src="<?php echo $assetBase; ?>/_imgs/ixu/cursos/Curso_-TENDENCIAS-PARA-MERCADOTECNIA-DEL-SIGLO-XXI.webp">
         <img src="<?php echo $assetBase; ?>/_imgs/ixu/cursos/Curso_-TENDENCIAS-PARA-MERCADOTECNIA-DEL-SIGLO-XXI.webp" alt="Curso tendencias para mercadotecnia del siglo XXI" class="w-full h-56 object-contain">
         <p class="mt-3 text-sm font-semibold text-[#0b2c65]">Tendencias para Mercadotecnia del Siglo XXI</p>
