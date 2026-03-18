@@ -100,6 +100,12 @@
           return action.includes('/api/forms/') && !action.includes('/api/forms/contacto');
         };
 
+        const isContactoApiForm = (form) => {
+          if (!(form instanceof HTMLFormElement)) return false;
+          const action = form.getAttribute('action') || '';
+          return action.includes('/api/forms/contacto');
+        };
+
         const setOrCreateHidden = (form, name, value) => {
           const selector = '[name=\"' + name + '\"]';
           let field = form.querySelector(selector);
@@ -129,6 +135,19 @@
           setOrCreateHidden(form, 'campaign', campaign);
         };
 
+        const addContactoUtmFields = (form) => {
+          if (!isContactoApiForm(form)) return;
+
+          const params = new URLSearchParams(window.location.search);
+          const utmSource = (params.get('utm_source') || '').trim() || 'organico';
+          const utmMedium = (params.get('utm_medium') || '').trim() || 'organico';
+          const utmCampaign = (params.get('utm_campaign') || '').trim() || 'organico';
+
+          setOrCreateHidden(form, 'utm_source', utmSource);
+          setOrCreateHidden(form, 'utm_medium', utmMedium);
+          setOrCreateHidden(form, 'utm_campaign', utmCampaign);
+        };
+
         const addTurnstile = (form) => {
           if (!isPublicApiForm(form)) return;
           if (form.querySelector('.cf-turnstile')) return;
@@ -151,6 +170,7 @@
 
         document.querySelectorAll('form').forEach((form) => {
           addUtmFields(form);
+          addContactoUtmFields(form);
           addTurnstile(form);
         });
       })();

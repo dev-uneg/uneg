@@ -122,6 +122,9 @@ $source = trim((string) ($_POST['source'] ?? ''));
 $message = trim((string) ($_POST['message'] ?? ''));
 $channel = trim((string) ($_POST['channel'] ?? ''));
 $medium = trim((string) ($_POST['medium'] ?? ''));
+$utmSource = trim((string) ($_POST['utm_source'] ?? ''));
+$utmMedium = trim((string) ($_POST['utm_medium'] ?? ''));
+$utmCampaign = trim((string) ($_POST['utm_campaign'] ?? ''));
 $privacyAccepted = isset($_POST['privacy']);
 
 if ($fullName === '' || $email === '' || $phone === '' || $interest === '' || !$privacyAccepted) {
@@ -170,6 +173,15 @@ if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
 
 if ($medium === '') {
     $medium = 'Sitio web';
+}
+if ($utmSource === '') {
+    $utmSource = 'organico';
+}
+if ($utmMedium === '') {
+    $utmMedium = 'organico';
+}
+if ($utmCampaign === '') {
+    $utmCampaign = 'organico';
 }
 
 // Pipedrive "Medio" suele ser campo tipo opciones.
@@ -224,6 +236,9 @@ $personPayload = [
         'primary' => true,
     ]],
     'cd1724715699c7674b53fd7e5918a1c853fa340f' => $interest,
+    '28c972a5db524e5d6a0b97af596d5c7a5aea43cc' => $utmSource,
+    'b73acfba916febba8cc8ec9c345bf6832caef86e' => $utmMedium,
+    '51afe9f4a6aefe4190fc45e0b0f7c5e8c3063510' => $utmCampaign,
     $mediumFieldKey => $mediumForPipedrive,
 ];
 
@@ -259,6 +274,15 @@ if ($personId && ($interest !== '' || $source !== '' || $message !== '' || $chan
     }
     if ($message !== '') {
         $noteLines[] = 'Mensaje: ' . $message;
+    }
+    if ($utmSource !== '') {
+        $noteLines[] = 'UTM Source: ' . $utmSource;
+    }
+    if ($utmMedium !== '') {
+        $noteLines[] = 'UTM Medium: ' . $utmMedium;
+    }
+    if ($utmCampaign !== '') {
+        $noteLines[] = 'UTM Campaign: ' . $utmCampaign;
     }
 
     $pipedriveRequest('https://api.pipedrive.com/v1/notes', $token, [
