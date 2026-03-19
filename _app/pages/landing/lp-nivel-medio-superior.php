@@ -90,11 +90,9 @@ require __DIR__ . '/../partials/header-lp.php';
 
     <div class="mt-12 rounded-2xl bg-[#d9dcec] text-slate-900 px-6 sm:px-8 py-8">
       <h2 class="text-2xl sm:text-3xl font-semibold text-center">Conoce nuestra oferta de Nivel Medio Superior</h2>
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-base max-w-6xl mx-auto">
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-base max-w-3xl mx-auto justify-items-center">
         <div class="flex flex-col items-center gap-2 text-center"><i data-lucide="school" class="h-7 w-7 text-[#0b2c86]"></i><span>CCH ISEC</span></div>
-        <div class="flex flex-col items-center gap-2 text-center"><i data-lucide="monitor" class="h-7 w-7 text-[#0b2c86]"></i><span>Bachillerato en L&iacute;nea</span></div>
         <div class="flex flex-col items-center gap-2 text-center"><i data-lucide="briefcase" class="h-7 w-7 text-[#0b2c86]"></i><span>Bachillerato T&eacute;cnico en Administraci&oacute;n de Empresas Tur&iacute;sticas</span></div>
-        <div class="flex flex-col items-center gap-2 text-center"><i data-lucide="book-open" class="h-7 w-7 text-[#0b2c86]"></i><span>Curso COLBACH</span></div>
       </div>
     </div>
   </div>
