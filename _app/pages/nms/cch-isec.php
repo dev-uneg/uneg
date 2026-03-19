@@ -113,19 +113,26 @@ require __DIR__ . '/../partials/header.php';
 
   <section class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
     <div class="rounded-xl bg-[#5a1c1c] text-white px-6 py-8">
-      <div class="flex items-center justify-center gap-3 text-center font-semibold">
+      <div class="flex flex-col items-center justify-center gap-3 text-center font-semibold">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
           <i class="text-xl" data-lucide="book-open"></i>
         </span>
         <span>Plan de Estudios</span>
+        <a href="<?php echo $assetBase; ?>/_assets/planes-de-estudio/plan-de-estudios-cch-isec.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-white/90 underline-offset-4 transition hover:text-white hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80">
+          Ver plan de estudios
+          <i class="text-base" data-lucide="external-link" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
     <div class="rounded-xl bg-[#5a4a4a] text-white px-6 py-8">
-      <div class="flex items-center justify-center gap-3 text-center font-semibold">
+      <div class="flex flex-col items-center justify-center gap-3 text-center font-semibold">
         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
           <i class="text-xl" data-lucide="pencil"></i>
         </span>
         <span>Inscríbete Ahora</span>
+        <p class="max-w-md text-sm font-normal text-white/90">
+          Inicia hoy tu proceso de admisión y asegura tu lugar con el acompañamiento de un asesor académico.
+        </p>
       </div>
     </div>
   </section>

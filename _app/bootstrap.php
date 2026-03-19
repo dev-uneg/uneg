@@ -205,6 +205,9 @@ $router->map('GET', '/lp-licenciaturas', function (): void {
 $router->map('GET', '/lp-maestrias', function (): void {
     require __DIR__ . '/pages/landing/lp-maestrias.php';
 });
+$router->map('GET', '/lp-nivel-medio-superior', function (): void {
+    require __DIR__ . '/pages/landing/lp-nivel-medio-superior.php';
+});
 
 // ---------------------------
 // Admin Leads
@@ -477,6 +480,9 @@ $router->map('GET', '/gracias-lp-licenciaturas', function (): void {
 });
 $router->map('GET', '/gracias-lp-maestrias', function (): void {
     require __DIR__ . '/pages/gracias-lp-maestrias.php';
+});
+$router->map('GET', '/gracias-lp-nivel-medio-superior', function (): void {
+    require __DIR__ . '/pages/gracias-lp-nivel-medio-superior.php';
 });
 
 // ---------------------------

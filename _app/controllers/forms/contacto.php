@@ -298,6 +298,8 @@ if ($isHtmlRequest) {
         $redirectPath = '/gracias-lp-licenciaturas';
     } elseif ($channelNormalized === 'landing maestrias') {
         $redirectPath = '/gracias-lp-maestrias';
+    } elseif ($channelNormalized === 'landing nivel medio superior') {
+        $redirectPath = '/gracias-lp-nivel-medio-superior';
     }
 
     header('Location: ' . $base . $redirectPath, true, 302);

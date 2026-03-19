@@ -92,6 +92,7 @@ require_once __DIR__ . '/../../helpers/icons.php';
               <th class="px-4 py-3 font-semibold">Email</th>
               <th class="px-4 py-3 font-semibold">Teléfono</th>
               <th class="px-4 py-3 font-semibold">Interés</th>
+              <th class="px-4 py-3 font-semibold">Página origen</th>
               <th class="px-4 py-3 font-semibold">Estado</th>
               <th class="px-4 py-3 font-semibold">Acciones</th>
             </tr>
@@ -99,7 +100,7 @@ require_once __DIR__ . '/../../helpers/icons.php';
           <tbody class="divide-y divide-slate-100">
             <?php if ($rows === []): ?>
               <tr>
-                <td colspan="8" class="px-4 py-6 text-center text-slate-500">Sin registros todavía.</td>
+                <td colspan="9" class="px-4 py-6 text-center text-slate-500">Sin registros todavía.</td>
               </tr>
             <?php endif; ?>
             <?php foreach ($rows as $row): ?>
@@ -114,6 +115,30 @@ require_once __DIR__ . '/../../helpers/icons.php';
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars($row['email'], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars($row['phone'], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars($row['interest'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td class="px-4 py-3 text-slate-600">
+                  <?php
+                    $pagePath = trim((string) ($row['page_path'] ?? ''));
+                    $safePath = '';
+                    if ($pagePath !== '') {
+                      if (strpos($pagePath, '/') !== 0) {
+                        $parsedPath = (string) parse_url($pagePath, PHP_URL_PATH);
+                        $pagePath = $parsedPath !== '' ? $parsedPath : '';
+                      }
+                      if ($pagePath !== '' && strpos($pagePath, '/') !== 0) {
+                        $pagePath = '/' . ltrim($pagePath, '/');
+                      }
+                      $safePath = $pagePath;
+                    }
+                  ?>
+                  <?php if ($safePath !== ''): ?>
+                    <a class="inline-flex items-center gap-1 text-[#0b2c65] underline decoration-slate-300 hover:decoration-[#0b2c65]" href="<?php echo htmlspecialchars($base . $safePath, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer">
+                      <?php echo htmlspecialchars($safePath, ENT_QUOTES, 'UTF-8'); ?>
+                      <?php echo uneg_icon('external-link', 'h-3.5 w-3.5'); ?>
+                    </a>
+                  <?php else: ?>
+                    <span class="text-slate-400">Sin dato</span>
+                  <?php endif; ?>
+                </td>
                 <td class="px-4 py-3">
                   <?php
                     $status = (string) ($row['status'] ?? '');

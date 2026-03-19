@@ -88,6 +88,7 @@
       $isOfferOrLandingPath =
         $requestPath === '/lp-licenciaturas' ||
         $requestPath === '/lp-maestrias' ||
+        $requestPath === '/lp-nivel-medio-superior' ||
         $requestPath === '/oferta-educativa' ||
         $requestPath === '/nivel-medio-superior' ||
         $requestPath === '/cch-isec' ||
@@ -173,6 +174,12 @@
           setOrCreateHidden(form, 'utm_campaign', utmCampaign);
         };
 
+        const addPagePathField = (form) => {
+          if (!isPublicApiForm(form)) return;
+          const currentPath = window.location.pathname || '/';
+          setOrCreateHidden(form, 'page_path', currentPath);
+        };
+
         const addTurnstile = (form) => {
           if (!isPublicApiForm(form)) return;
           if (form.querySelector('.cf-turnstile')) return;
@@ -196,6 +203,7 @@
         document.querySelectorAll('form').forEach((form) => {
           addUtmFields(form);
           addContactoUtmFields(form);
+          addPagePathField(form);
           addTurnstile(form);
         });
       })();

@@ -25,6 +25,7 @@ if ($canonicalPath !== '/' && substr($canonicalPath, -1) === '/') {
   $canonicalPath = rtrim($canonicalPath, '/');
 }
 $canonicalUrl = 'https://uneg.edu.mx' . $canonicalPath;
+$isLandingPath = strpos($canonicalPath, '/lp-') === 0;
 
 if (!isset($metaDescription) || trim((string) $metaDescription) === '') {
   $topic = preg_replace('/\s+/', ' ', str_replace(['| UNEG', 'UNEG -', ' - UNEG'], '', $title));
@@ -63,6 +64,9 @@ require_once __DIR__ . '/../../helpers/icons.php';
   <title><?php echo htmlspecialchars($title); ?></title>
   <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
   <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
+  <?php if ($isLandingPath): ?>
+    <meta name="robots" content="noindex, nofollow">
+  <?php endif; ?>
   <link rel="preload" href="<?php echo $assetBase; ?>/_assets/fonts/Figtree-wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="<?php echo $assetBase; ?>/_assets/fonts/Figtree-Italic-wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $assetBase; ?>/_imgs/favicon-32.png?v=1">
