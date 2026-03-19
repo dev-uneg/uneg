@@ -9,7 +9,7 @@ require __DIR__ . '/../partials/header-lp.php';
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-sm uppercase tracking-[0.18em] text-white/75">Universidad de Negocios ISEC</p>
-      <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">&iexcl;Inicia tu Nivel Medio Superior en Mayo y abre nuevas oportunidades!</h1>
+      <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">&iexcl;Inicia tu Nivel Medio Superior en Agosto y abre nuevas oportunidades!</h1>
       <p class="mt-4 text-[#ffd23f] text-base sm:text-lg font-medium">Prep&aacute;rate con programas dise&ntilde;ados para impulsar tu siguiente etapa acad&eacute;mica.</p>
     </div>
 
@@ -17,16 +17,26 @@ require __DIR__ . '/../partials/header-lp.php';
       <div class="flex flex-col items-center">
         <figure class="w-[90%] lg:w-[82%] mx-auto">
           <img
-            src="<?php echo $assetBase; ?>/_imgs/nms/cch/hero.webp"
-            alt="Nivel medio superior UNEG"
+            src="<?php echo $assetBase; ?>/_imgs/home/si-somos-unam.webp"
+            alt="Nivel Medio Superior UNEG"
             class="block w-full h-auto rounded-3xl"
             loading="eager"
             fetchpriority="high"
           >
         </figure>
         <p class="mt-4 text-sm sm:text-base text-white/90 leading-relaxed text-center max-w-xl mx-auto">
-          En Universidad de Negocios ISEC te ofrecemos opciones de nivel medio superior con enfoque acad&eacute;mico y acompa&ntilde;amiento para que avances con seguridad hacia tu formaci&oacute;n profesional.
+          En Universidad de Negocios ISEC te ofrecemos opciones de Nivel Medio Superior con enfoque acad&eacute;mico y acompa&ntilde;amiento para que avances con seguridad hacia tu formaci&oacute;n profesional.
         </p>
+        <div class="mt-4 w-full max-w-2xl rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-white/95">
+          <p class="flex items-start gap-2 text-xs sm:text-sm leading-relaxed text-left">
+            <i data-lucide="medal" class="mt-0.5 h-4 w-4 shrink-0"></i>
+            <span><strong>CCH ISEC UNAM:</strong> Incorporaci&oacute;n UNAM 2172</span>
+          </p>
+          <p class="mt-1.5 flex items-start gap-2 text-xs sm:text-sm leading-relaxed text-left">
+            <i data-lucide="medal" class="mt-0.5 h-4 w-4 shrink-0"></i>
+            <span><strong>Bachillerato T&eacute;cnico en Administraci&oacute;n de Empresas Tur&iacute;sticas:</strong> IPN A-RVOE-DG-NMS/33/99</span>
+          </p>
+        </div>
       </div>
 
       <div>
@@ -45,9 +55,7 @@ require __DIR__ . '/../partials/header-lp.php';
               <select class="block w-full appearance-none rounded-md border border-slate-300 px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" name="interest" required>
                 <option value="" selected>Selecciona una oferta educativa</option>
                 <option value="CCH ISEC">CCH ISEC</option>
-                <option value="Bachillerato en Linea">Bachillerato en L&iacute;nea</option>
                 <option value="Bachillerato Tecnico en Administracion de Empresas Turisticas">Bachillerato T&eacute;cnico en Administraci&oacute;n de Empresas Tur&iacute;sticas</option>
-                <option value="Curso COLBACH">Curso COLBACH</option>
               </select>
               <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0b2c86]">
                 <i class="text-xl" data-lucide="chevron-down"></i>
@@ -98,8 +106,8 @@ require __DIR__ . '/../partials/header-lp.php';
 
     <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
       <article class="rounded-3xl bg-[#d9dcec] p-7 text-center">
-        <i data-lucide="award" class="mx-auto h-8 w-8 text-[#0b2c86]"></i>
-        <p class="mt-4 text-lg leading-relaxed"><strong>Validez oficial</strong> en tus estudios de nivel medio superior.</p>
+        <i data-lucide="medal" class="mx-auto h-8 w-8 text-[#0b2c86]"></i>
+        <p class="mt-3 text-lg leading-relaxed"><strong>Validez oficial</strong> en tus estudios de Nivel Medio Superior.</p>
       </article>
       <article class="rounded-3xl bg-[#d9dcec] p-7 text-center">
         <i data-lucide="users" class="mx-auto h-8 w-8 text-[#0b2c86]"></i>
