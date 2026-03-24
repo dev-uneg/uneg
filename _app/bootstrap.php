@@ -71,6 +71,9 @@ $router->map('GET', '/comunidad/noticias/video-blog-uneg-isec', function (): voi
 $router->map('GET', '/comunidad/noticias/eventos-de-nuestra-comunidad/firma-convenio-camic', function (): void {
   require __DIR__ . '/pages/comunidad/noticias/eventos-de-nuestra-comunidad/post-1/index.php';
 });
+$router->map('GET', '/comunidad/noticias/eventos-de-nuestra-comunidad/business-week-2026', function (): void {
+  require __DIR__ . '/pages/comunidad/noticias/eventos-de-nuestra-comunidad/business-week-2026/index.php';
+});
 $router->map('GET', '/comunidad/noticias/vida-en-el-campus/emociones-en-la-adolescencia', function (): void {
   require __DIR__ . '/pages/comunidad/noticias/vida-en-el-campus/emociones-en-la-adolescencia/index.php';
 });
