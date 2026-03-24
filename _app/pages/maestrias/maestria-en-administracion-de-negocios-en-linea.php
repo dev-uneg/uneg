@@ -26,7 +26,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Sistema en Línea</p>
-          <p class="text-white/70 text-xs">24 Hrs</p>
+          <p class="text-white/70 text-xs">Sábados de 7:00 am a 01:00 pm</p>
         </div>
       </div>
       <div class="flex items-center gap-3">
@@ -173,7 +173,7 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-3xl sm:text-4xl font-semibold">Horarios</h2>
       <div class="mt-6 text-xl sm:text-2xl">Plan Cuatrimestral</div>
       <div class="mt-3 text-2xl sm:text-3xl font-semibold">Sistema en Línea</div>
-      <div class="mt-2 text-lg">24 Hrs</div>
+      <div class="mt-2 text-lg">Sábados de 7:00 am a 01:00 pm</div>
     </div>
   </section>
 

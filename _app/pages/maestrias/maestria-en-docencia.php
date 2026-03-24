@@ -26,7 +26,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Horarios Flexibles</p>
-          <p class="text-white/70 text-xs">Sábados</p>
+          <p class="text-white/70 text-xs">Sábados de 7:00 am a 01:00 pm</p>
         </div>
       </div>
       <div class="flex items-center gap-3">
@@ -186,7 +186,7 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-3xl sm:text-4xl font-semibold">Horarios</h2>
       <div class="mt-6 text-xl sm:text-2xl">Plan Cuatrimestral</div>
       <div class="mt-3 text-2xl sm:text-3xl font-semibold">Sábados</div>
-      <div class="mt-2 text-lg">7 AM a 13:00 Hrs</div>
+      <div class="mt-2 text-lg">Sábados de 7:00 am a 01:00 pm</div>
     </div>
   </section>
 
@@ -239,7 +239,7 @@ require __DIR__ . '/../partials/header.php';
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
           <summary class="font-semibold cursor-pointer">¿Cuánto dura la Maestría en Docencia?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            La Maestría en Docencia tiene una duración de cuatro cuatrimestres y, en cada uno de ellos, se imparten 4 materias en un horario matutino de 7:00 am a las 13:00 horas de la zona central de México, todos los sábados.
+            La Maestría en Docencia tiene una duración de cuatro cuatrimestres y, en cada uno de ellos, se imparten 4 materias en un horario matutino de 7:00 am a 01:00 pm de la zona central de México, todos los sábados.
           </p>
         </details>
 

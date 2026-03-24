@@ -26,7 +26,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Horarios Flexibles</p>
-          <p class="text-white/70 text-xs">Sábados</p>
+          <p class="text-white/70 text-xs">Sábados de 7:00 am a 01:00 pm</p>
         </div>
       </div>
       <div class="flex items-center gap-3">
@@ -190,7 +190,7 @@ require __DIR__ . '/../partials/header.php';
       <h2 class="text-3xl sm:text-4xl font-semibold">Horarios</h2>
       <div class="mt-6 text-xl sm:text-2xl">Plan Cuatrimestral</div>
       <div class="mt-3 text-2xl sm:text-3xl font-semibold">Sábados</div>
-      <div class="mt-2 text-lg">7 AM a 13:00 Hrs</div>
+      <div class="mt-2 text-lg">Sábados de 7:00 am a 01:00 pm</div>
     </div>
   </section>
 
@@ -249,7 +249,7 @@ require __DIR__ . '/../partials/header.php';
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
           <summary class="font-semibold cursor-pointer">¿Cuánto dura la Maestría en Finanzas?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            La Maestría en Finanzas tiene una duración de 4 semestres a través de los cuales se imparten 4 materias en cada uno. Las clases se imparten todos los sábados en el turno matutino de 7:00 am a 13:00 horas de la zona centro de México. Conoce el plan de estudios para que te puedas ir familiarizando con las materias impartidas en este posgrado.
+            La Maestría en Finanzas tiene una duración de 4 semestres a través de los cuales se imparten 4 materias en cada uno. Las clases se imparten todos los sábados en el turno matutino de 7:00 am a 01:00 pm de la zona centro de México. Conoce el plan de estudios para que te puedas ir familiarizando con las materias impartidas en este posgrado.
           </p>
         </details>
 
