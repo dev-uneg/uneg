@@ -40,6 +40,16 @@ require_once __DIR__ . '/../../helpers/icons.php';
       </div>
       <div class="flex flex-wrap items-center gap-3">
         <form method="get" action="<?php echo $base; ?>/admin/leads" class="flex flex-wrap items-center gap-2 text-sm text-slate-600">
+          <div class="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
+            <?php echo uneg_icon('search', 'h-4 w-4 text-slate-400'); ?>
+            <input
+              type="text"
+              name="q"
+              value="<?php echo htmlspecialchars((string) ($q ?? ''), ENT_QUOTES, 'UTF-8'); ?>"
+              placeholder="Buscar por nombre, email o interés"
+              class="w-64 max-w-[70vw] text-xs text-slate-700 outline-none"
+            >
+          </div>
           <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
             <label class="text-xs font-semibold text-slate-500">Desde</label>
             <input type="date" name="from" value="<?php echo htmlspecialchars($dateFrom, ENT_QUOTES, 'UTF-8'); ?>" class="text-xs text-slate-700 outline-none">
@@ -100,7 +110,13 @@ require_once __DIR__ . '/../../helpers/icons.php';
           <tbody class="divide-y divide-slate-100">
             <?php if ($rows === []): ?>
               <tr>
-                <td colspan="9" class="px-4 py-6 text-center text-slate-500">Sin registros todavía.</td>
+                <td colspan="9" class="px-4 py-6 text-center text-slate-500">
+                  <?php if (($q ?? '') !== '' || $dateFrom !== '' || $dateTo !== ''): ?>
+                    Sin resultados para los filtros actuales.
+                  <?php else: ?>
+                    Sin registros todavía.
+                  <?php endif; ?>
+                </td>
               </tr>
             <?php endif; ?>
             <?php foreach ($rows as $row): ?>
@@ -184,15 +200,18 @@ require_once __DIR__ . '/../../helpers/icons.php';
         <?php if ($dateTo !== ''): ?>
           <input type="hidden" name="to" value="<?php echo htmlspecialchars($dateTo, ENT_QUOTES, 'UTF-8'); ?>">
         <?php endif; ?>
+        <?php if (($q ?? '') !== ''): ?>
+          <input type="hidden" name="q" value="<?php echo htmlspecialchars((string) $q, ENT_QUOTES, 'UTF-8'); ?>">
+        <?php endif; ?>
         <input type="hidden" name="page" value="1">
       </form>
       <div>Página <?php echo $page; ?> de <?php echo $totalPages; ?></div>
       <div class="flex items-center gap-2">
         <?php if ($page > 1): ?>
-          <a class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-semibold hover:border-slate-300" href="<?php echo $base; ?>/admin/leads?page=<?php echo $page - 1; ?>&per_page=<?php echo $perPage; ?>&from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>">Anterior</a>
+          <a class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-semibold hover:border-slate-300" href="<?php echo $base; ?>/admin/leads?page=<?php echo $page - 1; ?>&per_page=<?php echo $perPage; ?>&from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>&q=<?php echo urlencode((string) ($q ?? '')); ?>">Anterior</a>
         <?php endif; ?>
         <?php if ($page < $totalPages): ?>
-          <a class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-semibold hover:border-slate-300" href="<?php echo $base; ?>/admin/leads?page=<?php echo $page + 1; ?>&per_page=<?php echo $perPage; ?>&from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>">Siguiente</a>
+          <a class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-semibold hover:border-slate-300" href="<?php echo $base; ?>/admin/leads?page=<?php echo $page + 1; ?>&per_page=<?php echo $perPage; ?>&from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>&q=<?php echo urlencode((string) ($q ?? '')); ?>">Siguiente</a>
         <?php endif; ?>
       </div>
     </section>

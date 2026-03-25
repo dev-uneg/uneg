@@ -12,6 +12,7 @@ $base = admin_base_path();
 $perPageOptions = [20, 50, 100, 200];
 $dateFrom = trim((string) ($_GET['from'] ?? ''));
 $dateTo = trim((string) ($_GET['to'] ?? ''));
+$q = trim((string) ($_GET['q'] ?? ''));
 $hasDateFilter = ($dateFrom !== '' || $dateTo !== '');
 
 $perPage = (int) ($_GET['per_page'] ?? 20);
@@ -32,6 +33,15 @@ if ($dateFrom !== '') {
 if ($dateTo !== '') {
     $where[] = 'created_at <= :to';
     $params[':to'] = $dateTo . ' 23:59:59';
+}
+if ($q !== '') {
+    $escapedQ = strtr($q, [
+        '\\' => '\\\\',
+        '%' => '\%',
+        '_' => '\_',
+    ]);
+    $where[] = '(full_name LIKE :q ESCAPE \'\\\' OR email LIKE :q ESCAPE \'\\\' OR interest LIKE :q ESCAPE \'\\\')';
+    $params[':q'] = '%' . $escapedQ . '%';
 }
 
 $whereSql = $where ? (' WHERE ' . implode(' AND ', $where)) : '';
