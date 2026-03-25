@@ -67,7 +67,7 @@ $hasAnyFilter = ($dateFrom !== '' || $dateTo !== '' || trim((string) ($q ?? ''))
             aria-label="Limpiar filtros"
             title="Limpiar filtros"
           >
-            <?php echo uneg_icon('x', 'h-4 w-4'); ?>
+            <?php echo uneg_icon('rotate-ccw', 'h-4 w-4'); ?>
           </a>
           <input type="hidden" name="per_page" value="<?php echo $perPage; ?>">
           <input type="hidden" name="page" value="1">
@@ -109,7 +109,7 @@ $hasAnyFilter = ($dateFrom !== '' || $dateTo !== '' || trim((string) ($q ?? ''))
         </form>
       </div>
       <div class="overflow-x-auto">
-        <table class="min-w-full text-left text-sm">
+        <table class="min-w-full whitespace-nowrap text-left text-sm">
           <thead class="bg-slate-100 text-slate-600">
             <tr>
               <th class="px-4 py-3 font-semibold w-10">

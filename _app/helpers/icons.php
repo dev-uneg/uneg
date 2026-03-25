@@ -8,6 +8,8 @@ if (!function_exists('uneg_icon')) {
       'menu' => 'menu',
       'check' => 'check',
       'filter' => 'filter',
+      'x' => 'x',
+      'rotate-ccw' => 'rotate-ccw',
       'download' => 'download',
       'layout-grid' => 'layout-grid',
       'log-out' => 'log-out',
