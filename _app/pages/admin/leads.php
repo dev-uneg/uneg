@@ -4,6 +4,7 @@ $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? '/'), '/');
 $base = $base === '.' ? '' : $base;
 $assetBase = $base === '' ? '' : $base;
 require_once __DIR__ . '/../../helpers/icons.php';
+$hasAnyFilter = ($dateFrom !== '' || $dateTo !== '' || trim((string) ($q ?? '')) !== '');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -60,6 +61,14 @@ require_once __DIR__ . '/../../helpers/icons.php';
           <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-[#0b2c65] p-2 text-white hover:bg-[#09306e]" aria-label="Filtrar">
             <?php echo uneg_icon('filter', 'h-4 w-4'); ?>
           </button>
+          <a
+            href="<?php echo $base; ?>/admin/leads?per_page=<?php echo (int) $perPage; ?>&page=1"
+            class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-600 hover:border-slate-300 <?php echo $hasAnyFilter ? '' : 'pointer-events-none opacity-40'; ?>"
+            aria-label="Limpiar filtros"
+            title="Limpiar filtros"
+          >
+            <?php echo uneg_icon('rotate-ccw', 'h-4 w-4'); ?>
+          </a>
           <input type="hidden" name="per_page" value="<?php echo $perPage; ?>">
           <input type="hidden" name="page" value="1">
         </form>
