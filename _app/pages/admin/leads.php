@@ -67,7 +67,7 @@ $hasAnyFilter = ($dateFrom !== '' || $dateTo !== '' || trim((string) ($q ?? ''))
             aria-label="Limpiar filtros"
             title="Limpiar filtros"
           >
-            <?php echo uneg_icon('rotate-ccw', 'h-4 w-4'); ?>
+            <?php echo uneg_icon('x', 'h-4 w-4'); ?>
           </a>
           <input type="hidden" name="per_page" value="<?php echo $perPage; ?>">
           <input type="hidden" name="page" value="1">
