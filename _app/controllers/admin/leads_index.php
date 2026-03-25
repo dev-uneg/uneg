@@ -40,8 +40,10 @@ if ($q !== '') {
         '%' => '\%',
         '_' => '\_',
     ]);
-    $where[] = '(full_name LIKE :q ESCAPE \'\\\' OR email LIKE :q ESCAPE \'\\\' OR interest LIKE :q ESCAPE \'\\\')';
-    $params[':q'] = '%' . $escapedQ . '%';
+    $where[] = '(full_name LIKE :q1 ESCAPE \'\\\' OR email LIKE :q2 ESCAPE \'\\\' OR interest LIKE :q3 ESCAPE \'\\\')';
+    $params[':q1'] = '%' . $escapedQ . '%';
+    $params[':q2'] = '%' . $escapedQ . '%';
+    $params[':q3'] = '%' . $escapedQ . '%';
 }
 
 $whereSql = $where ? (' WHERE ' . implode(' AND ', $where)) : '';
