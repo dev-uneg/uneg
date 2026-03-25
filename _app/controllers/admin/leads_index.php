@@ -22,6 +22,7 @@ if (!in_array($perPage, $perPageOptions, true)) {
 
 $page = max(1, (int) ($_GET['page'] ?? 1));
 $offset = ($page - 1) * $perPage;
+$queryError = '';
 
 $pdo = leads_db();
 $where = [];
@@ -47,23 +48,32 @@ if ($q !== '') {
 }
 
 $whereSql = $where ? (' WHERE ' . implode(' AND ', $where)) : '';
-$countStmt = $pdo->prepare('SELECT COUNT(*) FROM leads' . $whereSql);
-$countStmt->execute($params);
-$total = (int) $countStmt->fetchColumn();
-$totalPages = max(1, (int) ceil($total / $perPage));
-if ($page > $totalPages) {
-    $page = $totalPages;
-    $offset = ($page - 1) * $perPage;
-}
+$total = 0;
+$totalPages = 1;
+$rows = [];
 
-$stmt = $pdo->prepare('SELECT * FROM leads' . $whereSql . ' ORDER BY created_at DESC LIMIT :limit OFFSET :offset');
-foreach ($params as $key => $value) {
-    $stmt->bindValue($key, $value);
+try {
+    $countStmt = $pdo->prepare('SELECT COUNT(*) FROM leads' . $whereSql);
+    $countStmt->execute($params);
+    $total = (int) $countStmt->fetchColumn();
+    $totalPages = max(1, (int) ceil($total / $perPage));
+    if ($page > $totalPages) {
+        $page = $totalPages;
+        $offset = ($page - 1) * $perPage;
+    }
+
+    $stmt = $pdo->prepare('SELECT * FROM leads' . $whereSql . ' ORDER BY created_at DESC LIMIT :limit OFFSET :offset');
+    foreach ($params as $key => $value) {
+        $stmt->bindValue($key, $value);
+    }
+    $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
+    $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (Throwable $e) {
+    $queryError = 'Leads query failed: ' . $e->getMessage();
+    error_log($queryError);
 }
-$stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
-$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $csrf = admin_csrf_token();
 

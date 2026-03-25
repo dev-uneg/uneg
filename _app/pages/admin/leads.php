@@ -75,6 +75,15 @@ require_once __DIR__ . '/../../helpers/icons.php';
       </div>
     </section>
 
+    <?php if (($queryError ?? '') !== ''): ?>
+      <section class="mt-4 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
+        Error de consulta: <?php echo htmlspecialchars((string) $queryError, ENT_QUOTES, 'UTF-8'); ?>
+      </section>
+      <script>
+        console.error(<?php echo json_encode((string) $queryError, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>);
+      </script>
+    <?php endif; ?>
+
     <section class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" data-bulk-scope="leads-table">
       <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3">
         <form method="post" action="<?php echo $base; ?>/admin/leads/delete" data-bulk-delete-form data-checkbox-scope="leads-table" class="flex flex-wrap items-center gap-3">
