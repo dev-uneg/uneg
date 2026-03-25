@@ -36,15 +36,10 @@ if ($dateTo !== '') {
     $params[':to'] = $dateTo . ' 23:59:59';
 }
 if ($q !== '') {
-    $escapedQ = strtr($q, [
-        '\\' => '\\\\',
-        '%' => '\%',
-        '_' => '\_',
-    ]);
-    $where[] = '(full_name LIKE :q1 ESCAPE \'\\\' OR email LIKE :q2 ESCAPE \'\\\' OR interest LIKE :q3 ESCAPE \'\\\')';
-    $params[':q1'] = '%' . $escapedQ . '%';
-    $params[':q2'] = '%' . $escapedQ . '%';
-    $params[':q3'] = '%' . $escapedQ . '%';
+    $where[] = '(full_name LIKE :q1 OR email LIKE :q2 OR interest LIKE :q3)';
+    $params[':q1'] = '%' . $q . '%';
+    $params[':q2'] = '%' . $q . '%';
+    $params[':q3'] = '%' . $q . '%';
 }
 
 $whereSql = $where ? (' WHERE ' . implode(' AND ', $where)) : '';
