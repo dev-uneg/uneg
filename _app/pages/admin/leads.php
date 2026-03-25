@@ -13,7 +13,7 @@ $hasAnyFilter = ($dateFrom !== '' || $dateTo !== '' || trim((string) ($q ?? ''))
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Leads | UNEG</title>
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
-  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=2"></script>
+  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=3"></script>
   <style>
     @font-face {
       font-family: 'Figtree';
