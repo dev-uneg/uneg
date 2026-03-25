@@ -16,13 +16,13 @@ require __DIR__ . '/../../../../partials/header.php';
         <div class="overflow-hidden">
           <div class="bw-track flex transition-transform duration-500 ease-in-out">
             <div class="min-w-full">
-              <img src="<?php echo $assetBase; ?>/_imgs/noticias/eventos/business-week-2026-1.png?v=20260324" alt="Business Week 2026 - Imagen 1" class="w-full h-auto block">
+              <img src="<?php echo $assetBase; ?>/_imgs/noticias/eventos/business-week-2026-1-opt.webp?v=20260324b" alt="Business Week 2026 - Imagen 1" class="w-full h-auto block">
             </div>
             <div class="min-w-full">
-              <img src="<?php echo $assetBase; ?>/_imgs/noticias/eventos/business-week-2026-2.png?v=20260324" alt="Business Week 2026 - Imagen 2" class="w-full h-auto block">
+              <img src="<?php echo $assetBase; ?>/_imgs/noticias/eventos/business-week-2026-2-opt.webp?v=20260324b" alt="Business Week 2026 - Imagen 2" class="w-full h-auto block">
             </div>
             <div class="min-w-full">
-              <img src="<?php echo $assetBase; ?>/_imgs/noticias/eventos/business-week-2026-3.png?v=20260324" alt="Business Week 2026 - Imagen 3" class="w-full h-auto block">
+              <img src="<?php echo $assetBase; ?>/_imgs/noticias/eventos/business-week-2026-3-opt.webp?v=20260324b" alt="Business Week 2026 - Imagen 3" class="w-full h-auto block">
             </div>
           </div>
         </div>
@@ -47,6 +47,7 @@ require __DIR__ . '/../../../../partials/header.php';
         <p class="mt-3">Durante esta semana, se llevaron a cabo diversas conferencias y actividades en las que participaron ponentes especializados en áreas como Tecnología, ámbito Legal, sector Turístico, Marketing, Negocios Internacionales y Finanzas, lo que permitió a los alumnos conocer diferentes perspectivas del mundo laboral y empresarial.</p>
         <p class="mt-3">Así mismo, la participación de profesionistas con experiencia y egresados de la misma institución enriqueció el evento, ya que compartieron casos reales, conocimientos prácticos y recomendaciones para el desarrollo profesional.</p>
         <p class="mt-3">Este tipo de iniciativas refuerzan la importancia de la preparación multidisciplinaria en carreras como Administración, Derecho, Mercadotecnia y Negocios Internacionales, áreas que forman parte de la oferta académica de la Universidad.</p>
+        <p class="mt-3 font-medium text-[#0b2c65]">Con acciones como Business Week 2026, la Universidad de Negocios ISEC reafirma su compromiso con una educación conectada con los retos y oportunidades del mundo actual.</p>
       </div>
     </article>
 

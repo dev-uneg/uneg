@@ -6,7 +6,7 @@ return [
     'excerpt' => 'Conferencias y actividades con especialistas en Tecnología, Legal, Turismo, Marketing, Negocios Internacionales y Finanzas.',
     'href' => '/comunidad/noticias/eventos-de-nuestra-comunidad/business-week-2026',
     'category' => 'eventos-de-nuestra-comunidad',
-    'image' => '/_imgs/noticias/eventos/business-week-2026-1.png?v=20260324',
+    'image' => '/_imgs/noticias/eventos/business-week-2026-1-opt.webp?v=20260324b',
   ],
   [
     'title' => 'Emociones en la adolescencia: comprender para acompañar',
