@@ -268,6 +268,7 @@
           <div class="menu-dropdown menu-dropdown--narrow">
             <div class="simple-menu">
               <a href="<?php echo $base; ?>/comunidad/alumnos">Alumnos</a>
+              <a href="https://uneg.academic.lat/Autenticacion.aspx" target="_blank" rel="noopener noreferrer">Portal Escolar</a>
               <a href="<?php echo $base; ?>/comunidad/docentes">Docentes</a>
               <div class="simple-item">
                 <a href="<?php echo $base; ?>/comunidad/noticias">Noticias</a>
@@ -415,6 +416,7 @@
           </div>
           <div id="mobile-comunidad" class="hidden mt-3 space-y-3 text-sm">
             <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/alumnos">Alumnos</a>
+            <a class="block hover:text-[#0d4fb6]" href="https://uneg.academic.lat/Autenticacion.aspx" target="_blank" rel="noopener noreferrer">Portal Escolar</a>
             <a class="block hover:text-[#0d4fb6]" href="<?php echo $base; ?>/comunidad/docentes">Docentes</a>
 
             <div>
