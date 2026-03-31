@@ -224,8 +224,11 @@ $router->map('GET|POST', '/admin/leads-login', function (): void {
 $router->map('GET', '/admin/panel', function (): void {
     require __DIR__ . '/controllers/admin/panel.php';
 });
-$router->map('GET|POST', '/admin/form-tests', function (): void {
-    require __DIR__ . '/controllers/admin/form_tests.php';
+$router->map('GET', '/admin/reports', function (): void {
+    require __DIR__ . '/controllers/admin/reports_index.php';
+});
+$router->map('GET', '/admin/reports/uneg-mensual', function (): void {
+    require __DIR__ . '/controllers/admin/reports_uneg.php';
 });
 $router->map('GET', '/admin/leads', function (): void {
     require __DIR__ . '/controllers/admin/leads_index.php';
@@ -460,6 +463,12 @@ $router->map('POST', '/api/egresados', function (): void {
 });
 $router->map('POST', '/api/buzon-rector', function (): void {
     require __DIR__ . '/controllers/forms/buzon_rector_store.php';
+});
+$router->map('POST', '/api/events/whatsapp-click', function (): void {
+    require __DIR__ . '/controllers/events/whatsapp_click.php';
+});
+$router->map('POST', '/api/events/download-click', function (): void {
+    require __DIR__ . '/controllers/events/download_click.php';
 });
 
 // ---------------------------

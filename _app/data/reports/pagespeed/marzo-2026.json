@@ -1,0 +1,25 @@
+{
+  "captured_at": "30/03/2026 18:42:58",
+  "source_url": "https://uneg.edu.mx/",
+  "evidence_url": "https://pagespeed.web.dev/analysis/https-uneg-edu-mx/mne7pitjx6?form_factor=desktop",
+  "desktop": {
+    "label": "Ordenador",
+    "metrics": [
+      { "name": "LCP", "value": 1.3, "unit": "s", "goal": "< 2.5s" },
+      { "name": "INP", "value": 49, "unit": "ms", "goal": "< 200ms" },
+      { "name": "CLS", "value": 0.0, "unit": "", "goal": "< 0.1" },
+      { "name": "FCP", "value": 0.9, "unit": "s", "goal": "< 1.8s" },
+      { "name": "TTFB", "value": 0.4, "unit": "s", "goal": "< 0.8s" }
+    ]
+  },
+  "mobile": {
+    "label": "Móvil",
+    "metrics": [
+      { "name": "LCP", "value": 1.8, "unit": "s", "goal": "< 2.5s" },
+      { "name": "INP", "value": 121, "unit": "ms", "goal": "< 200ms" },
+      { "name": "CLS", "value": 0.0, "unit": "", "goal": "< 0.1" },
+      { "name": "FCP", "value": 1.3, "unit": "s", "goal": "< 1.8s" },
+      { "name": "TTFB", "value": 0.6, "unit": "s", "goal": "< 0.8s" }
+    ]
+  }
+}

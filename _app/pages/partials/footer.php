@@ -100,7 +100,7 @@
         strpos($requestPath, '/doctorados') === 0;
     ?>
     <?php if (!$isOfferOrLandingPath): ?>
-      <a href="https://wa.me/5215571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20UNEG%20y%20quiero%20informes%20de%20inscripciones%20y%20costos." class="whatsapp-float" aria-label="WhatsApp">
+      <a href="https://wa.me/5215571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20UNEG%20y%20quiero%20informes%20de%20inscripciones%20y%20costos." class="whatsapp-float" aria-label="WhatsApp" data-track-whatsapp="1">
         <?php echo uneg_icon('whatsapp', 'h-7 w-7'); ?>
       </a>
     <?php endif; ?>
@@ -205,6 +205,81 @@
           addContactoUtmFields(form);
           addPagePathField(form);
           addTurnstile(form);
+        });
+
+        const trackWhatsappClick = (anchor) => {
+          if (!(anchor instanceof HTMLAnchorElement)) return;
+
+          postTrackingEvent(
+            <?php echo json_encode($base . '/api/events/whatsapp-click', JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>,
+            {
+              page_path: window.location.pathname || '/',
+              target_url: anchor.getAttribute('href') || '',
+              referrer_url: document.referrer || ''
+            }
+          );
+        };
+
+        const postTrackingEvent = (endpoint, payload) => {
+          const body = JSON.stringify(payload || {});
+          if (navigator.sendBeacon) {
+            const blob = new Blob([body], { type: 'application/json' });
+            navigator.sendBeacon(endpoint, blob);
+            return;
+          }
+
+          fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body,
+            keepalive: true
+          }).catch(() => {});
+        };
+
+        const getOfferNameForPlanLink = (anchor) => {
+          if (!(anchor instanceof HTMLElement)) return '';
+          const explicit = (anchor.getAttribute('data-offer-name') || '').trim();
+          if (explicit) return explicit;
+
+          const scope = anchor.closest('article, section, main, .program-card, .card') || document;
+          const heading = scope.querySelector('h1, h2, h3, h4');
+          if (heading && heading.textContent) {
+            return heading.textContent.replace(/\s+/g, ' ').trim().slice(0, 190);
+          }
+
+          const pageHeading = document.querySelector('h1');
+          if (pageHeading && pageHeading.textContent) {
+            return pageHeading.textContent.replace(/\s+/g, ' ').trim().slice(0, 190);
+          }
+
+          return '';
+        };
+
+        const isPlanDownloadLink = (anchor) => {
+          if (!(anchor instanceof HTMLAnchorElement)) return false;
+          const href = (anchor.getAttribute('href') || '').trim().toLowerCase();
+          return href.includes('/_assets/planes-de-estudio/');
+        };
+
+        const trackPlanDownloadClick = (anchor) => {
+          if (!(anchor instanceof HTMLAnchorElement)) return;
+          postTrackingEvent(
+            <?php echo json_encode($base . '/api/events/download-click', JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>,
+            {
+              page_path: window.location.pathname || '/',
+              offer_name: getOfferNameForPlanLink(anchor),
+              referrer_url: document.referrer || ''
+            }
+          );
+        };
+
+        document.querySelectorAll('a[data-track-whatsapp=\"1\"]').forEach((anchor) => {
+          anchor.addEventListener('click', () => trackWhatsappClick(anchor), { passive: true });
+        });
+
+        document.querySelectorAll('a[href]').forEach((anchor) => {
+          if (!isPlanDownloadLink(anchor)) return;
+          anchor.addEventListener('click', () => trackPlanDownloadClick(anchor), { passive: true });
         });
       })();
     </script>

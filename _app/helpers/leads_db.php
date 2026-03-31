@@ -113,8 +113,27 @@ function leads_db_column_exists(PDO $pdo, string $table, string $column): bool
     return (bool) $stmt->fetchColumn();
 }
 
+function leads_db_table_exists(PDO $pdo, string $table): bool
+{
+    $stmt = $pdo->prepare(
+        'SELECT 1 FROM INFORMATION_SCHEMA.TABLES
+         WHERE TABLE_SCHEMA = DATABASE()
+           AND TABLE_NAME = :table
+         LIMIT 1'
+    );
+    $stmt->execute([
+        ':table' => $table,
+    ]);
+
+    return (bool) $stmt->fetchColumn();
+}
+
 function leads_db_init(PDO $pdo): void
 {
+    if (leads_db_table_exists($pdo, 'plan_download_clicks') && !leads_db_table_exists($pdo, 'download_clicks')) {
+        $pdo->exec('RENAME TABLE plan_download_clicks TO download_clicks');
+    }
+
     $pdo->exec('CREATE TABLE IF NOT EXISTS leads (
         id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
         full_name VARCHAR(190) NOT NULL,
@@ -167,6 +186,30 @@ function leads_db_init(PDO $pdo): void
         PRIMARY KEY (id)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
+    $pdo->exec('CREATE TABLE IF NOT EXISTS whatsapp_clicks (
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        page_path VARCHAR(255) NULL,
+        target_url VARCHAR(500) NULL,
+        device_type VARCHAR(30) NULL,
+        referrer_url VARCHAR(500) NULL,
+        ip VARCHAR(64) NULL,
+        user_agent TEXT NULL,
+        created_at DATETIME NOT NULL,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
+
+    $pdo->exec('CREATE TABLE IF NOT EXISTS download_clicks (
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        page_path VARCHAR(255) NULL,
+        offer_name VARCHAR(190) NULL,
+        device_type VARCHAR(30) NULL,
+        referrer_url VARCHAR(500) NULL,
+        ip VARCHAR(64) NULL,
+        user_agent TEXT NULL,
+        created_at DATETIME NOT NULL,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
+
     if (!leads_db_index_exists($pdo, 'leads', 'leads_created_at_idx')) {
         $pdo->exec('CREATE INDEX leads_created_at_idx ON leads (created_at)');
     }
@@ -178,6 +221,21 @@ function leads_db_init(PDO $pdo): void
     }
     if (!leads_db_index_exists($pdo, 'buzon_rector', 'buzon_rector_created_at_idx')) {
         $pdo->exec('CREATE INDEX buzon_rector_created_at_idx ON buzon_rector (created_at)');
+    }
+    if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_created_at_idx')) {
+        $pdo->exec('CREATE INDEX whatsapp_clicks_created_at_idx ON whatsapp_clicks (created_at)');
+    }
+    if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_page_path_idx')) {
+        $pdo->exec('CREATE INDEX whatsapp_clicks_page_path_idx ON whatsapp_clicks (page_path(190))');
+    }
+    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_created_at_idx')) {
+        $pdo->exec('CREATE INDEX download_clicks_created_at_idx ON download_clicks (created_at)');
+    }
+    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_page_path_idx')) {
+        $pdo->exec('CREATE INDEX download_clicks_page_path_idx ON download_clicks (page_path(190))');
+    }
+    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_offer_name_idx')) {
+        $pdo->exec('CREATE INDEX download_clicks_offer_name_idx ON download_clicks (offer_name)');
     }
 }
 
@@ -326,6 +384,76 @@ function buzon_rector_db_insert(array $data): ?int
             ':correo' => $data['correo'] ?? '',
             ':asunto' => $data['asunto'] ?? '',
             ':mensaje' => $data['mensaje'] ?? '',
+            ':ip' => $data['ip'] ?? null,
+            ':user_agent' => $data['user_agent'] ?? null,
+            ':created_at' => leads_db_datetime($data['created_at'] ?? null),
+        ]);
+
+        return (int) $pdo->lastInsertId();
+    } catch (Throwable $e) {
+        return null;
+    }
+}
+
+function whatsapp_click_db_insert(array $data): ?int
+{
+    try {
+        $pdo = leads_db();
+
+        $stmt = $pdo->prepare('INSERT INTO whatsapp_clicks (
+            page_path, target_url, device_type, referrer_url, ip, user_agent, created_at
+        ) VALUES (
+            :page_path, :target_url, :device_type, :referrer_url, :ip, :user_agent, :created_at
+        )');
+
+        $pagePath = trim((string) ($data['page_path'] ?? ''));
+        if ($pagePath !== '' && strpos($pagePath, '/') !== 0) {
+            $pagePath = '/' . ltrim($pagePath, '/');
+        }
+        $targetUrl = trim((string) ($data['target_url'] ?? ''));
+        $deviceType = trim((string) ($data['device_type'] ?? ''));
+        $referrerUrl = trim((string) ($data['referrer_url'] ?? ''));
+
+        $stmt->execute([
+            ':page_path' => $pagePath !== '' ? substr($pagePath, 0, 255) : null,
+            ':target_url' => $targetUrl !== '' ? substr($targetUrl, 0, 500) : null,
+            ':device_type' => $deviceType !== '' ? substr($deviceType, 0, 30) : null,
+            ':referrer_url' => $referrerUrl !== '' ? substr($referrerUrl, 0, 500) : null,
+            ':ip' => $data['ip'] ?? null,
+            ':user_agent' => $data['user_agent'] ?? null,
+            ':created_at' => leads_db_datetime($data['created_at'] ?? null),
+        ]);
+
+        return (int) $pdo->lastInsertId();
+    } catch (Throwable $e) {
+        return null;
+    }
+}
+
+function download_click_db_insert(array $data): ?int
+{
+    try {
+        $pdo = leads_db();
+
+        $stmt = $pdo->prepare('INSERT INTO download_clicks (
+            page_path, offer_name, device_type, referrer_url, ip, user_agent, created_at
+        ) VALUES (
+            :page_path, :offer_name, :device_type, :referrer_url, :ip, :user_agent, :created_at
+        )');
+
+        $pagePath = trim((string) ($data['page_path'] ?? ''));
+        if ($pagePath !== '' && strpos($pagePath, '/') !== 0) {
+            $pagePath = '/' . ltrim($pagePath, '/');
+        }
+        $offerName = trim((string) ($data['offer_name'] ?? ''));
+        $deviceType = trim((string) ($data['device_type'] ?? ''));
+        $referrerUrl = trim((string) ($data['referrer_url'] ?? ''));
+
+        $stmt->execute([
+            ':page_path' => $pagePath !== '' ? substr($pagePath, 0, 255) : null,
+            ':offer_name' => $offerName !== '' ? substr($offerName, 0, 190) : null,
+            ':device_type' => $deviceType !== '' ? substr($deviceType, 0, 30) : null,
+            ':referrer_url' => $referrerUrl !== '' ? substr($referrerUrl, 0, 500) : null,
             ':ip' => $data['ip'] ?? null,
             ':user_agent' => $data['user_agent'] ?? null,
             ':created_at' => leads_db_datetime($data['created_at'] ?? null),

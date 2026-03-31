@@ -20,6 +20,7 @@ if (!function_exists('uneg_icon')) {
       'graduation-cap' => 'graduation-cap',
       'mailbox' => 'mail',
       'shield-check' => 'check-circle',
+      'line-chart' => 'line-chart',
       'key-round' => 'key-round',
       'facebook' => 'facebook',
       'instagram' => 'instagram',

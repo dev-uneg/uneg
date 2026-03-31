@@ -12,7 +12,7 @@ require_once __DIR__ . '/../../helpers/icons.php';
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Panel Admin | UNEG</title>
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
-  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=2"></script>
+  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=3"></script>
   <style>
     @font-face {
       font-family: 'Figtree';
@@ -78,13 +78,13 @@ require_once __DIR__ . '/../../helpers/icons.php';
         <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo $buzonCount; ?></p>
       </a>
 
-      <a href="<?php echo $base; ?>/admin/form-tests" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1d4ed8] text-white">
-          <?php echo uneg_icon('shield-check', 'h-6 w-6'); ?>
+      <a href="<?php echo $base; ?>/admin/reports" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0f766e] text-white">
+          <?php echo uneg_icon('layout-grid', 'h-6 w-6'); ?>
         </div>
-        <h2 class="mt-4 text-lg font-semibold text-[#0b2c65]">Pruebas de Forms</h2>
-        <p class="mt-1 text-sm text-slate-600">Ejecuta pruebas de envío, guardado en BD y estado Pipedrive.</p>
-        <p class="mt-4 text-sm font-semibold text-slate-700">Diagnóstico</p>
+        <h2 class="mt-4 text-lg font-semibold text-[#0b2c65]">Reportes</h2>
+        <p class="mt-1 text-sm text-slate-600">Listado de reportes mensuales de performance y CRO para UNEG.</p>
+        <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo $reportsCount; ?></p>
       </a>
     </section>
   </main>

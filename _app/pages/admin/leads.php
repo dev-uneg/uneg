@@ -120,6 +120,7 @@ $hasAnyFilter = ($dateFrom !== '' || $dateTo !== '' || trim((string) ($q ?? ''))
               <th class="px-4 py-3 font-semibold">Email</th>
               <th class="px-4 py-3 font-semibold">Teléfono</th>
               <th class="px-4 py-3 font-semibold">Interés</th>
+              <th class="px-4 py-3 font-semibold">Origen</th>
               <th class="px-4 py-3 font-semibold">Página origen</th>
               <th class="px-4 py-3 font-semibold">Estado</th>
               <th class="px-4 py-3 font-semibold">Acciones</th>
@@ -128,7 +129,7 @@ $hasAnyFilter = ($dateFrom !== '' || $dateTo !== '' || trim((string) ($q ?? ''))
           <tbody class="divide-y divide-slate-100">
             <?php if ($rows === []): ?>
               <tr>
-                <td colspan="9" class="px-4 py-6 text-center text-slate-500">
+                <td colspan="10" class="px-4 py-6 text-center text-slate-500">
                   <?php if (($q ?? '') !== '' || $dateFrom !== '' || $dateTo !== ''): ?>
                     Sin resultados para los filtros actuales.
                   <?php else: ?>
@@ -149,6 +150,16 @@ $hasAnyFilter = ($dateFrom !== '' || $dateTo !== '' || trim((string) ($q ?? ''))
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars($row['email'], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars($row['phone'], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars($row['interest'], ENT_QUOTES, 'UTF-8'); ?></td>
+                <td class="px-4 py-3 text-slate-600">
+                  <?php
+                    $source = trim((string) ($row['source'] ?? ''));
+                  ?>
+                  <?php if ($source !== ''): ?>
+                    <?php echo htmlspecialchars($source, ENT_QUOTES, 'UTF-8'); ?>
+                  <?php else: ?>
+                    <span class="text-slate-400">Sin dato</span>
+                  <?php endif; ?>
+                </td>
                 <td class="px-4 py-3 text-slate-600">
                   <?php
                     $pagePath = trim((string) ($row['page_path'] ?? ''));

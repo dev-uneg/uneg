@@ -63,7 +63,7 @@ require __DIR__ . '/../partials/header-lp.php';
             </div>
 
             <div class="relative">
-              <select class="block w-full appearance-none rounded-md border border-slate-300 px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" name="source">
+              <select class="block w-full appearance-none rounded-md border border-slate-300 px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" name="message">
                 <option value="" selected>&iquest;En qu&eacute; etapa acad&eacute;mica te encuentras?</option>
                 <option value="Secundaria terminada">Secundaria terminada</option>
                 <option value="Secundaria en curso">Secundaria en curso</option>

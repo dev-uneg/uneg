@@ -12,12 +12,14 @@ $dbError = '';
 $leadsCount = 0;
 $egresadosCount = 0;
 $buzonCount = 0;
+$reportsCount = 0;
 
 try {
     $pdo = leads_db();
     $leadsCount = (int) $pdo->query('SELECT COUNT(*) FROM leads')->fetchColumn();
     $egresadosCount = (int) $pdo->query('SELECT COUNT(*) FROM egresados')->fetchColumn();
     $buzonCount = (int) $pdo->query('SELECT COUNT(*) FROM buzon_rector')->fetchColumn();
+    $reportsCount = (int) $pdo->query("SELECT COUNT(DISTINCT DATE_FORMAT(created_at, '%Y-%m')) FROM leads")->fetchColumn();
 } catch (Throwable $e) {
     $dbError = 'No se pudo conectar a la base de datos. Revisa host/usuario/password/permisos de MySQL.';
 }
