@@ -139,8 +139,9 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
       <?php if ($isOfferEducationPath): ?>
       main > section:first-of-type > img.block.w-full.h-auto[loading="eager"],
       main main > section:first-of-type > img.block.w-full.h-auto[loading="eager"] {
-        height: 140px !important;
-        object-fit: cover;
+        height: auto !important;
+        max-height: clamp(120px, 34vw, 160px);
+        width: 100%;
       }
       <?php endif; ?>
     }
