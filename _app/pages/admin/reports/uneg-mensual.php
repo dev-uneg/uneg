@@ -348,13 +348,13 @@ $scoreMetricStatus = static function (string $name, float $value): array {
     <section class="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
       <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div class="border-b border-slate-200 px-5 py-4">
-          <h2 class="text-lg font-semibold text-slate-800">Top ofertas por descargas</h2>
+          <h2 class="text-lg font-semibold text-slate-800">Top clics en Plan de estudios</h2>
         </div>
         <div class="overflow-x-auto">
           <table class="min-w-full text-left text-sm">
             <thead class="bg-slate-100 text-slate-700">
               <tr>
-                <th class="px-4 py-3 font-semibold">Oferta</th>
+                <th class="px-4 py-3 font-semibold">Botón/Enlace por oferta</th>
                 <th class="px-4 py-3 font-semibold">Clicks</th>
               </tr>
             </thead>

@@ -239,20 +239,51 @@
         const getOfferNameForPlanLink = (anchor) => {
           if (!(anchor instanceof HTMLElement)) return '';
           const explicit = (anchor.getAttribute('data-offer-name') || '').trim();
-          if (explicit) return explicit;
+          if (explicit) return explicit.slice(0, 190);
 
-          const scope = anchor.closest('article, section, main, .program-card, .card') || document;
-          const heading = scope.querySelector('h1, h2, h3, h4');
-          if (heading && heading.textContent) {
-            return heading.textContent.replace(/\s+/g, ' ').trim().slice(0, 190);
-          }
+          const normalize = (text) => (text || '').replace(/\s+/g, ' ').trim();
+          const withPrefix = (name) => {
+            const clean = normalize(name);
+            if (!clean) return '';
+            return ('Plan de Estudios - ' + clean).slice(0, 190);
+          };
+
+          const fromPath = () => {
+            const rawPath = String(window.location.pathname || '').split('?')[0].split('#')[0];
+            const cleanPath = rawPath.replace(/^\/+|\/+$/g, '');
+            if (!cleanPath) return '';
+
+            const parts = cleanPath.split('/').filter(Boolean);
+            let slug = parts[parts.length - 1] || '';
+            if (!slug) return '';
+
+            slug = decodeURIComponent(slug);
+            const label = slug
+              .replace(/[-_]+/g, ' ')
+              .replace(/\b\w/g, (char) => char.toUpperCase())
+              .replace(/\bSua\b/g, 'SUA')
+              .trim();
+
+            return withPrefix(label);
+          };
+
+          const fromRoute = fromPath();
+          if (fromRoute) return fromRoute;
 
           const pageHeading = document.querySelector('h1');
           if (pageHeading && pageHeading.textContent) {
-            return pageHeading.textContent.replace(/\s+/g, ' ').trim().slice(0, 190);
+            const fromH1 = withPrefix(pageHeading.textContent);
+            if (fromH1) return fromH1;
           }
 
-          return '';
+          const scope = anchor.closest('article, section, main, .program-card, .card') || document;
+          const localHeading = scope.querySelector('h2, h1, h4');
+          if (localHeading && localHeading.textContent) {
+            const fromLocal = withPrefix(localHeading.textContent);
+            if (fromLocal) return fromLocal;
+          }
+
+          return 'Plan de Estudios';
         };
 
         const isPlanDownloadLink = (anchor) => {
