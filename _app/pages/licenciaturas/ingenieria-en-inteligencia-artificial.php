@@ -17,7 +17,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Modalidad Presencial</p>
-          <p class="text-white/70 text-xs">Licenciaturas</p>
+          <p class="text-white/70 text-xs">Ingenierías</p>
         </div>
       </div>
       <div class="flex items-center gap-3">
@@ -35,7 +35,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Validez Oficial</p>
-          <p class="text-white/70 text-xs">RVOE / UNAM</p>
+          <p class="text-white/70 text-xs">Incorporación IPN: A-RVOE-DG-NS/04-2024</p>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@ require __DIR__ . '/../partials/header.php';
         <input class="w-full rounded-md border border-slate-300 px-3 py-2 sm:col-span-2 col-span-1" name="full_name" placeholder="Nombre completo*" type="text" required />
         <input class="w-full rounded-md border border-slate-300 px-3 py-2" name="email" placeholder="Correo Electrónico*" type="email" required />
         <input class="w-full rounded-md border border-slate-300 px-3 py-2" name="phone" placeholder="Teléfono*" type="tel" required />
-        <input type="hidden" name="interest" value="Licenciatura en Ingeniería en Inteligencia Artificial" />
+        <input type="hidden" name="interest" value="Ingeniería en Inteligencia Artificial" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" name="privacy" value="1" class="h-4 w-4" required />
           He leído y acepto el <a href="<?php echo $base; ?>/aviso-de-privacidad" class="font-semibold text-slate-700 underline" target="_blank" rel="noopener">Aviso de Privacidad</a>
@@ -118,7 +118,7 @@ require __DIR__ . '/../partials/header.php';
               <i class="text-xl" data-lucide="folder"></i>
             </div>
             <h4 class="mt-3 font-semibold">Requisitos</h4>
-            <p class="mt-2 text-sm text-slate-600">Para cursar esta licenciatura deberás contar con los siguientes documentos:</p>
+            <p class="mt-2 text-sm text-slate-600">Para cursar esta ingeniería deberás contar con los siguientes documentos:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Acta de nacimiento (Original y 2 copias).</li>
               <li>Certificado de Nivel Medio Superior (Original y 2 copias).</li>
@@ -133,7 +133,7 @@ require __DIR__ . '/../partials/header.php';
               <i class="text-xl" data-lucide="check-circle"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
-            <p class="mt-2 text-sm text-slate-600">Como aspirante de esta licenciatura deberás cubrir el siguiente perfil:</p>
+            <p class="mt-2 text-sm text-slate-600">Como aspirante de esta ingeniería deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Interés en invertir eficazmente e incrementar la economía empresarial.</li>
               <li>Interés en desarrollar habilidades para planear, desarrollar y dirigir estrategias que hagan crecer empresas o instituciones.</li>
@@ -146,7 +146,7 @@ require __DIR__ . '/../partials/header.php';
               <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
             <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
-            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura tendrás habilidades para:</p>
+            <p class="mt-2 text-sm text-slate-600">Al egresar de esta Ingeniería tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Cambiar la visión proyectiva de negocios.</li>
               <li>Realizar nuevos modelos de desarrollo empresarial.</li>
@@ -177,19 +177,18 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Ingeniería en Inteligencia Artificial</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Ingeniería en Inteligencia Artificial</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left font-semibold text-[#0b2c65]" data-sem="s1">Primer Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s2">Segundo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s3">Tercer Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s4">Cuarto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s5">Quinto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s9">Noveno Cuatrimestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left font-semibold text-[#0b2c65]" data-sem="s1">Primer Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s2">Segundo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s3">Tercer Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s4">Cuarto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s5">Quinto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Semestre</button>
         </div>
       </div>
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
@@ -253,9 +252,6 @@ require __DIR__ . '/../partials/header.php';
           <li>Gestión Empresarial</li>
           <li>Estancia Profesional</li>
           <li>Desarrollo De Habilidades Sociales Para La Alta Dirección</li>
-        </ul>
-        <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
-          <li>Por definir</li>
         </ul>
       </div>
     </div>
