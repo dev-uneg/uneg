@@ -1,7 +1,7 @@
 <?php
 $title = 'Gracias | UNEG';
 $active = '';
-require __DIR__ . '/partials/header.php';
+require __DIR__ . '/partials/header-lp.php';
 
 $origen = trim((string) ($_GET['origen'] ?? ''));
 $esBuzon = $origen === 'buzon';
@@ -28,6 +28,15 @@ $mensajeGracias = $esBuzon
 </main>
 
 <?php if (!$esBuzon): ?>
+  <!-- SPOTIFY EVENTO DE CONVERSION (SOLO GRACIAS LP) -->
+  <script>
+    (function (w) {
+      if (typeof w.spdt === 'function') {
+        w.spdt('custom_event_1');
+      }
+    })(window);
+  </script>
+  <!-- /SPOTIFY EVENTO DE CONVERSION (SOLO GRACIAS LP) -->
   <script>
     gtag('event', 'conversion', {
       'send_to': 'AW-17972441356/n6SkCJLK2f0bEIzi9vlC',

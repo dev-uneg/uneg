@@ -177,7 +177,7 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">

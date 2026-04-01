@@ -26,7 +26,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Horarios Flexibles</p>
-          <p class="text-white/70 text-xs">Lunes a viernes</p>
+          <p class="text-white/70 text-xs">Semestral</p>
         </div>
       </div>
       <div class="flex items-center gap-3">
@@ -181,14 +181,14 @@ require __DIR__ . '/../partials/header.php';
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left font-semibold text-[#0b2c65]" data-sem="s1">Primer Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s2">Segundo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s3">Tercer Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s4">Cuarto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s5">Quinto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Cuatrimestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left font-semibold text-[#0b2c65]" data-sem="s1">Primer Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s2">Segundo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s3">Tercer Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s4">Cuarto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s5">Quinto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Semestre</button>
         </div>
       </div>
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
@@ -288,7 +288,7 @@ require __DIR__ . '/../partials/header.php';
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
           <summary class="font-semibold cursor-pointer">¿Cuánto dura la carrera de psicología?</summary>
           <p class="mt-2 text-slate-600 text-sm">
-            La carrera de psicología en la Universidad de Negocios ISEC, tiene una duración de 8 cuatrimestres, de acuerdo al material oficial del plan de estudios de la licenciatura en psicología. A su vez, en cada periodo cuatrimestral, el alumno toma clase de 7 asignaturas; sin embargo, en el quinto semestre el estudiante tiene la oportunidad de elegir cuáles son las optativas que llevará, a fin de comenzar a especializarse.
+            La carrera de psicología en la Universidad de Negocios ISEC, tiene una duración de 8 semestres, de acuerdo al material oficial del plan de estudios de la licenciatura en psicología. A su vez, en cada periodo semestral, el alumno toma clase de 7 asignaturas; sin embargo, en el quinto semestre el estudiante tiene la oportunidad de elegir cuáles son las optativas que llevará, a fin de comenzar a especializarse.
           </p>
           <p class="mt-2 text-slate-600 text-sm">
             Hay dos horarios disponibles, el matutino, que abarca desde las 7:00 am a las 13:00 horas, y el vespertino, que abarca desde las 18:00 a las 22:00 horas.

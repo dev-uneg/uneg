@@ -26,7 +26,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Horarios Flexibles</p>
-          <p class="text-white/70 text-xs">Lunes a viernes</p>
+          <p class="text-white/70 text-xs">Semestral</p>
         </div>
       </div>
       <div class="flex items-center gap-3">

@@ -25,6 +25,16 @@ if ($canonicalPath !== '/' && substr($canonicalPath, -1) === '/') {
   $canonicalPath = rtrim($canonicalPath, '/');
 }
 $canonicalUrl = 'https://uneg.edu.mx' . $canonicalPath;
+$isOfferEducationPath =
+  $requestPath === '/oferta-educativa' ||
+  $requestPath === '/nivel-medio-superior' ||
+  $requestPath === '/cch-isec' ||
+  $requestPath === '/bachillerato-en-linea' ||
+  $requestPath === '/bachillerato-tecnico-administracion-empresas-turisticas' ||
+  $requestPath === '/curso-colbach' ||
+  strpos($requestPath, '/licenciaturas') === 0 ||
+  strpos($requestPath, '/maestrias') === 0 ||
+  strpos($requestPath, '/doctorados') === 0;
 
 if (!isset($metaDescription) || trim((string) $metaDescription) === '') {
   $topic = preg_replace('/\s+/', ' ', str_replace(['| UNEG', 'UNEG -', ' - UNEG'], '', $title));
@@ -99,29 +109,6 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
   src="https://www.facebook.com/tr?id=1244286750594641&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
-  <!-- Spotify Pixel: base global + event_id dinamico por carga para deduplicacion -->
-  <script>
-    (function (w, d) {
-      var id = 'spdt-capture', n = 'script';
-      if (!d.getElementById(id)) {
-        w.spdt = w.spdt || function () {
-          (w.spdt.q = w.spdt.q || []).push(arguments);
-        };
-        var e = d.createElement(n); e.id = id; e.async = 1;
-        e.src = 'https://pixel.byspotify.com/ping.min.js';
-        var s = d.getElementsByTagName(n)[0];
-        s.parentNode.insertBefore(e, s);
-      }
-
-      // Genera un ID unico por vista (simple y suficiente para medicion basica).
-      var eventId = (w.crypto && typeof w.crypto.randomUUID === 'function')
-        ? w.crypto.randomUUID()
-        : ('uneg-view-' + Date.now() + '-' + Math.random().toString(16).slice(2, 10));
-
-      w.spdt('conf', { key: '14c182851580462a8db1af7fa7e8491c' });
-      w.spdt('view', { event_id: eventId });
-    })(window, document);
-  </script>
   <style>
     @font-face {
       font-family: 'Figtree';
@@ -149,11 +136,13 @@ $navLink = function (string $href, string $label, string $key) use ($active, $ba
         margin-left: 0 !important;
         margin-right: 0 !important;
       }
+      <?php if ($isOfferEducationPath): ?>
       main > section:first-of-type > img.block.w-full.h-auto[loading="eager"],
       main main > section:first-of-type > img.block.w-full.h-auto[loading="eager"] {
-        height: 180px !important;
+        height: 140px !important;
         object-fit: cover;
       }
+      <?php endif; ?>
     }
   </style>
 </head>
