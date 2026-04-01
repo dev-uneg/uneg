@@ -130,8 +130,11 @@ function leads_db_table_exists(PDO $pdo, string $table): bool
 
 function leads_db_init(PDO $pdo): void
 {
-    if (leads_db_table_exists($pdo, 'plan_download_clicks') && !leads_db_table_exists($pdo, 'download_clicks')) {
-        $pdo->exec('RENAME TABLE plan_download_clicks TO download_clicks');
+    if (leads_db_table_exists($pdo, 'plan_download_clicks') && !leads_db_table_exists($pdo, 'download_clicks') && !leads_db_table_exists($pdo, 'cta_clicks')) {
+        $pdo->exec('RENAME TABLE plan_download_clicks TO cta_clicks');
+    }
+    if (leads_db_table_exists($pdo, 'download_clicks') && !leads_db_table_exists($pdo, 'cta_clicks')) {
+        $pdo->exec('RENAME TABLE download_clicks TO cta_clicks');
     }
 
     $pdo->exec('CREATE TABLE IF NOT EXISTS leads (
@@ -200,10 +203,10 @@ function leads_db_init(PDO $pdo): void
         PRIMARY KEY (id)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
-    $pdo->exec('CREATE TABLE IF NOT EXISTS download_clicks (
+    $pdo->exec('CREATE TABLE IF NOT EXISTS cta_clicks (
         id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
         page_path VARCHAR(255) NULL,
-        offer_name VARCHAR(190) NULL,
+        click_label VARCHAR(190) NULL,
         device_type VARCHAR(30) NULL,
         referrer_url VARCHAR(500) NULL,
         ip VARCHAR(64) NULL,
@@ -260,30 +263,33 @@ function leads_db_init(PDO $pdo): void
     if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_day_device_idx')) {
         $pdo->exec('CREATE INDEX whatsapp_clicks_day_device_idx ON whatsapp_clicks (created_day, device_type)');
     }
-    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_created_at_idx')) {
-        $pdo->exec('CREATE INDEX download_clicks_created_at_idx ON download_clicks (created_at)');
+    if (leads_db_column_exists($pdo, 'cta_clicks', 'offer_name') && !leads_db_column_exists($pdo, 'cta_clicks', 'click_label')) {
+        $pdo->exec('ALTER TABLE cta_clicks CHANGE COLUMN offer_name click_label VARCHAR(190) NULL');
     }
-    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_page_path_idx')) {
-        $pdo->exec('CREATE INDEX download_clicks_page_path_idx ON download_clicks (page_path(190))');
+    if (!leads_db_index_exists($pdo, 'cta_clicks', 'cta_clicks_created_at_idx')) {
+        $pdo->exec('CREATE INDEX cta_clicks_created_at_idx ON cta_clicks (created_at)');
     }
-    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_offer_name_idx')) {
-        $pdo->exec('CREATE INDEX download_clicks_offer_name_idx ON download_clicks (offer_name)');
+    if (!leads_db_index_exists($pdo, 'cta_clicks', 'cta_clicks_page_path_idx')) {
+        $pdo->exec('CREATE INDEX cta_clicks_page_path_idx ON cta_clicks (page_path(190))');
     }
-    if (!leads_db_column_exists($pdo, 'download_clicks', 'created_day')) {
-        $pdo->exec('ALTER TABLE download_clicks ADD COLUMN created_day DATE NULL AFTER created_at');
+    if (!leads_db_index_exists($pdo, 'cta_clicks', 'cta_clicks_label_idx')) {
+        $pdo->exec('CREATE INDEX cta_clicks_label_idx ON cta_clicks (click_label)');
     }
-    $pdo->exec('UPDATE download_clicks SET created_day = DATE(created_at) WHERE created_day IS NULL');
-    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_created_day_idx')) {
-        $pdo->exec('CREATE INDEX download_clicks_created_day_idx ON download_clicks (created_day)');
+    if (!leads_db_column_exists($pdo, 'cta_clicks', 'created_day')) {
+        $pdo->exec('ALTER TABLE cta_clicks ADD COLUMN created_day DATE NULL AFTER created_at');
     }
-    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_day_offer_idx')) {
-        $pdo->exec('CREATE INDEX download_clicks_day_offer_idx ON download_clicks (created_day, offer_name)');
+    $pdo->exec('UPDATE cta_clicks SET created_day = DATE(created_at) WHERE created_day IS NULL');
+    if (!leads_db_index_exists($pdo, 'cta_clicks', 'cta_clicks_created_day_idx')) {
+        $pdo->exec('CREATE INDEX cta_clicks_created_day_idx ON cta_clicks (created_day)');
     }
-    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_day_page_idx')) {
-        $pdo->exec('CREATE INDEX download_clicks_day_page_idx ON download_clicks (created_day, page_path)');
+    if (!leads_db_index_exists($pdo, 'cta_clicks', 'cta_clicks_day_label_idx')) {
+        $pdo->exec('CREATE INDEX cta_clicks_day_label_idx ON cta_clicks (created_day, click_label)');
     }
-    if (!leads_db_index_exists($pdo, 'download_clicks', 'download_clicks_day_device_idx')) {
-        $pdo->exec('CREATE INDEX download_clicks_day_device_idx ON download_clicks (created_day, device_type)');
+    if (!leads_db_index_exists($pdo, 'cta_clicks', 'cta_clicks_day_page_idx')) {
+        $pdo->exec('CREATE INDEX cta_clicks_day_page_idx ON cta_clicks (created_day, page_path)');
+    }
+    if (!leads_db_index_exists($pdo, 'cta_clicks', 'cta_clicks_day_device_idx')) {
+        $pdo->exec('CREATE INDEX cta_clicks_day_device_idx ON cta_clicks (created_day, device_type)');
     }
 }
 
@@ -484,29 +490,29 @@ function whatsapp_click_db_insert(array $data): ?int
     }
 }
 
-function download_click_db_insert(array $data): ?int
+function cta_click_db_insert(array $data): ?int
 {
     try {
         $pdo = leads_db();
         $createdAt = leads_db_datetime($data['created_at'] ?? null);
 
-        $stmt = $pdo->prepare('INSERT INTO download_clicks (
-            page_path, offer_name, device_type, referrer_url, ip, user_agent, created_at, created_day
+        $stmt = $pdo->prepare('INSERT INTO cta_clicks (
+            page_path, click_label, device_type, referrer_url, ip, user_agent, created_at, created_day
         ) VALUES (
-            :page_path, :offer_name, :device_type, :referrer_url, :ip, :user_agent, :created_at, :created_day
+            :page_path, :click_label, :device_type, :referrer_url, :ip, :user_agent, :created_at, :created_day
         )');
 
         $pagePath = trim((string) ($data['page_path'] ?? ''));
         if ($pagePath !== '' && strpos($pagePath, '/') !== 0) {
             $pagePath = '/' . ltrim($pagePath, '/');
         }
-        $offerName = trim((string) ($data['offer_name'] ?? ''));
+        $clickLabel = trim((string) ($data['click_label'] ?? ($data['offer_name'] ?? '')));
         $deviceType = trim((string) ($data['device_type'] ?? ''));
         $referrerUrl = trim((string) ($data['referrer_url'] ?? ''));
 
         $stmt->execute([
             ':page_path' => $pagePath !== '' ? substr($pagePath, 0, 255) : null,
-            ':offer_name' => $offerName !== '' ? substr($offerName, 0, 190) : null,
+            ':click_label' => $clickLabel !== '' ? substr($clickLabel, 0, 190) : null,
             ':device_type' => $deviceType !== '' ? substr($deviceType, 0, 30) : null,
             ':referrer_url' => $referrerUrl !== '' ? substr($referrerUrl, 0, 500) : null,
             ':ip' => $data['ip'] ?? null,

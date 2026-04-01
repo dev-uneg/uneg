@@ -334,13 +334,13 @@ $scoreMetricStatus = static function (string $name, float $value): array {
 
     <section class="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
       <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-        <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Descargas de plan (total mes)</p>
-        <p class="mt-2 text-3xl font-bold text-slate-900"><?php echo (int) ($summary['download_clicks'] ?? 0); ?></p>
-        <p class="mt-2 text-xs text-slate-600">Eventos en <code>download_clicks</code> durante el periodo.</p>
+        <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Clicks CTA (total mes)</p>
+        <p class="mt-2 text-3xl font-bold text-slate-900"><?php echo (int) ($summary['cta_clicks'] ?? 0); ?></p>
+        <p class="mt-2 text-xs text-slate-600">Eventos en <code>cta_clicks</code> durante el periodo.</p>
       </article>
 
       <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm xl:col-span-2">
-        <h2 class="text-lg font-semibold text-slate-800">Descargas de plan por día</h2>
+        <h2 class="text-lg font-semibold text-slate-800">Clicks CTA por día</h2>
         <div class="mt-4 h-[220px]"><canvas id="planDownloadsByDayChart"></canvas></div>
       </article>
     </section>
@@ -348,19 +348,19 @@ $scoreMetricStatus = static function (string $name, float $value): array {
     <section class="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
       <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div class="border-b border-slate-200 px-5 py-4">
-          <h2 class="text-lg font-semibold text-slate-800">Top clics en Plan de estudios</h2>
+          <h2 class="text-lg font-semibold text-slate-800">Top clics en CTAs</h2>
         </div>
         <div class="overflow-x-auto">
           <table class="min-w-full text-left text-sm">
             <thead class="bg-slate-100 text-slate-700">
               <tr>
-                <th class="px-4 py-3 font-semibold">Botón/Enlace por oferta</th>
+                <th class="px-4 py-3 font-semibold">CTA (botón/enlace)</th>
                 <th class="px-4 py-3 font-semibold">Clicks</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
               <?php if ($planTopOffers === []): ?>
-                <tr><td colspan="2" class="px-4 py-4 text-slate-500">Sin descargas registradas en el periodo.</td></tr>
+                <tr><td colspan="2" class="px-4 py-4 text-slate-500">Sin clics registrados en el periodo.</td></tr>
               <?php endif; ?>
               <?php foreach ($planTopOffers as $row): ?>
                 <tr>
@@ -375,7 +375,7 @@ $scoreMetricStatus = static function (string $name, float $value): array {
 
       <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div class="border-b border-slate-200 px-5 py-4">
-          <h2 class="text-lg font-semibold text-slate-800">Top páginas con descarga</h2>
+          <h2 class="text-lg font-semibold text-slate-800">Top páginas con clics CTA</h2>
         </div>
         <div class="overflow-x-auto">
           <table class="min-w-full text-left text-sm">
@@ -387,7 +387,7 @@ $scoreMetricStatus = static function (string $name, float $value): array {
             </thead>
             <tbody class="divide-y divide-slate-100">
               <?php if ($planTopPages === []): ?>
-                <tr><td colspan="2" class="px-4 py-4 text-slate-500">Sin descargas registradas en el periodo.</td></tr>
+                <tr><td colspan="2" class="px-4 py-4 text-slate-500">Sin clics registrados en el periodo.</td></tr>
               <?php endif; ?>
               <?php foreach ($planTopPages as $row): ?>
                 <tr>
@@ -607,7 +607,7 @@ $scoreMetricStatus = static function (string $name, float $value): array {
       data: {
         labels: planDailyLabels,
         datasets: [{
-          label: 'Descargas',
+          label: 'Clicks',
           data: planDailyValues,
           backgroundColor: '#0f766e'
         }]

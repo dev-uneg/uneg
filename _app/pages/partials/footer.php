@@ -151,8 +151,11 @@
         const addUtmFields = (form) => {
           if (!isOfferApiForm(form)) return;
 
+          const action = form.getAttribute('action') || '';
+          const isLandingForm = action.includes('/api/forms/lp-');
           const params = new URLSearchParams(window.location.search);
-          const source = (params.get('utm_source') || '').trim() || 'organico';
+          const sourceFallback = isLandingForm ? 'lp_sin_utm' : 'organico';
+          const source = (params.get('utm_source') || '').trim() || sourceFallback;
           const medium = (params.get('utm_medium') || '').trim() || 'organico';
           const campaign = (params.get('utm_campaign') || '').trim() || 'organico';
 
@@ -236,18 +239,9 @@
           }).catch(() => {});
         };
 
-        const getOfferNameForPlanLink = (anchor) => {
-          if (!(anchor instanceof HTMLElement)) return '';
-          const explicit = (anchor.getAttribute('data-offer-name') || '').trim();
-          if (explicit) return explicit.slice(0, 190);
+        const normalize = (text) => (text || '').replace(/\s+/g, ' ').trim();
 
-          const normalize = (text) => (text || '').replace(/\s+/g, ' ').trim();
-          const withPrefix = (name) => {
-            const clean = normalize(name);
-            if (!clean) return '';
-            return ('Plan de Estudios - ' + clean).slice(0, 190);
-          };
-
+        const getProgramLabelFromPage = () => {
           const fromPath = () => {
             const rawPath = String(window.location.pathname || '').split('?')[0].split('#')[0];
             const cleanPath = rawPath.replace(/^\/+|\/+$/g, '');
@@ -258,13 +252,12 @@
             if (!slug) return '';
 
             slug = decodeURIComponent(slug);
-            const label = slug
-              .replace(/[-_]+/g, ' ')
-              .replace(/\b\w/g, (char) => char.toUpperCase())
-              .replace(/\bSua\b/g, 'SUA')
-              .trim();
-
-            return withPrefix(label);
+            return normalize(
+              slug
+                .replace(/[-_]+/g, ' ')
+                .replace(/\b\w/g, (char) => char.toUpperCase())
+                .replace(/\bSua\b/g, 'SUA')
+            );
           };
 
           const fromRoute = fromPath();
@@ -272,18 +265,38 @@
 
           const pageHeading = document.querySelector('h1');
           if (pageHeading && pageHeading.textContent) {
-            const fromH1 = withPrefix(pageHeading.textContent);
+            const fromH1 = normalize(pageHeading.textContent);
             if (fromH1) return fromH1;
           }
 
-          const scope = anchor.closest('article, section, main, .program-card, .card') || document;
-          const localHeading = scope.querySelector('h2, h1, h4');
-          if (localHeading && localHeading.textContent) {
-            const fromLocal = withPrefix(localHeading.textContent);
-            if (fromLocal) return fromLocal;
+          return '';
+        };
+
+        const getCtaLabelForElement = (element) => {
+          if (!(element instanceof HTMLElement)) return '';
+
+          const explicit = (element.getAttribute('data-cta-label') || element.getAttribute('data-offer-name') || '').trim();
+          if (explicit) return explicit.slice(0, 190);
+
+          if (element instanceof HTMLAnchorElement) {
+            const href = (element.getAttribute('href') || '').trim().toLowerCase();
+            if (href.includes('/_assets/planes-de-estudio/')) {
+              const program = getProgramLabelFromPage();
+              return ('Plan de Estudios - ' + (program || 'Sin identificar')).slice(0, 190);
+            }
           }
 
-          return 'Plan de Estudios';
+          const rawText = normalize(element.textContent || '');
+          if (rawText !== '') {
+            const textLower = rawText.toLowerCase();
+            if (textLower === 'ver horarios' || textLower === 'contactar') {
+              const program = getProgramLabelFromPage();
+              return ((rawText + ' - ' + (program || 'Sin identificar')).slice(0, 190));
+            }
+            return rawText.slice(0, 190);
+          }
+
+          return 'CTA sin etiqueta';
         };
 
         const isPlanDownloadLink = (anchor) => {
@@ -292,13 +305,20 @@
           return href.includes('/_assets/planes-de-estudio/');
         };
 
-        const trackPlanDownloadClick = (anchor) => {
-          if (!(anchor instanceof HTMLAnchorElement)) return;
+        const isTrackedCtaButton = (button) => {
+          if (!(button instanceof HTMLButtonElement)) return false;
+          const text = normalize(button.textContent || '').toLowerCase();
+          return text === 'ver horarios' || text === 'contactar' || button.hasAttribute('data-track-cta');
+        };
+
+        const trackCtaClick = (element) => {
+          if (!(element instanceof HTMLElement)) return;
           postTrackingEvent(
-            <?php echo json_encode($base . '/api/events/download-click', JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>,
+            <?php echo json_encode($base . '/api/events/cta-click', JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>,
             {
               page_path: window.location.pathname || '/',
-              offer_name: getOfferNameForPlanLink(anchor),
+              click_label: getCtaLabelForElement(element),
+              target_url: element instanceof HTMLAnchorElement ? (element.getAttribute('href') || '') : '',
               referrer_url: document.referrer || ''
             }
           );
@@ -310,7 +330,12 @@
 
         document.querySelectorAll('a[href]').forEach((anchor) => {
           if (!isPlanDownloadLink(anchor)) return;
-          anchor.addEventListener('click', () => trackPlanDownloadClick(anchor), { passive: true });
+          anchor.addEventListener('click', () => trackCtaClick(anchor), { passive: true });
+        });
+
+        document.querySelectorAll('button').forEach((button) => {
+          if (!isTrackedCtaButton(button)) return;
+          button.addEventListener('click', () => trackCtaClick(button), { passive: true });
         });
       })();
     </script>

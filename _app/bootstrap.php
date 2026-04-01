@@ -455,6 +455,15 @@ $router->map('POST', '/api/forms/doctorados-doctorado-en-administracion-de-negoc
 $router->map('POST', '/api/forms/doctorados-doctorado-en-educacion-sistema-de-aprendizaje-en-linea', function (): void {
     require __DIR__ . '/controllers/forms/doctorados-doctorado-en-educacion-sistema-de-aprendizaje-en-linea.php';
 });
+$router->map('POST', '/api/forms/lp-licenciaturas', function (): void {
+    require __DIR__ . '/controllers/forms/lp-licenciaturas.php';
+});
+$router->map('POST', '/api/forms/lp-maestrias', function (): void {
+    require __DIR__ . '/controllers/forms/lp-maestrias.php';
+});
+$router->map('POST', '/api/forms/lp-nivel-medio-superior', function (): void {
+    require __DIR__ . '/controllers/forms/lp-nivel-medio-superior.php';
+});
 $router->map('POST', '/api/forms/contacto', function (): void {
     require __DIR__ . '/controllers/forms/contacto.php';
 });
@@ -467,8 +476,8 @@ $router->map('POST', '/api/buzon-rector', function (): void {
 $router->map('POST', '/api/events/whatsapp-click', function (): void {
     require __DIR__ . '/controllers/events/whatsapp_click.php';
 });
-$router->map('POST', '/api/events/download-click', function (): void {
-    require __DIR__ . '/controllers/events/download_click.php';
+$router->map('POST', '/api/events/cta-click', function (): void {
+    require __DIR__ . '/controllers/events/cta_click.php';
 });
 
 // ---------------------------

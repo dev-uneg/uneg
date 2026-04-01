@@ -23,7 +23,7 @@ if ($payload === []) {
 }
 
 $pagePath = trim((string) ($payload['page_path'] ?? ($_SERVER['HTTP_X_PAGE_PATH'] ?? '')));
-$offerName = trim((string) ($payload['offer_name'] ?? ($_SERVER['HTTP_X_OFFER_NAME'] ?? '')));
+$clickLabel = trim((string) ($payload['click_label'] ?? ($payload['offer_name'] ?? ($_SERVER['HTTP_X_OFFER_NAME'] ?? ''))));
 $referrerUrl = trim((string) ($payload['referrer_url'] ?? ($_SERVER['HTTP_REFERER'] ?? '')));
 
 $userAgent = (string) ($_SERVER['HTTP_USER_AGENT'] ?? '');
@@ -39,9 +39,9 @@ if (strpos($ua, 'tablet') !== false || strpos($ua, 'ipad') !== false) {
     $deviceType = 'mobile';
 }
 
-$inserted = download_click_db_insert([
+$inserted = cta_click_db_insert([
     'page_path' => $pagePath,
-    'offer_name' => $offerName,
+    'click_label' => $clickLabel,
     'device_type' => $deviceType,
     'referrer_url' => $referrerUrl,
     'ip' => $_SERVER['REMOTE_ADDR'] ?? null,

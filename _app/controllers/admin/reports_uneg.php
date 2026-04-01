@@ -73,7 +73,7 @@ $summary = [
     'universidad_leads' => 0,
     'without_page_path' => 0,
     'whatsapp_clicks' => 0,
-    'download_clicks' => 0,
+    'cta_clicks' => 0,
 ];
 
 $dailyLabels = [];
@@ -326,17 +326,17 @@ try {
     }
 
     $planCountStmt = $pdo->prepare(
-        'SELECT COUNT(*) FROM download_clicks WHERE created_day BETWEEN :from_day AND :to_day'
+        'SELECT COUNT(*) FROM cta_clicks WHERE created_day BETWEEN :from_day AND :to_day'
     );
     $planCountStmt->execute([
         ':from_day' => $monthStartDate,
         ':to_day' => $monthEndDate,
     ]);
-    $summary['download_clicks'] = (int) $planCountStmt->fetchColumn();
+    $summary['cta_clicks'] = (int) $planCountStmt->fetchColumn();
 
     $planDailyStmt = $pdo->prepare(
         'SELECT created_day AS day_key, COUNT(*) AS total
-         FROM download_clicks
+         FROM cta_clicks
          WHERE created_day BETWEEN :from_day AND :to_day
          GROUP BY created_day
          ORDER BY day_key ASC'
@@ -359,11 +359,11 @@ try {
 
     $planOfferStmt = $pdo->prepare(
         "SELECT
-            offer_name AS raw_label,
+            click_label AS raw_label,
             COUNT(*) AS total
-         FROM download_clicks
+         FROM cta_clicks
          WHERE created_day BETWEEN :from_day AND :to_day
-         GROUP BY offer_name
+         GROUP BY click_label
          ORDER BY total DESC
          LIMIT 8"
     );
@@ -374,7 +374,7 @@ try {
     foreach ($planOfferStmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
         $rawLabel = (string) ($row['raw_label'] ?? '');
         $planTopOffers[] = [
-            'label' => $rawLabel !== '' ? $rawLabel : 'Sin oferta detectada',
+            'label' => $rawLabel !== '' ? $rawLabel : 'Sin etiqueta',
             'total' => (int) ($row['total'] ?? 0),
         ];
     }
@@ -383,7 +383,7 @@ try {
         "SELECT
             page_path AS raw_label,
             COUNT(*) AS total
-         FROM download_clicks
+         FROM cta_clicks
          WHERE created_day BETWEEN :from_day AND :to_day
          GROUP BY page_path
          ORDER BY total DESC
@@ -405,7 +405,7 @@ try {
         "SELECT
             device_type AS raw_label,
             COUNT(*) AS total
-         FROM download_clicks
+         FROM cta_clicks
          WHERE created_day BETWEEN :from_day AND :to_day
          GROUP BY device_type
          ORDER BY total DESC"
@@ -443,9 +443,9 @@ $requirements = [
         'detail' => 'Disponible por status de envío a Pipedrive (pipedrive_failed).',
     ],
     [
-        'item' => 'Eventos GA4 (generate_lead, whatsapp_click, file_download)',
+        'item' => 'Eventos GA4 (generate_lead, whatsapp_click, cta_click)',
         'available' => true,
-        'detail' => 'Disponible: se implementó con código dentro del sitio web (sin GA4 de Analytics) el 31/03/2026 para generate_lead, whatsapp_click y file_download.',
+        'detail' => 'Disponible: se implementó con código dentro del sitio web (sin GA4 de Analytics) el 31/03/2026 para generate_lead, whatsapp_click y cta_click.',
     ],
     [
         'item' => 'Bitácora A/B testing',

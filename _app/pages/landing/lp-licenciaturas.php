@@ -37,7 +37,7 @@ require __DIR__ . '/../partials/header-lp.php';
           <h2 class="text-xl sm:text-2xl font-semibold text-center">Da el primer paso</h2>
           <p class="mt-2 text-center text-slate-600">Completa el formulario y asegura tu lugar en Universidad de Negocios ISEC.</p>
 
-          <form class="mt-6 flex flex-col gap-3 text-sm" method="post" action="<?php echo $base; ?>/api/forms/contacto" autocomplete="on">
+          <form class="mt-6 flex flex-col gap-3 text-sm" method="post" action="<?php echo $base; ?>/api/forms/lp-licenciaturas" autocomplete="on">
             <input class="block w-full rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" type="text" name="full_name" placeholder="Nombre" required>
             <input class="block w-full rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" type="email" name="email" placeholder="Correo electr&oacute;nico" required>
             <input class="block w-full rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0b2c86]/30" type="tel" name="phone" placeholder="Tel&eacute;fono (10 d&iacute;gitos)" required>
