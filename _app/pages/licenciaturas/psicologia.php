@@ -35,7 +35,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Validez Oficial</p>
-          <p class="text-white/70 text-xs">RVOE / UNAM</p>
+          <p class="text-white/70 text-xs">CLAVE UNAM: 3172-25 (ACUERDO CIRE 23/20)</p>
         </div>
       </div>
     </div>

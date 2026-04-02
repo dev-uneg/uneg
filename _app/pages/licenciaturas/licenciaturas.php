@@ -35,7 +35,7 @@ require __DIR__ . '/../partials/header.php';
           </span>
           <div>
             <p class="font-semibold">Validez Oficial</p>
-            <p class="text-white/70 text-xs">RVOE / UNAM</p>
+            <p class="text-white/70 text-xs">RVOE SEP/CLAVE UNAM/CLAVE IPN (SEGÚN PROGRAMA)</p>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ require __DIR__ . '/../partials/header.php';
         <i class="text-3xl" data-lucide="book-open"></i>
       </div>
       <h3 class="mt-4 font-semibold text-[#0b2c65]">Licenciatura en Pedagogía</h3>
-      <p class="mt-1 text-xs text-slate-500">UNAM CLAVE 3172-23 Acuerdo CIRE 11/09</p>
+      <p class="mt-1 text-xs text-slate-500">RVOE SEP</p>
     </a>
 
     <a href="<?php echo $base; ?>/licenciaturas/psicologia" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
@@ -113,7 +113,7 @@ require __DIR__ . '/../partials/header.php';
         <i class="text-3xl" data-lucide="brain"></i>
       </div>
       <h3 class="mt-4 font-semibold text-[#0b2c65]">Licenciatura en Psicología</h3>
-      <p class="mt-1 text-xs text-slate-500">UNAM CLAVE 3172-25 Acuerdo CIRE 23/02</p>
+      <p class="mt-1 text-xs text-slate-500">UNAM CLAVE 3172-25 ACUERDO CIRE 23/20</p>
     </a>
     <a href="<?php echo $base; ?>/licenciaturas/innovacion-turistica-y-gastronomica" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <div class="mx-auto h-24 w-24 rounded-full bg-[#0b2c65] text-white flex items-center justify-center">
@@ -134,7 +134,7 @@ require __DIR__ . '/../partials/header.php';
         <i class="text-3xl" data-lucide="scale"></i>
       </div>
       <h3 class="mt-4 font-semibold text-[#0b2c65]">Licenciatura en Derecho, Sistema de Universidad Abierta (SUA)</h3>
-      <p class="mt-1 text-xs text-slate-500">UNAM 3172-86</p>
+      <p class="mt-1 text-xs text-slate-500">RVOE SEP 20180822</p>
     </a>
 
     <a href="<?php echo $base; ?>/licenciaturas/ingenieria-en-inteligencia-artificial" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
@@ -142,7 +142,7 @@ require __DIR__ . '/../partials/header.php';
         <i class="text-3xl" data-lucide="cpu"></i>
       </div>
       <h3 class="mt-4 font-semibold text-[#0b2c65]">Ingeniería en Inteligencia Artificial</h3>
-      <p class="mt-1 text-xs text-slate-500">Acuerdo A-RVOE-DG-NS/04-2024</p>
+      <p class="mt-1 text-xs text-slate-500">CLAVE IPN A-RVOE-DG-NS/04-2024</p>
     </a>
   </section>
 

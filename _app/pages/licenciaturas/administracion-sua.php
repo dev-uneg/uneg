@@ -35,7 +35,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Validez Oficial</p>
-          <p class="text-white/70 text-xs">RVOE / UNAM</p>
+          <p class="text-white/70 text-xs">CLAVE UNAM: 3172-82 (ACUERDO CIREyTG 14/17)</p>
         </div>
       </div>
     </div>
@@ -177,19 +177,19 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Administración SUA</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left font-semibold text-[#0b2c65]" data-sem="s1">Primer Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s2">Segundo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s3">Tercer Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s4">Cuarto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s5">Quinto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s9">Noveno Cuatrimestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left font-semibold text-[#0b2c65]" data-sem="s1">Primer Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s2">Segundo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s3">Tercer Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s4">Cuarto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s5">Quinto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s9">Noveno Semestre</button>
         </div>
       </div>
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
