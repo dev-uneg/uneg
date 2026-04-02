@@ -35,7 +35,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Validez Oficial</p>
-          <p class="text-white/70 text-xs">RVOE SEP: 20180822</p>
+          <p class="text-white/70 text-xs">UNAM CLAVE: 3172-86 ACUERDO CIREyTG 05/18</p>
         </div>
       </div>
     </div>
@@ -177,102 +177,108 @@ require __DIR__ . '/../partials/header.php';
   </section>
 
   <section class="mt-12">
-    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Contaduría Pública Estratégica en Informática</h2>
+    <h2 class="text-center text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Plan de Estudios Licenciatura en Derecho SUA (10 Semestres)</h2>
     <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="rounded-xl border border-slate-200 bg-white p-4">
         <div class="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left font-semibold text-[#0b2c65]" data-sem="s1">Primer Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s2">Segundo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s3">Tercer Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s4">Cuarto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s5">Quinto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Cuatrimestre</button>
-          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s9">Noveno Cuatrimestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left font-semibold text-[#0b2c65]" data-sem="s1">Primer Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s2">Segundo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s3">Tercer Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s4">Cuarto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s5">Quinto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s6">Sexto Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s7">Séptimo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s8">Octavo Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s9">Noveno Semestre</button>
+          <button class="sem-btn rounded-md border border-slate-200 px-3 py-2 text-left" data-sem="s10">Décimo Semestre</button>
         </div>
       </div>
       <div class="md:col-span-2 rounded-xl border border-slate-200 bg-white p-6">
         <ul class="sem-panel list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s1">
-          <li>Razonamiento Matemático para Negocios</li>
-          <li>Microeconomía</li>
-          <li>Administración Contemporánea</li>
-          <li>Redacción de Informes</li>
-          <li>Informática para Negocios</li>
-          <li>Contabilidad para Negocios</li>
+          <li>Derecho Romano I</li>
+          <li>Historia del Derecho Mexicano</li>
+          <li>Introducción al Estudio del Derecho</li>
+          <li>Sociología General y Jurídica</li>
+          <li>Teoría General del Estado</li>
+          <li>Derechos Humanos</li>
           <li>Lengua Extranjera I (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s2">
-          <li>Probabilidad y Estadística</li>
-          <li>Macroeconomía</li>
-          <li>Derecho Civil</li>
-          <li>Comunicación y Liderazgo</li>
-          <li>Cultura General</li>
-          <li>Contabilidad Administrativa</li>
+          <li>Derecho Romano II</li>
+          <li>Acto Jurídico y Personas</li>
+          <li>Teoría del Derecho</li>
+          <li>Teoría de la Ley Penal y del Delito</li>
+          <li>Metodología Jurídica</li>
+          <li>Teoría de la Constitución</li>
           <li>Lengua Extranjera II (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s3">
-          <li>Matemáticas Financieras</li>
-          <li>Derecho Mercantil y Societario</li>
-          <li>Sistemas Contables I</li>
-          <li>Contabilidad Intermedia I</li>
-          <li>Contabilidad de Costos</li>
-          <li>Derecho Fiscal</li>
+          <li>Bienes y Derechos Reales</li>
+          <li>Delitos en Particular</li>
+          <li>Derecho Constitucional</li>
+          <li>Sistemas Jurídicos</li>
+          <li>Teoría del Proceso</li>
+          <li>Teoría Económica</li>
           <li>Lengua Extranjera III (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s4">
-          <li>Derecho Laboral</li>
-          <li>Sistemas Contables II</li>
-          <li>Contabilidad Intermedia II</li>
-          <li>Costos para la toma de Decisiones</li>
-          <li>Comercio Exterior y Ley Aduanera</li>
-          <li>Administración Financiera</li>
+          <li>Derecho Administrativo I</li>
+          <li>Derecho Económico</li>
+          <li>Garantías Constitucionales</li>
+          <li>Obligaciones</li>
+          <li>Sociedades Mercantiles</li>
+          <li>Derecho Procesal Civil</li>
           <li>Lengua Extranjera IV (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s5">
-          <li>Ética y Valores en los Negocios</li>
-          <li>Contabilidad Avanzada I</li>
-          <li>Administración Estratégica de Costos</li>
-          <li>Estudio de las Normas Internacionales de Auditoria</li>
-          <li>Impuestos Personas Morales</li>
-          <li>Finanzas Corporativas</li>
+          <li>Derecho Internacional Público</li>
+          <li>Derecho Administrativo II</li>
+          <li>Régimen Jurídico de Comercio Exterior</li>
+          <li>Títulos y Operaciones de Crédito</li>
+          <li>Contratos Civiles</li>
+          <li>Derecho Procesal Penal</li>
           <li>Lengua Extranjera V (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s6">
-          <li>Investigación de Operaciones</li>
-          <li>Contabilidad Avanzada II</li>
-          <li>Presupuestos</li>
-          <li>Auditoria Administrativa y Control Interno</li>
-          <li>Impuestos Personas Físicas</li>
-          <li>Finanzas Bursátiles</li>
+          <li>Derecho Fiscal I</li>
+          <li>Derecho Internacional Privado I</li>
+          <li>Derecho Individual del Trabajo</li>
+          <li>Derecho Familiar</li>
+          <li>Filosofía del Derecho</li>
+          <li>Contratos Mercantiles</li>
           <li>Lengua Extranjera VI (Inglés)</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s7">
-          <li>Informática Contable</li>
-          <li>Contabilidad Internacional</li>
-          <li>Auditoria Operacional</li>
-          <li>Impuestos Indirectos</li>
-          <li>Seguridad Social</li>
-          <li>Proyectos Internacionales de Inversión</li>
-          <li>Lengua Extranjera VII (Inglés)</li>
+          <li>Derecho Sucesorio</li>
+          <li>Amparo</li>
+          <li>Derecho Colectivo Procesal del Trabajo</li>
+          <li>Derecho Fiscal II</li>
+          <li>Derecho Internacional Privado II</li>
+          <li>Derecho Bancario Bursátil</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s8">
-          <li>Responsabilidad Social Corporativa</li>
-          <li>Taller de Imagen Pública</li>
-          <li>Análisis de la Información Financiera</li>
-          <li>Gobierno Corporativo</li>
-          <li>Impuestos Internacionales</li>
-          <li>Finanzas Internacionales</li>
-          <li>Lengua Extranjera VIII (Inglés)</li>
+          <li>Derecho Agrario</li>
+          <li>Seguridad Social</li>
+          <li>Argumentación Jurídica</li>
+          <li>Juicios Orales en Materia Civil</li>
+          <li>Juicios Orales en Materia Penal</li>
+          <li>Lógica Jurídica</li>
         </ul>
         <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s9">
-          <li>Desarrollo Sustentable</li>
-          <li>Emprendimiento Empresarial</li>
-          <li>Contabilidad Gubernamental</li>
-          <li>Dictamen Fiscal</li>
-          <li>Estrategias Fiscales</li>
-          <li>Riesgos</li>
-          <li>Lengua Extranjera IX (Inglés)</li>
+          <li>Optativa Requerida</li>
+          <li>Optativa Requerida</li>
+          <li>Optativa Requerida</li>
+          <li>Optativa Requerida</li>
+          <li>Optativa Requerida</li>
+          <li>Optativa</li>
+        </ul>
+        <ul class="sem-panel hidden list-disc list-inside space-y-2 text-slate-600" data-sem-panel="s10">
+          <li>Optativa Requerida</li>
+          <li>Optativa Requerida</li>
+          <li>Optativa Requerida</li>
+          <li>Optativa Requerida</li>
+          <li>Optativa</li>
+          <li>Optativa</li>
         </ul>
       </div>
     </div>

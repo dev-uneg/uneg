@@ -105,7 +105,7 @@ require __DIR__ . '/../partials/header.php';
         <i class="text-3xl" data-lucide="book-open"></i>
       </div>
       <h3 class="mt-4 font-semibold text-[#0b2c65]">Licenciatura en Pedagogía</h3>
-      <p class="mt-1 text-xs text-slate-500">RVOE SEP</p>
+      <p class="mt-1 text-xs text-slate-500">UNAM CLAVE: 3172-23</p>
     </a>
 
     <a href="<?php echo $base; ?>/licenciaturas/psicologia" class="block rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">

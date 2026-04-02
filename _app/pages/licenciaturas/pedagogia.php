@@ -35,7 +35,7 @@ require __DIR__ . '/../partials/header.php';
         </span>
         <div>
           <p class="font-semibold">Validez Oficial</p>
-          <p class="text-white/70 text-xs">RVOE SEP</p>
+          <p class="text-white/70 text-xs">UNAM CLAVE: 3172-23</p>
         </div>
       </div>
     </div>
