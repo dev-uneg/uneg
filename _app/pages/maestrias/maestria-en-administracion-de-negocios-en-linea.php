@@ -131,7 +131,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="check-circle"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Licenciados o pasantes que hayan cursado cualquier carrera en las siguientes áreas de conocimiento:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Ciencias sociales y de la salud.</li>
@@ -145,7 +145,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Egreso</h4>
             <p class="mt-2 text-sm text-slate-600">Al egresar de esta maestría, tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>El egresado de la Maestría en Administración de Negocios Sistema de Aprendizaje en Línea, será una persona transformada por la educación, un individuo seguro de sí mismo, con plena convicción de la importancia de su formación profesional.</li>

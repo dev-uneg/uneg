@@ -134,7 +134,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="check-circle"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Dirigido a Licenciados con un alto sentido de crítica que deseen analizar el entorno de un mundo globalizado en relación con los marcos legales que actualmente rigen nuestra sociedad, para buscar un beneficio hacia la comunidad y las organizaciones.</p>
           </div>
 
@@ -142,7 +142,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Egreso</h4>
             <p class="mt-2 text-sm text-slate-600">El egresado de la Maestría en Derecho Corporativo obtendrá las siguientes habilidades y conocimientos:</p>
           </div>
 

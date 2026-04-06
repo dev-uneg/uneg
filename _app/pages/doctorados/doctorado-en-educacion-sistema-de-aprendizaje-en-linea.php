@@ -25,8 +25,8 @@ require __DIR__ . '/../partials/header.php';
           <i class="text-lg" data-lucide="clock-3"></i>
         </span>
         <div>
-          <p class="font-semibold">Sistema en Línea</p>
-          <p class="text-white/70 text-xs">24 Hrs</p>
+          <p class="font-semibold">Sistema en Línea aprendizaje sincrónico</p>
+          <p class="text-white/70 text-xs">Modalidad</p>
         </div>
       </div>
       <div class="flex items-center gap-3">
@@ -43,9 +43,9 @@ require __DIR__ . '/../partials/header.php';
 </section>
 
   <section class="mt-10 text-center">
-    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce el Doctorado en Educación Sabatino (SUA) de la Universidad de Negocios ISEC</h1>
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[#0b2c65]">Conoce el Doctorado en Educación de la Universidad de Negocios ISEC</h1>
     <p class="mt-2 text-slate-600">
-      Continúa con tus actividades académicas y encuentra un espacio pertinente para estudiar los fines de semana. El Doctorado en Educación Sabatino (SUA) de la Universidad de Negocios ISEC te abre las puertas. ¡Inscríbete!
+      Continúa con tus actividades académicas y encuentra un espacio pertinente para estudiar los fines de semana. El Doctorado en Educación de la Universidad de Negocios ISEC te abre las puertas. ¡Inscríbete!
     </p>
   </section>
 
@@ -66,7 +66,7 @@ require __DIR__ . '/../partials/header.php';
         <input class="w-full rounded-md border border-slate-300 px-3 py-2 sm:col-span-2 col-span-1" name="full_name" placeholder="Nombre completo*" type="text" required />
         <input class="w-full rounded-md border border-slate-300 px-3 py-2" name="email" placeholder="Correo Electrónico*" type="email" required />
         <input class="w-full rounded-md border border-slate-300 px-3 py-2" name="phone" placeholder="Teléfono*" type="tel" required />
-        <input type="hidden" name="interest" value="Doctorado en Educación Sabatino (SUA)" />
+        <input type="hidden" name="interest" value="Doctorado en Educación" />
         <label class="col-span-1 sm:col-span-2 text-xs text-slate-500 flex items-center gap-2">
           <input type="checkbox" name="privacy" value="1" class="h-4 w-4" required />
           He leído y acepto el <a href="<?php echo $base; ?>/aviso-de-privacidad" class="font-semibold text-slate-700 underline" target="_blank" rel="noopener">Aviso de Privacidad</a>
@@ -131,7 +131,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="check-circle"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de este doctorado deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Titulado de cualquier Maestría con interés en la Educación.</li>
@@ -143,7 +143,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Egreso</h4>
             <p class="mt-2 text-sm text-slate-600">Al egresar de este doctorado, tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>El egresado del Doctorado es una persona transformada por el proceso de enseñanza – aprendizaje que se propicia a través de actividades virtuales. Formación de competencias que aborda los fenómenos educativos en cualquier ámbito ya sea en instituciones educativas u organizaciones, en el sector público, privado o social. Pensamiento sistémico que le permite visualizar de manera holística los elementos del fenómeno que observa, que estudia o bien que le interesa. Visión humanista que le permite tomar decisiones y atender las problemáticas que se le presenten.</li>
@@ -185,8 +185,7 @@ require __DIR__ . '/../partials/header.php';
     <div class="rounded-2xl border border-slate-200 bg-[#062c3a] px-6 py-10 text-center text-white shadow-sm">
       <h2 class="text-3xl sm:text-4xl font-semibold">Horarios</h2>
       <div class="mt-6 text-xl sm:text-2xl">Plan Semestral</div>
-      <div class="mt-3 text-2xl sm:text-3xl font-semibold">Sistema de Aprendizaje en Línea.</div>
-      <div class="mt-2 text-lg">24 HRS</div>
+      <div class="mt-3 text-2xl sm:text-3xl font-semibold">Modalidad: Sistema en Línea aprendizaje sincrónico.</div>
     </div>
   </section>
 

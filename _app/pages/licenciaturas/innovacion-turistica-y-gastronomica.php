@@ -132,7 +132,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="check-circle"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de esta licenciatura deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Esta Licenciatura responde a las necesidades educativas, sociales, políticas, económicas, ecológicas y laborales que den respuesta al campo en el que se va a desempeñar el profesionista de manera individual y profesional, logrando así brindar una formación oportuna de acuerdo a las características requeridas en un mundo globalizado donde se puedan desarrollar tanto en lo administrativo como en la parte operativa.</li>
@@ -143,7 +143,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Egreso</h4>
             <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura, tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Conocer y comprender la evolución, comportamiento y prospectiva de la actividad turística en el escenario nacional e internacional a efecto de analizar el impacto que refleje en el ámbito económico, social, cultural, gastronómico y ecológico.</li>

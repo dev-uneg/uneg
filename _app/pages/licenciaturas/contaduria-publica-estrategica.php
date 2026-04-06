@@ -132,7 +132,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="check-circle"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de esta licenciatura deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Interés en invertir eficazmente e incrementar la economía empresarial.</li>
@@ -145,7 +145,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Egreso</h4>
             <p class="mt-2 text-sm text-slate-600">Al egresar de esta Licenciatura tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Cambiar la visión proyectiva de negocios.</li>
@@ -342,7 +342,7 @@ require __DIR__ . '/../partials/header.php';
         </details>
 
         <details class="rounded-lg border border-slate-200 bg-white px-4 py-3">
-          <summary class="font-semibold cursor-pointer">¿Cuál es el perfil de egreso?</summary>
+          <summary class="font-semibold cursor-pointer">¿Cuál es el Perfil de Egreso?</summary>
           <p class="mt-2 text-slate-600 text-sm">
             Al completar tu formación en esta licenciatura, desarrollarás competencias esenciales para el ámbito empresarial, por ejemplo:
           </p>

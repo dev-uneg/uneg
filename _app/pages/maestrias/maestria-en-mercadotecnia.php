@@ -132,7 +132,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="check-circle"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de ingreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Ingreso</h4>
             <p class="mt-2 text-sm text-slate-600">Como aspirante de esta maestría deberás cubrir el siguiente perfil:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>Licenciados o pasantes que hayan cursado cualquier carrera, con interés en el mundo de los negocios.</li>
@@ -143,7 +143,7 @@ require __DIR__ . '/../partials/header.php';
             <div class="h-10 w-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0b2c65]">
               <i class="text-xl" data-lucide="graduation-cap"></i>
             </div>
-            <h4 class="mt-3 font-semibold">Perfil de egreso</h4>
+            <h4 class="mt-3 font-semibold">Perfil de Egreso</h4>
             <p class="mt-2 text-sm text-slate-600">Al egresar de esta Maestría, tendrás habilidades para:</p>
             <ul class="mt-3 space-y-2 text-sm text-[#0b2c65]">
               <li>El egresado de Maestría en Mercadotecnia será una persona transformadora por la educación, un individuo seguro de sí mismo, con plena convicción de la importancia de formación profesional.</li>

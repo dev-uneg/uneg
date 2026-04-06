@@ -15,6 +15,8 @@
     transform: translate(-50%, 6px);
     transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 160ms;
     z-index: 50;
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
   }
   .menu-dropdown--mid {
     width: 520px;
@@ -34,8 +36,7 @@
   .mega {
     display: grid;
     grid-template-columns: 1fr;
-    max-height: 70vh;
-    overflow: hidden;
+    overflow: visible;
   }
   .mega.has-right {
     grid-template-columns: 260px 1fr;
@@ -45,11 +46,23 @@
   }
   .mega-left {
     border-right: 1px solid #e5e7eb;
+    min-height: 0;
+    max-height: min(70vh, calc(100vh - 180px));
+    max-height: min(70dvh, calc(100dvh - 180px));
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
   }
   .mega-right {
     display: none;
+    min-height: 0;
+    max-height: min(70vh, calc(100vh - 180px));
+    max-height: min(70dvh, calc(100dvh - 180px));
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
   }
   .mega.has-right .mega-right {
     display: block;
