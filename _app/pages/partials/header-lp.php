@@ -105,13 +105,8 @@ require_once __DIR__ . '/../../helpers/icons.php';
         var s = d.getElementsByTagName(n)[0];
         s.parentNode.insertBefore(e, s);
       }
-
-      var eventId = (w.crypto && typeof w.crypto.randomUUID === 'function')
-        ? w.crypto.randomUUID()
-        : ('uneg-view-' + Date.now() + '-' + Math.random().toString(16).slice(2, 10));
-
       w.spdt('conf', { key: '14c182851580462a8db1af7fa7e8491c' });
-      w.spdt('view', { event_id: eventId });
+      w.spdt('view');
     })(window, document);
   </script>
   <style>
