@@ -227,6 +227,9 @@ $router->map('GET', '/admin/panel', function (): void {
 $router->map('GET', '/admin/reports', function (): void {
     require __DIR__ . '/controllers/admin/reports_index.php';
 });
+$router->map('GET|POST', '/admin/forms-test-runner', function (): void {
+    require __DIR__ . '/controllers/admin/forms_test_runner.php';
+});
 $router->map('GET', '/admin/reports/uneg-mensual', function (): void {
     require __DIR__ . '/controllers/admin/reports_uneg.php';
 });
