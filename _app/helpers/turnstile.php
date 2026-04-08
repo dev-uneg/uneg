@@ -51,33 +51,9 @@ function turnstile_secret_key(): string
 }
 
 
-function turnstile_forms_test_bypass_allowed(string $token): bool
-{
-    if ($token !== '__UNEG_FORMS_TEST_BYPASS__') {
-        return false;
-    }
-
-    $flag = trim((string) ($_SERVER['HTTP_X_UNEG_FORMS_TEST'] ?? ''));
-    if ($flag !== '1') {
-        return false;
-    }
-
-    if (session_status() !== PHP_SESSION_ACTIVE) {
-        @session_start();
-    }
-
-    require_once __DIR__ . '/admin_auth.php';
-    return function_exists('admin_is_authenticated') && admin_is_authenticated();
-}
 
 function verify_turnstile_token(string $token, string $remoteIp = ''): array
 {
-    if (turnstile_forms_test_bypass_allowed($token)) {
-        return [
-            'success' => true,
-            'action' => 'admin_forms_test_bypass',
-        ];
-    }
 
     $payload = [
         'secret' => turnstile_secret_key(),

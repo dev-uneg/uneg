@@ -87,14 +87,6 @@ require_once __DIR__ . '/../../helpers/icons.php';
         <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo $reportsCount; ?></p>
       </a>
 
-      <a href="<?php echo $base; ?>/admin/forms-test-runner" class="group rounded-2xl border border-indigo-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-700 text-white">
-          <?php echo uneg_icon('shield-check', 'h-6 w-6'); ?>
-        </div>
-        <h2 class="mt-4 text-lg font-semibold text-[#0b2c65]">Pruebas Forms</h2>
-        <p class="mt-1 text-sm text-slate-600">Ejecuta envios de prueba por endpoint y revisa resultado secuencial.</p>
-        <p class="mt-4 text-sm font-semibold text-indigo-700">Abrir modulo</p>
-      </a>
     </section>
   </main>
 </body>
