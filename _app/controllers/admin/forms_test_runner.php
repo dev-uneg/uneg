@@ -99,7 +99,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                         'X-UNEG-FORMS-TEST: 1',
                         'Cookie: ' . (string) ($_SERVER['HTTP_COOKIE'] ?? ''),
                     ],
-                    CURLOPT_TIMEOUT => 20,
+                    CURLOPT_CONNECTTIMEOUT => 3,
+                    CURLOPT_TIMEOUT => 8,
                 ]);
 
                 $raw = curl_exec($ch);
