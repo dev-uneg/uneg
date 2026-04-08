@@ -136,6 +136,7 @@ if (file_exists($configPath)) {
 }
 
 $token = (string) ($config['api_token'] ?? getenv('PIPEDRIVE_API_TOKEN') ?? '');
+$ownerId = (int) ($config['owner_id'] ?? getenv('PIPEDRIVE_OWNER_ID') ?? 0);
 if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
     leads_db_update($leadId, [
         'status' => 'pipedrive_failed',
@@ -160,6 +161,10 @@ $personPayload = [
     '51afe9f4a6aefe4190fc45e0b0f7c5e8c3063510' => $campaign,
     '1cd81947451e14a3c30084a31db4d6eef6fef63e' => 'Sitio web',
 ];
+
+if ($ownerId > 0) {
+    $personPayload['owner_id'] = $ownerId;
+}
 
 $personResponse = $pipedriveRequest('https://api.pipedrive.com/v1/persons', $token, $personPayload);
 
