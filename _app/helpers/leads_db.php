@@ -216,6 +216,34 @@ function leads_db_init(PDO $pdo): void
         PRIMARY KEY (id)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
+    $pdo->exec('CREATE TABLE IF NOT EXISTS web_engagement_events (
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        event_name VARCHAR(40) NOT NULL,
+        page_path VARCHAR(255) NOT NULL,
+        session_token VARCHAR(80) NULL,
+        scroll_pct TINYINT UNSIGNED NULL,
+        engagement_ms INT UNSIGNED NULL,
+        ip_hash CHAR(64) NULL,
+        user_agent_hash CHAR(64) NULL,
+        is_bot TINYINT(1) NOT NULL DEFAULT 0,
+        created_at DATETIME NOT NULL,
+        created_day DATE NULL,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
+
+    $pdo->exec('CREATE TABLE IF NOT EXISTS web_engagement_daily (
+        day_key DATE NOT NULL,
+        page_path VARCHAR(255) NOT NULL,
+        page_views INT UNSIGNED NOT NULL DEFAULT 0,
+        engaged_10s INT UNSIGNED NOT NULL DEFAULT 0,
+        scroll_50 INT UNSIGNED NOT NULL DEFAULT 0,
+        scroll_90 INT UNSIGNED NOT NULL DEFAULT 0,
+        time_on_page_samples INT UNSIGNED NOT NULL DEFAULT 0,
+        avg_time_on_page_ms INT UNSIGNED NOT NULL DEFAULT 0,
+        updated_at DATETIME NOT NULL,
+        PRIMARY KEY (day_key, page_path)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
+
     if (!leads_db_index_exists($pdo, 'leads', 'leads_created_at_idx')) {
         $pdo->exec('CREATE INDEX leads_created_at_idx ON leads (created_at)');
     }
@@ -290,6 +318,28 @@ function leads_db_init(PDO $pdo): void
     }
     if (!leads_db_index_exists($pdo, 'cta_clicks', 'cta_clicks_day_device_idx')) {
         $pdo->exec('CREATE INDEX cta_clicks_day_device_idx ON cta_clicks (created_day, device_type)');
+    }
+    if (!leads_db_index_exists($pdo, 'web_engagement_events', 'web_engagement_events_created_at_idx')) {
+        $pdo->exec('CREATE INDEX web_engagement_events_created_at_idx ON web_engagement_events (created_at)');
+    }
+    if (!leads_db_column_exists($pdo, 'web_engagement_events', 'created_day')) {
+        $pdo->exec('ALTER TABLE web_engagement_events ADD COLUMN created_day DATE NULL AFTER created_at');
+    }
+    $pdo->exec('UPDATE web_engagement_events SET created_day = DATE(created_at) WHERE created_day IS NULL');
+    if (!leads_db_index_exists($pdo, 'web_engagement_events', 'web_engagement_events_day_event_idx')) {
+        $pdo->exec('CREATE INDEX web_engagement_events_day_event_idx ON web_engagement_events (created_day, event_name)');
+    }
+    if (!leads_db_index_exists($pdo, 'web_engagement_events', 'web_engagement_events_day_page_idx')) {
+        $pdo->exec('CREATE INDEX web_engagement_events_day_page_idx ON web_engagement_events (created_day, page_path)');
+    }
+    if (!leads_db_index_exists($pdo, 'web_engagement_events', 'web_engagement_events_day_session_idx')) {
+        $pdo->exec('CREATE INDEX web_engagement_events_day_session_idx ON web_engagement_events (created_day, session_token)');
+    }
+    if (!leads_db_index_exists($pdo, 'web_engagement_events', 'web_engagement_events_day_ip_idx')) {
+        $pdo->exec('CREATE INDEX web_engagement_events_day_ip_idx ON web_engagement_events (created_day, ip_hash)');
+    }
+    if (!leads_db_index_exists($pdo, 'web_engagement_daily', 'web_engagement_daily_page_idx')) {
+        $pdo->exec('CREATE INDEX web_engagement_daily_page_idx ON web_engagement_daily (page_path)');
     }
 }
 
@@ -524,5 +574,275 @@ function cta_click_db_insert(array $data): ?int
         return (int) $pdo->lastInsertId();
     } catch (Throwable $e) {
         return null;
+    }
+}
+
+function engagement_allowed_events(): array
+{
+    return [
+        'page_view',
+        'engaged_10s',
+        'scroll_50',
+        'scroll_90',
+        'time_on_page',
+    ];
+}
+
+function engagement_normalize_page_path(?string $value): string
+{
+    $pagePath = trim((string) $value);
+    if ($pagePath === '') {
+        return '/';
+    }
+
+    if (strpos($pagePath, '/') !== 0) {
+        $parsedPath = (string) parse_url($pagePath, PHP_URL_PATH);
+        $pagePath = $parsedPath !== '' ? $parsedPath : '/';
+    }
+
+    if (strpos($pagePath, '/') !== 0) {
+        $pagePath = '/' . ltrim($pagePath, '/');
+    }
+
+    $pagePath = preg_replace('/\?.*/', '', $pagePath) ?: $pagePath;
+    $pagePath = preg_replace('/#.*$/', '', $pagePath) ?: $pagePath;
+    if ($pagePath === '') {
+        return '/';
+    }
+
+    return substr($pagePath, 0, 255);
+}
+
+function page_path_is_dev_noise(?string $value): bool
+{
+    $path = engagement_normalize_page_path((string) $value);
+    $lower = strtolower($path);
+
+    if (str_starts_with($lower, '/uneg/')) {
+        return true;
+    }
+    if (str_contains($lower, '/home-des')) {
+        return true;
+    }
+    if (str_contains($lower, '/page_des/')) {
+        return true;
+    }
+
+    return false;
+}
+
+function engagement_hash_nullable(?string $value): ?string
+{
+    $raw = trim((string) $value);
+    if ($raw === '') {
+        return null;
+    }
+
+    $salt = (string) (getenv('ENGAGEMENT_HASH_SALT') ?: 'uneg-engagement');
+    return hash('sha256', $salt . '|' . $raw);
+}
+
+function engagement_is_suspected_bot(?string $userAgent): bool
+{
+    $ua = strtolower(trim((string) $userAgent));
+    if ($ua === '') {
+        return true;
+    }
+
+    $needles = [
+        'bot', 'spider', 'crawler', 'headless', 'python-requests', 'curl/', 'wget/',
+        'httpclient', 'go-http-client', 'sqlmap', 'nikto', 'nmap', 'ahrefs', 'semrush',
+    ];
+
+    foreach ($needles as $needle) {
+        if (strpos($ua, $needle) !== false) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function engagement_event_is_rate_limited(?string $ipHash, int $windowSeconds = 60, int $maxEvents = 180): bool
+{
+    $ipHashValue = trim((string) $ipHash);
+    if ($ipHashValue === '' || $windowSeconds <= 0 || $maxEvents <= 0) {
+        return false;
+    }
+
+    try {
+        $pdo = leads_db();
+        $stmt = $pdo->prepare(
+            'SELECT COUNT(*)
+             FROM web_engagement_events
+             WHERE ip_hash = :ip_hash
+               AND created_at >= DATE_SUB(NOW(), INTERVAL :window_second SECOND)'
+        );
+        $stmt->bindValue(':ip_hash', $ipHashValue, PDO::PARAM_STR);
+        $stmt->bindValue(':window_second', $windowSeconds, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return (int) $stmt->fetchColumn() >= $maxEvents;
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function engagement_event_exists_today(string $eventName, string $pagePath, string $sessionToken): bool
+{
+    $token = trim($sessionToken);
+    if ($token === '') {
+        return false;
+    }
+
+    try {
+        $pdo = leads_db();
+        $stmt = $pdo->prepare(
+            'SELECT 1
+             FROM web_engagement_events
+             WHERE created_day = CURDATE()
+               AND event_name = :event_name
+               AND page_path = :page_path
+               AND session_token = :session_token
+             LIMIT 1'
+        );
+        $stmt->execute([
+            ':event_name' => $eventName,
+            ':page_path' => $pagePath,
+            ':session_token' => $token,
+        ]);
+
+        return (bool) $stmt->fetchColumn();
+    } catch (Throwable $e) {
+        return false;
+    }
+}
+
+function engagement_event_db_insert(array $data): ?int
+{
+    try {
+        $eventName = trim((string) ($data['event_name'] ?? ''));
+        if (!in_array($eventName, engagement_allowed_events(), true)) {
+            return null;
+        }
+
+        $pagePath = engagement_normalize_page_path((string) ($data['page_path'] ?? '/'));
+        if (page_path_is_dev_noise($pagePath)) {
+            return null;
+        }
+        if (preg_match('~^/[A-Za-z0-9/_\\-\\.]*$~', $pagePath) !== 1) {
+            return null;
+        }
+
+        $scrollPct = isset($data['scroll_pct']) ? (int) $data['scroll_pct'] : null;
+        if ($scrollPct !== null && ($scrollPct < 0 || $scrollPct > 100)) {
+            $scrollPct = null;
+        }
+
+        $engagementMs = isset($data['engagement_ms']) ? (int) $data['engagement_ms'] : null;
+        if ($engagementMs !== null) {
+            if ($engagementMs < 0) {
+                $engagementMs = 0;
+            }
+            if ($engagementMs > 1800000) {
+                $engagementMs = 1800000;
+            }
+        }
+
+        $sessionToken = substr(trim((string) ($data['session_token'] ?? '')), 0, 80);
+        if ($sessionToken === '') {
+            $sessionToken = null;
+        }
+
+        $createdAt = leads_db_datetime($data['created_at'] ?? null);
+        $pdo = leads_db();
+        $stmt = $pdo->prepare(
+            'INSERT INTO web_engagement_events (
+                event_name, page_path, session_token, scroll_pct, engagement_ms, ip_hash, user_agent_hash, is_bot, created_at, created_day
+            ) VALUES (
+                :event_name, :page_path, :session_token, :scroll_pct, :engagement_ms, :ip_hash, :user_agent_hash, :is_bot, :created_at, :created_day
+            )'
+        );
+        $stmt->execute([
+            ':event_name' => $eventName,
+            ':page_path' => $pagePath,
+            ':session_token' => $sessionToken,
+            ':scroll_pct' => $scrollPct,
+            ':engagement_ms' => $engagementMs,
+            ':ip_hash' => $data['ip_hash'] ?? null,
+            ':user_agent_hash' => $data['user_agent_hash'] ?? null,
+            ':is_bot' => !empty($data['is_bot']) ? 1 : 0,
+            ':created_at' => $createdAt,
+            ':created_day' => substr($createdAt, 0, 10),
+        ]);
+
+        return (int) $pdo->lastInsertId();
+    } catch (Throwable $e) {
+        error_log('[engagement_event_db_insert] ' . $e->getMessage());
+        return null;
+    }
+}
+
+function engagement_rebuild_daily_range(string $fromDay, string $toDay): void
+{
+    try {
+        $pdo = leads_db();
+        $stmtDelete = $pdo->prepare(
+            'DELETE FROM web_engagement_daily
+             WHERE day_key BETWEEN :from_day AND :to_day'
+        );
+        $stmtDelete->execute([
+            ':from_day' => $fromDay,
+            ':to_day' => $toDay,
+        ]);
+
+        $stmtInsert = $pdo->prepare(
+            "INSERT INTO web_engagement_daily (
+                day_key, page_path, page_views, engaged_10s, scroll_50, scroll_90, time_on_page_samples, avg_time_on_page_ms, updated_at
+            )
+            SELECT
+                created_day AS day_key,
+                page_path,
+                SUM(CASE WHEN event_name = 'page_view' THEN 1 ELSE 0 END) AS page_views,
+                SUM(CASE WHEN event_name = 'engaged_10s' THEN 1 ELSE 0 END) AS engaged_10s,
+                SUM(CASE WHEN event_name = 'scroll_50' THEN 1 ELSE 0 END) AS scroll_50,
+                SUM(CASE WHEN event_name = 'scroll_90' THEN 1 ELSE 0 END) AS scroll_90,
+                SUM(CASE WHEN event_name = 'time_on_page' THEN 1 ELSE 0 END) AS time_on_page_samples,
+                COALESCE(ROUND(AVG(CASE WHEN event_name = 'time_on_page' THEN engagement_ms END)), 0) AS avg_time_on_page_ms,
+                NOW() AS updated_at
+            FROM web_engagement_events
+            WHERE created_day BETWEEN :from_day AND :to_day
+              AND is_bot = 0
+              AND page_path NOT LIKE '/uneg/%'
+              AND page_path NOT LIKE '%/home-des%'
+              AND page_path NOT LIKE '%/page_des/%'
+            GROUP BY created_day, page_path"
+        );
+        $stmtInsert->execute([
+            ':from_day' => $fromDay,
+            ':to_day' => $toDay,
+        ]);
+    } catch (Throwable $e) {
+        error_log('[engagement_rebuild_daily_range] ' . $e->getMessage());
+    }
+}
+
+function engagement_cleanup_raw_days(int $keepDays = 90): int
+{
+    if ($keepDays < 7) {
+        $keepDays = 7;
+    }
+
+    try {
+        $pdo = leads_db();
+        $stmt = $pdo->prepare(
+            'DELETE FROM web_engagement_events
+             WHERE created_day < DATE_SUB(CURDATE(), INTERVAL :keep_days DAY)'
+        );
+        $stmt->bindValue(':keep_days', $keepDays, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->rowCount();
+    } catch (Throwable $e) {
+        return 0;
     }
 }

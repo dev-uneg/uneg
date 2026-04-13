@@ -47,6 +47,7 @@ $scoreMetricStatus = static function (string $name, float $value): array {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reporte UNEG | <?php echo htmlspecialchars($monthLabel, ENT_QUOTES, 'UTF-8'); ?></title>
+  <link rel="stylesheet" href="<?php echo $base; ?>/_assets/admin-fonts.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -77,20 +78,8 @@ $scoreMetricStatus = static function (string $name, float $value): array {
   </style>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
-  <div id="page-loader" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-50/95 backdrop-blur-sm transition-opacity duration-300">
-    <div class="flex flex-col items-center gap-4">
-      <div class="relative h-16 w-16">
-        <span class="absolute inset-0 rounded-full border-4 border-slate-200"></span>
-        <span class="absolute inset-0 rounded-full border-4 border-transparent border-t-[#0b2c65] animate-spin"></span>
-      </div>
-      <div class="text-center">
-        <p class="text-sm font-semibold text-slate-700">Generando reporte UNEG</p>
-        <p class="mt-1 text-xs text-slate-500">Consultando base de datos y preparando gráficas...</p>
-      </div>
-    </div>
-  </div>
-
-  <main id="page-content" class="mx-auto w-full max-w-7xl px-4 py-10 opacity-0 transition-opacity duration-300">
+  <?php require __DIR__ . '/../partials/sidebar.php'; ?>
+  <main class="admin-main">
     <section class="flex flex-wrap items-start justify-between gap-4">
       <div>
         <p class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800">UNEG · Performance Web y CRO</p>
@@ -443,18 +432,6 @@ $scoreMetricStatus = static function (string $name, float $value): array {
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script>
-    function hidePageLoader() {
-      const loader = document.getElementById('page-loader');
-      const content = document.getElementById('page-content');
-      if (content) content.classList.remove('opacity-0');
-      if (!loader) return;
-      loader.classList.add('opacity-0');
-      setTimeout(() => loader.remove(), 300);
-    }
-
-    window.addEventListener('load', hidePageLoader);
-    setTimeout(hidePageLoader, 1800);
-
     const dailyLabels = <?php echo json_encode($dailyLabels, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
     const dailyValues = <?php echo json_encode($dailyValues, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
     const interestLabels = <?php echo json_encode($interestLabels, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;

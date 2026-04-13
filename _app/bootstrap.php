@@ -230,6 +230,9 @@ $router->map('GET', '/admin/reports', function (): void {
 $router->map('GET', '/admin/reports/uneg-mensual', function (): void {
     require __DIR__ . '/controllers/admin/reports_uneg.php';
 });
+$router->map('GET', '/admin/reports/engagement-mensual', function (): void {
+    require __DIR__ . '/controllers/admin/reports_engagement.php';
+});
 $router->map('GET', '/admin/leads', function (): void {
     require __DIR__ . '/controllers/admin/leads_index.php';
 });
@@ -478,6 +481,9 @@ $router->map('POST', '/api/events/whatsapp-click', function (): void {
 });
 $router->map('POST', '/api/events/cta-click', function (): void {
     require __DIR__ . '/controllers/events/cta_click.php';
+});
+$router->map('POST', '/api/events/engagement', function (): void {
+    require __DIR__ . '/controllers/events/engagement.php';
 });
 
 // ---------------------------

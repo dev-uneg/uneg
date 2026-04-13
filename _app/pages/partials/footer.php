@@ -239,6 +239,83 @@
           }).catch(() => {});
         };
 
+        const engagementEndpoint = <?php echo json_encode($base . '/api/events/engagement', JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
+
+        const getEngagementSessionToken = () => {
+          const storageKey = 'uneg_engagement_session_v1';
+          try {
+            const existing = window.localStorage.getItem(storageKey);
+            if (existing && /^[A-Za-z0-9_-]{12,80}$/.test(existing)) {
+              return existing;
+            }
+
+            const randomPart = Math.random().toString(36).slice(2, 14);
+            const token = ('u' + Date.now().toString(36) + randomPart).slice(0, 40);
+            window.localStorage.setItem(storageKey, token);
+            return token;
+          } catch (_err) {
+            return ('u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12)).slice(0, 40);
+          }
+        };
+
+        const engagementSessionToken = getEngagementSessionToken();
+        const getEngagementBasePayload = () => ({
+          page_path: window.location.pathname || '/',
+          session_token: engagementSessionToken
+        });
+        const sendEngagementEvent = (eventName, extraPayload) => {
+          const payload = Object.assign({ event_name: eventName }, getEngagementBasePayload(), extraPayload || {});
+          postTrackingEvent(engagementEndpoint, payload);
+        };
+
+        const shouldTrackEngagement = () => {
+          const path = (window.location.pathname || '/').toLowerCase();
+          if (path.indexOf('/admin') === 0 || path.indexOf('/api') === 0) {
+            return false;
+          }
+          return true;
+        };
+
+        if (shouldTrackEngagement()) {
+          sendEngagementEvent('page_view');
+
+          let engagedSent = false;
+          setTimeout(() => {
+            if (engagedSent || document.visibilityState !== 'visible') return;
+            engagedSent = true;
+            sendEngagementEvent('engaged_10s');
+          }, 10000);
+
+          const sentScrollEvents = new Set();
+          const checkScrollDepth = () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+            const viewport = window.innerHeight || document.documentElement.clientHeight || 0;
+            const docHeight = Math.max(
+              document.body.scrollHeight || 0,
+              document.documentElement.scrollHeight || 0
+            );
+            const denominator = Math.max(1, docHeight - viewport);
+            const pct = Math.round((scrollTop / denominator) * 100);
+
+            if (pct >= 50 && !sentScrollEvents.has('scroll_50')) {
+              sentScrollEvents.add('scroll_50');
+              sendEngagementEvent('scroll_50', { scroll_pct: 50 });
+            }
+            if (pct >= 90 && !sentScrollEvents.has('scroll_90')) {
+              sentScrollEvents.add('scroll_90');
+              sendEngagementEvent('scroll_90', { scroll_pct: 90 });
+            }
+          };
+          window.addEventListener('scroll', checkScrollDepth, { passive: true });
+          checkScrollDepth();
+
+          const startedAt = Date.now();
+          window.addEventListener('pagehide', () => {
+            const durationMs = Math.max(0, Date.now() - startedAt);
+            sendEngagementEvent('time_on_page', { duration_ms: durationMs });
+          });
+        }
+
         const normalize = (text) => (text || '').replace(/\s+/g, ' ').trim();
 
         const getProgramLabelFromPage = () => {

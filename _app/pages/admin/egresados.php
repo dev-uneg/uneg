@@ -3,7 +3,6 @@ declare(strict_types=1);
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? '/'), '/');
 $base = $base === '.' ? '' : $base;
 $assetBase = $base === '' ? '' : $base;
-require_once __DIR__ . '/../../helpers/icons.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -12,34 +11,16 @@ require_once __DIR__ . '/../../helpers/icons.php';
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Egresados | Admin UNEG</title>
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
-  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=2"></script>
-  <style>
-    @font-face {
-      font-family: 'Figtree';
-      src: url('<?php echo $assetBase; ?>/_assets/fonts/Figtree-wght.ttf') format('truetype');
-      font-weight: 100 900;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Figtree';
-      src: url('<?php echo $assetBase; ?>/_assets/fonts/Figtree-Italic-wght.ttf') format('truetype');
-      font-weight: 100 900;
-      font-style: italic;
-      font-display: swap;
-    }
-    body { font-family: 'Figtree', sans-serif; }
-  </style>
+  <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/admin-fonts.css">
+  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=4"></script>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
-  <main class="mx-auto w-full max-w-7xl px-4 py-10">
-    <section class="flex flex-wrap items-center justify-between gap-4">
-      <div>
-        <h1 class="text-2xl font-semibold text-[#0b2c65]">Egresados</h1>
-        <p class="mt-1 text-sm text-slate-500">Total: <?php echo $total; ?> registros</p>
-      </div>
-      <div class="flex flex-wrap items-center gap-3">
-        <form method="get" action="<?php echo $base; ?>/admin/egresados" class="flex flex-wrap items-center gap-2 text-sm text-slate-600">
+  <?php require __DIR__ . '/partials/sidebar.php'; ?>
+  <main class="admin-main">
+    <?php
+      ob_start();
+    ?>
+    <form method="get" action="<?php echo $base; ?>/admin/egresados" class="flex flex-wrap items-center gap-2 text-sm text-slate-600">
           <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
             <label class="text-xs font-semibold text-slate-500">Desde</label>
             <input type="date" name="from" value="<?php echo htmlspecialchars($dateFrom, ENT_QUOTES, 'UTF-8'); ?>" class="text-xs text-slate-700 outline-none">
@@ -52,18 +33,24 @@ require_once __DIR__ . '/../../helpers/icons.php';
           </button>
           <input type="hidden" name="per_page" value="<?php echo $perPage; ?>">
           <input type="hidden" name="page" value="1">
-        </form>
-        <a class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-600 hover:border-slate-300 <?php echo $hasDateFilter ? '' : 'pointer-events-none opacity-40'; ?>" href="<?php echo $base; ?>/admin/egresados/export?from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>" aria-label="Exportar CSV">
-          <?php echo uneg_icon('download', 'h-4 w-4'); ?>
-        </a>
-        <a class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:border-slate-300" href="<?php echo $base; ?>/admin/panel">
-          <?php echo uneg_icon('layout-grid', 'h-4 w-4'); ?> Panel
-        </a>
-        <a class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-600 hover:border-slate-300" href="<?php echo $base; ?>/admin/logout" aria-label="Salir">
-          <?php echo uneg_icon('log-out', 'h-4 w-4'); ?>
-        </a>
-      </div>
-    </section>
+    </form>
+    <a class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white p-2 text-slate-600 hover:bg-slate-100 <?php echo $hasDateFilter ? '' : 'pointer-events-none opacity-40'; ?>" href="<?php echo $base; ?>/admin/egresados/export?from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>" aria-label="Exportar CSV">
+      <?php echo uneg_icon('download', 'h-4 w-4'); ?>
+    </a>
+    <a class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100" href="<?php echo $base; ?>/admin/panel">
+      <?php echo uneg_icon('layout-grid', 'h-4 w-4'); ?> Panel
+    </a>
+    <?php
+      $headerActionsHtml = (string) ob_get_clean();
+      $headerBadgeIcon = 'graduation-cap';
+      $headerBadgeText = 'Comunidad · Egresados';
+      $headerBadgeClass = 'bg-indigo-100 text-indigo-800';
+      $headerTitleIcon = 'graduation-cap';
+      $headerTitleIconClass = 'h-7 w-7 text-indigo-700';
+      $headerTitle = 'Registro de Egresados';
+      $headerSubtitle = 'Total: ' . (int) $total . ' registros';
+      require __DIR__ . '/partials/page-header.php';
+    ?>
 
     <section class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" data-bulk-scope="egresados-table">
       <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3">

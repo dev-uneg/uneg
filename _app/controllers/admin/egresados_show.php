@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 session_start();
 require __DIR__ . '/../../helpers/admin_auth.php';
+require __DIR__ . '/../../helpers/admin_async.php';
 require __DIR__ . '/../../helpers/leads_db.php';
 require __DIR__ . '/../../helpers/date.php';
 
@@ -12,6 +13,12 @@ $base = admin_base_path();
 $id = (int) ($_GET['id'] ?? 0);
 if ($id <= 0) {
     header('Location: ' . $base . '/admin/egresados', true, 302);
+    exit;
+}
+
+if (!admin_is_async_request()) {
+    $pageTitle = 'Detalle Egresado | Admin UNEG';
+    require __DIR__ . '/../../pages/admin/partials/async-shell.php';
     exit;
 }
 
@@ -25,4 +32,7 @@ if (!$row) {
     exit;
 }
 
+ob_start();
 require __DIR__ . '/../../pages/admin/egresados-show.php';
+$fullPageHtml = (string) ob_get_clean();
+echo admin_extract_body_html($fullPageHtml);

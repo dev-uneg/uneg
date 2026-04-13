@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Figtree';
+  src: url('./fonts/Figtree-wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('./fonts/Figtree-Italic-wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+}
+
+.admin-sidebar {
+  display: none;
+}
+
+.admin-main {
+  width: 100%;
+  padding: 2.5rem 1rem;
+}
+
+@media (min-width: 1024px) {
+  .admin-sidebar {
+    display: block;
+  }
+
+  .admin-main {
+    padding-left: 17rem;
+    padding-right: 1.5rem;
+  }
+}

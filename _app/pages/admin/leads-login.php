@@ -12,24 +12,8 @@ require_once __DIR__ . '/../../helpers/icons.php';
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Acceso Admin | UNEG</title>
   <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/css/output.css">
-  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=2"></script>
-  <style>
-    @font-face {
-      font-family: 'Figtree';
-      src: url('<?php echo $assetBase; ?>/_assets/fonts/Figtree-wght.ttf') format('truetype');
-      font-weight: 100 900;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Figtree';
-      src: url('<?php echo $assetBase; ?>/_assets/fonts/Figtree-Italic-wght.ttf') format('truetype');
-      font-weight: 100 900;
-      font-style: italic;
-      font-display: swap;
-    }
-    body { font-family: 'Figtree', sans-serif; }
-  </style>
+  <link rel="stylesheet" href="<?php echo $assetBase; ?>/_assets/admin-fonts.css">
+  <script defer src="<?php echo $assetBase; ?>/_assets/js/lucide-loader.js?v=4"></script>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
   <main class="mx-auto flex min-h-screen max-w-5xl items-center justify-center px-4 py-10">
