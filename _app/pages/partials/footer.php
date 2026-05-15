@@ -108,7 +108,7 @@
       require_once __DIR__ . '/../../helpers/turnstile.php';
       $turnstileSiteKey = turnstile_site_key();
     ?>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+    
     <script>
       (function () {
         const siteKey = <?php echo json_encode($turnstileSiteKey, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
@@ -183,31 +183,11 @@
           setOrCreateHidden(form, 'page_path', currentPath);
         };
 
-        const addTurnstile = (form) => {
-          if (!isPublicApiForm(form)) return;
-          if (form.querySelector('.cf-turnstile')) return;
-
-          const wrap = document.createElement('div');
-          wrap.className = 'turnstile-wrap sm:col-span-2';
-
-          const widget = document.createElement('div');
-          widget.className = 'cf-turnstile';
-          widget.setAttribute('data-sitekey', siteKey);
-          wrap.appendChild(widget);
-
-          const submit = form.querySelector('button[type="submit"], input[type="submit"]');
-          if (submit && submit.parentNode) {
-            submit.parentNode.insertBefore(wrap, submit);
-          } else {
-            form.appendChild(wrap);
-          }
-        };
 
         document.querySelectorAll('form').forEach((form) => {
           addUtmFields(form);
           addContactoUtmFields(form);
           addPagePathField(form);
-          addTurnstile(form);
         });
 
         const trackWhatsappClick = (anchor) => {
